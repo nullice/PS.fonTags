@@ -1,5 +1,5 @@
 /**
- * Created by Óï±ù on 2015/11/7.
+ * Created by è¯­å†° on 2015/11/7.
  */
 (function ()
 {
@@ -12,7 +12,7 @@
 
 
     //----------------------------
-    //×¢²á PS ½çÃæÅäÉ«¸Ä±äÊÂ¼ş¼àÌıÆ÷
+    //æ³¨å†Œ PS ç•Œé¢é…è‰²æ”¹å˜äº‹ä»¶ç›‘å¬å™¨
     cs.addEventListener(CSInterface.THEME_COLOR_CHANGED_EVENT, setUIColors);
     setUIColors();
 
@@ -23,27 +23,37 @@
 
         if (skinInfo)
         {
-            //»ñÈ¡ PS Íâ¹Û±³¾°É«
+            //è·å– PS å¤–è§‚èƒŒæ™¯è‰²
             var panelBgColor = toHex(skinInfo.panelBackgroundColor.color);
 
-            //===ÉèÖÃ½çÃæ±³¾°É«Îª PS Íâ¹ÛÉèÖÃ
+            //===è®¾ç½®ç•Œé¢èƒŒæ™¯è‰²ä¸º PS å¤–è§‚è®¾ç½®
             var body = document.getElementsByTagName("body");
             body[0].style.backgroundColor ="#"+ panelBgColor;
 
 
-            //===ÅĞ¶Ï PS Íâ¹ÛÉèÖÃ£¬ÓÉ°µµ½ÁÁ 4 µµ¼¶±ğ£¬´Ó×îÁÁµ½×î°µ£º light1¡¢2£¬dark1¡¢2
+
+            function changeCSSfile(file)
+            {
+                var topcoat = document.getElementById("css_topcoat");
+                topcoat.href=file;
+            }
+
+
+            //===åˆ¤æ–­ PS å¤–è§‚è®¾ç½®ï¼Œç”±æš—åˆ°äº® 4 æ¡£çº§åˆ«ï¼Œä»æœ€äº®åˆ°æœ€æš—ï¼š light1ã€2ï¼Œdark1ã€2
             panelBgColor= "0x"+panelBgColor
             if(panelBgColor > DARK_LIGHT_SWITCH_COLOR)
             {
                 if(panelBgColor > LIGHT1_2_SWITCH_COLOR)
                 {
                     //light1
-                    alert("light2")
+                    //alert("light2")
+                    changeCSSfile("css/topcoat-desktop-light.css");
                 }
                 else
                 {
                     //light2
-                    alert("light1")
+                    //alert("light1")
+                    changeCSSfile("css/topcoat-desktop-light.css");
                 }
             }
             else
@@ -51,12 +61,14 @@
                 if(panelBgColor > DARK1_2_SWITCH_COLOR)
                 {
                     //dark1
-                    alert("dark1")
+                   // alert("dark1")
+                    changeCSSfile("css/topcoat-desktop-dark.css");
                 }
                 else
                 {
                     //dark2
-                    alert("dark2")
+                    //alert("dark2")
+                    changeCSSfile("css/topcoat-desktop-dark.css");
                 }
             }
         }
@@ -65,7 +77,7 @@
     }
 
 
-    //°Ñ color ¶ÔÏó×ª»»Îª 16½øÖÆ×Ö·û´®
+    //æŠŠ color å¯¹è±¡è½¬æ¢ä¸º 16è¿›åˆ¶å­—ç¬¦ä¸²
     function toHex(color, prefix, delta)
     {
         function computeValue(value, delta)

@@ -1,0 +1,50 @@
+.topnav {
+
+    height: 32px;
+
+}
+
+.topnav nav
+{
+    margin: auto ;
+    vertical-align: middle;
+    position: relative;
+    top:4px;
+    z-index: 3;
+
+}
+
+.topnav hr{
+    position: relative;
+
+    top:-15px;
+    z-index: 1;
+
+}
+
+
+.tip
+{
+    margin: auto;
+    width: 10%;
+    background-color: #134f7f;
+}
+
+
+
+
+
+
+
+.tagpage
+{
+    display: block;
+    background-color: #134f7f;
+    width: 100%;
+    height: 100%;
+    top:33px;
+    position: absolute;
+
+
+}
+
