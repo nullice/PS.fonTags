@@ -55,7 +55,7 @@
 
 .chosebar .title{
     position: absolute;
-    top: 9px;
+    top: 4px;
     margin: auto;
     left: 12px;
     height: 18px;
@@ -75,7 +75,7 @@
     margin-right: 16px;
     margin-left: 55px;
     /*background:#134f7f;*/
-    top:2px;
+    top:4px;
 
 
 
@@ -87,7 +87,7 @@
 :checked + .bottom_bar
 {
 
-    height: 25px;
+    height: 22px;
 }
 
 
@@ -101,7 +101,14 @@
 .chooser
 {
     margin: 0 1px 4px;
+    font-size: 8pt;
+    line-height: 12pt;
+    padding: 0 0.30rem;
+
+
+
 }
+
 .bar_switch
 {
     margin-top: 1px;
@@ -123,5 +130,18 @@
 
 .fontbox {
 
-    background-color: #1e7dc8;
+    /*background-color: #1e7dc8;*/
+}
+
+.fontlist
+{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 120px;
+    overflow: auto;
+
+
+
+
 }
