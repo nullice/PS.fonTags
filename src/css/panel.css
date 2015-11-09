@@ -104,11 +104,9 @@
 }
 .bar_switch
 {
-
     margin-top: 1px;
     right: 2px;
     position: absolute;
-
 
 }
 
@@ -121,4 +119,9 @@
 {
     color: #0036ff;
     text-shadow: 0 0 4px #5dbdff;
+}
+
+.fontbox {
+
+    background-color: #1e7dc8;
 }
