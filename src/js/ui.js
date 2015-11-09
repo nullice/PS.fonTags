@@ -3,7 +3,10 @@
  */
 
 
+$(window).resize(function() {
 
+    $('.fontlist').height($(window).height()-$('.fontlist').offset().top -$('.foot').height());
+});
 
 
 

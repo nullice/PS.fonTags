@@ -131,17 +131,85 @@
 .fontbox {
 
     /*background-color: #1e7dc8;*/
+
+
+
 }
 
 .fontlist
 {
+
     position: relative;
-    width: 80%;
+    width: 94%;
     margin: auto;
-    height: 120px;
+
+    bottom: 0;
     overflow: auto;
 
+}
+
+/*滚动条：*/
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+}
 
 
+
+
+
+
+
+
+
+.fontitem
+{
+
+    cursor: default;
+    margin:2px 4px 2px 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.fontitem:hover
+{
+    box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.fontitem:active
+{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.group
+{
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+}
+
+.foot{
+
+    height:50px;
+    width: 100%;
+    bottom: 0;
 
 }
