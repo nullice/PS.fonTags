@@ -102,3 +102,17 @@
 {
     margin: 0 1px 4px;
 }
+.bar_switch
+{
+
+    margin-top: 1px;
+    right: 2px;
+    position: absolute;
+
+
+}
+
+:checked ^ .bar_switch
+{
+  background-color: red;
+}
