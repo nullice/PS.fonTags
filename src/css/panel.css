@@ -262,11 +262,14 @@
     margin-right: 8px;
 
 
+
+
 }
 
 
-.group label .fontitem
+:checked + .group label .fontitem
 {
-    box-shadow: 0 2px 2px rgba(100, 101, 101, 0.16);
-
+    box-shadow:
+    0 1px 0px 1px rgba(255, 255, 255, 0.79),
+    0 2px 2px 0px rgba(58, 58, 58, 0.71);
 }
