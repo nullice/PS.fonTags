@@ -112,7 +112,13 @@
 
 }
 
-:checked ^ .bar_switch
+.bar_switch span
 {
-  background-color: red;
+    text-shadow: 0 1px 1px #eee;
+}
+
+.bar_switch span:hover
+{
+    color: #0036ff;
+    text-shadow: 0 0 4px #5dbdff;
 }
