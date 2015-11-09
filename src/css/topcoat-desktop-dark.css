@@ -157,6 +157,8 @@
   pointer-events: none;
 }
 
+
+
 .topcoat-button,
 .topcoat-button--quiet,
 .topcoat-button--large,
@@ -212,6 +214,8 @@
   box-shadow: inset 0 1px rgba(0,0,0,0.05);
 }
 
+
+
 .topcoat-button--quiet {
   background: transparent;
   border: 1px solid transparent;
@@ -252,7 +256,8 @@
 }
 
 .topcoat-button--cta,
-.topcoat-button--large--cta {
+.topcoat-button--large--cta,
+:checked + label .topcoat-button {
   border: 1px solid #134f7f;
   background-color: #288edf;
   box-shadow: inset 0 1px rgba(255,255,255,0.36);
@@ -262,12 +267,14 @@
 }
 
 .topcoat-button--cta:hover,
-.topcoat-button--large--cta:hover {
+.topcoat-button--large--cta:hover,
+:checked + label .topcoat-button {
   background-color: #4ca1e4;
 }
 
 .topcoat-button--cta:active,
-.topcoat-button--large--cta:active {
+.topcoat-button--large--cta:active,
+:checked + label .topcoat-button {
   background-color: #1e7dc8;
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
 }

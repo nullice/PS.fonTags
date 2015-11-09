@@ -151,7 +151,9 @@
 .topcoat-button--cta:disabled,
 .topcoat-button--large--cta:disabled,
 .topcoat-button-bar__button:disabled,
-.topcoat-button-bar__button--large:disabled {
+.topcoat-button-bar__button--large:disabled
+:checked + label .topcoat-button--cta
+{
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
@@ -164,7 +166,9 @@
 .topcoat-button--cta,
 .topcoat-button--large--cta,
 .topcoat-button-bar__button,
-.topcoat-button-bar__button--large {
+.topcoat-button-bar__button--large
+:checked + label .topcoat-button--cta
+{
   padding: 0 0.563rem;
   font-size: 12px;
   line-height: 1.313rem;
@@ -252,7 +256,9 @@
 }
 
 .topcoat-button--cta,
-.topcoat-button--large--cta {
+.topcoat-button--large--cta,
+:checked + label .topcoat-button
+{
   border: 1px solid #134f7f;
   background-color: #288edf;
   box-shadow: inset 0 1px rgba(255,255,255,0.36);
@@ -262,12 +268,14 @@
 }
 
 .topcoat-button--cta:hover,
-.topcoat-button--large--cta:hover {
+.topcoat-button--large--cta:hover,
+:checked + label .topcoat-button{
   background-color: #4ca1e4;
 }
 
 .topcoat-button--cta:active,
-.topcoat-button--large--cta:active {
+.topcoat-button--large--cta:active,
+:checked + label .topcoat-button {
   background-color: #1e7dc8;
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
 }
