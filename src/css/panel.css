@@ -179,19 +179,18 @@
 
 .fontitem
 {
-
     cursor: default;
     margin:2px 4px 2px 4px;
     padding: 4px 8px;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.4);
-
 }
 
-.group label .fontitem:hover,
+.group>.fontitem:hover
+, .group label .fontitem:hover,
 .fontitem:hover
 {
-    box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);
+    /*box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);*/
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -220,39 +219,30 @@
 
 
 .font_number{
-
     display: none;
-
     padding:2px 4px;
     color: white;
     position: absolute;
-
     text-align: center;
     margin-top: 3px;
 
-
-
     right: 30px;
-
-
     border-radius: 3px;
 
     font-family:"Helvetica", serif;
     font-size: 12px;
     background-color: rgba(53, 36, 255, 0.55);
-
 }
+
 
 :checked + .group label .fontitem .font_number
 {
     display: inline;
-
 }
 
 :checked + .group>.fontitem
 {
     display: none;
-
 }
 
 .group>.fontitem
@@ -260,10 +250,6 @@
     background-color: rgba(255, 255, 255, 0.27);
     margin-left: 20px;
     margin-right: 8px;
-
-
-
-
 }
 
 
@@ -272,4 +258,20 @@
     box-shadow:
     0 1px 0px 1px rgba(255, 255, 255, 0.79),
     0 2px 2px 0px rgba(58, 58, 58, 0.71);
+}
+
+.sizeranger
+{
+    position: absolute;
+    margin-top: 10px;
+
+    right: 20px;
+
+}
+
+.sizeranger .topcoat-range
+{
+    height: 5px;
+    border: 1px solid rgba(157, 172, 169, 0.65);
+
 }

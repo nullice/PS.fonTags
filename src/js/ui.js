@@ -11,6 +11,14 @@ $(window).resize(function() {
 
 
 
+
+$('.sizeranger').on('change', function(){
+        alert($(".sizeranger").val());
+});
+
+
+
+
 $(".page1").show();
 $(".page2").hide();
 $(".page3").hide();
