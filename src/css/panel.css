@@ -179,11 +179,14 @@
 
 .fontitem
 {
+
+    position: relative;
     cursor: default;
     margin:2px 4px 2px 4px;
     padding: 4px 8px;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
 }
 
 .group>.fontitem:hover
@@ -220,12 +223,15 @@
 
 .font_number{
     display: none;
-    padding:2px 4px;
-    color: white;
     position: absolute;
-    text-align: center;
-    margin-top: 3px;
+    padding:2px 4px;
 
+    text-align: center;
+    top:20%;
+
+
+
+    color: white;
     right: 30px;
     border-radius: 3px;
 
