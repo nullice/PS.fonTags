@@ -16,6 +16,7 @@ $('.sizeranger').on('change', function(){
     console.log($(".sizeranger>input").val());
 
     $(".srang").text($(".sizeranger>input").val());
+    $(".fontitem").css("font-size",+$(".sizeranger>input").val());
 });
 
 
