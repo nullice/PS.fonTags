@@ -13,10 +13,13 @@ $(window).resize(function() {
 
 
 $('.sizeranger').on('change', function(){
-        alert($(".sizeranger").val());
+    console.log($(".sizeranger>input").val());
+
+    $(".srang").text($(".sizeranger>input").val());
 });
 
 
+//$(".srang").val($(".sizeranger").val());
 
 
 $(".page1").show();
