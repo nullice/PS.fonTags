@@ -84,7 +84,6 @@ function loadJSX(fileName)
 loadJSX("json2.js");
 
 
-
 function refurFontags()
 {
     cs.evalScript('getFontsJson()',
@@ -96,7 +95,7 @@ function refurFontags()
 
             for (var i = 0; i < o.length; i++)
             {
-                if("" != o.list[i].name && undefined != o.list[i].name)
+                if ("" != o.list[i].name && undefined != o.list[i].name)
                 {
                     Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style);
                 }
@@ -115,31 +114,25 @@ refurFontags();
 function fontagasToHTML(fontagesIn)
 {
     $(".fontlist").html("");
+
+
+    var str1 = ' font_name="' + fontagesIn.list[i].name + '" ';
+    str1    += ' font_family="' + fontagesIn.list[i].family + '" ';
+    str1    += ' font_postscriptname="' + fontagesIn.list[i].postScriptName + '" ';
+    str1    += ' font_style="' + fontagesIn.list[i].style + '" ';
+    str1    += ' style="' + fontagesIn.list[i].style + '" ';
+
+
+
     $(".fontlist").append(
-
-
-    '<div class="fontitem"' + ' font_name="' + fontagesIn.list[i].name + '" font_family="'+ fontagesIn.list[i].family +'" font_postscriptname="' +
-
-
-
-
+        '<div class="fontitem"' + ' font_name="' + +'" font_family="' + fontagesIn.list[i].family + '" font_postscriptname="' +
     )
-
-
 
 
     <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'Microsoft YaHei UI Light','MicrosoftYaHeiUILight', 'Microsoft YaHei UI' ;">
     <span> Microsoft YaHei UI </span>
 <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"></i><i class="fa fa-check  act_buttom act_apply" title="应用字体"></i><i class="fa fa-info act_buttom act_info" title="字体信息"></i> </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,34 @@
+{
+  "name": "jquery-tmpl",
+  "title": "jQuery Templates",
+  "description": "This is the fork of jQuery Templates that we use internally here at Kanban Solutions. We have fixed all known and encountered bugs as well as changing the syntax from the standard",
+  "keywords": [
+    "tmpl",
+    "jquery-tmpl",
+    "templates",
+    "template"
+  ],
+  "version": "1.0.4",
+  "author": {
+    "name": "jQuery Foundation and other contributors"
+  },
+  "maintainers": [
+    {
+      "name": "Kanban Solutions",
+      "email": "dj.gilcrease@kanbansolutions.com",
+      "url": "http://www.kanbansolutions.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://jquery.org/license"
+    }
+  ],
+  "bugs": "https://github.com/KanbanSolutions/jquery-tmpl/issues",
+  "homepage": "https://github.com/KanbanSolutions/jquery-tmpl",
+  "docs": "https://github.com/KanbanSolutions/jquery-tmpl",
+  "dependencies": {
+    "jquery": ">=1.6"
+  }
+}
