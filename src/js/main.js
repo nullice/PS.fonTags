@@ -97,12 +97,15 @@ function refurFontags()
             {
                 if ("" != o.list[i].name && undefined != o.list[i].name)
                 {
+
+                    Temp_fontages.length++;
                     Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style);
                 }
 
             }
 
             fontages = $.extend(true, {}, Temp_fontages);
+            fontagasToHTML(fontages);
         }
     )
 }
@@ -113,32 +116,32 @@ refurFontags();
 
 function fontagasToHTML(fontagesIn)
 {
+    console.log("fontagasToHTML\n")
     $(".fontlist").html("");
 
-
-    var str1 = ' font_name="' + fontagesIn.list[i].name + '" ';
-    str1    += ' font_family="' + fontagesIn.list[i].family + '" ';
-    str1    += ' font_postscriptname="' + fontagesIn.list[i].postScriptName + '" ';
-    str1    += ' font_style="' + fontagesIn.list[i].style + '" ';
-    str1    += ' style="' + fontagesIn.list[i].style + '" ';
-
-
-
-    $(".fontlist").append(
-        '<div class="fontitem"' + ' font_name="' + +'" font_family="' + fontagesIn.list[i].family + '" font_postscriptname="' +
-    )
+    for (var i = 0; i < fontagesIn.length; i++)
+    {
+        var str1 = ' font_name="' + fontagesIn.list[i].name + '" ';
+        str1 += ' font_family="' + fontagesIn.list[i].family + '" ';
+        str1 += ' font_postscriptname="' + fontagesIn.list[i].postScriptName + '" ';
+        str1 += ' font_style="' + fontagesIn.list[i].style + '" ';
+        var strf = "font-family: '" + fontagesIn.list[i].name + "', '" + fontagesIn.list[i].postScriptName + "', '" + fontagesIn.list[i].family + "' ;";
+        str1 += ' style="' + strf + '" ';
 
 
-    <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'Microsoft YaHei UI Light','MicrosoftYaHeiUILight', 'Microsoft YaHei UI' ;">
-    <span> Microsoft YaHei UI </span>
-<div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"></i><i class="fa fa-check  act_buttom act_apply" title="应用字体"></i><i class="fa fa-info act_buttom act_info" title="字体信息"></i> </div>
-</div>
+        var html =
+            '<div class="fontitem"' + str1 + ">\n" +
+            '<span>' + fontagesIn.list[i].name + '<\/span>' +
+
+            '<div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
+            + '<\/div>';
+
+        console.log(html);
 
 
-
-
+        $(".fontlist").append(html);
+    }
 
 
 }
 
-fontagasToHTML();
