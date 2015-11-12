@@ -286,6 +286,7 @@
 
 .opbar
 {
+    display: none;
     position: absolute;
     top: 10%;
     right: 10px;
@@ -294,6 +295,11 @@
     font-size: 14px;
 
     vertical-align: middle;
+}
+
+.fontitem:hover .opbar
+{
+    display: block;
 }
 
 .act_buttom
@@ -315,5 +321,4 @@
 .act_buttom:hover
 {
     color: #4495d7;
-
 }

@@ -42,10 +42,8 @@ var Fontages = function ()
 
 }
 
-
 Fontages.prototype.add = function (name, family, postScriptName, style)
 {
-
     var font =
     {
         name: name,
@@ -64,9 +62,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
         _type: "Font"
     }
 
-
-    this.list[this.list.length]=1;
-
+    this.list[this.list.length]=font;
 }
 
 
@@ -76,6 +72,8 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
 
 
 
+
+//----------------------------------------------------
 
 
 
