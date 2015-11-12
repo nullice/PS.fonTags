@@ -39,7 +39,7 @@ var Fontages = function ()
 
     var fontGroup =
     {
-        font: {},
+        font: [{}],
         _type: "FontGroup"
     }
 
