@@ -321,6 +321,9 @@
     font-size: 12px;
 }
 
+
+
+.info_open:not(.act_info)>.act_info:hover,
 .act_buttom:hover
 {
     color: #4495d7;
@@ -337,7 +340,21 @@
     color: #3174af;
     font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","メイリオ","Meiryo",sans-serif;
 }
+
+.info_open:not(.act_info){
+    display:block;
+}
+
+.info_open:not(.act_info)>.act_info{
+    color: #1f77af;
+}
+
+
+
+
 .info_box ul{
 
     list-style: none;
 }
+
+

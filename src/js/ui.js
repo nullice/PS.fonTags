@@ -12,8 +12,7 @@ $(window).resize(function() {
 
 
 
-$('.sizeranger').on('change', function(){
-    console.log($(".sizeranger>input").val());
+$('.sizeranger').on('mouseup', function(){
 
     $(".srang").text($(".sizeranger>input").val());
     $(".fontitem").css("font-size",+$(".sizeranger>input").val());

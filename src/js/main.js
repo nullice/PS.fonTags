@@ -1,33 +1,8 @@
 /**
  * Created by 语冰 on 2015/11/7.
  */
-$(".act_info").click(
-    function()
-    {
 
-        if( $(this).hasClass("info_open"))
-        {
-            $(this).removeClass("info_open");
-            $(this).parent().siblings().filter(".info_box").remove();
-        }
-        else
-        {
-            $(this).addClass("info_open");
-            var o =
-            {
-                name: $(this).parent().parent().attr("font_name"),
-                family: $(this).parent().parent().attr("font_family"),
-                PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
-                style: $(this).parent().parent().attr("font_style"),
-            }
-
-            $(this).parent().after( $('#tmpl_info_box').tmpl(o));
-        }
-
-    }
-);
-
-
+$(".act_info").click(act_info);
 
 
 
@@ -155,17 +130,46 @@ function fontagasToHTML(fontagesIn)
 
         var html =
             '<div class="fontitem"' + str1 + ">\n" +
-            '<span>' + fontagesIn.list[i].name + '<\/span>' +
+            '<span>' + fontagesIn.list[i].name + '<\/span> ' +
 
-            '<div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
+            ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
             + '<\/div>';
 
-        console.log(html);
+
 
 
         $(".fontlist").append(html);
     }
 
 
+    $(".act_info").click(act_info);
+
 }
 
+
+
+function act_info()
+{
+
+    if( $(this).hasClass("info_open"))
+    {
+        $(this).removeClass("info_open");
+        $(this).parent().removeClass("info_open");
+        $(this).parent().siblings().filter(".info_box").remove();
+    }
+    else
+    {
+        $(this).addClass("info_open");
+        $(this).parent().addClass("info_open");
+        var o =
+        {
+            name: $(this).parent().parent().attr("font_name"),
+            family: $(this).parent().parent().attr("font_family"),
+            PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
+            style: $(this).parent().parent().attr("font_style"),
+        }
+
+        $(this).parent().after( $('#tmpl_info_box').tmpl(o));
+    }
+
+}
