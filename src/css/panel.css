@@ -325,3 +325,18 @@
 {
     color: #4495d7;
 }
+
+
+.info_box
+{
+    position: relative;
+    margin-top: 12px;
+
+    /*background-color: red;*/
+    font-size: 8pt;
+    color: #3174af;
+    font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","メイリオ","Meiryo",sans-serif;
+
+
+
+}
