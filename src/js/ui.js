@@ -20,6 +20,15 @@ $('.sizeranger').on('change', function(){
 });
 
 
+
+
+
+
+
+
+
+fontagasToHTML
+
 //$(".srang").val($(".sizeranger").val());
 
 
