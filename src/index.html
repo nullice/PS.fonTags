@@ -5,11 +5,27 @@
 
     <script type="text/javascript">window.module = undefined</script>
     <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery.tmpl.js" type="text/javascript"></script>
     <script src="js/CSInterface.js" type="text/javascript"></script>
     <link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
     <link  id="css_topcoat" rel="stylesheet" href="css/topcoat-desktop-light.css"/>
     <link  id="css_psui" rel="stylesheet" href="css/PS_theme.css"/>
     <link   rel="stylesheet" href="css/panel.css"/>
+
+
+    <!--模板-->
+    <script id="tmpl_info_box" type="text/x-jquery-tmpl">
+       <div class="info_box">
+           <ul>
+               <li><span>名称: </span><span>${name}</span></li>
+               <li><span>字族: </span><span>${family}</span></li>
+               <li><span>样式: </span><span>${style}</span></li>
+               <li><span>PostScriptName: </span><span>${PostScriptName}</span></li>
+           </ul>
+      </div>
+    </script>
+
+
 
 
 
@@ -121,16 +137,10 @@
                             <li><span>名称: </span><span>asdfdsfdsfdsf</span></li>
                             <li><span>字族: </span><span>asdfdsfdsfdsf</span></li>
                             <li><span>样式: </span><span>asdfdsfdsfdsf</span></li>
-                            <li><span>样式: </span><span>asdfdsfdsfdsf</span></li>
-
+                            <li><span>PostScriptName: </span><span>asdfdsfdsfdsf</span></li>
                         </ul>
-
-
-
-
-
-
                     </div>
+
                     <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"></i><i class="fa fa-check  act_buttom act_apply" title="应用字体"></i><i class="fa fa-info act_buttom act_info" title="字体信息"></i> </div>
                 </div>
 

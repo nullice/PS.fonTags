@@ -336,7 +336,8 @@
     font-size: 8pt;
     color: #3174af;
     font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","メイリオ","Meiryo",sans-serif;
+}
+.info_box ul{
 
-
-
+    list-style: none;
 }
