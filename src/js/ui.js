@@ -24,6 +24,46 @@ $('.sizeranger').on('change', function(){
     $(".srang").text($(".sizeranger>input").val());
 });
 
+$('#view_mod1').mousedown(
+    fontlistDisplayFromName);
+
+
+$('#view_mod2').mousedown(
+    fontlistDisplayFromFamily);
+
+
+$('#view_mod2').mousedown(
+    fontlistDisplayFromPreview);
+
+
+
+
+
+function fontlistDisplayFromFamily()
+{
+    console.log("fontlistDisplayFromFamily");
+    $(".fontitem>span").text( function(){
+        return  $(this).parent().attr("font_family")+" "+$(this).parent().attr("font_style");
+    });
+}
+
+function fontlistDisplayFromName()
+{
+    console.log("fontlistDisplayFromName");
+    $(".fontitem>span").text( function(){
+        return $(this).parent().attr("font_name");
+    });
+}
+
+
+function fontlistDisplayFromPreview()
+{
+    $(".preview_text").show();
+    $(".fontitem>span").text( function(){
+        return $(this).parent().attr("font_name");
+    });
+}
+
 
 
 
