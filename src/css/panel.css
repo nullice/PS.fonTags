@@ -216,35 +216,51 @@
 
 .foot{
 
+    margin-bottom: 15px;
     height:50px;
     width: 100%;
     bottom: 0;
+    display: -webkit-flex;
+    -webkit-flex-wrap:wrap;
+    -webkit-justify-content: space-between;
+
+
 }
 
 
 
 .font_name_display
 {
-    position: absolute;
-    margin-top: 8px;
-    margin-left: 10px;
+    margin: 10px 1px 4px 12px;
     font-size: 9pt;
-
 }
 
 
 .srang
 {
-    position: absolute;
-    right: 155px;
-    margin-top: 9px;
+   position: absolute;
+    margin-top: 3px;
+    margin-left: 1px;
+
+
+
+
     font-size: 10pt;
     color: rgba(63, 64, 65, 0.71);
 }
 
-.sizeranger>input{
-    margin-top: 6px;
-    color: red;
+
+.preview_text
+{
+    display: none;
+
+
+    left: 120px;
+    margin: 10px 1px 4px 1px;
+
+    height: 24px;
+    -webkit-flex: 1;
+
 }
 
 
@@ -297,15 +313,19 @@
 
 .sizeranger
 {
-    position: absolute;
-    margin-top: 10px;
-
-    right: 20px;
+    -webkit-flex: 1;
+    margin: 10px 10px 10px 10px;
 
 }
 
 .sizeranger .topcoat-range
 {
+
+    margin-left: 18px;
+
+    margin-top: 10px;
+    width: 90%;
+
     height: 5px;
     border: 1px solid rgba(157, 172, 169, 0.65);
 
