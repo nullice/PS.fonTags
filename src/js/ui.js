@@ -46,10 +46,10 @@ function fontlistDisplayFromFamily()
 {
 
     $(".preview_text").css("display", "none");
-    $(".fontitem>span:not(.font_number)").text(function ()
+    $(".fontitem:not(.groupItem)>span").text(function ()
     {
 
-        return "族:"+$(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
+        return $(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
     });
     $(".preview_text").css("display", "none");
 }
@@ -58,9 +58,9 @@ function fontlistDisplayFromName()
 {
 
     $(".preview_text").css("display", "none");
-    $(".fontitem>span:not(.font_number)").text(function ()
+    $(".fontitem:not(.groupItem)>span").text(function ()
     {
-        return "名:"+$(this).parent().attr("font_name");
+        return $(this).parent().attr("font_name");
     });
     $(".preview_text").css("display", "none");
 

@@ -134,18 +134,24 @@ function arrangeFontGroup()
 
                 temp.list[temp.list.length-1].fonts.push($.extend(true, {}, pre))  ;
                 temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i]));
-                console.log(temp.list[temp.list.length-1] );
                 temp.length++;
                 continue;
 
             }
+
+            if (temp.list[temp.list.length - 1]._type =="group" && temp.list[temp.list.length - 1].groupName == fontages.list[i].family)
+            {
+                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i]));
+                temp.length++;
+                continue;
+            }
+
+
         }
 
 
             temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
             temp.length++;
-
-
     }
 
 
@@ -233,7 +239,7 @@ function fontagasToHTML(fontagesIn)
 
             for (var z = 0; z < fontagesIn.list[i].fonts.length; z++)
             {
-                fontTOHTML("#group" + groupCounter, fontagesIn.list[i].fonts[0]);
+                fontTOHTML("#group" + groupCounter, fontagesIn.list[i].fonts[z]);
             }
 
         }
