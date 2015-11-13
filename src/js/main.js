@@ -110,7 +110,7 @@ function refurFontags()
             }
 
             fontages = $.extend(true, {}, Temp_fontages);
-            //arrangeFontGroup();
+            arrangeFontGroup();
             fontagasToHTML(fontages);
         }
     )
@@ -122,123 +122,153 @@ function arrangeFontGroup()
     var temp = new Fontages();
     for (var i = 0; i < fontages.length; i++)
     {
-        //temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
 
-        if (i < fontages.length - 1)
-        {
-            if (fontages.list[i].family == fontages.list[i + 1].family)
-            {
-                if (i == 0 || fontages.list[i - 1].groupName != fontages.list[i].family)
-                {
-                    fontages.createGroup(fontages.list[i].family);
-                }
-            }
-
-        }
-        else if(fontages.list[i - 1].groupName == fontages.list[i].family){
-
-
-        }
-
-
-
-            }
-        fontages = $.extend(true, {}, temp);
-    }
-
-
-    refurFontags();
-
-
-    function fontagasToHTML(fontagesIn)
-    {
-
-        $(".fontlist").html("");
-        var groupCounter = 0;
-
-        for (var i = 0; i < fontagesIn.length; i++)
+        if (temp.list[temp.list.length - 1] != undefined)
         {
 
-            function fontTOHTML(parent, font)
+            if (temp.list[temp.list.length - 1]._type == "font" && temp.list[temp.list.length - 1].family == fontages.list[i].family)
             {
-                var str1 = ' font_name="' + font.name + '" ';
-                str1 += ' font_family="' + font.family + '" ';
-                str1 += ' font_postscriptname="' + font.postScriptName + '" ';
-                str1 += ' font_style="' + font.style + '" ';
-                var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
-                str1 += ' style="' + strf + '" ';
 
-                var html =
-                    '<div class="fontitem"' + str1 + ">\n" +
-                    '<span>' + font.name + '<\/span> ' +
+                var pre = temp.list.pop();
+                temp.createGroup(fontages.list[i].family)
 
-                    ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
-                    + '<\/div>';
-
-                $(parent).append(html);
-            }
-
-            if (fontagesIn.list[i]._type == "font")
-            {
-                fontTOHTML(".fontlist", fontagesIn.list[i])
-            }
-
-            if (fontagesIn.list[i]._type == "group" && fontagesIn.list[i].fonts.length > 0)
-            {
-                groupCounter++;
-                var groupHtml = "";
-                var o =
-                {
-                    group_id: groupCounter,
-                    font_name: fontagesIn.list[i].fonts[0].name,
-                    font_family: fontagesIn.list[i].fonts[0].font_family,
-                    font_postscriptname: fontagesIn.list[i].fonts[0].font_postscriptname,
-                    group_style: fontagesIn.list[i].fonts[0].group_style,
-                    font_group_name: fontagesIn.list[i].fonts[0].font_family,
-                    font_number: fontagesIn.list[i].fonts.length
-                }
-
-                groupHtml = $.tmpl(o, "#tmpl_fontlist_group")
-                $(".fontlist").append(groupHtml);
-
-                for (var z = 0; z < fontagesIn.list[i].fonts.length; z++)
-                {
-                    fontTOHTML("#group" + groupCounter, fontagesIn.list[i].fonts[0]);
-                }
+                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, pre))  ;
+                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i]));
+                console.log(temp.list[temp.list.length-1] );
+                temp.length++;
+                continue;
 
             }
-
-
         }
 
 
-        $(".act_info").click(act_info);
+            temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
+            temp.length++;
+
 
     }
 
 
-    function act_info()
+//else if (i == 0)
+//{
+//    temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
+//    console.log(temp);
+//}
+//else if (temp.list[temp.list.length - 1]._type == "group")
+//{
+//    if(temp.list[temp.list.length - 1].groupName==fontages.list[i].family)
+//    {
+//        temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i])) ;
+//    }
+//}else
+//{
+//    temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
+//}
+
+    fontages = $.extend(true, {}, temp);
+}
+
+
+refurFontags();
+
+
+function fontagasToHTML(fontagesIn)
+{
+
+    $(".fontlist").html("");
+    var groupCounter = 0;
+
+    for (var i = 0; i < fontagesIn.list.length; i++)
     {
 
-        if ($(this).hasClass("info_open"))
+        function fontTOHTML(parent, font)
         {
-            $(this).removeClass("info_open");
-            $(this).parent().removeClass("info_open");
-            $(this).parent().siblings().filter(".info_box").remove();
+            var str1 = ' font_name="' + font.name + '" ';
+            str1 += ' font_family="' + font.family + '" ';
+            str1 += ' font_postscriptname="' + font.postScriptName + '" ';
+            str1 += ' font_style="' + font.style + '" ';
+            var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
+            str1 += ' style="' + strf + '" ';
+
+            var html =
+                '<div class="fontitem"' + str1 + ">\n" +
+                '<span>' + font.name + '<\/span> ' +
+
+                ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
+                + '<\/div>';
+
+            $(parent).append(html);
         }
-        else
+
+        if (fontagesIn.list[i]._type == "font")
         {
-            $(this).addClass("info_open");
-            $(this).parent().addClass("info_open");
+            fontTOHTML(".fontlist", fontagesIn.list[i])
+        }
+
+        if (fontagesIn.list[i]._type == "group" && fontagesIn.list[i].fonts.length > 0)
+        {
+            groupCounter++;
+            var groupHtml = "";
             var o =
             {
-                name: $(this).parent().parent().attr("font_name"),
-                family: $(this).parent().parent().attr("font_family"),
-                PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
-                style: $(this).parent().parent().attr("font_style"),
+                group_id: groupCounter,
+                font_name: fontagesIn.list[i].fonts[0].name,
+                font_family: fontagesIn.list[i].fonts[0].family,
+                font_postscriptname: fontagesIn.list[i].fonts[0].postScriptName,
+                group_style:" '" + fontagesIn.list[i].fonts[0].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
+
+
+
+
+                font_group_name: fontagesIn.list[i].groupName,
+                font_number: fontagesIn.list[i].fonts.length
+
             }
 
-            $(this).parent().after($('#tmpl_info_box').tmpl(o));
+            groupHtml =  $("#tmpl_fontlist_group").tmpl(o);
+
+
+
+            $(".fontlist").append(groupHtml);
+
+            for (var z = 0; z < fontagesIn.list[i].fonts.length; z++)
+            {
+                fontTOHTML("#group" + groupCounter, fontagesIn.list[i].fonts[0]);
+            }
+
         }
 
+
     }
+
+
+    $(".act_info").click(act_info);
+
+}
+
+
+function act_info()
+{
+
+    if ($(this).hasClass("info_open"))
+    {
+        $(this).removeClass("info_open");
+        $(this).parent().removeClass("info_open");
+        $(this).parent().siblings().filter(".info_box").remove();
+    }
+    else
+    {
+        $(this).addClass("info_open");
+        $(this).parent().addClass("info_open");
+        var o =
+        {
+            name: $(this).parent().parent().attr("font_name"),
+            family: $(this).parent().parent().attr("font_family"),
+            PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
+            style: $(this).parent().parent().attr("font_style"),
+        }
+
+        $(this).parent().after($('#tmpl_info_box').tmpl(o));
+    }
+
+}
