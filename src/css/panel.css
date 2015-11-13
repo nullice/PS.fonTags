@@ -131,9 +131,6 @@
 .fontbox {
 
     /*background-color: #1e7dc8;*/
-
-
-
 }
 
 .fontlist
@@ -222,8 +219,33 @@
     height:50px;
     width: 100%;
     bottom: 0;
-
 }
+
+
+
+.font_name_display
+{
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+
+.srang
+{
+    position: absolute;
+    right: 155px;
+    margin-top: 9px;
+    font-size: 10pt;
+    color: rgba(63, 64, 65, 0.71);
+}
+
+.sizeranger>input{
+    margin-top: 6px;
+    color: red;
+}
+
+
 
 
 .font_number{
