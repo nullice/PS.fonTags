@@ -20,7 +20,9 @@ $('.sizeranger').on('mouseup', function(){
 
 
 
-
+$('.sizeranger').on('change', function(){
+    $(".srang").text($(".sizeranger>input").val());
+});
 
 
 
