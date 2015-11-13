@@ -3,24 +3,23 @@
  */
 
 
-$(window).resize(function() {
+$(window).resize(function ()
+{
 
-    $('.fontlist').height($(window).height()-$('.fontlist').offset().top -$('.foot').height());
+    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
 });
 
 
-
-
-
-$('.sizeranger').on('mouseup', function(){
+$('.sizeranger').on('mouseup', function ()
+{
 
     $(".srang").text($(".sizeranger>input").val());
-    $(".fontitem").css("font-size",+$(".sizeranger>input").val());
+    $(".fontitem").css("font-size", +$(".sizeranger>input").val());
 });
 
 
-
-$('.sizeranger').on('change', function(){
+$('.sizeranger').on('change', function ()
+{
     $(".srang").text($(".sizeranger>input").val());
 });
 
@@ -32,40 +31,61 @@ $('#view_mod2').mousedown(
     fontlistDisplayFromFamily);
 
 
-$('#view_mod2').mousedown(
-    fontlistDisplayFromPreview);
+$('#view_mod3').mousedown(
+    function(){
+        if()
+        {
+            $(".preview_text").css("display","none");
+        }
 
 
-
+    });
 
 
 function fontlistDisplayFromFamily()
 {
-    console.log("fontlistDisplayFromFamily");
-    $(".fontitem>span").text( function(){
-        return  $(this).parent().attr("font_family")+" "+$(this).parent().attr("font_style");
+
+    $(".preview_text").css("display","none");
+    $(".fontitem>span").text(function ()
+    {
+        return $(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
     });
+    $(".preview_text").css("display","none");
 }
 
 function fontlistDisplayFromName()
 {
-    console.log("fontlistDisplayFromName");
-    $(".fontitem>span").text( function(){
+
+    $(".preview_text").css("display","none");
+    $(".fontitem>span").text(function ()
+    {
         return $(this).parent().attr("font_name");
     });
+    $(".preview_text").css("display","none");
+
+
 }
+
+
 
 
 function fontlistDisplayFromPreview()
 {
-    $(".preview_text").show();
-    $(".fontitem>span").text( function(){
-        return $(this).parent().attr("font_name");
-    });
+
+    var e = document.getElementById("previewON");
+    var box = $(".preview_text");
+
+    if (true == e.checked)
+    {
+        box.css("display","none");
+    }
+    else
+    {
+        box.css("display","block");
+    }
+
+
 }
-
-
-
 
 
 fontagasToHTML
