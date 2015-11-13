@@ -26,6 +26,21 @@
     </script>
 
 
+    <script id="tmpl_fontlist_group" type="text/x-jquery-tmpl">
+
+        <input type="checkbox" id="cgroup${group_id}">
+        <div class="group" id="group${group_id}">
+            <label for="cgroup${group_id}">
+                <div class="fontitem" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
+                    <span> ${font_group_name} </span>
+                    <span class="font_number">${font_number}</span>
+                </div>
+            </label>
+         </div>
+
+    </script>
+
+
 
 
 
@@ -126,7 +141,7 @@
                     </div>
                 </div>
 
-        <div class="fontbox">
+        <div class=" ">
             <div class="fontlist">
 
                 <input type="checkbox">
@@ -166,23 +181,24 @@
                     <div class="opbar"></div>
                 </div>
 
+
                 <input type="checkbox" id="cgroup1">
                 <div class="group">
                 <label for="cgroup1">
-                <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
-                    <span> SentyTEA DDDDDD </span>
-                    <span class="font_number">21</span>
-                    <div class="opbar"></div>
-                </div>
+                    <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
+                        <span> SentyTEA DDDDDD </span>
+                        <span class="font_number">21</span>
+                        <div class="opbar"></div>
+                    </div>
                 </label>
 
-                <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
-                    <span> DDDDDDD </span>
-                    <div class="opbar"></div>
-                </div>
-                <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
-                    <span> SentyTEA DDDDDD </span>
-                    <div class="opbar"></div>
+                    <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
+                        <span> DDDDDDD </span>
+                        <div class="opbar"></div>
+                    </div>
+                    <div class="fontitem" font_name="Microsoft YaHei UI Light" font_family="Microsoft YaHei UI" font_postscriptname="MicrosoftYaHeiUILight" style="font-family: 'SentyTEA','SentyTEA', 'SentyTEA 新蒂下午茶体' ;">
+                        <span> SentyTEA DDDDDD </span>
+                        <div class="opbar"></div>
                 </div>
 
                 </div>

@@ -31,59 +31,52 @@ $('#view_mod2').mousedown(
     fontlistDisplayFromFamily);
 
 
-$('#view_mod3').mousedown(
-    function(){
-        if()
-        {
-            $(".preview_text").css("display","none");
-        }
-
-
+$('#view_mod3').mouseup(
+    function ()
+    {
+        $(".preview_text").css("display", "block");
+        fontlistDisplayFromPreview();
     });
+
+
+$('.preview_text').on("input", fontlistDisplayFromPreview);
 
 
 function fontlistDisplayFromFamily()
 {
 
-    $(".preview_text").css("display","none");
+    $(".preview_text").css("display", "none");
     $(".fontitem>span").text(function ()
     {
         return $(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
     });
-    $(".preview_text").css("display","none");
+    $(".preview_text").css("display", "none");
 }
 
 function fontlistDisplayFromName()
 {
 
-    $(".preview_text").css("display","none");
+    $(".preview_text").css("display", "none");
     $(".fontitem>span").text(function ()
     {
         return $(this).parent().attr("font_name");
     });
-    $(".preview_text").css("display","none");
+    $(".preview_text").css("display", "none");
 
 
 }
 
 
-
-
 function fontlistDisplayFromPreview()
 {
 
-    var e = document.getElementById("previewON");
+
     var box = $(".preview_text");
-
-    if (true == e.checked)
+    var t = box.val();
+    if (t != undefined && t != ""  && t != " ")
     {
-        box.css("display","none");
+        $(".fontitem>span").text(t);
     }
-    else
-    {
-        box.css("display","block");
-    }
-
 
 }
 
