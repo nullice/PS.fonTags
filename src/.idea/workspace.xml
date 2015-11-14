@@ -20,14 +20,14 @@
     <favorites_list name="com.nullice.pschen.fonTags" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4604275">
+    <splitter split-orientation="horizontal" split-proportion="0.18208778">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8244445">
-                  <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+                <state vertical-scroll-proportion="-1.8214285">
+                  <caret line="236" column="67" selection-start-line="236" selection-start-column="67" selection-end-line="236" selection-end-column="67" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,11 +54,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="panel.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="panel.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/panel.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.4333334">
-                  <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.3325893">
+                  <caret line="201" column="4" selection-start-line="201" selection-start-column="4" selection-end-line="201" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -88,7 +88,7 @@
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="243" column="0" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+                  <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -99,8 +99,8 @@
           <file leaf-file-name="ui.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/ui.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.73333335">
-                  <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+                <state vertical-scroll-proportion="-12.233334">
+                  <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -113,8 +113,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.64508927">
-                  <caret line="241" column="24" selection-start-line="241" selection-start-column="24" selection-end-line="241" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.5558036">
+                  <caret line="321" column="5" selection-start-line="321" selection-start-column="5" selection-end-line="321" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -150,9 +150,9 @@
         <option value="$PROJECT_DIR$/font/font-awesome/font-awesome.css" />
         <option value="$PROJECT_DIR$/jsx/jsx_main.js" />
         <option value="$PROJECT_DIR$/jsx/jsx_main.jsx" />
-        <option value="$PROJECT_DIR$/css/panel.css" />
-        <option value="$PROJECT_DIR$/js/ui.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/ui.js" />
+        <option value="$PROJECT_DIR$/css/panel.css" />
         <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
@@ -165,9 +165,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="169" />
-    <option name="y" value="52" />
-    <option name="width" value="1391" />
+    <option name="x" value="150" />
+    <option name="y" value="10" />
+    <option name="width" value="1891" />
     <option name="height" value="957" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -372,6 +372,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",HTML5_OUTLINE_MODE,ALPHA_COMPARATOR" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -394,10 +397,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="169" y="52" width="1391" height="957" extended-state="0" />
-    <editor active="false" />
+    <frame x="150" y="10" width="1891" height="957" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12342942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09012412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31750742" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -406,7 +409,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3397626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38545454" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38545454" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -710,14 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/topcoat-desktop-light.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2505176">
-          <caret line="2924" column="1" selection-start-line="2924" selection-start-column="1" selection-end-line="2924" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/PS_theme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -730,14 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="4810" column="4" selection-start-line="4810" selection-start-column="4" selection-end-line="4810" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/panel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4333334">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -760,16 +747,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.73333335">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        <state vertical-scroll-proportion="-12.233334">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/topcoat-desktop-light.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.667364">
+          <caret line="2109" column="16" selection-start-line="2109" selection-start-column="16" selection-end-line="2109" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8244445">
-          <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+        <state vertical-scroll-proportion="-1.8214285">
+          <caret line="236" column="67" selection-start-line="236" selection-start-column="67" selection-end-line="236" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -785,10 +780,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/panel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325893">
+          <caret line="201" column="4" selection-start-line="201" selection-start-column="4" selection-end-line="201" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DeliciousRetouch/CSXS/manifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46025103">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64508927">
-          <caret line="241" column="24" selection-start-line="241" selection-start-column="24" selection-end-line="241" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.5558036">
+          <caret line="321" column="5" selection-start-line="321" selection-start-column="5" selection-end-line="321" selection-end-column="5" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>

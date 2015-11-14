@@ -1,3 +1,12 @@
+
+
+body{
+    -webkit-user-select: none;
+    }
+
+
+
+
 .topnav {
 
     height: 32px;
@@ -186,7 +195,15 @@
     padding: 4px 8px;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.4);
+
+    white-space: nowrap;
     overflow: hidden;
+    text-overline: ellipsis;
+    -webkit-text-overline: ellipsis;
+    -webkit-user-select: text;
+
+
+
 }
 
 
@@ -238,8 +255,14 @@
 .srang
 {
    position: absolute;
-    margin-top: 3px;
-    margin-left: 1px;
+   margin-top: 3px;
+   margin-left: 1px;
+    left: -20px;
+
+
+
+
+    -webkit-user-select: text;
 
 
 
@@ -256,7 +279,7 @@
 
     left: 120px;
     margin: 10px 1px 4px 1px;
-
+    min-width: 30px;
     height: 24px;
     -webkit-flex: 1;
 
@@ -313,21 +336,19 @@
 .sizeranger
 {
     -webkit-flex: 1;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 24px;
+    position: relative;
+
 
 }
 
 .sizeranger .topcoat-range
 {
-
-    margin-left: 18px;
-
     margin-top: 10px;
     width: 90%;
 
     height: 5px;
     border: 1px solid rgba(157, 172, 169, 0.65);
-
 }
 
 .opbar

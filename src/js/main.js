@@ -50,7 +50,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
         style: style,
 
         firstname: "",
-        tags_lang: [],       //语言
+        tags_lang: [fontGetLang(name + family)],       //语言
         tags_com: [],        //发行商
         tags_type: [],       //类型
         tags_weight: [],     //字重
@@ -58,6 +58,12 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
         tags_other: [],      //其他
 
         _type: "font"
+    }
+
+    var com =fontGetInc(name,family);
+    if(com != null)
+    {
+        font.tags_com.push(com)
     }
 
     this.list[this.list.length] = font;
@@ -132,16 +138,16 @@ function arrangeFontGroup()
                 var pre = temp.list.pop();
                 temp.createGroup(fontages.list[i].family)
 
-                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, pre))  ;
-                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i]));
+                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, pre));
+                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fontages.list[i]));
                 temp.length++;
                 continue;
 
             }
 
-            if (temp.list[temp.list.length - 1]._type =="group" && temp.list[temp.list.length - 1].groupName == fontages.list[i].family)
+            if (temp.list[temp.list.length - 1]._type == "group" && temp.list[temp.list.length - 1].groupName == fontages.list[i].family)
             {
-                temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i]));
+                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fontages.list[i]));
                 temp.length++;
                 continue;
             }
@@ -150,8 +156,8 @@ function arrangeFontGroup()
         }
 
 
-            temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
-            temp.length++;
+        temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
+        temp.length++;
     }
 
 
@@ -193,6 +199,7 @@ function fontagasToHTML(fontagesIn)
             str1 += ' font_family="' + font.family + '" ';
             str1 += ' font_postscriptname="' + font.postScriptName + '" ';
             str1 += ' font_style="' + font.style + '" ';
+            str1 += ' id="fid' + i + '" ';
             var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
             str1 += ' style="' + strf + '" ';
 
@@ -221,9 +228,7 @@ function fontagasToHTML(fontagesIn)
                 font_name: fontagesIn.list[i].fonts[0].name,
                 font_family: fontagesIn.list[i].fonts[0].family,
                 font_postscriptname: fontagesIn.list[i].fonts[0].postScriptName,
-                group_style:" '" + fontagesIn.list[i].fonts[0].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
-
-
+                group_style: " '" + fontagesIn.list[i].fonts[0].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
 
 
                 font_group_name: fontagesIn.list[i].groupName,
@@ -231,8 +236,7 @@ function fontagasToHTML(fontagesIn)
 
             }
 
-            groupHtml =  $("#tmpl_fontlist_group").tmpl(o);
-
+            groupHtml = $("#tmpl_fontlist_group").tmpl(o);
 
 
             $(".fontlist").append(groupHtml);
@@ -278,3 +282,55 @@ function act_info()
     }
 
 }
+
+
+//U+3040–U+309F 平假名
+//U+30A0–U+30FF 片假名
+//U+31F0-U+31FF 日文片假名拼音扩展
+//U+1100-U+11FF 韩文字母
+//U+4E00–U+9FBF 汉字
+
+function fontGetLang(fontText)
+{
+    var reg = /[\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF]/;
+    if (reg.test(fontText))
+    {
+        return "日文";
+    }
+
+    reg = /[\u1100-\u11FF]/;
+    if (reg.test(fontText))
+    {
+        return "韩文";
+    }
+
+    reg = /[\u4E00-\u9FA5]/;
+    if (reg.test(fontText))
+    {
+        return "中文";
+    }
+
+    return "英文";
+
+}
+
+function fontGetInc(name, family)
+{
+    var INCS = ["方正", "汉仪", "华文", "造字工房", "迷你", "汉仪", "新蒂", "叶根友", "张海山", "Adobe", "Microsoft"];
+
+    for (var i; i < INCS.length; i++)
+    {
+        if(family.slice(0,INCS[i].length)==INCS[i])
+        {
+            return INCS[i];
+        }
+
+    }
+
+    return null;
+
+}
+
+
+
+
