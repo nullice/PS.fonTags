@@ -314,11 +314,10 @@ function fontGetLang(fontText)
 
 }
 
+var INCS = ["方正", "汉仪", "华文", "造字工房", "迷你", "汉仪", "新蒂", "叶根友", "张海山", "Adobe", "Microsoft"];
 function fontGetInc(name, family)
 {
-    var INCS = ["方正", "汉仪", "华文", "造字工房", "迷你", "汉仪", "新蒂", "叶根友", "张海山", "Adobe", "Microsoft"];
-
-    for (var i; i < INCS.length; i++)
+    for (var i=0; i < INCS.length; i++)
     {
         if(family.slice(0,INCS[i].length)==INCS[i])
         {
@@ -332,5 +331,9 @@ function fontGetInc(name, family)
 }
 
 
+function tagFliter_barRefur()
+{
+    
 
+}
 
