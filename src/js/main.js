@@ -556,14 +556,21 @@ function refurDisplay()
 
     function tagIsin(tags, booList)
     {
-        if (booList[tags])
+        
+        var b = false;
+        for (var i=0; i < tags.length; i++)
         {
-            return true;
+            //console.log("--------------------");
+            //console.log(tags[i]);
+            //console.log(booList[tags[i]]);
+            if (booList[tags[i]])
+            {
+                b == true;
+                booList[tags[i]]++;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return b;
+
     }
 
 
@@ -575,13 +582,10 @@ function refurDisplay()
             {
                 if (list[i]._visiable == true)
                 {
-
                     $("#fid" + list[i]._id).removeClass("hide");
-
                 }
                 else
                 {
-
                     $("#fid" + list[i]._id).addClass("hide");
                 }
 
@@ -592,8 +596,6 @@ function refurDisplay()
             }
         }
 
-
-        console.log("OO");
     }
 
 
