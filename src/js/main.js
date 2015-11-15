@@ -383,7 +383,7 @@ function fontGetInc(name, family)
 
     }
 
-    return null;
+    return "其他";
 
 }
 
@@ -530,6 +530,7 @@ function refurDisplay()
     var visible = 0;
 
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
+    dealFontDisplay(fontages.list, "tags_com", booList_com);
 
 
     applyVisible(fontages.list);
@@ -544,11 +545,7 @@ function refurDisplay()
         {
             if (list[i]._type == "font")
             {
-
-
                 list[i]._visiable *= tagIsin(list[i][tags], booList);
-
-
             }
             else if (list[i]._type == "group")
             {
