@@ -76,7 +76,6 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 
 Fontages.prototype.index = function (id)
 {
-
     return scanByFontId(this.list, id);
 
     function scanByFontId(list, id)
@@ -104,6 +103,26 @@ Fontages.prototype.index = function (id)
         }
     }
 
+}
+
+Fontages.prototype.restVisiable = function ()
+{
+    _restVisiable_0(this.list);
+
+    function _restVisiable_0(list, id)
+    {
+        for (var i = 0; i < list.length; i++)
+        {
+            if (list[i]._type == "font")
+            {
+                list[i]._visiable = true;
+            }
+            else if (list[i]._type == "group")
+            {
+                var result = _restVisiable_0(list[i].fonts, id);
+            }
+        }
+    }
 }
 
 
@@ -481,7 +500,10 @@ var booList_com = {};
 function getbooList()
 {
     console.log("getbooList");
+
+    fontages.restVisiable();
     booList_lang = {};
+
     for (var i = 0; i < pool_lang.length; i++)
     {
 
@@ -511,7 +533,7 @@ function refurDisplay()
 
 
     applyVisible(fontages.list);
-
+    hideEmptyGourp();
 
 
     //-------------
@@ -524,14 +546,13 @@ function refurDisplay()
             {
 
 
-
                 list[i]._visiable *= tagIsin(list[i][tags], booList);
 
 
             }
             else if (list[i]._type == "group")
             {
-                dealFontDisplay(list[i].fonts,tags,booList);
+                dealFontDisplay(list[i].fonts, tags, booList);
             }
         }
     }
@@ -574,14 +595,26 @@ function refurDisplay()
             }
         }
 
-        
-        $(".group").each(function(){
 
-            console.log($(this));
-           // console.log($(this).hasClass("hide"));
+        console.log("OO");
+    }
+
+
+    function hideEmptyGourp()
+    {
+        $(".group").each(function ()
+        {
+
+            if ($(this).children().filter(":not(.hide)").length <= 1)
+            {
+                $(this).addClass("hide");
+            }
+            else
+            {
+                $(this).removeClass("hide");
+            }
 
         });
-
 
     }
 

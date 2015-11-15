@@ -87,8 +87,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.6611676">
-                  <caret line="245" column="37" selection-start-line="245" selection-start-column="29" selection-end-line="245" selection-end-column="37" />
+                <state vertical-scroll-proportion="-7.6548223">
+                  <caret line="264" column="37" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -113,8 +113,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.67005074">
-                  <caret line="576" column="8" selection-start-line="576" selection-start-column="8" selection-end-line="576" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.46700507">
+                  <caret line="500" column="1" selection-start-line="500" selection-start-column="1" selection-end-line="500" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -165,7 +165,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="34" />
+    <option name="x" value="236" />
+    <option name="y" value="90" />
     <option name="width" value="1882" />
     <option name="height" value="1058" />
   </component>
@@ -396,7 +397,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="0" width="1882" height="1058" extended-state="0" />
+    <frame x="236" y="90" width="1882" height="1058" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09056399" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -858,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67005074">
-          <caret line="576" column="8" selection-start-line="576" selection-start-column="8" selection-end-line="576" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.46700507">
+          <caret line="500" column="1" selection-start-line="500" selection-start-column="1" selection-end-line="500" selection-end-column="1" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
