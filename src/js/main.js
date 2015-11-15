@@ -556,19 +556,21 @@ function refurDisplay()
 
     function tagIsin(tags, booList)
     {
-        
+
         var b = false;
         for (var i=0; i < tags.length; i++)
         {
             //console.log("--------------------");
-            //console.log(tags[i]);
+            console.log(tags[i]);
             //console.log(booList[tags[i]]);
-            if (booList[tags[i]])
+            if (booList[tags[i].toString()])
             {
-                b == true;
+                b = true;
                 booList[tags[i]]++;
+
             }
         }
+        console.log(b);
         return b;
 
     }

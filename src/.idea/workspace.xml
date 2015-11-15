@@ -88,7 +88,7 @@
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.64467007">
-                  <caret line="598" column="5" selection-start-line="598" selection-start-column="5" selection-end-line="598" selection-end-column="5" />
+                  <caret line="600" column="5" selection-start-line="600" selection-start-column="5" selection-end-line="600" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -113,8 +113,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.38324872">
-                  <caret line="558" column="8" selection-start-line="558" selection-start-column="8" selection-end-line="558" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.7893401">
+                  <caret line="568" column="32" selection-start-line="568" selection-start-column="32" selection-end-line="568" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -859,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38324872">
-          <caret line="558" column="8" selection-start-line="558" selection-start-column="8" selection-end-line="558" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.7893401">
+          <caret line="568" column="32" selection-start-line="568" selection-start-column="32" selection-end-line="568" selection-end-column="32" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
