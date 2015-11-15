@@ -60,8 +60,8 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
         _type: "font"
     }
 
-    var com =fontGetInc(name,family);
-    if(com != null)
+    var com = fontGetInc(name, family);
+    if (com != null)
     {
         font.tags_com.push(com)
     }
@@ -118,6 +118,7 @@ function refurFontags()
             fontages = $.extend(true, {}, Temp_fontages);
             arrangeFontGroup();
             fontagasToHTML(fontages);
+            tagFliter_barRefur();
         }
     )
 }
@@ -317,9 +318,9 @@ function fontGetLang(fontText)
 var INCS = ["方正", "汉仪", "华文", "造字工房", "迷你", "汉仪", "新蒂", "叶根友", "张海山", "Adobe", "Microsoft"];
 function fontGetInc(name, family)
 {
-    for (var i=0; i < INCS.length; i++)
+    for (var i = 0; i < INCS.length; i++)
     {
-        if(family.slice(0,INCS[i].length)==INCS[i])
+        if (family.slice(0, INCS[i].length) == INCS[i])
         {
             return INCS[i];
         }
@@ -331,9 +332,79 @@ function fontGetInc(name, family)
 }
 
 
+
+var pool_com = [];
+var pool_lang = [];
+var cc=0;
 function tagFliter_barRefur()
 {
-    
+    pool_com = [];
+    pool_lang = [];
+
+    fontTagsToPool(fontages.list,"tags_com",pool_com);
+    fontTagsToPool(fontages.list,"tags_lang",pool_lang);
+
+
+
+
+    //---------------------------------------
+
+
+    function fontTagsToPool(list,tags,pool){
+
+        for (var i = 0; i < list.length; i++)
+        {
+
+            if (list[i]._type == "font")
+            {
+
+                tagsToPool(list[i][tags],pool);
+
+            }
+            else if(list[i]._type == "group")
+            {
+                fontTagsToPool(list[i].fonts,tags,pool);
+            }
+        }
+        arryUnique(pool)
+
+    }
+
+    function tagsToPool(tags, pool)
+    { var hash = {};
+        for (var i = 0; i < tags.length; i++)
+        {
+            if (!hash[tags[i]])
+            {
+                hash[tags[i]]=true;
+                pool.push(tags[i]);
+            }
+        }
+    }
+
+
+
 
 }
 
+function arryUnique (arry)
+{
+    var hash = {};
+    var temp=[];
+
+    for(var i = 0; i < arry.length; i++)
+    {
+        if (!hash[arry[i]])
+        {
+            hash[arry[i]] = true;
+            temp.push(arry[i]);
+        }
+    }
+    arry.splice(0,arry.length);
+
+    for(var z = 0; z < temp.length; z++)
+    {
+        arry.push(temp[z]);
+    }
+
+}
