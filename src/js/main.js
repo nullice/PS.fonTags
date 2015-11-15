@@ -545,7 +545,11 @@ function refurDisplay()
         {
             if (list[i]._type == "font")
             {
-                list[i]._visiable *= tagIsin(list[i][tags], booList);
+                if(list[i]._visiable == true)
+                {
+                    list[i]._visiable *= tagIsin(list[i][tags], booList);
+                }
+
             }
             else if (list[i]._type == "group")
             {
@@ -561,16 +565,19 @@ function refurDisplay()
         for (var i=0; i < tags.length; i++)
         {
             //console.log("--------------------");
-            console.log(tags[i]);
+            //console.log(tags[i]);
             //console.log(booList[tags[i]]);
-            if (booList[tags[i].toString()])
+            if (booList[tags[i]]>0)
             {
                 b = true;
                 booList[tags[i]]++;
 
+            }else if (booList[tags[i]]==0)
+            {
+                booList[tags[i]]--;
             }
         }
-        console.log(b);
+        //console.log(b);
         return b;
 
     }
