@@ -574,8 +574,7 @@ function refurDisplay()
             }
         }
 
-
-
+        
         $(".group").each(function(){
 
             console.log($(this));
