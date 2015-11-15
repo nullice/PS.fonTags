@@ -24,8 +24,8 @@ var Fontages = function ()
         tags_user: [],       //用户自定义
         tags_other: [],      //其他
 
-        _visiable:false,
-        _id:0,
+        _visiable: false,
+        _id: 0,
         _type: "Font"
     }
 
@@ -42,7 +42,7 @@ var Fontages = function ()
 
 }
 
-Fontages.prototype.add = function (name, family, postScriptName, style,id)
+Fontages.prototype.add = function (name, family, postScriptName, style, id)
 {
     var font =
     {
@@ -59,8 +59,8 @@ Fontages.prototype.add = function (name, family, postScriptName, style,id)
         tags_user: [],       //用户自定义
         tags_other: [],      //其他
 
-        _visiable:true,
-        _id:id,
+        _visiable: true,
+        _id: id,
         _type: "font"
     }
 
@@ -74,50 +74,37 @@ Fontages.prototype.add = function (name, family, postScriptName, style,id)
 }
 
 
-
 Fontages.prototype.index = function (id)
 {
 
-    return  scanByFontId(this.list,id);
+    return scanByFontId(this.list, id);
 
-    function scanByFontId(list,id){
-        for (var i=0; i < list.length; i++)
+    function scanByFontId(list, id)
+    {
+        for (var i = 0; i < list.length; i++)
         {
 
             if (list[i]._type == "font")
             {
 
-                if(list[i]._id==id)
+                if (list[i]._id == id)
                 {
                     return list[i];
                 }
             }
             else if (list[i]._type == "group")
             {
-                var result = scanByFontId(list[i].fonts,id);
-                if(result!=undefined)
-                {return result;}
+                var result = scanByFontId(list[i].fonts, id);
+                if (result != undefined)
+                {
+                    return result;
+                }
 
             }
         }
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Fontages.prototype.createGroup = function (name)
@@ -160,7 +147,7 @@ function refurFontags()
                 if ("" != o.list[i].name && undefined != o.list[i].name)
                 {
                     Temp_fontages.length++;
-                    Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style,i);
+                    Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
                 }
 
             }
@@ -438,7 +425,7 @@ function chooserToHTML()
 {
 
     chooserToHTML_bar(pool_lang, "#bar_lang>.bottom_bar", "la");
-    //chooserToHTML_bar(pool_com,"#bar_com>.bottom_bar","co");
+    chooserToHTML_bar(pool_com, "#bar_com>.bottom_bar", "co");
 
     function chooserToHTML_bar(pool, bar, barName)
     {
@@ -458,6 +445,7 @@ function chooserToHTML()
         }
 
     }
+
     $(".chooser_input").on("change", getbooList)
 
 }
@@ -492,62 +480,65 @@ var booList_com = {};
 //选择器被改变
 function getbooList()
 {
-    console.log( "getbooList");
-    booList_lang={};
+    console.log("getbooList");
+    booList_lang = {};
     for (var i = 0; i < pool_lang.length; i++)
     {
-        booList_lang[pool_lang[i]] = (true==$("#ctag_la_" + pool_lang[i]).get(0).checked);
+
+        booList_lang[pool_lang[i]] = (true == $("#ctag_la_" + pool_lang[i]).get(0).checked);
     }
 
     booList_com = {};
-    for (var i = 0; i < pool_com.length; i++)
+    for (var z = 0; z < pool_com.length; z++)
     {
-        console.log( "----pool_com-----");
-        console.log( $("#ctag_la_" + pool_lang[i]));
-        console.log( $("#ctag_la_" + pool_lang[i]).get(0));
-        console.log( $("#ctag_la_" + pool_lang[i]).get(0).checked);
-        booList_com[pool_com[i]] = (true==$("#ctag_co_" + pool_com[i]).get(0).checked);
+
+        booList_com[pool_com[z]] = (true == $("#ctag_co_" + pool_com[z]).get(0).checked);
     }
 
 
+    console.log(booList_lang);
+    console.log(booList_com);
 
     refurDisplay()
 }
-
-
 
 
 function refurDisplay()
 {
     var visible = 0;
 
-    dealFontDisplay(fontages,"tags_lang",booList_lang);
+    dealFontDisplay(fontages.list, "tags_lang", booList_lang);
 
 
     applyVisible(fontages.list);
+
+
+
     //-------------
 
-    function dealFontDisplay(list,tags,booList)
+    function dealFontDisplay(list, tags, booList)
     {
-        for (var i=0; i < list.length; i++)
+        for (var i = 0; i < list.length; i++)
         {
             if (list[i]._type == "font")
             {
 
-                list[i].visible *= tagIsin(list[i][tags],booList);
+
+
+                list[i]._visiable *= tagIsin(list[i][tags], booList);
 
 
             }
             else if (list[i]._type == "group")
             {
-                dealFontDisplay(list[i].fonts);
+                dealFontDisplay(list[i].fonts,tags,booList);
             }
         }
     }
 
-    function tagIsin(tags,booList)
+    function tagIsin(tags, booList)
     {
-        if(booList[tags])
+        if (booList[tags])
         {
             return true;
         }
@@ -558,21 +549,22 @@ function refurDisplay()
     }
 
 
-
-
     function applyVisible(list)
     {
-        for (var i=0; i < list.length; i++)
+        for (var i = 0; i < list.length; i++)
         {
             if (list[i]._type == "font")
             {
-                if(list[i].visible==true)
+                if (list[i]._visiable == true)
                 {
-                    $("#fid"+list[i]._id).css("display","block");
 
-                }else
+                    $("#fid" + list[i]._id).removeClass("hide");
+
+                }
+                else
                 {
-                    $("#fid"+list[i]._id).css("display","none");
+
+                    $("#fid" + list[i]._id).addClass("hide");
                 }
 
             }
@@ -581,6 +573,17 @@ function refurDisplay()
                 applyVisible(list[i].fonts);
             }
         }
+
+
+
+        $(".group").each(function(){
+
+            console.log($(this));
+           // console.log($(this).hasClass("hide"));
+
+        });
+
+
     }
 
 }
