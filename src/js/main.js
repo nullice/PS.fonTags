@@ -119,6 +119,7 @@ function refurFontags()
             arrangeFontGroup();
             fontagasToHTML(fontages);
             tagFliter_barRefur();
+            chooserToHTML();
         }
     )
 }
@@ -387,6 +388,38 @@ function tagFliter_barRefur()
 
 }
 
+
+function chooserToHTML(){
+
+    chooserToHTML_bar(pool_lang,"#bar_lang>.bottom_bar","la");
+    chooserToHTML_bar(pool_com,"#bar_com>.bottom_bar","co");
+
+    function chooserToHTML_bar(pool,bar,barName){
+        $(bar).html("");
+        var o={"bar":barName};
+        $(bar).append($("#tmpl_bar_item_all").tmpl(o));
+
+        for(var i=0;i<pool.length;i++)
+        {
+            o={"name":pool[i],
+                "bar":barName
+            };
+
+
+            $(bar).append($("#tmpl_bar_item").tmpl(o));
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+
 function arryUnique (arry)
 {
     var hash = {};
@@ -406,5 +439,4 @@ function arryUnique (arry)
     {
         arry.push(temp[z]);
     }
-
 }

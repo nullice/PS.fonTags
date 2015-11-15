@@ -10,8 +10,14 @@ body{
 .topnav {
 
     height: 32px;
-
 }
+
+.topnav i {
+    color: rgba(29, 30, 29, 0.74);
+}
+
+
+
 
 .topnav nav
 {
@@ -78,7 +84,9 @@ body{
 
 .bottom_bar
 {
+    display: block;
 
+    min-height: 24px;
     position: relative;
     margin: 5px ;
     margin-right: 16px;
@@ -107,16 +115,22 @@ body{
 
 }
 
-.chooser
+.chooser,
+.chooser_all
 {
     margin: 0 1px 4px;
     font-size: 8pt;
     line-height: 12pt;
     padding: 0 0.30rem;
-
-
-
 }
+
+
+:checked+label .chooser_all{
+    background-color: #b948dc;
+    border-color: #8b31b6;
+}
+
+
 
 .bar_switch
 {
