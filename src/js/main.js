@@ -24,6 +24,8 @@ var Fontages = function ()
         tags_user: [],       //用户自定义
         tags_other: [],      //其他
 
+        _visiable:false,
+        _id:0,
         _type: "Font"
     }
 
@@ -40,7 +42,7 @@ var Fontages = function ()
 
 }
 
-Fontages.prototype.add = function (name, family, postScriptName, style)
+Fontages.prototype.add = function (name, family, postScriptName, style,id)
 {
     var font =
     {
@@ -57,6 +59,8 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
         tags_user: [],       //用户自定义
         tags_other: [],      //其他
 
+        _visiable:true,
+        _id:id,
         _type: "font"
     }
 
@@ -68,6 +72,52 @@ Fontages.prototype.add = function (name, family, postScriptName, style)
 
     this.list[this.list.length] = font;
 }
+
+
+
+Fontages.prototype.index = function (id)
+{
+
+    return  scanByFontId(this.list,id);
+
+    function scanByFontId(list,id){
+        for (var i=0; i < list.length; i++)
+        {
+
+            if (list[i]._type == "font")
+            {
+
+                if(list[i]._id==id)
+                {
+                    return list[i];
+                }
+            }
+            else if (list[i]._type == "group")
+            {
+                var result = scanByFontId(list[i].fonts,id);
+                if(result!=undefined)
+                {return result;}
+
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Fontages.prototype.createGroup = function (name)
@@ -110,7 +160,7 @@ function refurFontags()
                 if ("" != o.list[i].name && undefined != o.list[i].name)
                 {
                     Temp_fontages.length++;
-                    Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style);
+                    Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style,i);
                 }
 
             }
@@ -201,7 +251,7 @@ function fontagasToHTML(fontagesIn)
             str1 += ' font_family="' + font.family + '" ';
             str1 += ' font_postscriptname="' + font.postScriptName + '" ';
             str1 += ' font_style="' + font.style + '" ';
-            str1 += ' id="fid' + i + '" ';
+            str1 += ' id="fid' + font._id + '" ';
             var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
             str1 += ' style="' + strf + '" ';
 
@@ -231,7 +281,6 @@ function fontagasToHTML(fontagesIn)
                 font_family: fontagesIn.list[i].fonts[0].family,
                 font_postscriptname: fontagesIn.list[i].fonts[0].postScriptName,
                 group_style: " '" + fontagesIn.list[i].fonts[0].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
-
 
                 font_group_name: fontagesIn.list[i].groupName,
                 font_number: fontagesIn.list[i].fonts.length
@@ -333,25 +382,22 @@ function fontGetInc(name, family)
 }
 
 
-
 var pool_com = [];
 var pool_lang = [];
-var cc=0;
+var cc = 0;
 function tagFliter_barRefur()
 {
     pool_com = [];
     pool_lang = [];
 
-    fontTagsToPool(fontages.list,"tags_com",pool_com);
-    fontTagsToPool(fontages.list,"tags_lang",pool_lang);
-
-
-
+    fontTagsToPool(fontages.list, "tags_com", pool_com);
+    fontTagsToPool(fontages.list, "tags_lang", pool_lang);
 
     //---------------------------------------
 
 
-    function fontTagsToPool(list,tags,pool){
+    function fontTagsToPool(list, tags, pool)
+    {
 
         for (var i = 0; i < list.length; i++)
         {
@@ -359,12 +405,12 @@ function tagFliter_barRefur()
             if (list[i]._type == "font")
             {
 
-                tagsToPool(list[i][tags],pool);
+                tagsToPool(list[i][tags], pool);
 
             }
-            else if(list[i]._type == "group")
+            else if (list[i]._type == "group")
             {
-                fontTagsToPool(list[i].fonts,tags,pool);
+                fontTagsToPool(list[i].fonts, tags, pool);
             }
         }
         arryUnique(pool)
@@ -372,37 +418,39 @@ function tagFliter_barRefur()
     }
 
     function tagsToPool(tags, pool)
-    { var hash = {};
+    {
+        var hash = {};
         for (var i = 0; i < tags.length; i++)
         {
             if (!hash[tags[i]])
             {
-                hash[tags[i]]=true;
+                hash[tags[i]] = true;
                 pool.push(tags[i]);
             }
         }
     }
 
 
-
-
 }
 
 
-function chooserToHTML(){
+function chooserToHTML()
+{
 
-    chooserToHTML_bar(pool_lang,"#bar_lang>.bottom_bar","la");
-    chooserToHTML_bar(pool_com,"#bar_com>.bottom_bar","co");
+    chooserToHTML_bar(pool_lang, "#bar_lang>.bottom_bar", "la");
+    //chooserToHTML_bar(pool_com,"#bar_com>.bottom_bar","co");
 
-    function chooserToHTML_bar(pool,bar,barName){
+    function chooserToHTML_bar(pool, bar, barName)
+    {
         $(bar).html("");
-        var o={"bar":barName};
+        var o = {"bar": barName};
         $(bar).append($("#tmpl_bar_item_all").tmpl(o));
 
-        for(var i=0;i<pool.length;i++)
+        for (var i = 0; i < pool.length; i++)
         {
-            o={"name":pool[i],
-                "bar":barName
+            o = {
+                "name": pool[i],
+                "bar": barName
             };
 
 
@@ -410,22 +458,17 @@ function chooserToHTML(){
         }
 
     }
-
+    $(".chooser_input").on("change", getbooList)
 
 }
 
 
-
-
-
-
-
-function arryUnique (arry)
+function arryUnique(arry)
 {
     var hash = {};
-    var temp=[];
+    var temp = [];
 
-    for(var i = 0; i < arry.length; i++)
+    for (var i = 0; i < arry.length; i++)
     {
         if (!hash[arry[i]])
         {
@@ -433,10 +476,111 @@ function arryUnique (arry)
             temp.push(arry[i]);
         }
     }
-    arry.splice(0,arry.length);
+    arry.splice(0, arry.length);
 
-    for(var z = 0; z < temp.length; z++)
+    for (var z = 0; z < temp.length; z++)
     {
         arry.push(temp[z]);
     }
+}
+//---------------------Fliter - UI-----------------------------
+
+var booList_lang = {};
+var booList_com = {};
+
+
+//选择器被改变
+function getbooList()
+{
+    console.log( "getbooList");
+    booList_lang={};
+    for (var i = 0; i < pool_lang.length; i++)
+    {
+        booList_lang[pool_lang[i]] = (true==$("#ctag_la_" + pool_lang[i]).get(0).checked);
+    }
+
+    booList_com = {};
+    for (var i = 0; i < pool_com.length; i++)
+    {
+        console.log( "----pool_com-----");
+        console.log( $("#ctag_la_" + pool_lang[i]));
+        console.log( $("#ctag_la_" + pool_lang[i]).get(0));
+        console.log( $("#ctag_la_" + pool_lang[i]).get(0).checked);
+        booList_com[pool_com[i]] = (true==$("#ctag_co_" + pool_com[i]).get(0).checked);
+    }
+
+
+
+    refurDisplay()
+}
+
+
+
+
+function refurDisplay()
+{
+    var visible = 0;
+
+    dealFontDisplay(fontages,"tags_lang",booList_lang);
+
+
+    applyVisible(fontages.list);
+    //-------------
+
+    function dealFontDisplay(list,tags,booList)
+    {
+        for (var i=0; i < list.length; i++)
+        {
+            if (list[i]._type == "font")
+            {
+
+                list[i].visible *= tagIsin(list[i][tags],booList);
+
+
+            }
+            else if (list[i]._type == "group")
+            {
+                dealFontDisplay(list[i].fonts);
+            }
+        }
+    }
+
+    function tagIsin(tags,booList)
+    {
+        if(booList[tags])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
+
+    function applyVisible(list)
+    {
+        for (var i=0; i < list.length; i++)
+        {
+            if (list[i]._type == "font")
+            {
+                if(list[i].visible==true)
+                {
+                    $("#fid"+list[i]._id).css("display","block");
+
+                }else
+                {
+                    $("#fid"+list[i]._id).css("display","none");
+                }
+
+            }
+            else if (list[i]._type == "group")
+            {
+                applyVisible(list[i].fonts);
+            }
+        }
+    }
+
 }
