@@ -472,7 +472,7 @@ function chooserToHTML()
     });
 
 
-    $(".chooser_input").mousedown(function (e)
+    $(".chooser_input+label").mousedown(function (e)
     {
         console.log("点击：" +e.which)
        // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
@@ -488,7 +488,15 @@ function chooserToHTML()
     function barChooseUnique(e)
     {
         console.log(e);
-       e.parent().children().filter(".chooser_input:not(#" + $(this).attr("id") + ")").get(0).checked = false;
+        console.log( ".chooser_input:not(#" + e.attr("for") + ")");
+        console.log(e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").get());
+       e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").each(function(){
+          $(this).get(0).checked = false;
+       });
+
+        $( "#"+e.attr("for")).get(0).checked = true;
+        getbooList()
+
     }
 
 
