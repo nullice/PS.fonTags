@@ -203,6 +203,7 @@ body{
 .fontitem
 {
 
+    transition: all .6s;
     position: relative;
     cursor: default;
     margin:2px 4px 2px 4px;
@@ -273,13 +274,7 @@ body{
    margin-left: 1px;
     left: -20px;
 
-
-
-
     -webkit-user-select: text;
-
-
-
 
     font-size: 10pt;
     color: rgba(63, 64, 65, 0.71);
@@ -330,6 +325,8 @@ body{
 :checked + .group>.fontitem
 {
     display: none;
+    opacity: 0;
+    height: 0;
 }
 
 .group>.fontitem

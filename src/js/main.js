@@ -467,37 +467,70 @@ function chooserToHTML()
     //-------------绑定事件----------
     $(".chooser_input").on("change", getbooList);
 
-    $(".chooser_input+label").bind("contextmenu",function(e){
+    $(".chooser_input+label").bind("contextmenu", function (e)
+    {
         return false;
     });
 
 
     $(".chooser_input+label").mousedown(function (e)
     {
-        console.log("点击：" +e.which)
-       // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
-        if(e.which==3)
-        {
-            barChooseUnique($(this));
+        console.log("点击：" + e.which)
+        // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 
+        if (e.which == 3)
+        {
+
+            if($("#" + $(this).attr("for")).get(0).checked)
+            {
+                barChooseReverse($(this));
+            }else
+            {
+                barChooseUnique($(this));
+            }
         }
-        //return false;
     });
+
+    $(".input_all").on("change", function(){
+
+
+        var bool = $(this).get(0).checked;
+
+        $(this).parent().children().filter(".chooser_input:not(.input_all)").each(function ()
+        {
+            $(this).get(0).checked = bool;
+        });
+        getbooList()
+    });
+
+
+
+
 
 
     function barChooseUnique(e)
     {
-        console.log(e);
-        console.log( ".chooser_input:not(#" + e.attr("for") + ")");
-        console.log(e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").get());
-       e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").each(function(){
-          $(this).get(0).checked = false;
-       });
+        e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").each(function ()
+        {
+            $(this).get(0).checked = false;
+        });
 
-        $( "#"+e.attr("for")).get(0).checked = true;
+        $("#" + e.attr("for")).get(0).checked = true;
         getbooList()
-
     }
+
+    function barChooseReverse(e)
+    {
+        e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").not(".input_all").each(function ()
+        {
+            $(this).get(0).checked = true;
+        });
+
+        $("#" + e.attr("for")).get(0).checked = false;
+        getbooList()
+    }
+
+
 
 
 }

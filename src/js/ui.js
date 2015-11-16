@@ -3,6 +3,21 @@
  */
 
 
+
+
+$(".fontitem").on("click",function(){
+
+  if( $(this).hasClass("pick") )
+  {
+      re
+  }
+
+
+
+})
+
+
+
 $(window).resize(function ()
 {
 
@@ -132,8 +147,23 @@ $(".page2").show();
 $(".page2").hide();
 $(".page3").hide();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function ttt()
 {
     var e = document.getElementById("ctag1");
     alert(e.checked);
 }
+
