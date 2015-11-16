@@ -216,6 +216,7 @@ body{
     text-overline: ellipsis;
     -webkit-text-overline: ellipsis;
     -webkit-user-select: text;
+    min-height: 20px;
 
 }
 
@@ -238,7 +239,7 @@ body{
 .group>.fontitem:active,
 .fontitem:active
 {
-    background-color: rgb(114, 89, 213);
+    background-color: rgb(73, 154, 213);
 }
 
 .group
@@ -385,9 +386,38 @@ body{
     display: block;
 }
 
+
+
+
+.group>.pick,
+.pick{
+
+    background-color: #8dc0fe;
+}
+
+.group>.pick:hover,
+.pick:hover{
+
+    background-color: #2a6ee8;
+}
+
+.pickG
+{
+    background-color: #48cbe8;
+}
+
+
+
+
+
+
+
 .act_buttom
 {
     margin: 4px;
+    border-width: 2px;
+    border-color: rgba(211, 215, 215, 0);
+    border-style: solid;
 }
 
 
@@ -457,3 +487,4 @@ body{
 .hide{
     display: none;
 }
+

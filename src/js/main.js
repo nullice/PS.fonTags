@@ -479,6 +479,86 @@ function chooserToHTML()
     );
 
 
+
+    $(".act_buttom").on("mousedown",
+        function(e){
+            //alert("1");
+            //e.stopPropagation();
+            return false;
+        });
+
+
+    $(".fontitem").bind("contextmenu", function (e)
+    {
+        return false;
+    });
+
+    $(".fontitem").mousedown(function(e){
+
+        if (e.which == 3)
+        {
+
+            if( $(this).hasClass("groupItem") )
+            {
+
+                var ev= $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
+                var count= 0;
+
+                ev.each(function(){count += fontItemPick($(this));})
+                if(count>0)
+                {
+                    $(this).addClass("pickG");
+                }
+                else
+                {
+                    $(this).removeClass("pickG");
+                }
+            }
+            else
+            {
+
+                fontItemPick($(this));
+
+                if($(this).parent().hasClass("group"))
+                {
+
+                    //console.log($(this).parent().children().filter(".groupItem"));
+                    if($(this).parent().children().hasClass("pick"))
+                    {
+                        $(this).parent().find(".groupItem").addClass("pickG");
+                    }
+                    else
+                    {
+                        $(this).parent().find(".groupItem").removeClass("pickG");
+                    }
+                }
+            }
+
+
+
+
+        }
+
+            function fontItemPick(e){
+                if( e.hasClass("pick") )
+                {
+                    e.removeClass("pick");
+                    return 0;
+                }
+                else
+                {
+                    e.addClass("pick");
+                    return 1;
+                }
+            }
+        }
+
+
+
+
+    )
+
+
     //------标签按钮------------------------
 
 
