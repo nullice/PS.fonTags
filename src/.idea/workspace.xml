@@ -168,8 +168,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="325" />
-    <option name="y" value="82" />
+    <option name="x" value="350" />
+    <option name="y" value="138" />
     <option name="width" value="1157" />
     <option name="height" value="784" />
   </component>
@@ -400,7 +400,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="325" y="82" width="1157" height="784" extended-state="0" />
+    <frame x="350" y="138" width="1157" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08042896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
