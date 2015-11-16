@@ -469,7 +469,7 @@ function chooserToHTML()
 
     //----------------- fontitem------
 
-    $(".fontitem").on("click",
+    $(".fontitem:not(.groupItem)").on("click",
         function ()
         {
             cs.evalScript(

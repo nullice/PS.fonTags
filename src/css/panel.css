@@ -203,7 +203,7 @@ body{
 .fontitem
 {
 
-    transition: all .6s;
+    transition: all .3s;
     position: relative;
     cursor: default;
     margin:2px 4px 2px 4px;
@@ -217,9 +217,11 @@ body{
     -webkit-text-overline: ellipsis;
     -webkit-user-select: text;
 
-
-
 }
+
+
+
+
 
 
 
@@ -231,9 +233,12 @@ body{
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+
+
+.group>.fontitem:active,
 .fontitem:active
 {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(114, 89, 213);
 }
 
 .group
@@ -447,10 +452,6 @@ body{
     width: 0px;
     height: 0px;
 }
-
-
-
-
 
 
 .hide{

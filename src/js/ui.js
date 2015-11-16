@@ -5,13 +5,16 @@
 
 
 
+$()
+
+opbar
+
 $(".fontitem").on("click",function(){
 
   if( $(this).hasClass("pick") )
   {
-      re
-  }
 
+  }
 
 
 })
