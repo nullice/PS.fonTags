@@ -392,19 +392,16 @@ body{
 .group>.pick,
 .pick{
 
-    background-color: #8dc0fe;
+    background-color: rgb(67, 148, 213);
+    color: #FFF;
 }
 
 .group>.pick:hover,
 .pick:hover{
 
-    background-color: #2a6ee8;
+    background-color: rgb(71, 158, 227);
 }
 
-.pickG
-{
-    background-color: #48cbe8;
-}
 
 
 
@@ -488,3 +485,31 @@ body{
     display: none;
 }
 
+
+:checked + .group label .pickG ,
+.pickG
+{
+    background-color: rgb(210, 242, 255);
+    box-shadow: 0 1px 0px 1px rgb(89, 195, 255), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
+}
+
+
+
+.editmod{
+    display: table;
+    position: absolute;
+    width: 100%;
+    heigth:130px;
+    bottom: 5px;
+    background-color: #D6D6D6;
+    text-align: center;
+    z-index: 4;
+
+}
+
+.act_creat_group
+{
+    display: inline-block;
+    margin: 10px 2px 10px 2px;
+
+}
