@@ -808,3 +808,6 @@ function hideUnusedBar()
     }
 
 }
+//-----------------------------------
+var fs = require('fs');
+
