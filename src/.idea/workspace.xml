@@ -20,7 +20,7 @@
     <favorites_list name="com.nullice.pschen.fonTags" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.87279844">
+    <splitter split-orientation="horizontal" split-proportion="0.13405088">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
@@ -87,24 +87,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-15.133333">
-                  <caret line="813" column="0" selection-start-line="813" selection-start-column="0" selection-end-line="813" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.80544746">
+                  <caret line="811" column="0" selection-start-line="811" selection-start-column="0" selection-end-line="811" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NativeFunction.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../CEP_HTML_Test_Extension/html/NativeFunction.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.590535">
-                  <caret line="328" column="47" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="58" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -116,7 +106,7 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.71206224">
+                <state vertical-scroll-proportion="-10.4786">
                   <caret line="524" column="22" selection-start-line="524" selection-start-column="22" selection-end-line="524" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
@@ -178,8 +168,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="791" />
-    <option name="y" value="81" />
+    <option name="x" value="325" />
+    <option name="y" value="82" />
     <option name="width" value="1157" />
     <option name="height" value="784" />
   </component>
@@ -410,7 +400,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="791" y="81" width="1157" height="784" extended-state="1" />
+    <frame x="325" y="82" width="1157" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08042896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -893,21 +883,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/../CEP_HTML_Test_Extension/html/NativeFunction.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.133333">
-          <caret line="813" column="0" selection-start-line="813" selection-start-column="0" selection-end-line="813" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.26131687">
+          <caret line="320" column="12" selection-start-line="320" selection-start-column="12" selection-end-line="320" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../CEP_HTML_Test_Extension/html/NativeFunction.html">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.590535">
-          <caret line="328" column="47" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="58" />
-          <folding />
+        <state vertical-scroll-proportion="-10.4786">
+          <caret line="524" column="22" selection-start-line="524" selection-start-column="22" selection-end-line="524" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
