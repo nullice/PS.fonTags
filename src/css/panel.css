@@ -436,10 +436,25 @@ body{
 }
 
 
-.topcoat-button-bar__item>input{
+
+.chooser_input
+{
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+
+.topcoat-button-bar__item>input
+{
     width: 0px;
     height: 0px;
 }
+
+
+
+
+
 
 .hide{
     display: none;

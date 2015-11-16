@@ -459,13 +459,38 @@ function chooserToHTML()
                 "bar": barName
             };
 
-
             $(bar).append($("#tmpl_bar_item").tmpl(o));
         }
 
     }
 
-    $(".chooser_input").on("change", getbooList)
+    //-------------绑定事件----------
+    $(".chooser_input").on("change", getbooList);
+
+    $(".chooser_input+label").bind("contextmenu",function(e){
+        return false;
+    });
+
+
+    $(".chooser_input").mousedown(function (e)
+    {
+        console.log("点击：" +e.which)
+       // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
+        if(e.which==3)
+        {
+            barChooseUnique($(this));
+
+        }
+        //return false;
+    });
+
+
+    function barChooseUnique(e)
+    {
+        console.log(e);
+       e.parent().children().filter(".chooser_input:not(#" + $(this).attr("id") + ")").get(0).checked = false;
+    }
+
 
 }
 
@@ -535,6 +560,7 @@ function refurDisplay()
 
     applyVisible(fontages.list);
     hideEmptyGourp();
+    hideUnusedBar();
 
 
     //-------------
@@ -545,7 +571,7 @@ function refurDisplay()
         {
             if (list[i]._type == "font")
             {
-                if(list[i]._visiable == true)
+                if (list[i]._visiable == true)
                 {
                     list[i]._visiable *= tagIsin(list[i][tags], booList);
                 }
@@ -562,17 +588,18 @@ function refurDisplay()
     {
 
         var b = false;
-        for (var i=0; i < tags.length; i++)
+        for (var i = 0; i < tags.length; i++)
         {
             //console.log("--------------------");
             //console.log(tags[i]);
             //console.log(booList[tags[i]]);
-            if (booList[tags[i]]>0)
+            if (booList[tags[i]] > 0)
             {
                 b = true;
                 booList[tags[i]]++;
 
-            }else if (booList[tags[i]]==0)
+            }
+            else if (booList[tags[i]] == 0)
             {
                 booList[tags[i]]--;
             }
@@ -623,6 +650,26 @@ function refurDisplay()
             }
 
         });
+    }
+
+
+}
+
+function hideUnusedBar()
+{
+    for (var i in booList_com)
+    {
+        console.log(booList_com[i]);
+        if (booList_com[i] == 0 || booList_com[i] == 1)
+        {
+            //$("#ctag_co_" + i).get(0).checked = false;
+            $("#ltag_co_" + i).addClass("hide");
+        }
+        else if (booList_com[i] != undefined)
+        {
+            $("#ltag_co_" + i).removeClass("hide");
+        }
+
 
     }
 
