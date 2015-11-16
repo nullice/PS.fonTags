@@ -22,3 +22,12 @@ function getFontsJson()
 
     return JSON.stringify(fontlist); // 把对象转化成 JSON 字符串并返回
 }
+
+
+
+
+function ps_applyLayerFont(fontpsname)
+{
+    app.activeDocument.activeLayer.textItem.font=fontpsname;
+
+}

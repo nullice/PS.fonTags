@@ -465,6 +465,23 @@ function chooserToHTML()
     }
 
     //-------------绑定事件----------
+
+
+    //----------------- fontitem------
+
+    $(".fontitem").on("click",
+        function ()
+        {
+            cs.evalScript(
+                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "')"
+            )
+        }
+    );
+
+
+    //------标签按钮------------------------
+
+
     $(".chooser_input").on("change", getbooList);
 
     $(".chooser_input+label").bind("contextmenu", function (e)
@@ -481,17 +498,19 @@ function chooserToHTML()
         if (e.which == 3)
         {
 
-            if($("#" + $(this).attr("for")).get(0).checked)
+            if ($("#" + $(this).attr("for")).get(0).checked)
             {
                 barChooseReverse($(this));
-            }else
+            }
+            else
             {
                 barChooseUnique($(this));
             }
         }
     });
 
-    $(".input_all").on("change", function(){
+    $(".input_all").on("change", function ()
+    {
 
 
         var bool = $(this).get(0).checked;
@@ -502,10 +521,6 @@ function chooserToHTML()
         });
         getbooList()
     });
-
-
-
-
 
 
     function barChooseUnique(e)
@@ -529,8 +544,6 @@ function chooserToHTML()
         $("#" + e.attr("for")).get(0).checked = false;
         getbooList()
     }
-
-
 
 
 }
