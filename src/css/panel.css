@@ -496,7 +496,8 @@ body{
 
 
 .editmod{
-    display: table;
+    display: none;
+    /*display: table;*/
     position: absolute;
     width: 100%;
     heigth:130px;
@@ -510,5 +511,15 @@ body{
 .act_creat_group
 {
     display: inline-block;
-    margin: 10px 2px 10px 2px;
+    margin: 4px 2px 10px 2px;
+    font-size: 10pt;
+    padding: 1px 5px 1px 5px ;
+
+}
+.picknumber
+{
+    margin: 10px 2px 2px 2px;
+    color: #335fa1;
+    font-size: 12pt;
+
 }
