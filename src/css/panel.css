@@ -523,3 +523,30 @@ body{
     font-size: 12pt;
 
 }
+
+.opbox{
+    position: relative;
+    margin: 5px 20px 10px 20px;
+
+}
+
+
+#loadfonts{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 125px;
+
+}
+
+.edit_inl{
+
+    padding: 0 4px;
+    border: 1px solid rgba(51, 52, 52, 0);
+    background-color: rgba(69, 70, 70, 0);
+    color: inherit;
+    vertical-align: top;
+    font-size: inherit;
+
+}

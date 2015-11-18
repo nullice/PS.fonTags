@@ -17,10 +17,12 @@
     <script id="tmpl_info_box" type="text/x-jquery-tmpl">
        <div class="info_box">
            <ul>
-               <li><span>名称: </span><span>${name}</span></li>
-               <li><span>字族: </span><span>${family}</span></li>
-               <li><span>样式: </span><span>${style}</span></li>
+               <li><span>名称: </span><input type="text" class="edit_inl edit_name" value="${name}" inp_for="name"/></li>
+               <li><span>字族: </span><input type="text" class="edit_inl edit_family" value="${family}" inp_for="family"/></li>
+               <li><span>样式: </span><input type="text" class="edit_inl edit_style" value="${style}" inp_for="style"/></li>
                <li><span>PostScriptName: </span><span>${PostScriptName}</span></li>
+
+
            </ul>
       </div>
     </script>
@@ -78,7 +80,7 @@
 
         <label class="topcoat-button-bar__item">
             <input type="radio" name="tab-bar" id="tagbut3">
-            <button class="topcoat-button-bar__button"> 设置 </button>
+            <button class="topcoat-button-bar__button"  > 设置 </button>
 
         </label>
     </nav>
@@ -163,9 +165,9 @@
                     <span> Microsoft YaHei UI </span>
                     <div class="info_box">
                         <ul>
-                            <li><span>名称: </span><span>asdfdsfdsfdsf</span></li>
-                            <li><span>字族: </span><span>asdfdsfdsfdsf</span></li>
-                            <li><span>样式: </span><span>asdfdsfdsfdsf</span></li>
+                            <li><span>名称: </span><input type="text" class="edit_inl edit_name" value="ddd"/></li>
+                            <li><span>字族: </span><input type="text" class="edit_inl edit_family" value="ddd"/></li>
+                            <li><span>样式: </span><input type="text" class="edit_inl edit_style" value="ddd"/></li>
                             <li><span>PostScriptName: </span><span>asdfdsfdsfdsf</span></li>
                         </ul>
                     </div>
@@ -282,7 +284,17 @@
 
 </div>
 
-    <div class="page3 tagpage">page3</div>
+    <div class="page3 tagpage">
+
+        <div class="opbox">
+            <div class="optitle"> 载入系统字体列表 </div>
+            <button class="topcoat-button--large--cta" id="loadfonts" >重新载入字体列表</button>
+
+        </div>
+
+
+
+    </div>
 
 
 </div>

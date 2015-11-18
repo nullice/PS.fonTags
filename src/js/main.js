@@ -1,10 +1,11 @@
 /**
  * Created by 语冰 on 2015/11/7.
  */
+var cs = new CSInterface();
 
-$(".act_info").click(act_info);
 
 
+//------------------------------Fontages------------------------------------
 var Fontages = function ()
 {
     this.length = 0;
@@ -28,8 +29,6 @@ var Fontages = function ()
         _id: 0,
         _type: "Font"
     }
-
-
     this.list = [];
 
     var fontGroup =
@@ -38,8 +37,6 @@ var Fontages = function ()
         fonts: [{}],
         _type: "group"
     }
-
-
 }
 
 Fontages.prototype.add = function (name, family, postScriptName, style, id)
@@ -72,7 +69,6 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 
     this.list[this.list.length] = font;
 }
-
 
 Fontages.prototype.index = function (id)
 {
@@ -125,7 +121,6 @@ Fontages.prototype.restVisiable = function ()
     }
 }
 
-
 Fontages.prototype.createGroup = function (name)
 {
     var fontGroup =
@@ -140,8 +135,6 @@ Fontages.prototype.createGroup = function (name)
 
 //----------------------------------------------------fromJSX
 
-var fontages = new Fontages();
-var cs = new CSInterface();
 
 function loadJSX(fileName)
 {
@@ -187,7 +180,6 @@ function showfontages()
     chooserToHTML();
 }
 
-
 function arrangeFontGroup()
 {
     var temp = new Fontages();
@@ -221,28 +213,8 @@ function arrangeFontGroup()
         temp.length++;
     }
 
-
-//else if (i == 0)
-//{
-//    temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
-//    console.log(temp);
-//}
-//else if (temp.list[temp.list.length - 1]._type == "group")
-//{
-//    if(temp.list[temp.list.length - 1].groupName==fontages.list[i].family)
-//    {
-//        temp.list[temp.list.length-1].fonts.push($.extend(true, {}, fontages.list[i])) ;
-//    }
-//}else
-//{
-//    temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
-//}
-
     fontages = $.extend(true, {}, temp);
 }
-
-
-refurFontags();
 
 
 function fontagasToHTML(fontagesIn)
@@ -556,6 +528,24 @@ function chooserToHTML()
         }
     )
 
+    //------------------------
+    $(".edit_inl").on("change", function (e)
+    {
+            var fid =$(this).parent().parent().parent().parent().attr("id").slice(3);
+            if (fid != undefined)
+            {
+                fontages.list[fid][$(this).attr("inp_for")]
+            }
+
+
+    });
+
+
+
+
+
+
+
 
     //------标签按钮------------------------
 
@@ -647,6 +637,14 @@ function arryUnique(arry)
         arry.push(temp[z]);
     }
 }
+
+
+
+
+
+
+
+
 //---------------------Fliter - UI-----------------------------
 
 var booList_lang = {};
@@ -657,8 +655,9 @@ var booList_com = {};
 function getbooList()
 {
     console.log("getbooList");
-
+    console.log(fontages);
     fontages.restVisiable();
+
     booList_lang = {};
 
     for (var i = 0; i < pool_lang.length; i++)
@@ -831,12 +830,14 @@ function loadFontages(fileName)
     var result = window.cep.fs.readFile(fileName);
     if (0 == result.err)// err 为 0 读取成功
     {
-        fontages = $.extend(true, {}, JSON.parse(result.data));
+        fontages = $.extend(true, new Fontages(), JSON.parse(result.data));
         //fontages = JSON.parse(result.data);
+        return true;
     }
     else
     {
         alert("读取错误\n" + fileName + "\nerr code:" + result.err);
+        return false;
     }
 }
 
@@ -847,6 +848,43 @@ function nowSave()
 
 function nowLoad()
 {
-    loadFontages(__dirname + "/UserData/fontages.json");
-    showfontages();
+    if(loadFontages(__dirname + "/UserData/fontages.json"))
+    {
+        showfontages();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///------------------main---------
+
+
+var fontages = new Fontages();
+$(".act_info").click(act_info);
+
+if(nowLoad())
+{
+
+}else
+{
+    refurFontags();
 }

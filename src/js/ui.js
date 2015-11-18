@@ -132,7 +132,7 @@ function showTagpage(event)
     }
 }
 
-$(".page2").show();
+$(".page1").show();
 $(".page2").hide();
 $(".page3").hide();
 
