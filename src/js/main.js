@@ -440,7 +440,11 @@ function chooserToHTML()
 
     //----------------- fontitem------
 
-    $(".fontitem:not(.groupItem)").on("click",
+
+
+
+
+    $(document).on("click", ".fontitem:not(.groupItem)",
         function ()
         {
             cs.evalScript(
@@ -529,15 +533,15 @@ function chooserToHTML()
     )
 
     //------------------------
-    $(".edit_inl").on("change", function (e)
+    $(document).on("change", ".edit_inl",function (e)
     {
             var fid =$(this).parent().parent().parent().parent().attr("id").slice(3);
             if (fid != undefined)
             {
-                fontages.list[fid][$(this).attr("inp_for")]
+                //fontages.list[fid][$(this).attr("inp_for")]=
+
+                console.log ($(this)[0].value);
             }
-
-
     });
 
 
