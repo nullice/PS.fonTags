@@ -4,7 +4,6 @@
 var cs = new CSInterface();
 
 
-
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
 {
@@ -28,7 +27,7 @@ var Fontages = function ()
         _visiable: false,
         _id: 0,
         _type: "Font"
-    }
+    };
     this.list = [];
 
     var fontGroup =
@@ -37,7 +36,7 @@ var Fontages = function ()
         fonts: [{}],
         _type: "group"
     }
-}
+};
 
 Fontages.prototype.add = function (name, family, postScriptName, style, id)
 {
@@ -59,7 +58,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
         _visiable: true,
         _id: id,
         _type: "font"
-    }
+    };
 
     var com = fontGetInc(name, family);
     if (com != null)
@@ -68,7 +67,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
     }
 
     this.list[this.list.length] = font;
-}
+};
 
 Fontages.prototype.index = function (id)
 {
@@ -99,7 +98,7 @@ Fontages.prototype.index = function (id)
         }
     }
 
-}
+};
 
 Fontages.prototype.restVisiable = function ()
 {
@@ -119,7 +118,7 @@ Fontages.prototype.restVisiable = function ()
             }
         }
     }
-}
+};
 
 Fontages.prototype.createGroup = function (name)
 {
@@ -128,9 +127,9 @@ Fontages.prototype.createGroup = function (name)
         groupName: name,
         fonts: [],
         _type: "group"
-    }
+    };
     this.list[this.list.length] = fontGroup;
-}
+};
 
 
 //----------------------------------------------------fromJSX
@@ -192,7 +191,7 @@ function arrangeFontGroup()
             {
 
                 var pre = temp.list.pop();
-                temp.createGroup(fontages.list[i].family)
+                temp.createGroup(fontages.list[i].family);
 
                 temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, pre));
                 temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fontages.list[i]));
@@ -266,7 +265,7 @@ function fontagasToHTML(fontagesIn)
                 font_group_name: fontagesIn.list[i].groupName,
                 font_number: fontagesIn.list[i].fonts.length
 
-            }
+            };
 
             groupHtml = $("#tmpl_fontlist_group").tmpl(o);
 
@@ -304,7 +303,7 @@ function act_info()
             family: $(this).parent().parent().attr("font_family"),
             PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
             style: $(this).parent().parent().attr("font_style"),
-        }
+        };
 
         $(this).parent().after($('#tmpl_info_box').tmpl(o));
     }
@@ -441,7 +440,17 @@ function chooserToHTML()
     //----------------- fontitem------
 
 
+    $(".act_buttom").on("mousedown",
+        function (e)
+        {
+            return false;
+        });
 
+
+    $(".fontitem").bind("contextmenu", function (e)
+    {
+        return false;
+    });
 
 
     $(document).on("click", ".fontitem:not(.groupItem)",
@@ -454,27 +463,11 @@ function chooserToHTML()
     );
 
 
-
-    $(".act_buttom").on("mousedown",
-        function (e)
-        {
-            //alert("1");
-            //e.stopPropagation();
-            return false;
-        });
-
-
-    $(".fontitem").bind("contextmenu", function (e)
-    {
-        return false;
-    });
-
-
-
     $(document).on("mousedown", ".fontitem", function (e)
         {
             if (e.which == 3)
             {
+
                 if ($(this).hasClass("groupItem"))
                 {
 
@@ -484,7 +477,7 @@ function chooserToHTML()
                     ev.each(function ()
                     {
                         count += fontItemPick($(this));
-                    })
+                    });
                     if (count > 0)
                     {
                         $(this).addClass("pickG");
@@ -531,30 +524,14 @@ function chooserToHTML()
                 }
             }
         }
-    )
+    );
 
     //------------------------
-    $(document).on("change", ".edit_inl",function (e)
-    {
-            var fid =$(this).parent().parent().parent().parent().attr("id").slice(3);
-            if (fid != undefined)
-            {
-                //fontages.list[fid][$(this).attr("inp_for")]=
-
-                console.log ($(this)[0].value);
-            }
-    });
-
-
-
-
-
-
 
 
     //------标签按钮------------------------
 
-
+    $(document).on();
     $(".chooser_input").on("change", getbooList);
 
     $(".chooser_input+label").bind("contextmenu", function (e)
@@ -565,7 +542,7 @@ function chooserToHTML()
 
     $(".chooser_input+label").mousedown(function (e)
     {
-        console.log("点击：" + e.which)
+        console.log("点击：" + e.which);
         // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 
         if (e.which == 3)
@@ -642,12 +619,6 @@ function arryUnique(arry)
         arry.push(temp[z]);
     }
 }
-
-
-
-
-
-
 
 
 //---------------------Fliter - UI-----------------------------
@@ -853,7 +824,7 @@ function nowSave()
 
 function nowLoad()
 {
-    if(loadFontages(__dirname + "/UserData/fontages.json"))
+    if (loadFontages(__dirname + "/UserData/fontages.json"))
     {
         showfontages();
         return true;
@@ -866,30 +837,32 @@ function nowLoad()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///------------------main---------
+
+
+
+$(document).on("change", ".edit_inl", function (e)
+{
+    var fid = $(this).parent().parent().parent().parent().attr("id").slice(3);
+    if (fid != undefined)
+    {
+
+        fontages.list[fid][$(this).attr("inp_for")]=$(this)[0].value;
+        nowSave()
+        console.log(fontages.list[fid][$(this).attr("inp_for")]);
+    }
+});
+
 
 
 var fontages = new Fontages();
 $(".act_info").click(act_info);
 
-if(nowLoad())
+if (nowLoad())
 {
 
-}else
+}
+else
 {
     refurFontags();
 }
