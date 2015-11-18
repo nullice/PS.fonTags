@@ -172,12 +172,22 @@ function refurFontags()
             }
 
             fontages = $.extend(true, {}, Temp_fontages);
-            arrangeFontGroup();
-            fontagasToHTML(fontages);
-            tagFliter_barRefur();
-            chooserToHTML();
+            showfontages();
+
         }
     )
+}
+
+function showfontages()
+{
+    console.log("arrangeFontGroup");
+    arrangeFontGroup();
+    console.log("fontagasToHTML");
+    fontagasToHTML(fontages);
+    console.log("tagFliter_barRefur");
+    tagFliter_barRefur();
+    console.log("chooserToHTML");
+    chooserToHTML();
 }
 
 
@@ -209,10 +219,7 @@ function arrangeFontGroup()
                 temp.length++;
                 continue;
             }
-
-
         }
-
 
         temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
         temp.length++;
@@ -302,12 +309,8 @@ function fontagasToHTML(fontagesIn)
             {
                 fontTOHTML("#group" + groupCounter, fontagesIn.list[i].fonts[z]);
             }
-
         }
-
-
     }
-
 
     $(".act_info").click(act_info);
 
@@ -479,9 +482,9 @@ function chooserToHTML()
     );
 
 
-
     $(".act_buttom").on("mousedown",
-        function(e){
+        function (e)
+        {
             //alert("1");
             //e.stopPropagation();
             return false;
@@ -493,54 +496,57 @@ function chooserToHTML()
         return false;
     });
 
-    $(".fontitem").mousedown(function(e){
-
-        if (e.which == 3)
+    $(".fontitem").mousedown(function (e)
         {
 
-            if( $(this).hasClass("groupItem") )
+            if (e.which == 3)
             {
 
-                var ev= $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
-                var count= 0;
-
-                ev.each(function(){count += fontItemPick($(this));})
-                if(count>0)
-                {
-                    $(this).addClass("pickG");
-                }
-                else
-                {
-                    $(this).removeClass("pickG");
-                }
-            }
-            else
-            {
-
-                fontItemPick($(this));
-
-                if($(this).parent().hasClass("group"))
+                if ($(this).hasClass("groupItem"))
                 {
 
-                    //console.log($(this).parent().children().filter(".groupItem"));
-                    if($(this).parent().children().hasClass("pick"))
+                    var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
+                    var count = 0;
+
+                    ev.each(function ()
                     {
-                        $(this).parent().find(".groupItem").addClass("pickG");
+                        count += fontItemPick($(this));
+                    })
+                    if (count > 0)
+                    {
+                        $(this).addClass("pickG");
                     }
                     else
                     {
-                        $(this).parent().find(".groupItem").removeClass("pickG");
+                        $(this).removeClass("pickG");
                     }
                 }
+                else
+                {
+
+                    fontItemPick($(this));
+
+                    if ($(this).parent().hasClass("group"))
+                    {
+
+                        //console.log($(this).parent().children().filter(".groupItem"));
+                        if ($(this).parent().children().hasClass("pick"))
+                        {
+                            $(this).parent().find(".groupItem").addClass("pickG");
+                        }
+                        else
+                        {
+                            $(this).parent().find(".groupItem").removeClass("pickG");
+                        }
+                    }
+                }
+
+
             }
 
-
-
-
-        }
-
-            function fontItemPick(e){
-                if( e.hasClass("pick") )
+            function fontItemPick(e)
+            {
+                if (e.hasClass("pick"))
                 {
                     e.removeClass("pick");
                     return 0;
@@ -552,10 +558,6 @@ function chooserToHTML()
                 }
             }
         }
-
-
-
-
     )
 
 
@@ -808,6 +810,47 @@ function hideUnusedBar()
     }
 
 }
-//-----------------------------------
+//---------------------SAVE--------------
 
 
+//window.cep.fs.makedir ( __dirname + "/UserData")
+
+function saveFontages(fileName)
+{
+
+    var data = JSON.stringify(fontages);
+    var result = window.cep.fs.writeFile(fileName, data);
+    if (0 == result.err)
+    {
+    }
+    else
+    {
+        alert("保存错误\n" + fileName + "\nerr code:" + result.err);
+    }
+}
+
+
+function loadFontages(fileName)
+{
+    var result = window.cep.fs.readFile(fileName);
+    if (0 == result.err)// err 为 0 读取成功
+    {
+        //fontages = $.extend(true, {}, JSON.parse(result.data));
+        //fontages = JSON.parse(result.data);
+    }
+    else
+    {
+        alert("读取错误\n" + fileName + "\nerr code:" + result.err);
+    }
+}
+
+function nowSave()
+{
+    saveFontages(__dirname + "/UserData/fontages.json");
+}
+
+function nowLoad()
+{
+    loadFontages(__dirname + "/UserData/fontages.json");
+    showfontages();
+}
