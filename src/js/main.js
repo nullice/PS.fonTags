@@ -793,6 +793,7 @@ function saveFontages(fileName)
     var result = window.cep.fs.writeFile(fileName, data);
     if (0 == result.err)
     {
+        console.log("保存到：" +fileName);
     }
     else
     {
@@ -820,6 +821,7 @@ function loadFontages(fileName)
 function nowSave()
 {
     saveFontages(__dirname + "/UserData/fontages.json");
+
 }
 
 function nowLoad()
@@ -837,7 +839,7 @@ function nowLoad()
 }
 
 
-///------------------main---------
+//------------------main---------
 
 
 
@@ -847,9 +849,9 @@ $(document).on("change", ".edit_inl", function (e)
     if (fid != undefined)
     {
 
-        fontages.list[fid][$(this).attr("inp_for")]=$(this)[0].value;
-        nowSave()
-        console.log(fontages.list[fid][$(this).attr("inp_for")]);
+        fontages.index(fid)[$(this).attr("inp_for")]=$(this)[0].value;
+        nowSave();
+        console.log(fontages.index(fid));
     }
 });
 
