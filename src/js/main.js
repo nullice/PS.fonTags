@@ -454,6 +454,7 @@ function chooserToHTML()
     );
 
 
+
     $(".act_buttom").on("mousedown",
         function (e)
         {
@@ -468,12 +469,12 @@ function chooserToHTML()
         return false;
     });
 
-    $(".fontitem").mousedown(function (e)
-        {
 
+
+    $(document).on("mousedown", ".fontitem", function (e)
+        {
             if (e.which == 3)
             {
-
                 if ($(this).hasClass("groupItem"))
                 {
 
