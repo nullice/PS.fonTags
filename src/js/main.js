@@ -172,6 +172,8 @@ function refurFontags()
             }
 
             fontages = $.extend(true, {}, Temp_fontages);
+            arrangeFontGroup();
+
             showfontages();
 
         }
@@ -180,13 +182,8 @@ function refurFontags()
 
 function showfontages()
 {
-    console.log("arrangeFontGroup");
-    arrangeFontGroup();
-    console.log("fontagasToHTML");
     fontagasToHTML(fontages);
-    console.log("tagFliter_barRefur");
     tagFliter_barRefur();
-    console.log("chooserToHTML");
     chooserToHTML();
 }
 
@@ -196,7 +193,6 @@ function arrangeFontGroup()
     var temp = new Fontages();
     for (var i = 0; i < fontages.length; i++)
     {
-
         if (temp.list[temp.list.length - 1] != undefined)
         {
 
@@ -835,7 +831,7 @@ function loadFontages(fileName)
     var result = window.cep.fs.readFile(fileName);
     if (0 == result.err)// err 为 0 读取成功
     {
-        //fontages = $.extend(true, {}, JSON.parse(result.data));
+        fontages = $.extend(true, {}, JSON.parse(result.data));
         //fontages = JSON.parse(result.data);
     }
     else
