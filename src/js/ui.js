@@ -69,6 +69,7 @@ $('.preview_text').on("input", fontlistDisplayFromPreview);
 
 function fontlistDisplayFromFamily()
 {
+    g_vmod=1;
 
     $(".preview_text").css("display", "none");
     $(".fontitem:not(.groupItem)>span").text(function ()
@@ -87,6 +88,7 @@ function fontlistDisplayFromFamily()
 
 function fontlistDisplayFromName()
 {
+    g_vmod=0;
 
     $(".preview_text").css("display", "none");
     $(".fontitem:not(.groupItem)>span").text(function ()
@@ -107,15 +109,13 @@ function fontlistDisplayFromName()
 
 function fontlistDisplayFromPreview()
 {
-
-
+    g_vmod=3;
     var box = $(".preview_text");
     var t = box.val();
     if (t != undefined && t != ""  && t != " ")
     {
         $(".fontitem>span:not(.font_number)").text(t);
     }
-
 }
 
 

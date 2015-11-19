@@ -2,7 +2,7 @@
  * Created by 语冰 on 2015/11/7.
  */
 var cs = new CSInterface();
-
+var g_vmod = 1;
 
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
@@ -169,7 +169,6 @@ function refurFontags()
             showfontages();
 
 
-
         }
     )
 }
@@ -179,9 +178,10 @@ function showfontages()
     fontagasToHTML(fontages);
     tagFliter_barRefur();
     chooserToHTML();
-    setTimeout(function () {
+    setTimeout(function ()
+    {
         showOverHeightBut();
-    },2000);
+    }, 2000);
 }
 
 function showOverHeightBut()
@@ -201,9 +201,6 @@ function showOverHeightBut()
 
     })
 }
-
-
-
 
 
 function arrangeFontGroup()
@@ -664,8 +661,6 @@ function chooserToHTML()
     });
 
 
-
-
     function barChooseUnique(e)
     {
         e.parent().children().filter(".chooser_input:not(#" + e.attr("for") + ")").each(function ()
@@ -688,10 +683,6 @@ function chooserToHTML()
         getbooList()
     }
 }
-
-
-
-
 
 
 function arryUnique(arry)
@@ -781,9 +772,6 @@ function getbooList()
     console.log(booList_user);
 
 
-
-
-
     function input_allRef()
     {
         console.log($(this).siblings().filter(".chooser_input"));
@@ -822,8 +810,6 @@ function refurDisplay()
     hideEmptyGourp();
     hideUnusedBar();
     showOverHeightBut();
-
-
 
 
     //-------------
@@ -1016,7 +1002,45 @@ function nowLoad()
 }
 
 
-function 
+function reloadChooserBar()
+{
+    tagFliter_barRefur();
+    chooserToHTML();
+    getbooList()
+    setTimeout(function ()
+    {
+        showOverHeightBut();
+    }, 2000);
+}
+
+
+function rufSetting()
+{
+
+    if (g_vmod == 1)
+    {
+        $("#view_mod1_inp")[0].checked = true;
+        fontlistDisplayFromName();
+    }
+
+    if (g_vmod == 2)
+    {
+        $("#view_mod2_inp")[0].checked = true;
+        fontlistDisplayFromFamily();
+    }
+
+    if (g_vmod == 3)
+    {
+        $("#previewON")[0].checked = true;
+        $(".preview_text").css("display", "block");
+        fontlistDisplayFromPreview();
+    }
+
+
+
+
+}
+
 
 //------------------main---------
 
