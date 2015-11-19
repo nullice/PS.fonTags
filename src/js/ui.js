@@ -2,14 +2,15 @@
  * Created by 语冰 on 2015/11/8.
  */
 
-
-
-
+$(document).on('click',"bar_switch", function ()
+{
+    console.log("aaaaa")
+    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+});
 
 
 $(window).resize(function ()
 {
-
     $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
 });
 

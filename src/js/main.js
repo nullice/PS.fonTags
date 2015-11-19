@@ -279,7 +279,7 @@ function fontagasToHTML(fontagesIn)
         }
     }
 
-    $(".act_info").on("click",act_info);
+    $(".act_info").on("click", act_info);
 
 }
 
@@ -299,7 +299,7 @@ function act_info(event)
         $(this).parent().addClass("info_open");
 
         var fid = $(this).parent().parent().attr("id").slice(3);
-        var o={
+        var o = {
 
 
             name: fontages.index(fid).name,
@@ -307,10 +307,10 @@ function act_info(event)
             PostScriptName: fontages.index(fid).postScriptName,
             style: fontages.index(fid).style,
             lang: fontages.index(fid).tags_lang.join(),
-            com:fontages.index(fid).tags_com.join(),
-            weight:fontages.index(fid).tags_weight.join(),
-            user:fontages.index(fid).tags_user.join(),
-            type:fontages.index(fid).tags_type.join()
+            com: fontages.index(fid).tags_com.join(),
+            weight: fontages.index(fid).tags_weight.join(),
+            user: fontages.index(fid).tags_user.join(),
+            type: fontages.index(fid).tags_type.join()
 
         };
 
@@ -318,7 +318,10 @@ function act_info(event)
     }
 
 
-    $( ".info_box").on("click", function (){ return false;})
+    $(".info_box").on("click", function ()
+    {
+        return false;
+    })
     return false;
 }
 
@@ -419,6 +422,13 @@ function tagFliter_barRefur()
     function tagsToPool(tags, pool)
     {
         var hash = {};
+        if (0 == tags.length)
+        {
+            tags.push("无");
+
+        }
+
+
         for (var i = 0; i < tags.length; i++)
         {
             if (!hash[tags[i]])
@@ -441,9 +451,6 @@ function chooserToHTML()
     chooserToHTML_bar(pool_type, "#bar_type>.bottom_bar", "ty");
     chooserToHTML_bar(pool_weight, "#bar_weight>.bottom_bar", "we");
     chooserToHTML_bar(pool_user, "#bar_user>.bottom_bar", "us");
-
-
-
 
 
     function chooserToHTML_bar(pool, bar, barName)
@@ -655,7 +662,9 @@ function arryUnique(arry)
 
 var booList_lang = {};
 var booList_com = {};
-
+var booList_type = {};
+var booList_weight = {};
+var booList_user = {};
 
 //选择器被改变
 function getbooList()
@@ -665,24 +674,42 @@ function getbooList()
     fontages.restVisiable();
 
     booList_lang = {};
-
     for (var i = 0; i < pool_lang.length; i++)
     {
-
         booList_lang[pool_lang[i]] = (true == $("#ctag_la_" + pool_lang[i]).get(0).checked);
     }
 
     booList_com = {};
     for (var z = 0; z < pool_com.length; z++)
     {
-
         booList_com[pool_com[z]] = (true == $("#ctag_co_" + pool_com[z]).get(0).checked);
+    }
+
+    booList_type = {};
+    for (var z1 = 0; z1 < pool_type.length; z1++)
+    {
+        booList_type[pool_type[z1]] = (true == $("#ctag_ty_" + pool_type[z1]).get(0).checked);
+    }
+
+
+    booList_weight = {};
+    for (var z2 = 0; z2 < pool_weight.length; z2++)
+    {
+        booList_weight[pool_weight[z2]] = (true == $("#ctag_we_" + pool_weight[z2]).get(0).checked);
+    }
+
+    booList_user = {};
+    for (var z3 = 0; z3 < pool_user.length; z3++)
+    {
+        booList_user[pool_user[z3]] = (true == $("#ctag_us_" + pool_user[z3]).get(0).checked);
     }
 
 
     console.log(booList_lang);
     console.log(booList_com);
-
+    console.log(booList_type);
+    console.log(booList_weight);
+    console.log(booList_user);
     refurDisplay()
 }
 
@@ -693,11 +720,32 @@ function refurDisplay()
 
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
     dealFontDisplay(fontages.list, "tags_com", booList_com);
-
+    dealFontDisplay(fontages.list, "tags_type", booList_type);
+    dealFontDisplay(fontages.list, "tags_weight", booList_weight);
+    dealFontDisplay(fontages.list, "tags_user", booList_user);
 
     applyVisible(fontages.list);
     hideEmptyGourp();
     hideUnusedBar();
+    showOverHeightBut();
+
+    function showOverHeightBut()
+    {
+
+        $(".bottom_bar").each(function ()
+        {
+
+            if ($(this).get(0).scrollHeight > 25)
+            {
+                $(this).siblings().filter(".bar_switch").removeClass("hide");
+            }
+            else
+            {
+                $(this).siblings().filter(".bar_switch").addClass("hide");
+            }
+
+        })
+    }
 
 
     //-------------
@@ -794,6 +842,29 @@ function refurDisplay()
 
 function hideUnusedBar()
 {
+
+    _hideUnusedBar_0(booList_com, "co");
+    _hideUnusedBar_0(booList_type, "ty");
+    _hideUnusedBar_0(booList_weight, "we");
+    _hideUnusedBar_0(booList_user, "us");
+
+    function _hideUnusedBar_0(booList, barName)
+    {
+        for (var i in booList)
+        {
+            console.log(booList[i]);
+            if (booList[i] == 0 || booList[i] == 1)
+            {
+                $("#ltag_" + barName + "_" + i).addClass("hide");
+            }
+            else if (booList[i] != undefined)
+            {
+                $("#ltag_" + barName + "_" + i).removeClass("hide");
+            }
+        }
+    }
+
+
     for (var i in booList_com)
     {
         console.log(booList_com[i]);
@@ -806,8 +877,6 @@ function hideUnusedBar()
         {
             $("#ltag_co_" + i).removeClass("hide");
         }
-
-
     }
 
 }
@@ -823,7 +892,7 @@ function saveFontages(fileName)
     var result = window.cep.fs.writeFile(fileName, data);
     if (0 == result.err)
     {
-        console.log("保存到：" +fileName);
+        console.log("保存到：" + fileName);
     }
     else
     {
@@ -872,34 +941,24 @@ function nowLoad()
 //------------------main---------
 
 
-
-
-
-
-
-
-
-
-
 $(document).on("change", ".edit_inl", function (e)
 {
     var fid = $(this).parent().parent().parent().parent().attr("id").slice(3);
     if (fid != undefined)
     {
-        if($(this).hasClass("edit_tags"))
+        if ($(this).hasClass("edit_tags"))
         {
             fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value.split(",");
         }
         else
         {
-            fontages.index(fid)[$(this).attr("inp_for")]=$(this)[0].value;
+            fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value;
         }
 
         nowSave();
         console.log(fontages.index(fid));
     }
 });
-
 
 
 var fontages = new Fontages();

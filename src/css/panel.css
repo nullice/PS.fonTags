@@ -86,7 +86,7 @@ body{
 {
     display: block;
 
-    min-height: 24px;
+    min-height: 22px;
     position: relative;
     margin: 5px ;
     margin-right: 16px;
@@ -135,8 +135,11 @@ body{
 .bar_switch
 {
     margin-top: 1px;
-    right: 2px;
+    right: 8px;
     position: absolute;
+    background-color: rgba(231, 231, 231, 0);
+    font-size: 13pt;
+    z-index: 3;
 
 }
 
@@ -149,6 +152,7 @@ body{
 {
     color: #0036ff;
     text-shadow: 0 0 4px #5dbdff;
+
 }
 
 .fontbox {
