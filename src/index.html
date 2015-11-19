@@ -21,8 +21,11 @@
                <li><span>字族: </span><input type="text" class="edit_inl edit_family" value="${family}" inp_for="family"/></li>
                <li><span>样式: </span><input type="text" class="edit_inl edit_style" value="${style}" inp_for="style"/></li>
                <li><span>PostScriptName: </span><span>${PostScriptName}</span></li>
-
-
+               <li><span>语言: </span><input type="text" class="edit_inl edit_tags" value="${lang}" inp_for="tags_lang"/></li>
+               <li><span>厂商: </span><input type="text" class="edit_inl edit_tags" value="${com}" inp_for="tags_com"/></li>
+               <li><span>类型: </span><input type="text" class="edit_inl edit_tags" value="${type}" inp_for="tags_type"/></li>
+               <li><span>字重: </span><input type="text" class="edit_inl edit_tags" value="${weight}" inp_for="tags_weight"/></li>
+               <li><span>自定义: </span><input type="text" class="edit_inl edit_tags" value="${user}" inp_for="tags_user"/></li>
            </ul>
       </div>
     </script>
@@ -157,6 +160,36 @@
                         <label for="ctagr8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
                     </div>
                 </div>
+        <div class="chosebar" id="bar_type">
+            <div class="title"><span>类型</span></div>
+
+            <label for="dd3" class="bar_switch"> <span>⋯</span></label>
+            <input type="checkbox" id="dd3">
+            <div class="bottom_bar" ></div>
+        </div>
+
+        <div class="chosebar" id="bar_weight">
+            <div class="title"><span>字重</span></div>
+
+            <label for="dd4" class="bar_switch"> <span>⋯</span></label>
+            <input type="checkbox" id="dd4">
+            <div class="bottom_bar" ></div>
+        </div>
+
+        <div class="chosebar" id="bar_user">
+            <div class="title"><span>自定义</span></div>
+
+            <label for="dd5" class="bar_switch"> <span>⋯</span></label>
+            <input type="checkbox" id="dd5">
+            <div class="bottom_bar" ></div>
+        </div>
+
+
+
+
+
+
+
 
         <div class="midbox">
             <div class="fontlist">

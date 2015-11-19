@@ -279,12 +279,12 @@ function fontagasToHTML(fontagesIn)
         }
     }
 
-    $(".act_info").click(act_info);
+    $(".act_info").on("click",act_info);
 
 }
 
 
-function act_info()
+function act_info(event)
 {
 
     if ($(this).hasClass("info_open"))
@@ -297,17 +297,29 @@ function act_info()
     {
         $(this).addClass("info_open");
         $(this).parent().addClass("info_open");
-        var o =
-        {
-            name: $(this).parent().parent().attr("font_name"),
-            family: $(this).parent().parent().attr("font_family"),
-            PostScriptName: $(this).parent().parent().attr("font_postscriptname"),
-            style: $(this).parent().parent().attr("font_style"),
+
+        var fid = $(this).parent().parent().attr("id").slice(3);
+        var o={
+
+
+            name: fontages.index(fid).name,
+            family: fontages.index(fid).family,
+            PostScriptName: fontages.index(fid).postScriptName,
+            style: fontages.index(fid).style,
+            lang: fontages.index(fid).tags_lang.join(),
+            com:fontages.index(fid).tags_com.join(),
+            weight:fontages.index(fid).tags_weight.join(),
+            user:fontages.index(fid).tags_user.join(),
+            type:fontages.index(fid).tags_type.join()
+
         };
 
         $(this).parent().after($('#tmpl_info_box').tmpl(o));
     }
 
+
+    $( ".info_box").on("click", function (){ return false;})
+    return false;
 }
 
 
@@ -360,14 +372,25 @@ function fontGetInc(name, family)
 
 var pool_com = [];
 var pool_lang = [];
+var pool_type = [];
+var pool_weight = [];
+var pool_user = [];
+
+
 var cc = 0;
 function tagFliter_barRefur()
 {
     pool_com = [];
     pool_lang = [];
+    pool_type = [];
+    pool_weight = []
+    pool_user = [];
 
     fontTagsToPool(fontages.list, "tags_com", pool_com);
     fontTagsToPool(fontages.list, "tags_lang", pool_lang);
+    fontTagsToPool(fontages.list, "tags_type", pool_type);
+    fontTagsToPool(fontages.list, "tags_weight", pool_weight);
+    fontTagsToPool(fontages.list, "tags_user", pool_user);
 
     //---------------------------------------
 
@@ -415,6 +438,13 @@ function chooserToHTML()
 
     chooserToHTML_bar(pool_lang, "#bar_lang>.bottom_bar", "la");
     chooserToHTML_bar(pool_com, "#bar_com>.bottom_bar", "co");
+    chooserToHTML_bar(pool_type, "#bar_type>.bottom_bar", "ty");
+    chooserToHTML_bar(pool_weight, "#bar_weight>.bottom_bar", "we");
+    chooserToHTML_bar(pool_user, "#bar_user>.bottom_bar", "us");
+
+
+
+
 
     function chooserToHTML_bar(pool, bar, barName)
     {
@@ -843,13 +873,28 @@ function nowLoad()
 
 
 
+
+
+
+
+
+
+
+
 $(document).on("change", ".edit_inl", function (e)
 {
     var fid = $(this).parent().parent().parent().parent().attr("id").slice(3);
     if (fid != undefined)
     {
+        if($(this).hasClass("edit_tags"))
+        {
+            fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value.split(",");
+        }
+        else
+        {
+            fontages.index(fid)[$(this).attr("inp_for")]=$(this)[0].value;
+        }
 
-        fontages.index(fid)[$(this).attr("inp_for")]=$(this)[0].value;
         nowSave();
         console.log(fontages.index(fid));
     }
