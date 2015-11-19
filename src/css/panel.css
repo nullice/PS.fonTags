@@ -388,6 +388,7 @@ body{
 .fontitem:hover .opbar
 {
     display: block;
+    z-index: 3;
 }
 
 
@@ -446,6 +447,7 @@ body{
     position: relative;
     margin-top: 12px;
 
+
     /*background-color: red;*/
     font-size: 8pt;
     color: #3174af;
@@ -466,6 +468,7 @@ body{
 .info_box ul{
 
     list-style: none;
+    padding-left: 15px;
 }
 
 
@@ -553,5 +556,58 @@ body{
     background-color: rgba(69, 70, 70, 0);
     color: inherit;
     font-size: inherit;
+}
 
+
+.filter_buttom {
+
+    position: fixed;
+    font-size: 10pt;
+    color: rgba(66, 67, 67, 0.72);
+    text-shadow: 0 1px 1px #fbfbfb;
+
+    display: block;
+    top: 18px;
+    left: 15px;
+}
+
+
+
+.filter_buttom:hover{
+    color: rgba(18, 94, 188, 0.95);
+}
+
+.top7{
+    margin-top: 7px;
+}
+
+.cantedit{
+    color: rgba(101, 103, 103, 0.76);
+}
+
+
+.addtag_but
+{
+    display: none;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0);
+
+}
+
+.addtag_but:hover{
+
+    color: #288edf;
+}
+
+li:hover .addtag_but
+{
+    /*display: inline;*/
+}
+
+
+li input:hover{
+
+    border-bottom: solid;
+    border-bottom-color: #6f86a3;
+    border-bottom-width: 1px;
 }

@@ -9,8 +9,24 @@ $(document).on('click',".bar_switch", function ()
         $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
     }, 100);
 
+});
+
+
+$(document).on('click',".filter_buttom", function ()
+{
+
+    $(".chosebar_box").toggleClass("hide");
+    $(".fontlist_box").toggleClass("top7");
+
+
+    setTimeout(function () {
+        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    }, 50);
 
 });
+
+
+
 
 
 $(window).resize(function ()

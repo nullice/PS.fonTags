@@ -168,6 +168,8 @@ function refurFontags()
 
             showfontages();
 
+
+
         }
     )
 }
@@ -177,7 +179,32 @@ function showfontages()
     fontagasToHTML(fontages);
     tagFliter_barRefur();
     chooserToHTML();
+    setTimeout(function () {
+        showOverHeightBut();
+    },2000);
 }
+
+function showOverHeightBut()
+{
+    console.log("showOverHeightBut");
+    $(".bottom_bar").each(function ()
+    {
+
+        if ($(this).get(0).scrollHeight > 25)
+        {
+            $(this).siblings().filter(".bar_switch").removeClass("hide");
+        }
+        else
+        {
+            $(this).siblings().filter(".bar_switch").addClass("hide");
+        }
+
+    })
+}
+
+
+
+
 
 function arrangeFontGroup()
 {
@@ -458,7 +485,7 @@ function chooserToHTML()
     chooserToHTML_bar(pool_type, "#bar_type>.bottom_bar", "ty");
     chooserToHTML_bar(pool_weight, "#bar_weight>.bottom_bar", "we");
     chooserToHTML_bar(pool_user, "#bar_user>.bottom_bar", "us");
-
+    showOverHeightBut();
 
     function chooserToHTML_bar(pool, bar, barName)
     {
@@ -660,9 +687,11 @@ function chooserToHTML()
         $("#" + e.attr("for")).get(0).checked = false;
         getbooList()
     }
-
-
 }
+
+
+
+
 
 
 function arryUnique(arry)
@@ -794,23 +823,7 @@ function refurDisplay()
     hideUnusedBar();
     showOverHeightBut();
 
-    function showOverHeightBut()
-    {
 
-        $(".bottom_bar").each(function ()
-        {
-
-            if ($(this).get(0).scrollHeight > 25)
-            {
-                $(this).siblings().filter(".bar_switch").removeClass("hide");
-            }
-            else
-            {
-                $(this).siblings().filter(".bar_switch").addClass("hide");
-            }
-
-        })
-    }
 
 
     //-------------
@@ -1002,6 +1015,8 @@ function nowLoad()
 
 }
 
+
+function 
 
 //------------------main---------
 

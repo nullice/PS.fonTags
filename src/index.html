@@ -20,12 +20,12 @@
                <li><span>名称: </span><input type="text" class="edit_inl edit_name" value="${name}" inp_for="name"/></li>
                <li><span>字族: </span><input type="text" class="edit_inl edit_family" value="${family}" inp_for="family"/></li>
                <li><span>样式: </span><input type="text" class="edit_inl edit_style" value="${style}" inp_for="style"/></li>
-               <li><span>PostScriptName: </span><span>${PostScriptName}</span></li>
-               <li><span>语言: </span><input type="text" class="edit_inl edit_tags" value="${lang}" inp_for="tags_lang"/></li>
-               <li><span>厂商: </span><input type="text" class="edit_inl edit_tags" value="${com}" inp_for="tags_com"/></li>
-               <li><span>类型: </span><input type="text" class="edit_inl edit_tags" value="${type}" inp_for="tags_type"/></li>
-               <li><span>字重: </span><input type="text" class="edit_inl edit_tags" value="${weight}" inp_for="tags_weight"/></li>
-               <li><span>自定义: </span><input type="text" class="edit_inl edit_tags" value="${user}" inp_for="tags_user"/></li>
+               <li><span>PostScriptName: </span><span class="cantedit">${PostScriptName}</span></li>
+               <li><span>语言: </span><input type="text" class="edit_inl edit_tags" value="${lang}" inp_for="tags_lang"/><span class="addtag_but">+</span></li>
+               <li><span>厂商: </span><input type="text" class="edit_inl edit_tags" value="${com}" inp_for="tags_com"/><span class="addtag_but">+</span></li>
+               <li><span>类型: </span><input type="text" class="edit_inl edit_tags" value="${type}" inp_for="tags_type"/><span class="addtag_but">+</span></li>
+               <li><span>字重: </span><input type="text" class="edit_inl edit_tags" value="${weight}" inp_for="tags_weight"/><span class="addtag_but">+</span></li>
+               <li><span>自定义: </span><input type="text" class="edit_inl edit_tags" value="${user}" inp_for="tags_user"/><span class="addtag_but">+</span></li>
            </ul>
       </div>
     </script>
@@ -95,12 +95,15 @@
 
     <div class="page1 tagpage" id="test">
 
-        <div class="chosebar" id="bar_lang">
-            <div class="title"><span>语言</span></div>
+        <div class="filter_buttom"><i class="fa fa-filter"></i></div>
 
-            <label for="dd" class="bar_switch"> <span>⋯</span></label>
-            <input type="checkbox" id="dd">
-            <div class="bottom_bar" >
+        <div class="chosebar_box">
+            <div class="chosebar" id="bar_lang">
+                <div class="title"><span>语言</span></div>
+
+                <label for="dd" class="bar_switch"> <span>⋯</span></label>
+                <input type="checkbox" id="dd">
+                <div class="bottom_bar" >
 
                     <input type="checkbox" id="ctag1" >
                     <label for="ctag1"> <button class="topcoat-button chooser" >中文</button> </label>
@@ -127,69 +130,61 @@
                     <label for="ctag8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
                 </div>
             </div>
-        <div class="chosebar" id="bar_com">
+            <div class="chosebar" id="bar_com">
                 <div class="title"><span>厂商</span></div>
 
                 <label for="dd2" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd2">
-                    <div class="bottom_bar" >
+                <div class="bottom_bar" >
 
 
-                        <input type="checkbox" id="ctagr1" >
-                        <label for="ctagr1"> <button class="topcoat-button chooser" >中文</button> </label>
+                    <input type="checkbox" id="ctagr1" >
+                    <label for="ctagr1"> <button class="topcoat-button chooser" >中文</button> </label>
 
-                        <input type="checkbox" id="ctagr2">
-                        <label for="ctagr2"> <button class="topcoat-button chooser" >英文</button> </label>
+                    <input type="checkbox" id="ctagr2">
+                    <label for="ctagr2"> <button class="topcoat-button chooser" >英文</button> </label>
 
-                        <input type="checkbox" id="ctagr3">
-                        <label for="ctagr3"> <button class="topcoat-button chooser" >日文</button> </label>
+                    <input type="checkbox" id="ctagr3">
+                    <label for="ctagr3"> <button class="topcoat-button chooser" >日文</button> </label>
 
-                        <input type="checkbox" id="ctagr4">
-                        <label for="ctagr4"> <button class="topcoat-button chooser" >fds</button> </label>
+                    <input type="checkbox" id="ctagr4">
+                    <label for="ctagr4"> <button class="topcoat-button chooser" >fds</button> </label>
 
-                        <input type="checkbox" id="ctagr5">
-                        <label for="ctagr5"> <button class="topcoat-button chooser" >SDFDDSF</button> </label>
+                    <input type="checkbox" id="ctagr5">
+                    <label for="ctagr5"> <button class="topcoat-button chooser" >SDFDDSF</button> </label>
 
-                        <input type="checkbox" id="ctagr6">
-                        <label for="ctagr6"> <button class="topcoat-button chooser" >dfgf个梵蒂冈</button> </label>
+                    <input type="checkbox" id="ctagr6">
+                    <label for="ctagr6"> <button class="topcoat-button chooser" >dfgf个梵蒂冈</button> </label>
 
-                        <input type="checkbox" id="ctagr7">
-                        <label for="ctagr7"> <button class="topcoat-button chooser" >SDAF的风格的发生过电饭锅的</button> </label>
+                    <input type="checkbox" id="ctagr7">
+                    <label for="ctagr7"> <button class="topcoat-button chooser" >SDAF的风格的发生过电饭锅的</button> </label>
 
-                        <input type="checkbox" id="ctagr8">
-                        <label for="ctagr8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
-                    </div>
+                    <input type="checkbox" id="ctagr8">
+                    <label for="ctagr8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
                 </div>
-        <div class="chosebar" id="bar_type">
-            <div class="title"><span>类型</span></div>
+            </div>
+            <div class="chosebar" id="bar_type">
+                <div class="title"><span>类型</span></div>
 
-            <label for="dd3" class="bar_switch"> <span>⋯</span></label>
-            <input type="checkbox" id="dd3">
-            <div class="bottom_bar" ></div>
+                <label for="dd3" class="bar_switch"> <span>⋯</span></label>
+                <input type="checkbox" id="dd3">
+                <div class="bottom_bar" ></div>
+            </div>
+            <div class="chosebar" id="bar_weight">
+                <div class="title"><span>字重</span></div>
+
+                <label for="dd4" class="bar_switch"> <span>⋯</span></label>
+                <input type="checkbox" id="dd4">
+                <div class="bottom_bar" ></div>
+            </div>
+            <div class="chosebar" id="bar_user">
+                <div class="title"><span>自定义</span></div>
+
+                <label for="dd5" class="bar_switch"> <span>⋯</span></label>
+                <input type="checkbox" id="dd5">
+                <div class="bottom_bar" ></div>
+            </div>
         </div>
-
-        <div class="chosebar" id="bar_weight">
-            <div class="title"><span>字重</span></div>
-
-            <label for="dd4" class="bar_switch"> <span>⋯</span></label>
-            <input type="checkbox" id="dd4">
-            <div class="bottom_bar" ></div>
-        </div>
-
-        <div class="chosebar" id="bar_user">
-            <div class="title"><span>自定义</span></div>
-
-            <label for="dd5" class="bar_switch"> <span>⋯</span></label>
-            <input type="checkbox" id="dd5">
-            <div class="bottom_bar" ></div>
-        </div>
-
-
-
-
-
-
-
 
         <div class="midbox">
             <div class="fontlist_box">
@@ -333,6 +328,10 @@
 
 
 </div>
+
+
+
+
 
 <!--<script src="js/vue.min.js"></script>-->
 <script src="js/main.js"></script>
