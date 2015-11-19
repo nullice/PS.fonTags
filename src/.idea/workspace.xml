@@ -23,11 +23,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.54635566">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-27.166666">
-                  <caret line="574" column="5" selection-start-line="574" selection-start-column="5" selection-end-line="574" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.2591687">
+                  <caret line="492" column="22" selection-start-line="492" selection-start-column="22" selection-end-line="492" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -36,8 +36,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.821429">
-                  <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+                <state vertical-scroll-proportion="-4.534483">
+                  <caret line="295" column="102" selection-start-line="295" selection-start-column="100" selection-end-line="295" selection-end-column="102" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,8 +57,8 @@
           <file leaf-file-name="panel.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/panel.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-96.0">
-                  <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+                <state vertical-scroll-proportion="-7.9333334">
+                  <caret line="482" column="15" selection-start-line="482" selection-start-column="15" selection-end-line="482" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -74,11 +74,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ui.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ui.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/ui.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.14669926">
-                  <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+                <state vertical-scroll-proportion="-6.0">
+                  <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -151,10 +151,10 @@
         <option value="$PROJECT_DIR$/jsx/jsx_main.js" />
         <option value="$PROJECT_DIR$/jsx/jsx_main.jsx" />
         <option value="$PROJECT_DIR$/UserData/fontages.json" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/css/panel.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/ui.js" />
+        <option value="$PROJECT_DIR$/css/panel.css" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -469,7 +469,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -833,36 +833,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserData/fontages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="1141" selection-start-line="0" selection-start-column="1141" selection-end-line="0" selection-end-column="1141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsx/jsx_main.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc;n#getFontsJson#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../CEP_HTML_Test_Extension/html/NativeFunction.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5840336">
           <caret line="194" column="51" selection-start-line="194" selection-start-column="51" selection-end-line="194" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/panel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-96.0">
-          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -875,10 +849,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/panel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9333334">
+          <caret line="482" column="15" selection-start-line="482" selection-start-column="15" selection-end-line="482" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.821429">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.534483">
+          <caret line="295" column="102" selection-start-line="295" selection-start-column="100" selection-end-line="295" selection-end-column="102" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -894,18 +884,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/UserData/fontages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.166666">
-          <caret line="574" column="5" selection-start-line="574" selection-start-column="5" selection-end-line="574" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.2887139">
+          <caret line="0" column="997" selection-start-line="0" selection-start-column="997" selection-end-line="0" selection-end-column="997" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ui.js">
+    <entry file="file://$PROJECT_DIR$/jsx/jsx_main.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14669926">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc;n#getFontsJson#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2591687">
+          <caret line="492" column="22" selection-start-line="492" selection-start-column="22" selection-end-line="492" selection-end-column="22" />
           <folding />
         </state>
       </provider>

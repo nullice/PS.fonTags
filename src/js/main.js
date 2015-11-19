@@ -422,20 +422,29 @@ function tagFliter_barRefur()
     function tagsToPool(tags, pool)
     {
         var hash = {};
-        if (0 == tags.length)
+        if (0 == tags.length )
         {
             tags.push("无");
-
         }
+        if(1 == tags.length && tags[0]== "")
+        {
+            tags[0]="无";
+        }
+
+
 
 
         for (var i = 0; i < tags.length; i++)
         {
-            if (!hash[tags[i]])
+            if(tags[i] != "")
             {
-                hash[tags[i]] = true;
-                pool.push(tags[i]);
+                if (!hash[tags[i]])
+                {
+                    hash[tags[i]] = true;
+                    pool.push(tags[i]);
+                }
             }
+
         }
     }
 
@@ -467,6 +476,21 @@ function chooserToHTML()
             };
 
             $(bar).append($("#tmpl_bar_item").tmpl(o));
+        }
+
+
+        $(bar).children().filter(".chooser_input").each(function ()
+        {
+            $(this)[0].checked = true;
+        })
+
+        if (pool.length == 1 && pool[0] == "无")
+        {
+            $(bar).parent().addClass("hide");
+
+        }else
+        {
+            $(bar).parent().removeClass("hide");
         }
 
     }
@@ -705,12 +729,21 @@ function getbooList()
     }
 
 
+
     console.log(booList_lang);
     console.log(booList_com);
     console.log(booList_type);
     console.log(booList_weight);
     console.log(booList_user);
-    refurDisplay()
+    console.log("---------------------");
+
+    refurDisplay();
+
+    console.log(booList_lang);
+    console.log(booList_com);
+    console.log(booList_type);
+    console.log(booList_weight);
+    console.log(booList_user);
 }
 
 
@@ -719,10 +752,15 @@ function refurDisplay()
     var visible = 0;
 
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
+    console.log(fontages.list[0]._visiable +"tags_lang");
     dealFontDisplay(fontages.list, "tags_com", booList_com);
+    console.log(fontages.list[0]._visiable +"tags_com");
     dealFontDisplay(fontages.list, "tags_type", booList_type);
+    console.log(fontages.list[0]._visiable +"tags_type");
     dealFontDisplay(fontages.list, "tags_weight", booList_weight);
+    console.log(fontages.list[0]._visiable +"tags_weight");
     dealFontDisplay(fontages.list, "tags_user", booList_user);
+    console.log(fontages.list[0]._visiable +"tags_user");
 
     applyVisible(fontages.list);
     hideEmptyGourp();

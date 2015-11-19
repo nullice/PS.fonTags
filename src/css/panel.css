@@ -125,9 +125,9 @@ body{
 }
 
 
-:checked+label .chooser_all{
-    background-color: #b948dc;
-    border-color: #8b31b6;
+:checked+label .chooser_all {
+    background-color: rgb(130, 144, 170);
+    border-color: rgb(93, 119, 134);
 }
 
 
@@ -496,6 +496,8 @@ body{
     background-color: rgb(210, 242, 255);
     box-shadow: 0 1px 0px 1px rgb(89, 195, 255), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
 }
+
+
 
 
 
