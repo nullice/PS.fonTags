@@ -3,6 +3,7 @@
  */
 var cs = new CSInterface();
 var g_vmod = 1;
+var g_fsize = 14;
 
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
@@ -1037,6 +1038,9 @@ function rufSetting()
     }
 
 
+    $(".srang").text(g_fsize);
+    $(".fontitem").css("font-size", g_fsize);
+    $(".sizeranger>input").val(g_fsize);
 
 
 }
@@ -1057,9 +1061,13 @@ $(document).on("change", ".edit_inl", function (e)
         else
         {
             fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value;
+            $("#fid"+fid).attr("font_"+$(this).attr("inp_for"),$(this)[0].value);
+
         }
 
         nowSave();
+        rufSetting();
+        reloadChooserBar();
         console.log(fontages.index(fid));
     }
 });

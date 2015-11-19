@@ -40,6 +40,8 @@ $('.sizeranger').on('mouseup', function ()
 
     $(".srang").text($(".sizeranger>input").val());
     $(".fontitem").css("font-size", +$(".sizeranger>input").val());
+    g_fsize= +$(".sizeranger>input").val();
+
 });
 
 
@@ -69,7 +71,7 @@ $('.preview_text').on("input", fontlistDisplayFromPreview);
 
 function fontlistDisplayFromFamily()
 {
-    g_vmod=1;
+    g_vmod=2;
 
     $(".preview_text").css("display", "none");
     $(".fontitem:not(.groupItem)>span").text(function ()
@@ -88,7 +90,7 @@ function fontlistDisplayFromFamily()
 
 function fontlistDisplayFromName()
 {
-    g_vmod=0;
+    g_vmod=1;
 
     $(".preview_text").css("display", "none");
     $(".fontitem:not(.groupItem)>span").text(function ()
