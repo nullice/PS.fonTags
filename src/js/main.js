@@ -422,21 +422,19 @@ function tagFliter_barRefur()
     function tagsToPool(tags, pool)
     {
         var hash = {};
-        if (0 == tags.length )
+        if (0 == tags.length)
         {
             tags.push("无");
         }
-        if(1 == tags.length && tags[0]== "")
+        if (1 == tags.length && tags[0] == "")
         {
-            tags[0]="无";
+            tags[0] = "无";
         }
-
-
 
 
         for (var i = 0; i < tags.length; i++)
         {
-            if(tags[i] != "")
+            if (tags[i] != "")
             {
                 if (!hash[tags[i]])
                 {
@@ -488,7 +486,8 @@ function chooserToHTML()
         {
             $(bar).parent().addClass("hide");
 
-        }else
+        }
+        else
         {
             $(bar).parent().removeClass("hide");
         }
@@ -593,7 +592,7 @@ function chooserToHTML()
     //------标签按钮------------------------
 
     $(document).on();
-    $(".chooser_input").on("change", getbooList);
+    $(".chooser_input:not(.input_all)").on("change", getbooList);
 
     $(".chooser_input+label").bind("contextmenu", function (e)
     {
@@ -611,13 +610,16 @@ function chooserToHTML()
 
             if ($("#" + $(this).attr("for")).get(0).checked)
             {
-                barChooseReverse($(this));
+                // 反选 barChooseReverse($(this));
+                barChooseUnique($(this));
             }
             else
             {
                 barChooseUnique($(this));
             }
         }
+
+
     });
 
     $(".input_all").on("change", function ()
@@ -630,8 +632,11 @@ function chooserToHTML()
         {
             $(this).get(0).checked = bool;
         });
+
         getbooList()
     });
+
+
 
 
     function barChooseUnique(e)
@@ -729,7 +734,6 @@ function getbooList()
     }
 
 
-
     console.log(booList_lang);
     console.log(booList_com);
     console.log(booList_type);
@@ -739,11 +743,34 @@ function getbooList()
 
     refurDisplay();
 
+
+    input_allRef();
     console.log(booList_lang);
     console.log(booList_com);
     console.log(booList_type);
     console.log(booList_weight);
     console.log(booList_user);
+
+
+
+
+
+    function input_allRef()
+    {
+        console.log($(this).siblings().filter(".chooser_input"));
+        $(".input_all").each(function ()
+        {
+            var bool = true;
+            $(this).siblings().filter(".chooser_input").each(function ()
+            {
+                bool *= $(this).get(0).checked;
+            });
+
+            $(this)[0].checked = bool;
+
+        })
+    }
+
 }
 
 
@@ -752,15 +779,15 @@ function refurDisplay()
     var visible = 0;
 
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
-    console.log(fontages.list[0]._visiable +"tags_lang");
+    console.log(fontages.list[0]._visiable + "tags_lang");
     dealFontDisplay(fontages.list, "tags_com", booList_com);
-    console.log(fontages.list[0]._visiable +"tags_com");
+    console.log(fontages.list[0]._visiable + "tags_com");
     dealFontDisplay(fontages.list, "tags_type", booList_type);
-    console.log(fontages.list[0]._visiable +"tags_type");
+    console.log(fontages.list[0]._visiable + "tags_type");
     dealFontDisplay(fontages.list, "tags_weight", booList_weight);
-    console.log(fontages.list[0]._visiable +"tags_weight");
+    console.log(fontages.list[0]._visiable + "tags_weight");
     dealFontDisplay(fontages.list, "tags_user", booList_user);
-    console.log(fontages.list[0]._visiable +"tags_user");
+    console.log(fontages.list[0]._visiable + "tags_user");
 
     applyVisible(fontages.list);
     hideEmptyGourp();
