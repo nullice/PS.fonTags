@@ -1048,7 +1048,6 @@ function rufSetting()
 
 //------------------main---------
 
-
 $(document).on("change", ".edit_inl", function (e)
 {
     var fid = $(this).parent().parent().parent().parent().attr("id").slice(3);
