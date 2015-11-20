@@ -5,6 +5,9 @@ var cs = new CSInterface();
 var g_vmod = 1;
 var g_fsize = 14;
 
+var g_pickfont = {};
+var g_pickgroup = {};
+
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
 {
@@ -162,13 +165,16 @@ Fontages.prototype.removeFontFromGroup = function (fid)
 {
 
     var o = this.index(fid, true);
-    if(o != undefined)
+    if (o != undefined)
     {
         if (o.group != undefined)
         {
             var font = $.extend(true, {}, this.index(fid));
             console.log(font);
-            this.list[o.group].fonts.splice(o.font,1);
+            this.list[o.group].fonts.splice(o.font, 1);
+            this.list.splice(o.group+1,0,font);
+            this.list[o.group].length--;
+
             console.log(o);
         }
     }
@@ -176,7 +182,6 @@ Fontages.prototype.removeFontFromGroup = function (fid)
     {
         console.log("Index 未找到");
     }
-
 
 
 }
@@ -533,6 +538,7 @@ function chooserToHTML()
     chooserToHTML_bar(pool_weight, "#bar_weight>.bottom_bar", "we");
     chooserToHTML_bar(pool_user, "#bar_user>.bottom_bar", "us");
     showOverHeightBut();
+    refPickfont();
 
     function chooserToHTML_bar(pool, bar, barName)
     {
@@ -587,7 +593,7 @@ function chooserToHTML()
     });
 
 
-    $(document).on("click", ".fontitem:not(.groupItem)",
+    $( ".fontitem:not(.groupItem)").on("click",
         function ()
         {
             cs.evalScript(
@@ -597,7 +603,7 @@ function chooserToHTML()
     );
 
 
-    $(document).on("mousedown", ".fontitem", function (e)
+    $(".fontitem").on("mousedown", function (e)
         {
             if (e.which == 3)
             {
@@ -615,10 +621,12 @@ function chooserToHTML()
                     if (count > 0)
                     {
                         $(this).addClass("pickG");
+                        refPickfont();
                     }
                     else
                     {
                         $(this).removeClass("pickG");
+                        refPickfont();
                     }
                 }
                 else
@@ -633,6 +641,7 @@ function chooserToHTML()
                         if ($(this).parent().children().hasClass("pick"))
                         {
                             $(this).parent().find(".groupItem").addClass("pickG");
+
                         }
                         else
                         {
@@ -640,8 +649,6 @@ function chooserToHTML()
                         }
                     }
                 }
-
-
             }
 
             function fontItemPick(e)
@@ -649,16 +656,30 @@ function chooserToHTML()
                 if (e.hasClass("pick"))
                 {
                     e.removeClass("pick");
+                    refPickfont();
                     return 0;
                 }
                 else
                 {
                     e.addClass("pick");
+                    refPickfont();
                     return 1;
                 }
             }
         }
     );
+
+    function refPickfont()
+    {
+        g_pickfont = {};
+        $(".pick").each(function ()
+        {
+            g_pickfont[$(this).attr("id").slice(3)] = $(this).attr("id").slice(3);
+            var len = Object.getOwnPropertyNames(g_pickfont).length;
+            $(".picknumber").text(len);
+        });
+
+    }
 
     //------------------------
 
@@ -1131,4 +1152,21 @@ if (nowLoad())
 else
 {
     refurFontags();
+}
+//-------选中字体操作--------------------------------
+
+
+$(document).on("click",".act_out_group",function(){
+
+    pf_dismissFonts();
+    showfontages();
+});
+
+
+function pf_dismissFonts()
+{//Object.getOwnPropertyNames(g_pickfont).length
+    for (var i in g_pickfont)
+    {
+        fontages.removeFontFromGroup( g_pickfont[i])
+    }
 }
