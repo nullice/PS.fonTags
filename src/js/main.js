@@ -144,10 +144,12 @@ Fontages.prototype.createGroup = function (name, pos)
     if (pos == undefined)
     {
         this.list[this.list.length] = fontGroup;
+        return(this.list.length);
     }
     else
     {
         this.list.splice(pos, 0, fontGroup);
+        return(pos);
     }
 
 };
@@ -1192,8 +1194,14 @@ else
 
 $(document).on("click", ".act_out_group", function ()
 {
-
     pf_dismissFonts();
+    showfontages();
+});
+
+
+$(document).on("click", ".act_creat_group", function ()
+{
+    pf_newGroup();
     showfontages();
 });
 
@@ -1210,6 +1218,7 @@ function pf_dismissFonts()
 function pf_newGroup()
 {
     var d = 0;
+    var pos = 0;
     for (var i in g_pickfont)
     {
         if (0 == d)
@@ -1217,16 +1226,17 @@ function pf_newGroup()
             var o = fontages.index(i, true);
             if (o.group == undefined)
             {
-                fontages.createGroup(fontages.index(i).name, o.font);
+                pos = fontages.createGroup(fontages.index(i).name, o.font);
             }
             else
             {
-                fontages.createGroup(fontages.index(i).name);
+                pos = fontages.createGroup(fontages.index(i).name);
             }
         }
-
-        fontages.moveFontToGroup(g_pickfont[i])
         d++;
+
+        fontages.moveFontToGroup(g_pickfont[i],pos)
+
     }
 
 
