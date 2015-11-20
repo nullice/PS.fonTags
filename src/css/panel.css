@@ -505,8 +505,8 @@ body{
 
 
 .editmod{
-    display: none;
-    /*display: table;*/
+    /*display: none;*/
+    display: table;
     position: absolute;
     width: 100%;
     heigth:130px;
@@ -525,13 +525,16 @@ body{
     padding: 1px 5px 1px 5px ;
 
 }
+
+
 .picknumber
 {
     margin: 10px 2px 2px 2px;
     color: #335fa1;
     font-size: 12pt;
-
 }
+
+
 
 .opbox{
     position: relative;

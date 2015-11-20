@@ -133,6 +133,24 @@ Fontages.prototype.createGroup = function (name)
 };
 
 
+Fontages.prototype.ins = function (name)
+{
+    var fontGroup =
+    {
+        groupName: name,
+        fonts: [],
+        _type: "group"
+    };
+    this.list[this.list.length] = fontGroup;
+};
+
+
+
+
+
+
+
+
 //----------------------------------------------------fromJSX
 
 
