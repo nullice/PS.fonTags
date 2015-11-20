@@ -173,7 +173,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
             console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
             this.list.splice(o.group+1,0,font);
-            this.list[o.group].length--;
+
 
             console.log(o);
         }
@@ -182,9 +182,36 @@ Fontages.prototype.removeFontFromGroup = function (fid)
     {
         console.log("Index 未找到");
     }
-
-
 }
+
+
+Fontages.prototype.moveFontToGroup = function (fid,group)
+{
+
+    var o = this.index(fid, true);
+    if (o != undefined)
+    {
+        if (o.group != undefined)
+        {
+            var font = $.extend(true, {}, this.index(fid));
+            this.list[o.group].fonts.splice(o.font, 1);
+            this.list[group].fonts.push(font);
+
+        }else
+        {
+            var font = $.extend(true, {}, this.index(fid));
+            this.list[o.group].fonts.splice(o.font, 1);
+            this.list[group].fonts.push(font);
+
+        }
+    }
+    else
+    {
+        console.log("Index 未找到");
+    }
+}
+
+
 
 
 //----------------------------------------------------fromJSX
@@ -1169,4 +1196,15 @@ function pf_dismissFonts()
     {
         fontages.removeFontFromGroup( g_pickfont[i])
     }
+}
+
+
+function pf_newGroup()
+{
+    for (var i in g_pickfont)
+    {
+        fontages.removeFontFromGroup( g_pickfont[i])
+    }
+
+
 }
