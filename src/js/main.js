@@ -133,7 +133,7 @@ Fontages.prototype.restVisiable = function ()
     }
 };
 
-Fontages.prototype.createGroup = function (name)
+Fontages.prototype.createGroup = function (name, pos)
 {
     var fontGroup =
     {
@@ -141,7 +141,15 @@ Fontages.prototype.createGroup = function (name)
         fonts: [],
         _type: "group"
     };
-    this.list[this.list.length] = fontGroup;
+    if (pos == undefined)
+    {
+        this.list[this.list.length] = fontGroup;
+    }
+    else
+    {
+        this.list.splice(pos, 0, fontGroup);
+    }
+
 };
 
 
@@ -172,7 +180,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
             var font = $.extend(true, {}, this.index(fid));
             console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
-            this.list.splice(o.group+1,0,font);
+            this.list.splice(o.group + 1, 0, font);
 
 
             console.log(o);
@@ -185,7 +193,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
 }
 
 
-Fontages.prototype.moveFontToGroup = function (fid,group)
+Fontages.prototype.moveFontToGroup = function (fid, group)
 {
 
     var o = this.index(fid, true);
@@ -197,7 +205,8 @@ Fontages.prototype.moveFontToGroup = function (fid,group)
             this.list[o.group].fonts.splice(o.font, 1);
             this.list[group].fonts.push(font);
 
-        }else
+        }
+        else
         {
             var font = $.extend(true, {}, this.index(fid));
             this.list.splice(o.font, 1);
@@ -210,8 +219,6 @@ Fontages.prototype.moveFontToGroup = function (fid,group)
         console.log("Index 未找到");
     }
 }
-
-
 
 
 //----------------------------------------------------fromJSX
@@ -620,7 +627,7 @@ function chooserToHTML()
     });
 
 
-    $( ".fontitem:not(.groupItem)").on("click",
+    $(".fontitem:not(.groupItem)").on("click",
         function ()
         {
             cs.evalScript(
@@ -1183,7 +1190,8 @@ else
 //-------选中字体操作--------------------------------
 
 
-$(document).on("click",".act_out_group",function(){
+$(document).on("click", ".act_out_group", function ()
+{
 
     pf_dismissFonts();
     showfontages();
@@ -1194,18 +1202,31 @@ function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
     {
-        fontages.removeFontFromGroup( g_pickfont[i])
+        fontages.removeFontFromGroup(g_pickfont[i])
     }
 }
 
 
 function pf_newGroup()
 {
-    var i=0;
+    var d = 0;
     for (var i in g_pickfont)
     {
-        
-        fontages.moveFontToGroup( g_pickfont[i])
+        if (0 == d)
+        {
+            var o = fontages.index(i, true);
+            if (o.group == undefined)
+            {
+                fontages.createGroup(fontages.index(i).name, o.font);
+            }
+            else
+            {
+                fontages.createGroup(fontages.index(i).name);
+            }
+        }
+
+        fontages.moveFontToGroup(g_pickfont[i])
+        d++;
     }
 
 
