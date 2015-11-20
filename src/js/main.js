@@ -70,8 +70,9 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
     this.list[this.list.length] = font;
 };
 
-Fontages.prototype.index = function (id)
+Fontages.prototype.index = function (id, indexmod)
 {
+    var nowGroup;
     return scanByFontId(this.list, id);
 
     function scanByFontId(list, id)
@@ -84,12 +85,19 @@ Fontages.prototype.index = function (id)
 
                 if (list[i]._id == id)
                 {
+                    if (indexmod)
+                    {
+                        return {font: i, group: nowGroup};
+                    }
                     return list[i];
                 }
             }
             else if (list[i]._type == "group")
             {
+
+                nowGroup = i;
                 var result = scanByFontId(list[i].fonts, id);
+                nowGroup = undefined;
                 if (result != undefined)
                 {
                     return result;
@@ -97,9 +105,10 @@ Fontages.prototype.index = function (id)
 
             }
         }
-    }
 
-};
+    }
+}
+
 
 Fontages.prototype.restVisiable = function ()
 {
@@ -133,22 +142,44 @@ Fontages.prototype.createGroup = function (name)
 };
 
 
-Fontages.prototype.ins = function (name)
+Fontages.prototype.dismissEmptyGroup = function (group)
 {
-    var fontGroup =
+    for (var i = 0; i < this.length; i++)
     {
-        groupName: name,
-        fonts: [],
-        _type: "group"
-    };
-    this.list[this.list.length] = fontGroup;
-};
+        if (list[i]._type == "group")
+        {
+            if (list[i].fonts.length <= 0)
+            {
+                this.list.splice(i, 1);
+                i--;
+            }
+        }
+
+    }
+}
+
+Fontages.prototype.removeFontFromGroup = function (fid)
+{
+
+    var o = this.index(fid, true);
+    if(o != undefined)
+    {
+        if (o.group != undefined)
+        {
+            var font = $.extend(true, {}, this.index(fid));
+            console.log(font);
+            this.list[o.group].fonts.splice(o.font,1);
+            console.log(o);
+        }
+    }
+    else
+    {
+        console.log("Index 未找到");
+    }
 
 
 
-
-
-
+}
 
 
 //----------------------------------------------------fromJSX
@@ -1078,7 +1109,7 @@ $(document).on("change", ".edit_inl", function (e)
         else
         {
             fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value;
-            $("#fid"+fid).attr("font_"+$(this).attr("inp_for"),$(this)[0].value);
+            $("#fid" + fid).attr("font_" + $(this).attr("inp_for"), $(this)[0].value);
 
         }
 
