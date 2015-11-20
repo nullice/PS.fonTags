@@ -200,7 +200,7 @@ Fontages.prototype.moveFontToGroup = function (fid,group)
         }else
         {
             var font = $.extend(true, {}, this.index(fid));
-            this.list[o.group].fonts.splice(o.font, 1);
+            this.list.splice(o.font, 1);
             this.list[group].fonts.push(font);
 
         }
@@ -1201,9 +1201,11 @@ function pf_dismissFonts()
 
 function pf_newGroup()
 {
+    var i=0;
     for (var i in g_pickfont)
     {
-        fontages.removeFontFromGroup( g_pickfont[i])
+        
+        fontages.moveFontToGroup( g_pickfont[i])
     }
 
 
