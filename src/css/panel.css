@@ -522,24 +522,44 @@ body{
 .act_out_group
 {
     display: inline-block;
-    margin: 4px 2px 10px 2px;
+    margin: 10px 2px 4px 2px;
     font-size: 10pt;
-    padding: 1px 5px 1px 5px ;
+    padding: 0px 5px 0px 5px ;
 
 }
 
 .gname_edit
 {
-
+    border-width: 0;
+    border-bottom: solid;
+    border-bottom-color: #6f86a3;
+    border-bottom-width: 1px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #377D9D;
+    font-family: inherit;
 
 }
 
+
+.finf span{
+    font-size: 12px;
+    color: #92999d;
+}
 .picknumber
 {
     display: inline-block;
-    margin: 10px 2px 2px 2px;
-    color: #335fa1;
-    font-size: 12pt;
+    margin: 13px 10px 7px 2px;
+    /* color: #335fa1; */
+    /* font-size: 12pt; */
+    padding: 1px 3px;
+    text-align: center;
+    top: 20%;
+    color: white;
+    right: 30px;
+    border-radius: 3px;
+    font-family: "Helvetica", serif;
+    font-size: 12px;
+    background-color: rgba(53, 36, 255, 0.55);
 }
 
 
