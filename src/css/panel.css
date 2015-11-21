@@ -501,7 +501,11 @@ body{
 }
 
 
+.hide{
+    width: 0;
+    height: 0;
 
+}
 
 
 .editmod{
@@ -515,6 +519,9 @@ body{
     text-align: center;
     z-index: 4;
 
+    border-top-color: rgba(255, 255, 255, 0.42);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.22);
+    transition: all .8s;
 }
 
 .act_creat_group,
@@ -591,7 +598,8 @@ body{
     font-size: inherit;
 }
 
-
+.eop_buttom,
+.spead_buttom,
 .filter_buttom {
 
     position: fixed;
@@ -600,12 +608,32 @@ body{
     text-shadow: 0 1px 1px #fbfbfb;
 
     display: block;
-    top: 18px;
     left: 15px;
+    padding: 0 4px 0 4px;
+    top: 7px;
+    z-index: 3;
 }
 
+.eop_buttom,
+.spead_buttom{
 
+    right: 0px;
+    left: auto;
+    width: 12px;
+    margin: 4px;
+    top: -18px;
+    display: block;
+    position: absolute;
+}
 
+.eop_buttom{
+    right: 20px;
+    font-size: 11px;
+    top: -16px;
+}
+
+.eop_buttom:hover,
+.spead_buttom:hover,
 .filter_buttom:hover{
     color: rgba(18, 94, 188, 0.95);
 }
@@ -657,6 +685,9 @@ li input:hover{
 
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.22),inset 0px 1px 1px 0px rgba(244, 244, 244, 0.75);
     bottom: 90px;
+
+    max-height: 90%;
+    overflow-y: scroll;
 
     color: #5d5d5d;
     font-size: 13px;

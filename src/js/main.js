@@ -373,13 +373,16 @@ function fontagasToHTML(fontagesIn)
         {
             groupCounter++;
             var groupHtml = "";
+            var mid = fontagesIn.list[i].fonts.length/2;
+            mid =Math.floor(mid);
+
             var o =
             {
                 group_id: groupCounter,
-                font_name: fontagesIn.list[i].fonts[0].name,
-                font_family: fontagesIn.list[i].fonts[0].family,
-                font_postscriptname: fontagesIn.list[i].fonts[0].postScriptName,
-                group_style: " '" + fontagesIn.list[i].fonts[0].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
+                font_name: fontagesIn.list[i].fonts[mid].name,
+                font_family: fontagesIn.list[i].fonts[mid].family,
+                font_postscriptname: fontagesIn.list[i].fonts[mid].postScriptName,
+                group_style: " '" + fontagesIn.list[i].fonts[mid].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
 
                 font_group_name: fontagesIn.list[i].groupName,
                 font_number: fontagesIn.list[i].fonts.length
@@ -399,6 +402,94 @@ function fontagasToHTML(fontagesIn)
     }
 
     $(".act_info").on("click", act_info);
+
+    $(".fontitem").bind("contextmenu", function (e)
+    {
+        return false;
+    });
+
+
+    $(".fontitem:not(.groupItem)").on("click",
+        function ()
+        {
+            cs.evalScript(
+                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "')"
+            )
+        }
+    );
+
+
+    $(".fontitem").on("mousedown", function (e)
+        {
+            if (e.which == 3)
+            {
+                if ($(this).hasClass("groupItem"))
+                {
+
+                    var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
+                    var count = 0;
+                    console.log(ev);
+
+                    ev.each(function ()
+                    {
+                        count += fontItemPick($(this));
+                    });
+                    if (count > 0)
+                    {
+                        $(this).addClass("pickG");
+
+                        g_pickLastGroup = fontages.index($(this).parent().siblings().attr("id").slice(3), true).group;
+                        g_pickLastGroup_element = $(this);
+                        refPickfont();
+                    }
+                    else
+                    {
+                        $(this).removeClass("pickG");
+                        g_pickLastGroup = -1;
+                        g_pickLastGroup_element = -1;
+                        refPickfont();
+                    }
+                }
+                else
+                {
+
+                    fontItemPick($(this));
+
+                    if ($(this).parent().hasClass("group"))
+                    {
+
+                        //console.log($(this).parent().children().filter(".groupItem"));
+                        if ($(this).parent().children().hasClass("pick"))
+                        {
+                            $(this).parent().find(".groupItem").addClass("pickG");
+
+                        }
+                        else
+                        {
+                            $(this).parent().find(".groupItem").removeClass("pickG");
+                        }
+                    }
+                }
+            }
+
+            function fontItemPick(e)
+            {
+                if (e.hasClass("pick"))
+                {
+                    e.removeClass("pick");
+                    refPickfont();
+                    return 0;
+                }
+                else
+                {
+                    e.addClass("pick");
+                    refPickfont();
+                    return 1;
+                }
+            }
+        }
+    );
+
 
 }
 
@@ -627,120 +718,11 @@ function chooserToHTML()
         });
 
 
-    $(".fontitem").bind("contextmenu", function (e)
-    {
-        return false;
-    });
-
-
-    $(".fontitem:not(.groupItem)").on("click",
-        function ()
-        {
-            cs.evalScript(
-                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "')"
-            )
-        }
-    );
-
-
-    $(".fontitem").on("mousedown", function (e)
-        {
-            if (e.which == 3)
-            {
-
-                if ($(this).hasClass("groupItem"))
-                {
-
-                    var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
-                    var count = 0;
-
-                    ev.each(function ()
-                    {
-                        count += fontItemPick($(this));
-                    });
-                    if (count > 0)
-                    {
-                        $(this).addClass("pickG");
-
-                        g_pickLastGroup = fontages.index($(this).parent().siblings().attr("id").slice(3), true).group;
-                        g_pickLastGroup_element = $(this);
-                        refPickfont();
-                    }
-                    else
-                    {
-                        $(this).removeClass("pickG");
-                        g_pickLastGroup = -1;
-                        g_pickLastGroup_element = -1;
-                        refPickfont();
-                    }
-                }
-                else
-                {
-
-                    fontItemPick($(this));
-
-                    if ($(this).parent().hasClass("group"))
-                    {
-
-                        //console.log($(this).parent().children().filter(".groupItem"));
-                        if ($(this).parent().children().hasClass("pick"))
-                        {
-                            $(this).parent().find(".groupItem").addClass("pickG");
-
-                        }
-                        else
-                        {
-                            $(this).parent().find(".groupItem").removeClass("pickG");
-                        }
-                    }
-                }
-            }
-
-            function fontItemPick(e)
-            {
-                if (e.hasClass("pick"))
-                {
-                    e.removeClass("pick");
-                    refPickfont();
-                    return 0;
-                }
-                else
-                {
-                    e.addClass("pick");
-                    refPickfont();
-                    return 1;
-                }
-            }
-        }
-    );
-
-    function refPickfont()
-    {
-        g_pickfont = {};
-        $(".pick").each(function ()
-        {
-            g_pickfont[$(this).attr("id").slice(3)] = $(this).attr("id").slice(3);
-            var len = Object.getOwnPropertyNames(g_pickfont).length;
-            $(".picknumber").text(len);
-        });
-
-        if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
-        {
-            $(".gname_edit").val(fontages.list[g_pickLastGroup].groupName);
-        }
-        else
-        {
-            $(".gname_edit").val("");
-        }
-
-    }
-
     //------------------------
 
 
     //------标签按钮------------------------
 
-    $(document).on();
     $(".chooser_input:not(.input_all)").on("change", getbooList);
 
     $(".chooser_input+label").bind("contextmenu", function (e)
@@ -810,6 +792,38 @@ function chooserToHTML()
 }
 
 
+function refPickfont()
+{
+    g_pickfont = {};
+    $(".pick").each(function ()
+    {
+        g_pickfont[$(this).attr("id").slice(3)] = $(this).attr("id").slice(3);
+    });
+
+    var len = Object.getOwnPropertyNames(g_pickfont).length;
+    $(".picknumber").text(len);
+    if(len>0)
+    {
+        $(".editmod").css("display","table");
+    }else
+    {
+        $(".editmod").css("display","none");;
+    }
+
+
+    if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
+    {
+        $(".gname_edit").val(fontages.list[g_pickLastGroup].groupName);
+    }
+    else
+    {
+        $(".gname_edit").val("");
+    }
+
+
+
+}
+
 function arryUnique(arry)
 {
     var hash = {};
@@ -831,6 +845,32 @@ function arryUnique(arry)
     }
 }
 
+
+function arryDeletFrom(arr,delFrom)
+{
+    var hash={};
+    var temp=[]
+    for(var i =0; i<delFrom.length;i++)
+    {
+        hash[delFrom[i]] = true;
+    }
+
+    for(var z=0; z<arr.length; z++)
+    {
+        if(hash[arr[z]]!==true)
+        {
+            temp.push(arr[z]);
+        }
+    }
+    console.log(hash)
+
+    arr.splice(0, arr.length);
+    for (var x = 0; x < temp.length; x++)
+    {
+        arr.push(temp[x]);
+    }
+
+}
 
 //---------------------Fliter - UI-----------------------------
 
@@ -1226,8 +1266,6 @@ $(document).on("click", ".act_creat_group", function ()
 
 $(document).on("click", ".act_push_group", function ()
 {
-
-
     if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
     {
         pf_pushToGroup();
@@ -1245,6 +1283,32 @@ $(document).on("change", ".gname_edit", function ()
         nowSave();
     }
 });
+
+
+$(document).on("change", ".setg_group_inp", function ()
+{
+
+    if ($(this)[0].checked === true)
+    {
+        $(".tagcook").removeClass("hide");
+    }
+    else
+    {
+        $(".tagcook").addClass("hide");
+    }
+});
+
+$(document).on("click", ".cook_add", function ()
+{
+    pf_addPicksTag();
+});
+
+$(document).on("click", ".cook_del", function ()
+{
+    pf_removePicksTag();
+});
+
+
 
 
 function pf_dismissFonts()
@@ -1298,7 +1362,86 @@ function pf_pushToGroup()
         var cc = fontages.list[g_pickLastGroup].fonts[0];
         for (var i in g_pickfont)
         {
-            fontages.moveFontToGroup(g_pickfont[i], fontages.index(cc._id,true).group);
+            fontages.moveFontToGroup(g_pickfont[i], fontages.index(cc._id, true).group);
         }
     }
 }
+function pf_addPicksTag()
+{
+    for (var i in g_pickfont)
+    {
+        var arr = $(".cook_lang").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            fontages.index(i).tags_lang = fontages.index(i).tags_lang.concat(arr);
+            arryUnique(fontages.index(i).tags_lang);
+        }
+
+        var arr = $(".cook_com").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            fontages.index(i).tags_com = fontages.index(i).tags_com.concat(arr);
+            arryUnique(fontages.index(i).tags_com);
+        }
+
+        var arr = $(".cook_type").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            fontages.index(i).tags_type = fontages.index(i).tags_type.concat(arr);
+            arryUnique(fontages.index(i).tags_type);
+        }
+
+        var arr = $(".cook_weight").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            fontages.index(i).tags_weight = fontages.index(i).tags_weight.concat(arr);
+            arryUnique(fontages.index(i).tags_weight);
+        }
+        var arr = $(".cook_user").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            fontages.index(i).tags_user = fontages.index(i).tags_user.concat(arr);
+            arryUnique(fontages.index(i).tags_user);
+        }
+    }
+    rufSetting();
+    reloadChooserBar();
+}
+
+function pf_removePicksTag()
+{
+    for (var i in g_pickfont)
+    {
+        var arr = $(".cook_lang").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            arryDeletFrom(fontages.index(i).tags_lang,arr);
+        }
+
+        var arr = $(".cook_com").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            arryDeletFrom(fontages.index(i).tags_com,arr);
+        }
+
+        var arr = $(".cook_type").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            arryDeletFrom(fontages.index(i).tags_type,arr);
+        }
+
+        var arr = $(".cook_weight").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            arryDeletFrom(fontages.index(i).tags_weight,arr);
+        }
+        var arr = $(".cook_user").val().split(",");
+        if (arr !== undefined && arr.length > 0)
+        {
+            arryDeletFrom(fontages.index(i).tags_user,arr);
+        }
+    }
+    rufSetting();
+    reloadChooserBar();
+}
+

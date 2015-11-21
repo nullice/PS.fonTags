@@ -33,7 +33,7 @@
 
     <script id="tmpl_fontlist_group" type="text/x-jquery-tmpl">
 
-        <input type="checkbox" id="cgroup${group_id}" checked="checked">
+        <input type="checkbox" id="cgroup${group_id}" checked="checked"  class="group_inp">
         <div class="group" id="group${group_id}">
             <label for="cgroup${group_id}">
                 <div class="fontitem groupItem" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
@@ -76,15 +76,14 @@
             <button class="topcoat-button-bar__button" > 浏览 </button>
         </label>
 
-        <label class="topcoat-button-bar__item">
-            <input type="radio" name="tab-bar" id="tagbut2">
-            <button class="topcoat-button-bar__button" > 整理 </button>
-        </label>
+        <!--<label class="topcoat-button-bar__item">-->
+            <!--<input type="radio" name="tab-bar" id="tagbut2">-->
+            <!--<button class="topcoat-button-bar__button" > 记录 </button>-->
+        <!--</label>-->
 
         <label class="topcoat-button-bar__item">
             <input type="radio" name="tab-bar" id="tagbut3">
             <button class="topcoat-button-bar__button"  > 设置 </button>
-
         </label>
     </nav>
 
@@ -96,6 +95,9 @@
     <div class="page1 tagpage" id="test">
 
         <div class="filter_buttom"><i class="fa fa-tags"></i></div>
+        <div class="spead_buttom"><i class="fa fa-sort"></i></div>
+        <!--<div class="eop_buttom"><i class="fa fa-eyedropper"></i></div>-->
+
 
         <div class="chosebar_box">
             <div class="chosebar" id="bar_lang">
@@ -259,15 +261,15 @@
                  </div>
             </div>
 
-            <div class="tagcook">
+            <div class="tagcook hide">
                 <ul>
-                    <li><span>语言: </span><input type="text" class=" cook_inp" value="" inp_for="tags_lang"/><span class="addtag_but">+</span></li>
-                    <li><span>厂商: </span><input type="text" class=" cook_inp" value="" inp_for="tags_com"/><span class="addtag_but">+</span></li>
-                    <li><span>类型: </span><input type="text" class=" cook_inp" value="" inp_for="tags_type"/><span class="addtag_but">+</span></li>
-                    <li><span>字重: </span><input type="text" class=" cook_inp" value="" inp_for="tags_weight"/><span class="addtag_but">+</span></li>
-                    <li><span>自定义: </span><input type="text" class=" cook_inp" value="" inp_for="tags_user"/><span class="addtag_but">+</span></li>
+                    <li><span>语言: </span><input type="text" class=" cook_inp cook_lang" value="" inp_for="tags_lang"/><span class="addtag_but">+</span></li>
+                    <li><span>厂商: </span><input type="text" class=" cook_inp cook_com" value="" inp_for="tags_com"/><span class="addtag_but">+</span></li>
+                    <li><span>类型: </span><input type="text" class=" cook_inp cook_type" value="" inp_for="tags_type"/><span class="addtag_but">+</span></li>
+                    <li><span>字重: </span><input type="text" class=" cook_inp cook_weight" value="" inp_for="tags_weight"/><span class="addtag_but">+</span></li>
+                    <li><span>自定义: </span><input type="text" class=" cook_inp cook_user" value="" inp_for="tags_user"/><span class="addtag_but">+</span></li>
                 </ul>
-                <div class="cookbut_box"> <button class="topcoat-button "> 添加 </button><button class="topcoat-button "> 移除 </button>
+                <div class="cookbut_box"> <button class="topcoat-button cook_add"> 添加 </button><button class="topcoat-button cook_del"> 移除 </button>
                 </div>
 
             </div>
@@ -276,10 +278,10 @@
 
             <div class="editmod">
 
-                <div class="picknumber">123</div>
+                <div class="picknumber">0</div>
                 <button class="topcoat-button act_creat_group"> 创建组 </button>
                 <button class="topcoat-button act_out_group"> 从组移出 </button>
-                <input type="checkbox" id="ddd3" class="">
+                <input type="checkbox" id="ddd3" class="setg_group_inp">
                 <label for="ddd3"><button class="topcoat-button act_setg_group"> 设置标签 </button></label>
 
                 <div class="finf"><span>目标组: </span> <input class="gname_edit" type="text" value="ttt"/> <button class="topcoat-button act_push_group"> 移入 </button></div>
