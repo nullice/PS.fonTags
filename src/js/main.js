@@ -6,7 +6,7 @@ var g_vmod = 1;
 var g_fsize = 14;
 
 var g_pickfont = {};
-var g_pickgroup = {};
+var g_pickLastGroup;
 
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
@@ -75,7 +75,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 
 Fontages.prototype.index = function (id, indexmod)
 {
-    var nowGroup;
+    var nowGroup=-1;
     return scanByFontId(this.list, id);
 
     function scanByFontId(list, id)
@@ -100,7 +100,7 @@ Fontages.prototype.index = function (id, indexmod)
 
                 nowGroup = i;
                 var result = scanByFontId(list[i].fonts, id);
-                nowGroup = undefined;
+                nowGroup = -1;
                 if (result != undefined)
                 {
                     return result;
@@ -177,7 +177,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
     var o = this.index(fid, true);
     if (o != undefined)
     {
-        if (o.group != undefined)
+        if (o.group >= 0)
         {
             var font = $.extend(true, {}, this.index(fid));
             console.log(font);
@@ -199,12 +199,14 @@ Fontages.prototype.moveFontToGroup = function (fid, group)
 {
 
     var o = this.index(fid, true);
+    console.log(o)
     if (o != undefined)
     {
-        if (o.group != undefined)
+        if (o.group >= 0)
         {
             var font = $.extend(true, {}, this.index(fid));
             this.list[o.group].fonts.splice(o.font, 1);
+            console.log(pf_newGroup())
             this.list[group].fonts.push(font);
 
         }
@@ -212,6 +214,8 @@ Fontages.prototype.moveFontToGroup = function (fid, group)
         {
             var font = $.extend(true, {}, this.index(fid));
             this.list.splice(o.font, 1);
+
+            console.log(pf_newGroup())
             this.list[group].fonts.push(font);
 
         }
@@ -657,11 +661,14 @@ function chooserToHTML()
                     if (count > 0)
                     {
                         $(this).addClass("pickG");
+
+                        g_pickLastGroup = fontages.index($(this).parent().siblings().attr("id").slice(3),true).group;
                         refPickfont();
                     }
                     else
                     {
                         $(this).removeClass("pickG");
+                        g_pickLastGroup = "";
                         refPickfont();
                     }
                 }
@@ -1221,21 +1228,52 @@ function pf_newGroup()
     var pos = 0;
     for (var i in g_pickfont)
     {
+
         if (0 == d)
         {
             var o = fontages.index(i, true);
-            if (o.group == undefined)
+            console.log("dd"+i);
+            console.log(o);
+            console.log(fontages.index(i));
+            if(o != undefined)
             {
-                pos = fontages.createGroup(fontages.index(i).name, o.font);
-            }
-            else
-            {
-                pos = fontages.createGroup(fontages.index(i).name);
-            }
-        }
-        d++;
+                if (o.group < 0)
+                {
+                    pos = fontages.createGroup(fontages.index(i).name,o.font);
+                }else
+                {
+                    pos = fontages.createGroup(fontages.index(i).name,o.group);
+                }
 
-        fontages.moveFontToGroup(g_pickfont[i],pos)
+            }
+            //{
+            //    if (o.group >= 0)
+            //    {   console.log("a"+pos);
+            //        console.log(fontages.index(i));
+            //        pos = fontages.createGroup(fontages.index(i).name);
+            //    }
+            //    else
+            //    {
+            //        console.log("b"+pos);
+            //        console.log(fontages.index(i));
+            //        pos = fontages.createGroup(fontages.index(i).name, o.font);
+            //    }
+            //}
+            //else
+            //{
+            //    console.log("c"+pos);
+            //    console.log(fontages.index(i));
+            //    pos = fontages.createGroup(fontages.index(i).name);
+            //}
+        }
+        d=1;
+
+
+
+        if(fontages.list[pos]._type == "group")
+        {
+            fontages.moveFontToGroup(g_pickfont[i],pos);
+        }
 
     }
 

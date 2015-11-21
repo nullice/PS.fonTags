@@ -517,7 +517,9 @@ body{
 
 }
 
-.act_creat_group
+.act_creat_group,
+.act_setg_group,
+.act_out_group
 {
     display: inline-block;
     margin: 4px 2px 10px 2px;
@@ -526,9 +528,15 @@ body{
 
 }
 
+.gname_edit
+{
+
+
+}
 
 .picknumber
 {
+    display: inline-block;
     margin: 10px 2px 2px 2px;
     color: #335fa1;
     font-size: 12pt;

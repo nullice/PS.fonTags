@@ -25,11 +25,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.63878787">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.60474306">
-                  <caret line="1203" column="17" selection-start-line="1203" selection-start-column="17" selection-end-line="1203" selection-end-column="17" />
+                <state vertical-scroll-proportion="-8.2">
+                  <caret line="664" column="84" selection-start-line="664" selection-start-column="84" selection-end-line="664" selection-end-column="84" />
                   <folding />
                 </state>
               </provider>
@@ -38,8 +38,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.3965516">
-                  <caret line="264" column="61" selection-start-line="264" selection-start-column="46" selection-end-line="264" selection-end-column="61" />
+                <state vertical-scroll-proportion="-3.4827585">
+                  <caret line="263" column="56" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="56" />
                   <folding>
                     <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -61,11 +61,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="panel.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="panel.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/panel.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.933333">
-                  <caret line="496" column="6" selection-start-line="496" selection-start-column="1" selection-end-line="496" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.25150904">
+                  <caret line="526" column="30" selection-start-line="526" selection-start-column="30" selection-end-line="526" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -120,8 +120,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.53754944">
-                  <caret line="415" column="63" selection-start-line="415" selection-start-column="44" selection-end-line="415" selection-end-column="63" />
+                <state vertical-scroll-proportion="0.4668008">
+                  <caret line="417" column="17" selection-start-line="417" selection-start-column="17" selection-end-line="417" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -168,10 +168,10 @@
         <option value="$PROJECT_DIR$/jsx/jsx_main.js" />
         <option value="$PROJECT_DIR$/jsx/jsx_main.jsx" />
         <option value="$PROJECT_DIR$/UserData/fontages.json" />
-        <option value="$PROJECT_DIR$/css/panel.css" />
         <option value="$PROJECT_DIR$/js/ui.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/panel.css" />
       </list>
     </option>
   </component>
@@ -183,10 +183,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="276" />
+    <option name="width" value="1363" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -429,19 +428,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="276" y="0" width="1363" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0943098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31750742" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07679739" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077943616" sideWeight="0.5026415" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1845238" sideWeight="0.49380532" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1871698" sideWeight="0.49280575" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3397626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1845238" sideWeight="0.5061947" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07679739" sideWeight="0.49702382" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1871698" sideWeight="0.5071942" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077943616" sideWeight="0.4973585" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -899,14 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/panel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.933333">
-          <caret line="496" column="6" selection-start-line="496" selection-start-column="1" selection-end-line="496" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.866667">
@@ -915,10 +906,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.2">
+          <caret line="664" column="84" selection-start-line="664" selection-start-column="84" selection-end-line="664" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3965516">
-          <caret line="264" column="61" selection-start-line="264" selection-start-column="46" selection-end-line="264" selection-end-column="61" />
+        <state vertical-scroll-proportion="-3.4827585">
+          <caret line="263" column="56" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="56" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -939,10 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/css/panel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60474306">
-          <caret line="1203" column="17" selection-start-line="1203" selection-start-column="17" selection-end-line="1203" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.25150904">
+          <caret line="526" column="30" selection-start-line="526" selection-start-column="30" selection-end-line="526" selection-end-column="30" />
           <folding />
         </state>
       </provider>
