@@ -728,6 +728,10 @@ function chooserToHTML()
         {
             $(".gname_edit").val(fontages.list[g_pickLastGroup].groupName);
         }
+        else
+        {
+            $(".gname_edit").val("");
+        }
 
     }
 
