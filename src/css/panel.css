@@ -680,7 +680,8 @@ li input:hover{
 
 .cookbut_box{
 
-    width: 100px;
+    width: 120px;
+
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -689,4 +690,8 @@ li input:hover{
     right: 0;
     left: 0;
 
+}
+
+.cookbut_box button{
+    margin: 0 5px;
 }
