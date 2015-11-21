@@ -250,7 +250,7 @@ function refurFontags()
             for (var i = 0; i < o.length; i++)
             {
 
-                if ("" != o.list[i].name && undefined != o.list[i].name)
+                if ("" !== o.list[i].name && undefined != o.list[i].name)
                 {
                     Temp_fontages.length++;
                     Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
@@ -545,7 +545,7 @@ function tagFliter_barRefur()
         {
             tags.push("无");
         }
-        if (1 == tags.length && tags[0] == "")
+        if (1 == tags.length && tags[0] === "")
         {
             tags[0] = "无";
         }
@@ -553,7 +553,7 @@ function tagFliter_barRefur()
 
         for (var i = 0; i < tags.length; i++)
         {
-            if (tags[i] != "")
+            if (tags[i] !== "")
             {
                 if (!hash[tags[i]])
                 {
@@ -669,8 +669,8 @@ function chooserToHTML()
                     else
                     {
                         $(this).removeClass("pickG");
-                        g_pickLastGroup = "";
-                        g_pickLastGroup_element = "";
+                        g_pickLastGroup = -1;
+                        g_pickLastGroup_element = -1;
                         refPickfont();
                     }
                 }
@@ -724,7 +724,7 @@ function chooserToHTML()
             $(".picknumber").text(len);
         });
 
-        if (g_pickLastGroup != undefined && g_pickLastGroup != "")
+        if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
         {
             $(".gname_edit").val(fontages.list[g_pickLastGroup].groupName);
         }
@@ -1222,13 +1222,19 @@ $(document).on("click", ".act_creat_group", function ()
 
 $(document).on("click", ".act_push_group", function ()
 {
-    pf_pushToGroup();
-    showfontages();
+
+
+    if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
+    {
+        pf_pushToGroup();
+        showfontages();
+    }
+
 });
 
 $(document).on("change", ".gname_edit", function ()
 {
-    if (g_pickLastGroup != undefined && g_pickLastGroup != "")
+    if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
     {
         fontages.list[g_pickLastGroup].groupName = $(this).val();
         g_pickLastGroup_element.children("span:not(.font_number)").text($(this).val());
@@ -1281,9 +1287,11 @@ function pf_newGroup()
 function pf_pushToGroup()
 {
     var pos = 0;
-    var cc = fontages.list[g_pickLastGroup].fonts[0];
-    if (g_pickLastGroup != undefined && g_pickLastGroup != "")
+
+
+    if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
     {
+        var cc = fontages.list[g_pickLastGroup].fonts[0];
         for (var i in g_pickfont)
         {
             fontages.moveFontToGroup(g_pickfont[i], fontages.index(cc._id,true).group);
