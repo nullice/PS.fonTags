@@ -2,7 +2,7 @@
  * Created by 语冰 on 2015/11/7.
  */
 var cs = new CSInterface();
-var g_vmod = 1;
+var g_vmod = 2;
 var g_fsize = 14;
 
 var g_pickfont = {};
@@ -57,7 +57,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
         tags_lang: [fontGetLang(name + family)],       //语言
         tags_com: [],        //发行商
         tags_type: [],       //类型
-        tags_weight: [],     //字重
+        tags_weight: fontGetWeigth(style),     //字重
         tags_user: [],       //用户自定义
         tags_other: [],      //其他
 
@@ -71,6 +71,9 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
     {
         font.tags_com.push(com)
     }
+
+
+
 
     this.list[this.list.length] = font;
 };
@@ -373,8 +376,8 @@ function fontagasToHTML(fontagesIn)
         {
             groupCounter++;
             var groupHtml = "";
-            var mid = fontagesIn.list[i].fonts.length/2;
-            mid =Math.floor(mid);
+            var mid = fontagesIn.list[i].fonts.length / 2;
+            mid = Math.floor(mid);
 
             var o =
             {
@@ -401,6 +404,8 @@ function fontagasToHTML(fontagesIn)
         }
     }
 
+
+    rufSetting();
     $(".act_info").on("click", act_info);
 
     $(".fontitem").bind("contextmenu", function (e)
@@ -493,7 +498,7 @@ function fontagasToHTML(fontagesIn)
 
 }
 
-
+//---
 function act_info(event)
 {
 
@@ -566,22 +571,77 @@ function fontGetLang(fontText)
 
 }
 
-var INCS = ["方正", "汉仪", "华文", "造字工房", "迷你", "汉仪", "新蒂", "叶根友", "张海山", "Adobe", "Microsoft"];
-function fontGetInc(name, family)
-{
-    for (var i = 0; i < INCS.length; i++)
-    {
-        if (family.slice(0, INCS[i].length) == INCS[i])
-        {
-            return INCS[i];
-        }
-
-    }
-
-    return "其他";
-
+var INCS = {
+    "方正": "",
+    "汉仪": "",
+    "华文": "",
+    "造字工房": "",
+    "迷你": "",
+    "汉仪": "",
+    "新蒂": "",
+    "叶根友": "",
+    "张海山": "",
+    "Adobe": "",
+    "Microsoft": "微软",
+    "微软": "",
+    "ＭＳ": "微软",
+    "MS ": "微软",
+    "微軟": "微软",
 }
 
+
+function fontGetInc(name, family)
+{
+    for (var i in INCS)
+    {
+        if (family.slice(0, i.length) == i)
+        {
+            if (INCS[i] === "")
+            {
+                return i;
+            }
+            else
+            {
+                return INCS[i];
+            }
+        }
+    }
+    return "其他";
+}
+
+
+var WEIGHT = {
+    极粗: [/Heavy/i, /ExBold/i, /Extra-bold/i, /^H$/i, /^W[8-9]$/i, /Black/i],
+    粗: [/^Bold$/i, /Semibold/i, /^B$/i, /Demibold/i, /^W[6-7]$/i,/Semi-bold/i,/^Bold/i],
+    中等: [/Medium/i, /Regular/i, /Normal/i, /^M$/i, /^R$/i, /^W[4-5]$/i,/Book/i],
+    细: [/Semilight/i, /^Light$/i, /^L$/i, /^W[2-3]$/i],
+    极细: [/ExtraLight/i, /ExLight/i, /Extra-light/i, /Thin/i, /UltLight/i, /UltraLight/i, /^EL$/i,/Ultra Light/i],
+    窄: [/\BCom/, /\BCond/, /Condensed/i,/Narrow/i],
+    宽: [/Expanded/i],
+    斜: [/Italic/i, /Slanted/i],
+}
+
+function fontGetWeigth(style)
+{
+    var result = [];
+    var bool = false;
+    for (var i in WEIGHT)
+    {
+        bool = false;
+        for (var z = 0; z < WEIGHT[i].length; z++)
+        {
+            bool = WEIGHT[i][z].test(style);
+            if (bool)
+            {
+                result.push(i);
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+//----------------------------------------------------
 
 var pool_com = [];
 var pool_lang = [];
@@ -802,12 +862,14 @@ function refPickfont()
 
     var len = Object.getOwnPropertyNames(g_pickfont).length;
     $(".picknumber").text(len);
-    if(len>0)
+    if (len > 0)
     {
-        $(".editmod").css("display","table");
-    }else
+        $(".editmod").css("display", "table");
+    }
+    else
     {
-        $(".editmod").css("display","none");;
+        $(".editmod").css("display", "none");
+        ;
     }
 
 
@@ -819,7 +881,6 @@ function refPickfont()
     {
         $(".gname_edit").val("");
     }
-
 
 
 }
@@ -846,18 +907,18 @@ function arryUnique(arry)
 }
 
 
-function arryDeletFrom(arr,delFrom)
+function arryDeletFrom(arr, delFrom)
 {
-    var hash={};
-    var temp=[]
-    for(var i =0; i<delFrom.length;i++)
+    var hash = {};
+    var temp = []
+    for (var i = 0; i < delFrom.length; i++)
     {
         hash[delFrom[i]] = true;
     }
 
-    for(var z=0; z<arr.length; z++)
+    for (var z = 0; z < arr.length; z++)
     {
-        if(hash[arr[z]]!==true)
+        if (hash[arr[z]] !== true)
         {
             temp.push(arr[z]);
         }
@@ -1309,14 +1370,13 @@ $(document).on("click", ".cook_del", function ()
 });
 
 
-
-
 function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
     {
         fontages.removeFontFromGroup(g_pickfont[i])
     }
+    nowSave();
 }
 
 
@@ -1349,6 +1409,7 @@ function pf_newGroup()
         }
 
     }
+    nowSave();
 }
 
 
@@ -1365,6 +1426,7 @@ function pf_pushToGroup()
             fontages.moveFontToGroup(g_pickfont[i], fontages.index(cc._id, true).group);
         }
     }
+    nowSave();
 }
 function pf_addPicksTag()
 {
@@ -1406,6 +1468,7 @@ function pf_addPicksTag()
     }
     rufSetting();
     reloadChooserBar();
+    nowSave();
 }
 
 function pf_removePicksTag()
@@ -1415,33 +1478,34 @@ function pf_removePicksTag()
         var arr = $(".cook_lang").val().split(",");
         if (arr !== undefined && arr.length > 0)
         {
-            arryDeletFrom(fontages.index(i).tags_lang,arr);
+            arryDeletFrom(fontages.index(i).tags_lang, arr);
         }
 
         var arr = $(".cook_com").val().split(",");
         if (arr !== undefined && arr.length > 0)
         {
-            arryDeletFrom(fontages.index(i).tags_com,arr);
+            arryDeletFrom(fontages.index(i).tags_com, arr);
         }
 
         var arr = $(".cook_type").val().split(",");
         if (arr !== undefined && arr.length > 0)
         {
-            arryDeletFrom(fontages.index(i).tags_type,arr);
+            arryDeletFrom(fontages.index(i).tags_type, arr);
         }
 
         var arr = $(".cook_weight").val().split(",");
         if (arr !== undefined && arr.length > 0)
         {
-            arryDeletFrom(fontages.index(i).tags_weight,arr);
+            arryDeletFrom(fontages.index(i).tags_weight, arr);
         }
         var arr = $(".cook_user").val().split(",");
         if (arr !== undefined && arr.length > 0)
         {
-            arryDeletFrom(fontages.index(i).tags_user,arr);
+            arryDeletFrom(fontages.index(i).tags_user, arr);
         }
     }
     rufSetting();
     reloadChooserBar();
+    nowSave();
 }
 

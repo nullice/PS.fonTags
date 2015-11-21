@@ -408,12 +408,6 @@ body{
 }
 
 
-
-
-
-
-
-
 .act_buttom
 {
     margin: 4px;
@@ -442,6 +436,12 @@ body{
 }
 
 
+.pick .info_open:not(.act_info)>.act_info:hover,
+.pick .act_buttom:hover
+{
+    color: #bae4fa;
+}
+
 .info_box
 {
     position: relative;
@@ -453,6 +453,19 @@ body{
     color: #3174af;
     font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","メイリオ","Meiryo",sans-serif;
 }
+
+
+.pick .info_box
+{
+    color: #f6fcff;
+}
+
+.pick .cantedit
+{
+    color: rgb(172, 211, 245);
+}
+
+
 
 .info_open:not(.act_info){
     display:block;
@@ -579,11 +592,6 @@ body{
 
 
 #loadfonts{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 125px;
 
 }
 
@@ -672,6 +680,13 @@ li input:hover{
     border-bottom-color: #6f86a3;
     border-bottom-width: 1px;
 }
+
+.pick li input:hover{
+
+    border-bottom-color: #b5e3ff;
+
+}
+
 
 .tagcook
 {
