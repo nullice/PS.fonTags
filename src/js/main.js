@@ -9,6 +9,8 @@ var g_pickfont = {};
 var g_pickLastGroup;
 var g_pickLastGroup_element;
 
+var g_diyTagsname = {lang: "", com: "", type: "", weight: "", user: ""}
+
 
 //------------------------------Fontages------------------------------------
 var Fontages = function ()
@@ -297,7 +299,7 @@ function refurFontags(addmod)
             else
             {
                 fontages = $.extend(true, {}, Temp_fontages);
-                fontages= arrangeFontGroup(fontages);
+                fontages = arrangeFontGroup(fontages);
             }
 
 
@@ -1212,7 +1214,6 @@ function hideUnusedBar()
 
 function saveFontages(fileName)
 {
-
     var data = JSON.stringify(fontages);
     var result = window.cep.fs.writeFile(fileName, data);
     if (0 == result.err)
@@ -1277,7 +1278,6 @@ function reloadChooserBar()
 
 function rufSetting()
 {
-
     if (g_vmod == 1)
     {
         $("#view_mod1_inp")[0].checked = true;
@@ -1297,12 +1297,46 @@ function rufSetting()
         fontlistDisplayFromPreview();
     }
 
-
     $(".srang").text(g_fsize);
     $(".fontitem").css("font-size", g_fsize);
     $(".sizeranger>input").val(g_fsize);
+}
 
+function saveSetting()
+{
+    var fileName = __dirname + "/UserData/setting.json";
+    var setObj = {
+        "g_vmod": g_vmod,
+        "diyTagsname": g_diyTagsname
+    }
 
+    var data = JSON.stringify(setObj);
+    var result = window.cep.fs.writeFile(fileName, data);
+    if (0 == result.err)
+    {
+        console.log("保存到：" + fileName);
+    }
+    else
+    {
+        alert("保存错误\n" + fileName + "\nerr code:" + result.err);
+    }
+}
+
+function loadSetting()
+{
+    var fileName = __dirname + "/UserData/setting.json";
+    var result = window.cep.fs.readFile(fileName);
+    if (0 == result.err)// err 为 0 读取成功
+    {
+        g_vmod = result.g_vmod;
+        g_diyTagsname = result.diyTagsname
+        return true;
+    }
+    else
+    {
+        alert("读取错误\n" + fileName + "\nerr code:" + result.err);
+        return false;
+    }
 }
 
 
@@ -1547,9 +1581,9 @@ function pf_removePicksTag()
 //------------------setting page-----------
 $(document).on("click", "#addfonts", function ()
 {
-   refurFontags(true);
+    refurFontags(true);
     nowSave();
-    $("#tagbut1")[0].checked=true;
+    $("#tagbut1")[0].checked = true;
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
@@ -1561,7 +1595,7 @@ $(document).on("click", "#reloadfonts", function ()
 {
     refurFontags();
     nowSave();
-    $("#tagbut1")[0].checked=true;
+    $("#tagbut1")[0].checked = true;
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
@@ -1573,6 +1607,25 @@ $(document).on("click", "#fontlist_out", function ()
 });
 
 
+function displayDIYTagsName()
+{
+    if(g_diyTagsname.lang != "")
+    {
+        $("#bar_lang>.title>span").text(g_diyTagsname.lang);
+    }
+    if(g_diyTagsname.com != "")
+    {
+        $("#bar_com>.title>span").text(g_diyTagsname.com);
+    }
+    if(g_diyTagsname.type != "")
+    {
+        $("#bar_type>.title>span").text(g_diyTagsname.type);
+    }
+    if(g_diyTagsname.user != "")
+    {
+        $("#bar_user>.title>span").text(g_diyTagsname.user);
+    }
 
 
+}
 
