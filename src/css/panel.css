@@ -775,10 +775,10 @@ h2{
 
 
 .redbut{
-     background-color: rgb(231, 37, 37);
+     background-color: rgb(233, 82, 86);
      border-color: rgb(143, 10, 10);
  }
 
 .redbut:hover{
-    background-color: rgb(255, 77, 70);
+    background-color: rgb(244, 104, 106);
 }

@@ -1607,6 +1607,18 @@ $(document).on("click", "#fontlist_out", function ()
 });
 
 
+$(document).on("change", "#diyt_lang", function ()
+{
+    g_diyTagsname.lang = $(this).val()
+
+
+});
+
+
+
+
+
+
 function displayDIYTagsName()
 {
     if(g_diyTagsname.lang != "")
@@ -1621,11 +1633,13 @@ function displayDIYTagsName()
     {
         $("#bar_type>.title>span").text(g_diyTagsname.type);
     }
+    if(g_diyTagsname.weight != "")
+    {
+        $("#bar_weight>.title>span").text(g_diyTagsname.weight);
+    }
     if(g_diyTagsname.user != "")
     {
         $("#bar_user>.title>span").text(g_diyTagsname.user);
     }
-
-
 }
 
