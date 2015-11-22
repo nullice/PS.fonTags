@@ -503,6 +503,9 @@ body{
 
 .hide{
     display: none;
+    height: 0;
+    opacity: 0;
+    width: 0;
 }
 
 
@@ -524,9 +527,8 @@ body{
 .editmod{
     /*display: none;*/
     display: table;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    heigth:130px;
     bottom: 5px;
     background-color: #D6D6D6;
     text-align: center;
@@ -534,7 +536,7 @@ body{
 
     border-top-color: rgba(255, 255, 255, 0.42);
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.22);
-    transition: all .8s;
+    transition: all .3s;
 }
 
 .act_creat_group,
@@ -605,6 +607,11 @@ body{
     color: inherit;
     font-size: inherit;
 }
+
+
+
+
+
 
 .eop_buttom,
 .spead_buttom,
@@ -740,4 +747,38 @@ li input:hover{
 
 .cookbut_box button{
     margin: 0 5px;
+}
+
+h2{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.lll{
+    margin: 5px;
+}
+.lll button{
+
+    margin: 5px 2px;
+}
+
+.diytag_inp{width: 100px;}
+
+.lll ul{
+    margin-left: 10px;
+    list-style: none;
+    padding-left: 0;
+    min-width: 40px;
+
+}
+.lll ul li{font-family: inherit;font-size: 11px}
+
+
+.redbut{
+     background-color: rgb(231, 37, 37);
+     border-color: rgb(143, 10, 10);
+ }
+
+.redbut:hover{
+    background-color: rgb(255, 77, 70);
 }

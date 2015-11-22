@@ -73,8 +73,6 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
     }
 
 
-
-
     this.list[this.list.length] = font;
 };
 
@@ -87,10 +85,8 @@ Fontages.prototype.index = function (id, indexmod)
     {
         for (var i = 0; i < list.length; i++)
         {
-
             if (list[i]._type == "font")
             {
-
                 if (list[i]._id == id)
                 {
                     if (indexmod)
@@ -102,7 +98,6 @@ Fontages.prototype.index = function (id, indexmod)
             }
             else if (list[i]._type == "group")
             {
-
                 nowGroup = i;
                 var result = scanByFontId(list[i].fonts, id);
                 nowGroup = -1;
@@ -110,13 +105,36 @@ Fontages.prototype.index = function (id, indexmod)
                 {
                     return result;
                 }
-
             }
         }
-
     }
 }
+Fontages.prototype.findByPSName = function (PSName)
+{
+    return scanByPSName(this.list, PSName);
 
+    function scanByPSName(list, PSName)
+    {
+        for (var i = 0; i < list.length; i++)
+        {
+            if (list[i]._type == "font")
+            {
+                if (list[i].postScriptName == PSName)
+                {
+                    return list[i];
+                }
+            }
+            else if (list[i]._type == "group")
+            {
+                var result = scanByPSName(list[i].fonts, PSName);
+                if (result != undefined)
+                {
+                    return result;
+                }
+            }
+        }
+    }
+}
 
 Fontages.prototype.restVisiable = function ()
 {
@@ -241,7 +259,7 @@ function loadJSX(fileName)
 loadJSX("json2.js");
 
 
-function refurFontags()
+function refurFontags(addmod)
 {
     cs.evalScript('getFontsJson()',
         function (result)
@@ -249,24 +267,41 @@ function refurFontags()
             var o = JSON.parse(result);
             var Temp_fontages = new Fontages();
 
-
             for (var i = 0; i < o.length; i++)
             {
-
                 if ("" !== o.list[i].name && undefined != o.list[i].name)
                 {
-                    Temp_fontages.length++;
-                    Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
+                    if (addmod)
+                    {
+                        if (fontages.findByPSName(o.list[i].postScriptName) === undefined)
+                        {
+                            Temp_fontages.length++;
+                            Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
+                        }
+                    }
+                    else
+                    {
+                        Temp_fontages.length++;
+                        Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
+                    }
                 }
 
             }
 
-            fontages = $.extend(true, {}, Temp_fontages);
-            arrangeFontGroup();
+            if (addmod)
+            {
+                Temp_fontages = arrangeFontGroup(Temp_fontages);
+                fontages.list = fontages.list.concat(Temp_fontages.list);
+
+            }
+            else
+            {
+                fontages = $.extend(true, {}, Temp_fontages);
+                fontages= arrangeFontGroup(fontages);
+            }
+
 
             showfontages();
-
-
         }
     )
 }
@@ -301,40 +336,38 @@ function showOverHeightBut()
 }
 
 
-function arrangeFontGroup()
+function arrangeFontGroup(fonts)
 {
     var temp = new Fontages();
-    for (var i = 0; i < fontages.length; i++)
+    for (var i = 0; i < fonts.length; i++)
     {
         if (temp.list[temp.list.length - 1] != undefined)
         {
-
-            if (temp.list[temp.list.length - 1]._type == "font" && temp.list[temp.list.length - 1].family == fontages.list[i].family)
+            if (temp.list[temp.list.length - 1]._type == "font" && temp.list[temp.list.length - 1].family == fonts.list[i].family)
             {
-
                 var pre = temp.list.pop();
-                temp.createGroup(fontages.list[i].family);
+                temp.createGroup(fonts.list[i].family);
 
                 temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, pre));
-                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fontages.list[i]));
+                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fonts.list[i]));
                 temp.length++;
                 continue;
-
             }
 
-            if (temp.list[temp.list.length - 1]._type == "group" && temp.list[temp.list.length - 1].groupName == fontages.list[i].family)
+            if (temp.list[temp.list.length - 1]._type == "group" && temp.list[temp.list.length - 1].groupName == fonts.list[i].family)
             {
-                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fontages.list[i]));
+                temp.list[temp.list.length - 1].fonts.push($.extend(true, {}, fonts.list[i]));
                 temp.length++;
                 continue;
             }
         }
 
-        temp.list[temp.list.length] = $.extend(true, {}, fontages.list[i]);
+        temp.list[temp.list.length] = $.extend(true, {}, fonts.list[i]);
         temp.length++;
     }
 
-    fontages = $.extend(true, {}, temp);
+    fonts = $.extend(true, {}, temp);
+    return fonts;
 }
 
 
@@ -612,11 +645,11 @@ function fontGetInc(name, family)
 
 var WEIGHT = {
     极粗: [/Heavy/i, /ExBold/i, /Extra-bold/i, /^H$/i, /^W[8-9]$/i, /Black/i],
-    粗: [/^Bold$/i, /Semibold/i, /^B$/i, /Demibold/i, /^W[6-7]$/i,/Semi-bold/i,/^Bold/i],
-    中等: [/Medium/i, /Regular/i, /Normal/i, /^M$/i, /^R$/i, /^W[4-5]$/i,/Book/i],
+    粗: [/^Bold$/i, /Semibold/i, /^B$/i, /Demibold/i, /^W[6-7]$/i, /Semi-bold/i, /^Bold/i],
+    中等: [/Medium/i, /Regular/i, /Normal/i, /^M$/i, /^R$/i, /^W[4-5]$/i, /Book/i],
     细: [/Semilight/i, /^Light$/i, /^L$/i, /^W[2-3]$/i],
-    极细: [/ExtraLight/i, /ExLight/i, /Extra-light/i, /Thin/i, /UltLight/i, /UltraLight/i, /^EL$/i,/Ultra Light/i],
-    窄: [/\BCom/, /\BCond/, /Condensed/i,/Narrow/i],
+    极细: [/ExtraLight/i, /ExLight/i, /Extra-light/i, /Thin/i, /UltLight/i, /UltraLight/i, /^EL$/i, /Ultra Light/i],
+    窄: [/\BCom/, /\BCond/, /Condensed/i, /Narrow/i],
     宽: [/Expanded/i],
     斜: [/Italic/i, /Slanted/i],
 }
@@ -864,12 +897,14 @@ function refPickfont()
     $(".picknumber").text(len);
     if (len > 0)
     {
-        $(".editmod").css("display", "table");
+
+        $(".editmod").css("bottom", "5px");
+        $(".editmod").css("height", "64px");
     }
     else
     {
-        $(".editmod").css("display", "none");
-        ;
+        $(".editmod").css("bottom", "-95px");
+        $(".editmod").css("height", "0px");
     }
 
 
@@ -1508,4 +1543,36 @@ function pf_removePicksTag()
     reloadChooserBar();
     nowSave();
 }
+
+//------------------setting page-----------
+$(document).on("click", "#addfonts", function ()
+{
+   refurFontags(true);
+    nowSave();
+    $("#tagbut1")[0].checked=true;
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+
+
+});
+
+$(document).on("click", "#reloadfonts", function ()
+{
+    refurFontags();
+    nowSave();
+    $("#tagbut1")[0].checked=true;
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+});
+
+$(document).on("click", "#fontlist_out", function ()
+{
+    saveFontages(__dirname + "/UserData/fontages.json");
+});
+
+
+
+
 
