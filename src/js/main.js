@@ -9,7 +9,13 @@ var g_pickfont = {};
 var g_pickLastGroup;
 var g_pickLastGroup_element;
 
-var g_diyTagsname = {lang: "", com: "", type: "", weight: "", user: ""}
+var g_diyTagsname = {lang: "", com: "", type: "", weight: "", user: ""};
+
+function alert(text)
+{
+    cs.evalScript('alert("'+text+'")');
+}
+
 
 
 //------------------------------Fontages------------------------------------
@@ -1326,21 +1332,34 @@ function loadSetting()
 {
     var fileName = __dirname + "/UserData/setting.json";
     var result = window.cep.fs.readFile(fileName);
+
     if (0 == result.err)// err 为 0 读取成功
     {
+        result = JSON.parse(result.data);
         g_vmod = result.g_vmod;
-        g_diyTagsname = result.diyTagsname
+        g_diyTagsname = result.diyTagsname;
+
+        $("#diyt_lang").val(g_diyTagsname.lang );
+        $("#diyt_com").val(g_diyTagsname.com );
+        $("#diyt_type").val(g_diyTagsname.type );
+        $("#diyt_weight").val(g_diyTagsname.weight);
+        $("#diyt_user").val(g_diyTagsname.user );
+
         return true;
     }
     else
     {
         alert("读取错误\n" + fileName + "\nerr code:" + result.err);
+
         return false;
     }
 }
 
 
 //------------------main---------
+
+loadSetting();
+displayDIYTagsName();
 
 $(document).on("change", ".edit_inl", function (e)
 {
@@ -1601,6 +1620,10 @@ $(document).on("click", "#reloadfonts", function ()
     $(".page3").hide();
 });
 
+
+
+
+
 $(document).on("click", "#fontlist_out", function ()
 {
     saveFontages(__dirname + "/UserData/fontages.json");
@@ -1609,12 +1632,39 @@ $(document).on("click", "#fontlist_out", function ()
 
 $(document).on("change", "#diyt_lang", function ()
 {
-    g_diyTagsname.lang = $(this).val()
+    g_diyTagsname.lang = $(this).val();
+    saveSetting();
+    displayDIYTagsName();
+});
 
+$(document).on("change", "#diyt_com", function ()
+{
+    g_diyTagsname.com = $(this).val();
+    saveSetting();
+    displayDIYTagsName();
+});
 
+$(document).on("change", "#diyt_type", function ()
+{
+    g_diyTagsname.type = $(this).val();
+    saveSetting();
+    displayDIYTagsName();
+});
+
+$(document).on("change", "#diyt_weight", function ()
+{
+    g_diyTagsname.weight = $(this).val();
+    saveSetting();
+    displayDIYTagsName();
 });
 
 
+$(document).on("change", "#diyt_user", function ()
+{
+    g_diyTagsname.user = $(this).val();
+    saveSetting();
+    displayDIYTagsName();
+});
 
 
 
