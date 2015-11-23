@@ -87,8 +87,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 Fontages.prototype.index = function (id, indexmod)
 {
     var nowGroup = -1;
-    return scanByFontId(this.list, id);
-
+ B
     function scanByFontId(list, id)
     {
         for (var i = 0; i < list.length; i++)
@@ -1251,13 +1250,21 @@ function loadFontages(fileName)
 
 function nowSave()
 {
-    saveFontages(__dirname + "/UserData/fontages.json");
+    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    window.cep.fs.makedir(p1);
+    var fileName = p1 +"/fontages.json";
+    saveFontages(fileName);
+
 
 }
 
 function nowLoad()
 {
-    if (loadFontages(__dirname + "/UserData/fontages.json"))
+
+    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    var fileName = p1 +"/fontages.json";
+
+    if (loadFontages(fileName))
     {
         showfontages();
         return true;
@@ -1310,7 +1317,11 @@ function rufSetting()
 
 function saveSetting()
 {
-    var fileName = __dirname + "/UserData/setting.json";
+
+    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    window.cep.fs.makedir(p1);
+    var fileName = p1 +"/setting.json";
+
     var setObj = {
         "g_vmod": g_vmod,
         "diyTagsname": g_diyTagsname
@@ -1330,7 +1341,10 @@ function saveSetting()
 
 function loadSetting()
 {
-    var fileName = __dirname + "/UserData/setting.json";
+
+    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+
+    var fileName = p1 +"/setting.json";
     var result = window.cep.fs.readFile(fileName);
 
     if (0 == result.err)// err 为 0 读取成功
