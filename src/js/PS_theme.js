@@ -30,6 +30,7 @@
             var body = document.getElementsByTagName("body");
             body[0].style.backgroundColor ="#"+ panelBgColor;
 
+            $(".editmod").css("background-color","#"+ panelBgColor);
 
 
             function changeCSSfile(id,file)

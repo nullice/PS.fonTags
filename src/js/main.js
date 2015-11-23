@@ -402,7 +402,7 @@ function fontagasToHTML(fontagesIn)
                 '<div class="fontitem"' + str1 + ">\n" +
                 '<span>' + font.name + '<\/span> ' +
 
-                ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名"><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
+                ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名" data-clipboard-text="' +font.family+" "+font.style+'" ><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
                 + '<\/div>';
 
             $(parent).append(html);
@@ -449,6 +449,8 @@ function fontagasToHTML(fontagesIn)
     rufSetting();
     $(".act_info").on("click", act_info);
 
+
+
     $(".fontitem").bind("contextmenu", function (e)
     {
         return false;
@@ -456,8 +458,13 @@ function fontagasToHTML(fontagesIn)
 
 
     $(".fontitem:not(.groupItem)").on("click",
-        function ()
+
+        function (e)
         {
+            if($(e.target).hasClass("act_copy"))
+            {
+                return;
+            }
             cs.evalScript(
                 "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "')"
             )
@@ -467,6 +474,7 @@ function fontagasToHTML(fontagesIn)
 
     $(".fontitem").on("mousedown", function (e)
         {
+
             if (e.which == 3)
             {
                 if ($(this).hasClass("groupItem"))
@@ -817,6 +825,8 @@ function chooserToHTML()
         {
             return false;
         });
+
+
 
 
     //------------------------

@@ -194,3 +194,6 @@ function ttt()
     alert(e.checked);
 }
 
+
+
+new Clipboard('.act_copy');
