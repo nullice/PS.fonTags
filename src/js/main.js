@@ -87,6 +87,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 Fontages.prototype.index = function (id, indexmod)
 {
     var nowGroup = -1;
+    return scanByFontId(this.list, id);
 
     function scanByFontId(list, id)
     {
@@ -539,6 +540,7 @@ function fontagasToHTML(fontagesIn)
 }
 
 //---
+
 function act_info(event)
 {
 
@@ -554,9 +556,8 @@ function act_info(event)
         $(this).parent().addClass("info_open");
 
         var fid = $(this).parent().parent().attr("id").slice(3);
+        console.log(fid)
         var o = {
-
-
             name: fontages.index(fid).name,
             family: fontages.index(fid).family,
             PostScriptName: fontages.index(fid).postScriptName,

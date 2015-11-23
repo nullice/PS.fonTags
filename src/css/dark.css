@@ -12,11 +12,11 @@
 }
 
 
-.fontitem {
+.fontitem:not(.pick):not(.pickG) {
     background-color: rgba(156, 156, 156, 0.23);
 }
 
-.group>.fontitem:hover, .group label .fontitem:hover, .fontitem:hover {
+.group>.fontitem:hover:not(.pick):not(.pickG), .group label .fontitem:hover:not(.pick):not(.pickG), .fontitem:hover:not(.pick):not(.pickG) {
     background-color: rgba(114, 112, 112, 0.7);
 }
 
@@ -64,7 +64,7 @@ a, a:visited {
     color: rgb(209, 205, 205);
 }
 
-.topcoat-button {
+.topcoat-button--cta:active, .topcoat-button--large--cta:active, :checked + label .topcoat-button {
     background-color: rgb(7, 88, 151);
     color: rgba(250, 250, 250, 0.8);
 }
@@ -75,6 +75,41 @@ a, a:visited {
 }
 
 
-:checked + .group label .fontitem {
+:checked + .group label .fontitem:not(.pick):not(.pickG) {
     box-shadow: 0 1px 0px 1px rgba(126, 124, 124, 0.79), 0 2px 2px 0px rgba(58, 58, 58, 0.71);
+}
+
+
+.group>.fontitem:not(.pick):not(.pickG)
+{
+
+    background-color: rgba(126, 123, 123, 0.27);
+}
+
+
+
+.group>.pick:hover, .pick:hover {
+    background-color: rgb(72, 160, 230);
+}
+
+:checked + .group label .pickG, .pickG {
+    background-color: rgb(19, 87, 119);
+    box-shadow: 0 1px 0px 1px rgb(69, 149, 195), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
+}
+
+.group>.pick, .pick {
+    background-color: rgb(34, 87, 129);
+    color: rgba(255, 255, 255, 0.77);
+}
+
+
+
+:checked + .group label .pickG:hover,
+.pickG:hover {
+    background-color: rgb(28, 115, 156)
+
+}
+
+.pick:hover{
+    background-color: rgb(39, 157, 213)
 }

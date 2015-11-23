@@ -233,14 +233,21 @@ body{
 
 
 
-.group>.fontitem:hover
-, .group label .fontitem:hover,
-.fontitem:hover
+.group>.fontitem:hover:not(.pick):not(.pickG)
+, .group label .fontitem:hover:not(.pick):not(.pickG),
+.fontitem:hover:not(.pick):not(.pickG)
 {
     /*box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);*/
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+
+
+:checked + .group label .pickG:hover,
+.pickG:hover {
+    background-color: rgb(225, 252, 255);
+    box-shadow: 0 1px 0px 1px rgb(89, 195, 255), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
+}
 
 
 .group>.fontitem:active,
@@ -253,10 +260,7 @@ body{
 {
     margin-top: 6px;
     margin-bottom: 6px;
-
 }
-
-
 
 
 .foot{
