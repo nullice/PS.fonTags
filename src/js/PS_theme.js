@@ -32,11 +32,13 @@
 
 
 
-            function changeCSSfile(file)
+            function changeCSSfile(id,file)
             {
-                var topcoat = document.getElementById("css_topcoat");
+                var topcoat = document.getElementById(id);
                 topcoat.href=file;
             }
+
+
 
 
             //===判断 PS 外观设置，由暗到亮 4 档级别，从最亮到最暗： light1、2，dark1、2
@@ -47,13 +49,15 @@
                 {
                     //light1
                     //alert("light2")
-                    changeCSSfile("css/topcoat-desktop-light.css");
+                    changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
+                    changeCSSfile("css_dark","");
                 }
                 else
                 {
                     //light2
                     //alert("light1")
-                    changeCSSfile("css/topcoat-desktop-light.css");
+                    changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
+                    changeCSSfile("css_dark","");
                 }
             }
             else
@@ -62,13 +66,15 @@
                 {
                     //dark1
                    // alert("dark1")
-                    changeCSSfile("css/topcoat-desktop-dark.css");
+                    changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
+                    changeCSSfile("css_dark","css/dark.css");
                 }
                 else
                 {
                     //dark2
                     //alert("dark2")
-                    changeCSSfile("css/topcoat-desktop-dark.css");
+                    changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
+                    changeCSSfile("css_dark","css/dark.css");
                 }
             }
         }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschen.fotags" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschan.fotags" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
     <ExtensionList>
-        <Extension Id="com.nullice.pschen.fotags" Version="1.0"/>
+        <Extension Id="com.nullice.pschan.fotags" Version="1.0"/>
     </ExtensionList>
 
     <ExecutionEnvironment>
@@ -22,7 +22,7 @@
 
 
     <DispatchInfoList>
-        <Extension Id="com.nullice.pschen.fotags">
+        <Extension Id="com.nullice.pschan.fotags">
             <DispatchInfo>
                 <Resources>
                     <MainPath>./index.html</MainPath>
@@ -54,8 +54,8 @@
                     </Geometry>
 
                     <Icons>
-                        <Icon Type="Normal">./img/icon1.png</Icon>
-                        <Icon Type="DarkNormal">./img/icon1.png</Icon>
+                        <Icon Type="Normal">./icon/Light.png</Icon>
+                        <Icon Type="DarkNormal">./icon/Dark.png</Icon>
                     </Icons>
 
                 </UI>

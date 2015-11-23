@@ -34,6 +34,9 @@ body{
 
     top:-15px;
     z-index: 1;
+    border-style: inset;
+    border-width: 1px;
+    border-color: #F2F2F2;
 
 }
 
@@ -781,4 +784,19 @@ h2{
 
 .redbut:hover{
     background-color: rgb(244, 104, 106);
+}
+
+.lll div {
+    font-size: 10pt;
+    margin-bottom: 4px;
+    color: #484747;
+    /* background-color: red; */
+}
+
+a:hover {
+    color: #319CFF;
+}
+a,a:visited {
+    text-decoration: none;
+    color: #343434;
 }

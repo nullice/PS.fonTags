@@ -87,7 +87,7 @@ Fontages.prototype.add = function (name, family, postScriptName, style, id)
 Fontages.prototype.index = function (id, indexmod)
 {
     var nowGroup = -1;
- B
+
     function scanByFontId(list, id)
     {
         for (var i = 0; i < list.length; i++)
@@ -210,17 +210,17 @@ Fontages.prototype.removeFontFromGroup = function (fid)
         if (o.group >= 0)
         {
             var font = $.extend(true, {}, this.index(fid));
-            console.log(font);
+            //console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
             this.list.splice(o.group + 1, 0, font);
 
 
-            console.log(o);
+            //console.log(o);
         }
     }
     else
     {
-        console.log("Index 未找到");
+        //console.log("Index 未找到");
     }
 }
 
@@ -250,7 +250,7 @@ Fontages.prototype.moveFontToGroup = function (fid, group)
     }
     else
     {
-        console.log("Index 未找到");
+        //console.log("Index 未找到");
     }
 }
 
@@ -326,7 +326,7 @@ function showfontages()
 
 function showOverHeightBut()
 {
-    console.log("showOverHeightBut");
+    //console.log("showOverHeightBut");
     $(".bottom_bar").each(function ()
     {
 
@@ -473,7 +473,7 @@ function fontagasToHTML(fontagesIn)
 
                     var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
                     var count = 0;
-                    console.log(ev);
+                   // console.log(ev);
 
                     ev.each(function ()
                     {
@@ -833,7 +833,7 @@ function chooserToHTML()
 
     $(".chooser_input+label").mousedown(function (e)
     {
-        console.log("点击：" + e.which);
+        //console.log("点击：" + e.which);
         // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 
         if (e.which == 3)
@@ -965,7 +965,7 @@ function arryDeletFrom(arr, delFrom)
             temp.push(arr[z]);
         }
     }
-    console.log(hash)
+    //console.log(hash)
 
     arr.splice(0, arr.length);
     for (var x = 0; x < temp.length; x++)
@@ -986,8 +986,8 @@ var booList_user = {};
 //选择器被改变
 function getbooList()
 {
-    console.log("getbooList");
-    console.log(fontages);
+/*    console.log("getbooList");
+    console.log(fontages);*/
     fontages.restVisiable();
 
     booList_lang = {};
@@ -1022,27 +1022,27 @@ function getbooList()
     }
 
 
-    console.log(booList_lang);
+/*    console.log(booList_lang);
     console.log(booList_com);
     console.log(booList_type);
     console.log(booList_weight);
     console.log(booList_user);
-    console.log("---------------------");
+    console.log("---------------------");*/
 
     refurDisplay();
 
 
     input_allRef();
-    console.log(booList_lang);
+/*    console.log(booList_lang);
     console.log(booList_com);
     console.log(booList_type);
     console.log(booList_weight);
-    console.log(booList_user);
+    console.log(booList_user);*/
 
 
     function input_allRef()
     {
-        console.log($(this).siblings().filter(".chooser_input"));
+       /* console.log($(this).siblings().filter(".chooser_input"));*/
         $(".input_all").each(function ()
         {
             var bool = true;
@@ -1064,15 +1064,15 @@ function refurDisplay()
     var visible = 0;
 
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
-    console.log(fontages.list[0]._visiable + "tags_lang");
+    //console.log(fontages.list[0]._visiable + "tags_lang");
     dealFontDisplay(fontages.list, "tags_com", booList_com);
-    console.log(fontages.list[0]._visiable + "tags_com");
+   // console.log(fontages.list[0]._visiable + "tags_com");
     dealFontDisplay(fontages.list, "tags_type", booList_type);
-    console.log(fontages.list[0]._visiable + "tags_type");
+   // console.log(fontages.list[0]._visiable + "tags_type");
     dealFontDisplay(fontages.list, "tags_weight", booList_weight);
-    console.log(fontages.list[0]._visiable + "tags_weight");
+   // console.log(fontages.list[0]._visiable + "tags_weight");
     dealFontDisplay(fontages.list, "tags_user", booList_user);
-    console.log(fontages.list[0]._visiable + "tags_user");
+   // console.log(fontages.list[0]._visiable + "tags_user");
 
     applyVisible(fontages.list);
     hideEmptyGourp();
@@ -1199,7 +1199,7 @@ function hideUnusedBar()
 
     for (var i in booList_com)
     {
-        console.log(booList_com[i]);
+        //console.log(booList_com[i]);
         if (booList_com[i] == 0 || booList_com[i] == 1)
         {
             //$("#ctag_co_" + i).get(0).checked = false;
@@ -1223,7 +1223,7 @@ function saveFontages(fileName)
     var result = window.cep.fs.writeFile(fileName, data);
     if (0 == result.err)
     {
-        console.log("保存到：" + fileName);
+       // console.log("保存到：" + fileName);
     }
     else
     {
@@ -1394,7 +1394,7 @@ $(document).on("change", ".edit_inl", function (e)
         nowSave();
         rufSetting();
         reloadChooserBar();
-        console.log(fontages.index(fid));
+        //console.log(fontages.index(fid));
     }
 });
 
