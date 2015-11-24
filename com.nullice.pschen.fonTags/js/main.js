@@ -918,11 +918,14 @@ function refPickfont()
 
         $(".editmod").css("bottom", "5px");
         $(".editmod").css("height", "64px");
+        $(".fontitem").css("-webkit-user-select","text");
     }
+
     else
     {
         $(".editmod").css("bottom", "-95px");
         $(".editmod").css("height", "0px");
+        $(".fontitem").css("-webkit-user-select","none");
     }
 
 
@@ -1195,7 +1198,7 @@ function hideUnusedBar()
     {
         for (var i in booList)
         {
-            console.log(booList[i]);
+            //console.log(booList[i]);
             if (booList[i] == 0 || booList[i] == 1)
             {
                 $("#ltag_" + barName + "_" + i).addClass("hide");
@@ -1249,6 +1252,7 @@ function loadFontages(fileName)
     if (0 == result.err)// err 为 0 读取成功
     {
         fontages = $.extend(true, new Fontages(), JSON.parse(result.data));
+
         //fontages = JSON.parse(result.data);
         return true;
     }
@@ -1273,6 +1277,7 @@ function nowLoad()
 {
 
     var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    console.log("用户设置目录：" +p1);
     var fileName = p1 +"/fontages.json";
 
     if (loadFontages(fileName))
@@ -1383,6 +1388,13 @@ function loadSetting()
 
 //------------------main---------
 
+var event = new CSEvent();//创建一个事件
+event.type = "com.adobe.PhotoshopPersistent"; //注册持久化运行事件
+event.scope = "APPLICATION";
+event.extensionId = cs.getExtensionID();// 我们的扩展 ID
+cs.dispatchEvent(event); //发送事件让宿主持久化运行我们的扩展
+
+
 loadSetting();
 displayDIYTagsName();
 
@@ -1483,6 +1495,29 @@ $(document).on("click", ".cook_del", function ()
 });
 
 
+$(document).on("click", "#fontlist_out", function ()
+{
+    pf_fontlist_out();
+});
+
+$(document).on("click", "#fontlist_in", function ()
+{
+    pf_fontlist_in();
+});
+
+$(document).on("click", ".picknumber", function ()
+{
+    $(".pick").removeClass("pick");
+    $(".pickG").removeClass("pickG");
+    refPickfont();
+
+});
+
+
+
+
+
+
 function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
@@ -1506,11 +1541,11 @@ function pf_newGroup()
             {
                 if (o.group < 0)
                 {
-                    pos = fontages.createGroup(fontages.index(i).name, o.font);
+                    pos = fontages.createGroup(fontages.index(i).family, o.font);
                 }
                 else
                 {
-                    pos = fontages.createGroup(fontages.index(i).name, o.group);
+                    pos = fontages.createGroup(fontages.index(i).family, o.group);
                 }
             }
         }
@@ -1541,6 +1576,7 @@ function pf_pushToGroup()
     }
     nowSave();
 }
+
 function pf_addPicksTag()
 {
     for (var i in g_pickfont)
@@ -1622,6 +1658,54 @@ function pf_removePicksTag()
     nowSave();
 }
 
+
+function pf_fontlist_out()
+{
+    result = window.cep.fs.showSaveDialogEx ("导出字体列表", "", ["json"], "fonTagsList.json", "字体列表 JSON");
+    if (0 == result.err)
+    {
+        if(result.data.length==0)
+        {
+            console.log("用户放弃了保存");
+        }
+        else
+        {
+            console.log(result.data);
+            saveFontages(result.data);
+            nowSave();
+        }
+    }
+    else
+    {
+        console.log("错误：" + result.err)
+    }
+}
+
+
+function pf_fontlist_in()
+{
+    var result = window.cep.fs.showOpenDialogEx (false, false, "导入字体列表", "", ["json"] , "字体列表 JSON");
+    if (0 == result.err)
+    {
+        console.log( result.data)
+        loadFontages(result.data[0]);
+        nowSave();
+        showfontages();
+        $("#tagbut1")[0].checked = true;
+        $(".page1").show();
+        $(".page2").hide();
+        $(".page3").hide();
+
+    }
+    else
+    {
+        console.log("错误：" + result.err)
+    }
+
+
+}
+
+
 //------------------setting page-----------
 $(document).on("click", "#addfonts", function ()
 {
@@ -1631,9 +1715,8 @@ $(document).on("click", "#addfonts", function ()
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
-
-
 });
+
 
 $(document).on("click", "#reloadfonts", function ()
 {
