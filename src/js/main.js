@@ -1483,6 +1483,14 @@ $(document).on("click", ".cook_del", function ()
 });
 
 
+$(document).on("click", "#fontlist_out", function ()
+{
+    pf_fontlist_out();
+});
+
+
+
+
 function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
@@ -1622,6 +1630,28 @@ function pf_removePicksTag()
     nowSave();
 }
 
+
+function pf_fontlist_out()
+{
+    result = window.cep.fs.showSaveDialogEx ("标题", "", ["json"], "fonTagsList.json", "字体列表 JSON");
+    if (0 == result.err)
+    {
+        if(result.data.length==0)
+        {
+            console.log("用户放弃了保存");
+        }
+        else
+        {
+            console.log(result.data);
+            saveFontages(result.data);
+        }
+    }
+    else
+    {
+        console.log("错误：" + result.err)
+    }
+}
+
 //------------------setting page-----------
 $(document).on("click", "#addfonts", function ()
 {
@@ -1631,9 +1661,8 @@ $(document).on("click", "#addfonts", function ()
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
-
-
 });
+
 
 $(document).on("click", "#reloadfonts", function ()
 {
