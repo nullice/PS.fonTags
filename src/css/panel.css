@@ -222,7 +222,8 @@ body{
     overflow: hidden;
     text-overline: ellipsis;
     -webkit-text-overline: ellipsis;
-    -webkit-user-select: text;
+
+    -webkit-user-select: none;
     min-height: 20px;
 
 }
@@ -589,6 +590,8 @@ body{
     font-family: "Helvetica", serif;
     font-size: 12px;
     background-color: rgba(53, 36, 255, 0.55);
+    -webkit-user-select: none;
+    cursor: default;
 }
 
 
