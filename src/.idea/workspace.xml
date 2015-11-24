@@ -25,11 +25,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.74878556">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24046242">
-                  <caret line="1390" column="34" selection-start-line="1390" selection-start-column="34" selection-end-line="1390" selection-end-column="34" />
+                <state vertical-scroll-proportion="-10.0">
+                  <caret line="1267" column="47" selection-start-line="1267" selection-start-column="12" selection-end-line="1267" selection-end-column="47" />
                   <folding>
                     <element signature="n#!!block;n#chooserToHTML_bar#0;n#!!block;n#chooserToHTML#0" expanded="false" />
                   </folding>
@@ -40,8 +40,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.637931">
-                  <caret line="397" column="17" selection-start-line="397" selection-start-column="17" selection-end-line="397" selection-end-column="17" />
+                <state vertical-scroll-proportion="-4.8103447">
+                  <caret line="345" column="63" selection-start-line="345" selection-start-column="51" selection-end-line="345" selection-end-column="63" />
                   <folding />
                 </state>
               </provider>
@@ -77,7 +77,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PS_theme.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="PS_theme.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/PS_theme.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
@@ -428,7 +428,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24077977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -848,28 +848,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PS_theme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/panel.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.4">
           <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.637931">
-          <caret line="397" column="17" selection-start-line="397" selection-start-column="17" selection-end-line="397" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -882,12 +864,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8103447">
+          <caret line="345" column="63" selection-start-line="345" selection-start-column="51" selection-end-line="345" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24046242">
-          <caret line="1390" column="34" selection-start-line="1390" selection-start-column="34" selection-end-line="1390" selection-end-column="34" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="1267" column="47" selection-start-line="1267" selection-start-column="12" selection-end-line="1267" selection-end-column="47" />
           <folding>
             <element signature="n#!!block;n#chooserToHTML_bar#0;n#!!block;n#chooserToHTML#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PS_theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>

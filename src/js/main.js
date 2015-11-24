@@ -1516,8 +1516,6 @@ $(document).on("click", ".picknumber", function ()
 
 
 
-
-
 function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
@@ -1732,10 +1730,7 @@ $(document).on("click", "#reloadfonts", function ()
 
 
 
-$(document).on("click", "#fontlist_out", function ()
-{
-    saveFontages(__dirname + "/UserData/fontages.json");
-});
+
 
 
 $(document).on("change", "#diyt_lang", function ()
