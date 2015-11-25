@@ -8,7 +8,6 @@
 $(document).on('click', ".spead_buttom", function ()
 {
 
-
     if ($(this).hasClass("bool_t"))
     {
         $(".group_inp").each(function ()
@@ -26,12 +25,9 @@ $(document).on('click', ".spead_buttom", function ()
         $(this).addClass("bool_t");
     }
 
-
 });
 
-
 //----------------
-
 
 $(document).on('click', ".bar_switch", function ()
 {
