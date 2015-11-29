@@ -4,7 +4,6 @@
 
 //----------------
 
-
 $(document).on('click', ".spead_buttom", function ()
 {
 

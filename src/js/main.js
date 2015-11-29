@@ -1270,7 +1270,6 @@ function nowSave()
     var fileName = p1 +"/fontages.json";
     saveFontages(fileName);
 
-
 }
 
 function nowLoad()
@@ -1513,6 +1512,13 @@ $(document).on("click", ".picknumber", function ()
 
 });
 
+$(document).on("click", "#opensetfolder", function ()
+{
+    pf_opensetfolder();
+});
+
+
+
 
 
 
@@ -1703,27 +1709,39 @@ function pf_fontlist_in()
 
 }
 
+function pf_opensetfolder()
+{
+    var process = require('child_process');
+    var path = require('path');
+    process.exec("explorer " + path.normalize("C:/Users/语冰/AppData/Roaming/nullice.psex") );
+
+}
+
+
+
+
 
 //------------------setting page-----------
 $(document).on("click", "#addfonts", function ()
 {
     refurFontags(true);
-    nowSave();
+
     $("#tagbut1")[0].checked = true;
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
+    nowSave();
 });
 
 
 $(document).on("click", "#reloadfonts", function ()
 {
     refurFontags();
-    nowSave();
     $("#tagbut1")[0].checked = true;
     $(".page1").show();
     $(".page2").hide();
     $(".page3").hide();
+    nowSave();
 });
 
 
