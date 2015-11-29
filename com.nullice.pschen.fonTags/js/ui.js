@@ -8,7 +8,6 @@
 $(document).on('click', ".spead_buttom", function ()
 {
 
-
     if ($(this).hasClass("bool_t"))
     {
         $(".group_inp").each(function ()
@@ -26,16 +25,12 @@ $(document).on('click', ".spead_buttom", function ()
         $(this).addClass("bool_t");
     }
 
-
 });
-
 
 //----------------
 
-
 $(document).on('click', ".bar_switch", function ()
 {
-
     setTimeout(function ()
     {
         $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
@@ -50,7 +45,6 @@ $(document).on('click', ".filter_buttom", function ()
     $(".chosebar_box").toggleClass("hide");
     $(".fontlist_box").toggleClass("top7");
 
-
     setTimeout(function ()
     {
         $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
@@ -64,14 +58,11 @@ $(window).resize(function ()
     $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
 });
 
-
 $('.sizeranger').on('mouseup', function ()
 {
-
     $(".srang").text($(".sizeranger>input").val());
     $(".fontitem").css("font-size", +$(".sizeranger>input").val());
     g_fsize = +$(".sizeranger>input").val();
-
 });
 
 
