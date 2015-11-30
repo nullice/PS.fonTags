@@ -310,6 +310,7 @@ function refurFontags(addmod)
 
 
             showfontages();
+            nowSave();
         }
     )
 }
@@ -1713,7 +1714,8 @@ function pf_opensetfolder()
 {
     var process = require('child_process');
     var path = require('path');
-    process.exec("explorer " + path.normalize("C:/Users/语冰/AppData/Roaming/nullice.psex") );
+    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex"
+    process.exec("explorer " + path.normalize(p1) );
 
 }
 
