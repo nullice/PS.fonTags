@@ -25,14 +25,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.8832952">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9099307">
-                  <caret line="312" column="22" selection-start-line="312" selection-start-column="22" selection-end-line="312" selection-end-column="22" />
+                <state vertical-scroll-proportion="-10.866667">
+                  <caret line="301" column="59" selection-start-line="301" selection-start-column="59" selection-end-line="301" selection-end-column="59" />
                   <folding>
                     <element signature="n#!!block;n#chooserToHTML_bar#0;n#!!block;n#chooserToHTML#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="新建文本文档.html" pinned="false" current-in-tab="true">
+            <entry file="file://$USER_HOME$/Desktop/新建文本文档.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.13824885">
+                  <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -170,6 +180,7 @@
         <option value="$PROJECT_DIR$/js/ui.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$USER_HOME$/Desktop/新建文本文档.html" />
       </list>
     </option>
   </component>
@@ -800,11 +811,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9099307">
-          <caret line="312" column="22" selection-start-line="312" selection-start-column="22" selection-end-line="312" selection-end-column="22" />
+        <state vertical-scroll-proportion="-10.866667">
+          <caret line="301" column="59" selection-start-line="301" selection-start-column="59" selection-end-line="301" selection-end-column="59" />
           <folding>
             <element signature="n#!!block;n#chooserToHTML_bar#0;n#!!block;n#chooserToHTML#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/新建文本文档.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13824885">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
