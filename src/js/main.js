@@ -186,13 +186,13 @@ Fontages.prototype.createGroup = function (name, pos)
 };
 
 
-Fontages.prototype.dismissEmptyGroup = function (group)
+Fontages.prototype.dismissEmptyGroup = function ()
 {
-    for (var i = 0; i < this.length; i++)
+    for (var i = 0; i < this.list.length; i++)
     {
-        if (list[i]._type == "group")
+        if (this.list[i]._type == "group")
         {
-            if (list[i].fonts.length <= 0)
+            if (this.list[i].fonts.length <= 0)
             {
                 this.list.splice(i, 1);
                 i--;
@@ -215,9 +215,8 @@ Fontages.prototype.removeFontFromGroup = function (fid)
             //console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
             this.list.splice(o.group + 1, 0, font);
-
-
             //console.log(o);
+
         }
     }
     else
@@ -1440,6 +1439,7 @@ else
 $(document).on("click", ".act_out_group", function ()
 {
     pf_dismissFonts();
+    fontages.dismissEmptyGroup();
     showfontages();
 });
 
@@ -1557,8 +1557,11 @@ function pf_newGroup()
         }
         d = 1;
 
+        console.log(pos );
+        console.log(fontages.list);
         if (fontages.list[pos]._type == "group")
         {
+            console.log(g_pickfont[i]);
             fontages.moveFontToGroup(g_pickfont[i], pos);
         }
 
