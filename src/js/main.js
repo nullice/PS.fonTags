@@ -247,6 +247,11 @@ Fontages.prototype.moveFontToGroup = function (fid, group)
 
             this.list[group].fonts.push(font);
             this.list.splice(o.font, 1);
+
+            if(o.font<group)
+            {
+                return -1;
+            }
         }
     }
     else
@@ -1538,6 +1543,7 @@ function pf_newGroup()
 {
     var d = 0;
     var pos = 0;
+    var previous =0;
     for (var i in g_pickfont)
     {
         if (0 == d)
@@ -1561,8 +1567,13 @@ function pf_newGroup()
         console.log(fontages.list);
         if (fontages.list[pos]._type == "group")
         {
-            console.log(g_pickfont[i]);
-            fontages.moveFontToGroup(g_pickfont[i], pos);
+             previous =fontages.moveFontToGroup(g_pickfont[i], pos);
+            if( previous === -1)
+            {
+                pos--;
+            }
+
+
         }
 
     }
