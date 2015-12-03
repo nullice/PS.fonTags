@@ -1,0 +1,138 @@
+.topnav hr {
+    border-color: rgba(77, 77, 77, 0.46);
+}
+
+.eop_buttom, .spead_buttom, .filter_buttom {
+    color: rgba(0, 0, 0, 0.72);
+    text-shadow: 0 1px 1px rgb(77, 77, 77);
+}
+
+.chosebar .title {
+    color: rgb(131, 131, 131);
+}
+
+
+.fontitem:not(.pick):not(.pickG) {
+    background-color: rgba(156, 156, 156, 0.23);
+}
+
+.group>.fontitem:hover:not(.pick):not(.pickG), .group label .fontitem:hover:not(.pick):not(.pickG), .fontitem:hover:not(.pick):not(.pickG) {
+    background-color: rgba(114, 112, 112, 0.7);
+}
+
+
+body {
+    color: rgb(179, 179, 179);
+}
+
+.font_number {
+    color: rgb(32, 32, 32);
+    background-color: rgba(119, 116, 116, 0.97);
+}
+
+
+.srang {
+    color: rgba(160, 160, 160, 0.71);
+}
+
+
+.chosebar {
+    border-color: rgba(20, 20, 20, 0.36);
+}
+
+
+.editmod {
+    background-color: rgb(51, 51, 51);
+}
+
+.picknumber {
+    color: rgb(32, 32, 32);
+    background-color: rgba(136, 136, 136, 0.55);
+}
+
+
+.opbar {
+    color: rgba(241, 241, 241, 0.65);
+}
+
+.lll div {
+    color: rgb(158, 156, 156);
+}
+
+
+a, a:visited {
+    color: rgb(209, 205, 205);
+}
+
+.topcoat-button--cta:active, .topcoat-button--large--cta:active, :checked + label .topcoat-button {
+    background-color: rgb(7, 88, 151);
+    color: rgba(250, 250, 250, 0.8);
+}
+
+:checked+label .chooser_all {
+    background-color: rgb(71, 87, 114);
+    border-color: rgb(58, 77, 87);
+}
+
+
+:checked + .group label .fontitem:not(.pick):not(.pickG) {
+    box-shadow: 0 1px 0px 1px rgba(126, 124, 124, 0.79), 0 2px 2px 0px rgba(58, 58, 58, 0.71);
+}
+
+
+.group>.fontitem:not(.pick):not(.pickG)
+{
+
+    background-color: rgba(126, 123, 123, 0.27);
+}
+
+
+
+.group>.pick:hover, .pick:hover {
+    background-color: rgb(72, 160, 230);
+}
+
+:checked + .group label .pickG, .pickG {
+    background-color: rgb(19, 87, 119);
+    box-shadow: 0 1px 0px 1px rgb(69, 149, 195), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
+}
+
+.group>.pick, .pick {
+    background-color: rgb(34, 87, 129);
+    color: rgba(255, 255, 255, 0.77);
+}
+
+
+
+:checked + .group label .pickG:hover,
+.pickG:hover {
+    background-color: rgb(28, 115, 156)
+
+}
+
+.pick:hover{
+    background-color: rgb(39, 157, 213)
+}
+
+.info_box {
+    color: rgb(149, 149, 150);
+}
+
+.cantedit {
+    color: rgba(143, 143, 143, 0.76);
+}
+
+.topcoat-button--cta, .topcoat-button--large--cta {
+    border: 1px solid #134f7f;
+    background-color: rgb(32, 108, 168);
+    box-shadow: inset 0 1px rgba(255,255,255,0.36);
+    color: rgba(255, 255, 255, 0.87);
+    font-weight: 500;
+    text-shadow: 0 -1px rgba(0,0,0,0.36);
+}
+
+.redbut {
+    background-color: rgb(187, 69, 72);
+    border-color: rgb(143, 10, 10);
+}
+
