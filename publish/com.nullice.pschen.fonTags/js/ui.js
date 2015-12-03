@@ -99,10 +99,10 @@ function fontlistDisplayFromFamily()
         return $(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
     });
 
-    $(".groupItem>span:not(.font_number)").text(function ()
-    {
-        return $(this).parent().attr("font_family");
-    });
+    //$(".groupItem>span:not(.font_number)").text(function ()
+    //{
+    //    return $(this).parent().attr("font_family");
+    //});
 
 
     $(".preview_text").css("display", "none");
@@ -117,10 +117,10 @@ function fontlistDisplayFromName()
     {
         return $(this).parent().attr("font_name");
     });
-    $(".groupItem>span:not(.font_number)").text(function ()
-    {
-        return $(this).parent().attr("font_family");
-    });
+    //$(".groupItem>span:not(.font_number)").text(function ()
+    //{
+    //    return $(this).parent().attr("font_family");
+    //});
 
 
     $(".preview_text").css("display", "none");
