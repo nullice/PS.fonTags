@@ -1571,7 +1571,6 @@ function pf_newGroup()
             {
                 pos--;
             }
-
         }
 
     }
