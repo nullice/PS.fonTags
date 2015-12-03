@@ -211,6 +211,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
         if (o.group >= 0)
         {
             var font = $.extend(true, {}, this.index(fid));
+            font._type="font";
             //console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
             this.list.splice(o.group + 1, 0, font);
