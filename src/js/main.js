@@ -1563,8 +1563,7 @@ function pf_newGroup()
         }
         d = 1;
 
-        console.log(pos );
-        console.log(fontages.list);
+
         if (fontages.list[pos]._type == "group")
         {
              previous =fontages.moveFontToGroup(g_pickfont[i], pos);
@@ -1572,7 +1571,6 @@ function pf_newGroup()
             {
                 pos--;
             }
-
 
         }
 
