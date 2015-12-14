@@ -78,8 +78,6 @@ body{
     left: 12px;
     height: 18px;
     width:60px;
-
-
     font-size: 8pt;
     color: #5b5b5b;
 }
@@ -88,7 +86,6 @@ body{
 .bottom_bar
 {
     display: block;
-
     min-height: 22px;
     position: relative;
     margin: 5px ;
@@ -96,27 +93,15 @@ body{
     margin-left: 55px;
     /*background:#134f7f;*/
     top:4px;
-
-
-
-
     overflow: hidden;
-
 }
 
 :checked + .bottom_bar
 {
-
     height: 22px;
 }
 
 
-
-
-:checked + label .topcoat-button
-{
-
-}
 
 .chooser,
 .chooser_all
@@ -128,7 +113,7 @@ body{
 }
 
 
-:checked+label .chooser_all {
+:checked+.chooser_all {
     background-color: rgb(130, 144, 170);
     border-color: rgb(93, 119, 134);
 }

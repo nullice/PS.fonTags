@@ -53,7 +53,7 @@
     <script id="tmpl_bar_item" type="text/x-jquery-tmpl">
 
         <input type="checkbox" id="ctag_${bar}_${name}" class="chooser_input">
-        <label for="ctag_${bar}_${name}" id="ltag_${bar}_${name}"> <button class="topcoat-button chooser" >${name}</button> </label>
+        <label for="ctag_${bar}_${name}" id="ltag_${bar}_${name}" class="rito-button chooser"> ${name} </label>
 
 
     </script>
@@ -61,8 +61,7 @@
     <script id="tmpl_bar_item_all" type="text/x-jquery-tmpl">
 
         <input type="checkbox" id="ctag_all_${bar}" class="chooser_input input_all">
-        <label for="ctag_all_${bar}"> <button class="topcoat-button chooser_all" >全部</button> </label>
-
+        <label for="ctag_all_${bar}" class="rito-button chooser_all"> 全部 </label>
 
     </script>
 
@@ -98,6 +97,7 @@
 
         <input type="radio" id="tagbut2" checked="checked" name="bar">
         <label class="rito-button-bar-item rito-button" for="tagbut2"><span>xx</span></label>
+
 
         <input type="radio" id="tagbut3" name="bar">
         <label class="rito-button-bar-item rito-button" for="tagbut3"><span>设置</span></label>
