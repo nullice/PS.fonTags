@@ -4,3 +4,9 @@
 h3 {
   color: #4D926F;
 }
+h3 .ss {
+  width: 22px;
+}
+h3:hover {
+  font-family: sans-serif;
+}
