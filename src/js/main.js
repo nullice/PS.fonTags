@@ -1297,7 +1297,6 @@ function nowLoad()
 
 }
 
-
 function reloadChooserBar()
 {
     tagFliter_barRefur();
