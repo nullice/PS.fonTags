@@ -1822,16 +1822,16 @@ input[type="radio"] {
 *
 */
 
-/*input[type="radio"] {*/
-  /*position: absolute;*/
-  /*overflow: hidden;*/
-  /*padding: 0;*/
-  /*border: 0;*/
-  /*opacity: 0.001;*/
-  /*z-index: 1;*/
-  /*vertical-align: top;*/
-  /*outline: none;*/
-/*}*/
+input[type="radio"] {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+}
 
 .radio-button,
 .topcoat-radio-button__checkmark {

@@ -1,18 +1,52 @@
 @color: #4D926F;
 
 .rito-button-bar {
+    z-index: 3;
+    display: table;
+    text-align: center;
+    white-space: nowrap;
 
-  .input {
+    input[type="radio"] {
+        position: absolute;
+        overflow: hidden;
+        padding: 0;
+        border: 0;
+        opacity: 0.001;
+        z-index: 1;
+        vertical-align: top;
+        outline: none;
+        height: 0;
+        width: 0;
+    }
 
-  }
+    .rito-button-bar-item {
+        font-size: 10pt;
+        display: table-cell;
+        border-right: 0 none #fff;
+        border-left: 0 none #fff;
+        border-radius: 0 0 0 0;
 
-  .rito-button-bar-item {
 
-  }
+        &:first-of-type {
+            border-radius: 4px 0 0 4px;
+            border-left: 1px solid #9daca9;
+
+
+        }
+    }
 
 }
 
-
-
-
-
+.rito-button {
+    padding: 0 0.563rem;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.313rem;
+    color: #454545;
+    text-shadow: 0 1px #fff;
+    vertical-align: initial;
+    background-color: #e5e9e8;
+    box-shadow: inset 0 1px #fff;
+    border: 1px solid #9daca9;
+    border-radius: 4px;
+}
