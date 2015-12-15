@@ -110,6 +110,7 @@ body{
     font-size: 8pt;
     line-height: 12pt;
     padding: 0 0.30rem;
+    vertical-align: bottom;
 }
 
 
@@ -150,15 +151,19 @@ body{
 
 .fontlist
 {
-
     position: relative;
     width: 94%;
     margin: auto;
-
     bottom: 0;
     overflow: auto;
-
 }
+
+.fontlist_box{
+    background-color: rgba(31, 31, 29, 0.04);
+}
+
+
+
 
 /*滚动条：*/
 ::-webkit-scrollbar {
@@ -196,8 +201,7 @@ body{
     margin:2px 4px 2px 4px;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
-
+    background-color: rgba(245, 245, 245, 1);
     white-space: nowrap;
     overflow: hidden;
     text-overline: ellipsis;
@@ -219,7 +223,7 @@ body{
 .fontitem:hover:not(.pick):not(.pickG)
 {
     /*box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);*/
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgb(253, 253, 253);
 }
 
 
@@ -244,15 +248,15 @@ body{
 }
 
 
-.foot{
 
+.foot{
     height:50px;
     width: 100%;
     bottom: 0;
     display: -webkit-flex;
     -webkit-flex-wrap:wrap;
     -webkit-justify-content: space-between;
-
+    border-top: 1px solid rgba(199, 199, 199, 0.67);
 
 }
 
@@ -482,11 +486,6 @@ body{
 }
 
 
-.topcoat-button-bar__item>input
-{
-    width: 0px;
-    height: 0px;
-}
 
 
 .hide{
@@ -615,7 +614,7 @@ body{
     display: block;
     left: 15px;
     padding: 0 4px 0 4px;
-    top: 7px;
+    top: 9px;
     z-index: 3;
 }
 
@@ -626,7 +625,7 @@ body{
     left: auto;
     width: 12px;
     margin: 4px;
-    top: -18px;
+    top: -26px;
     display: block;
     position: absolute;
 }
