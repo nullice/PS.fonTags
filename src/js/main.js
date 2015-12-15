@@ -329,6 +329,11 @@ function showfontages()
     {
         showOverHeightBut();
     }, 2000);
+
+    setTimeout(function ()
+    {
+        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    }, 100);
 }
 
 function showOverHeightBut()
@@ -1438,6 +1443,7 @@ else
 {
     refurFontags();
 }
+
 //-------选中字体操作--------------------------------
 
 

@@ -9,10 +9,10 @@
     <script src="js/CSInterface.js" type="text/javascript"></script>
     <link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
     <link id="css_topcoat" rel="stylesheet" href="css/topcoat-desktop-light.css"/>
-    <link id="css_psui" rel="stylesheet" href="css/PS_theme.css"/>
     <link rel="stylesheet" href="css/rito.css">
     <link rel="stylesheet" href="css/panel.css"/>
     <link rel="stylesheet" id="css_dark" href=""/>
+    <link id="css_psui" rel="stylesheet" href="css/PS_theme.css"/>
 
 
     <!--模板-->
@@ -343,11 +343,11 @@
             <div class="foot">
                 <div class="rito-button-bar font_name_display">
                     <input type="radio" name="view-bar" checked="checked" id="view_mod1_inp">
-                    <label class="rito-button-bar-item rito-button" for="view_mod1_inp">名</label>
+                    <label class="rito-button-bar-item rito-button" for="view_mod1_inp" id="view_mod1">名</label>
                     <input type="radio" name="view-bar" id="view_mod2_inp">
-                    <label class="rito-button-bar-item rito-button" for="view_mod2_inp">族</label>
+                    <label class="rito-button-bar-item rito-button" for="view_mod2_inp" id="view_mod2">族</label>
                     <input type="radio" name="view-bar" id="previewON">
-                    <label class="rito-button-bar-item rito-button" for="previewON">预览</label>
+                    <label class="rito-button-bar-item rito-button" for="previewON" id="view_mod3">预览</label>
                 </div>
                 <input type="text" class="topcoat-text-input preview_text" placeholder="预览文字" value="">
 
@@ -377,16 +377,16 @@
         <div class="opbox">
             <h2>扫描字体列表</h2>
             <div class="lll">
-                <button class="topcoat-button--cta" id="addfonts">扫描新增字体</button>
-                <button class="topcoat-button--cta redbut" id="reloadfonts">重新扫描</button>
+                <button class="rito-button" id="addfonts">扫描新增字体</button>
+                <button class="rito-button redbut" id="reloadfonts">重新扫描</button>
             </div>
 
 
             <h2>字体列表保存</h2>
             <div class="lll">
-                <button class="topcoat-button" id="fontlist_out"> 导出</button>
-                <button class="topcoat-button" id="fontlist_in"> 导入</button>
-                <button class="topcoat-button" id="opensetfolder">打开配置文件夹</button>
+                <button class="rito-button" id="fontlist_out"> 导出</button>
+                <button class="rito-button" id="fontlist_in"> 导入</button>
+                <button class="rito-button" id="opensetfolder">打开配置文件夹</button>
             </div>
 
             <h2>标签自定义</h2>
@@ -400,17 +400,17 @@
                     <li>
                         <span>厂商:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_com" value="厂商"/>
-                        <button class="topcoat-button--cta redbut" id="">清空标签</button>
+                        <button class="rito-button redbut" id="">清空标签</button>
                     </li>
                     <li>
                         <span>类型:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_type" value="类型"/>
-                        <button class="topcoat-button--cta redbut" id="">清空标签</button>
+                        <button class="rito-button redbut" id="">清空标签</button>
                     </li>
                     <li>
                         <span>字重:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_weight" value="字重"/>
-                        <button class="topcoat-button--cta redbut">清空标签</button>
+                        <button class="rito-button redbut">清空标签</button>
                     </li>
                     <li>
                         <span>用户:</span>

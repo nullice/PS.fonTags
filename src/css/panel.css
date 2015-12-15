@@ -24,7 +24,7 @@ body{
     margin: auto ;
     vertical-align: middle;
     position: relative;
-    top:4px;
+    top:7px;
     z-index: 3;
 
 }
@@ -250,13 +250,13 @@ body{
 
 
 .foot{
-    height:50px;
+    height:45px;
     width: 100%;
     bottom: 0;
     display: -webkit-flex;
     -webkit-flex-wrap:wrap;
     -webkit-justify-content: space-between;
-    border-top: 1px solid rgba(199, 199, 199, 0.67);
+    box-shadow: 0 1px 0 rgba(85, 85, 85, 0.1) inset;
 
 }
 
@@ -605,12 +605,10 @@ body{
 .eop_buttom,
 .spead_buttom,
 .filter_buttom {
-
     position: fixed;
     font-size: 10pt;
-    color: rgba(66, 67, 67, 0.72);
+    color: rgba(66, 67, 67, 0.57);
     text-shadow: 0 1px 1px #fbfbfb;
-
     display: block;
     left: 15px;
     padding: 0 4px 0 4px;
@@ -764,12 +762,19 @@ h2{
 
 
 .redbut{
-     background-color: rgb(233, 82, 86);
-     border-color: rgb(143, 10, 10);
+    background-color: rgb(255, 198, 200);
+    color: rgba(121, 72, 72, 0.98);
+    border-color: rgb(221, 143, 143);
+    text-shadow: none;
+    box-shadow: none;
  }
 
 .redbut:hover{
-    background-color: rgb(244, 104, 106);
+    background-color: rgb(255, 198, 200);
+    color: rgba(242, 36, 43, 0.98);
+    border-color: rgb(221, 143, 143);
+    text-shadow: none;
+    box-shadow: none;
 }
 
 .lll div {
