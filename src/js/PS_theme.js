@@ -52,16 +52,16 @@
                 if(panelBgColor > LIGHT1_2_SWITCH_COLOR)
                 {
                     //light1
-                    //alert("light2")
+                    //alert("light1")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
                     changeCSSfile("css_dark","");
                 }
                 else
                 {
                     //light2
-                    //alert("light1")
+                    //alert("light2")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
-                    changeCSSfile("css_dark","");
+                    changeCSSfile("css_dark","css/light2.css");
                 }
             }
             else

@@ -4,6 +4,13 @@
 
 //----------------
 
+
+$(".fontlist").niceScroll({
+    cursorcolor:"rgba(0,0,0,0.2)",
+    cursorborder:"none",
+    mousescrollstep: 20
+});
+
 $(document).on('click', ".spead_buttom", function ()
 {
 
