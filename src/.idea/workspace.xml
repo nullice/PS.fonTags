@@ -38,8 +38,8 @@
       <file leaf-file-name="PS_theme.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/PS_theme.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="5" />
+            <state vertical-scroll-proportion="-2.857143">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7586207">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state vertical-scroll-proportion="-8.0172415">
+              <caret line="338" column="46" selection-start-line="338" selection-start-column="46" selection-end-line="338" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <file leaf-file-name="light2.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/light2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25404158">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.861244">
+              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -120,8 +120,8 @@
       <file leaf-file-name="panel.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/panel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.24138">
-              <caret line="773" column="35" selection-start-line="773" selection-start-column="35" selection-end-line="773" selection-end-column="35" />
+            <state vertical-scroll-proportion="-4.448276">
+              <caret line="762" column="0" selection-start-line="762" selection-start-column="0" selection-end-line="769" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -152,7 +152,6 @@
         <option value="$PROJECT_DIR$/CSXS/manifest.xml" />
         <option value="$PROJECT_DIR$/.debug" />
         <option value="$PROJECT_DIR$/css/dark.css" />
-        <option value="$PROJECT_DIR$/css/PS_theme.css" />
         <option value="$USER_HOME$/Desktop/新建文本文档.html" />
         <option value="$PROJECT_DIR$/css/topcoat-desktop-dark.css" />
         <option value="$PROJECT_DIR$/css/zoes_psui.less" />
@@ -160,10 +159,11 @@
         <option value="$PROJECT_DIR$/css/panel.css" />
         <option value="$PROJECT_DIR$/css/rito.less" />
         <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/ui.js" />
         <option value="$PROJECT_DIR$/css/topcoat-desktop-light.css" />
         <option value="$PROJECT_DIR$/js/PS_theme.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/PS_theme.css" />
         <option value="$PROJECT_DIR$/css/light2.css" />
       </list>
     </option>
@@ -174,9 +174,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="x" value="113" />
+    <option name="y" value="93" />
+    <option name="width" value="1407" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -417,10 +417,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="113" y="93" width="1407" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17544784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24324325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31744313" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49420443" order="-1" side_tool="false" content_ui="tabs" />
@@ -756,56 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/PS_theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/panel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.24138">
-          <caret line="773" column="35" selection-start-line="773" selection-start-column="35" selection-end-line="773" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.266666">
-          <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
-          <folding>
-            <marker date="1450175355007" expanded="true" signature="9915:10296" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7586207">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/topcoat-desktop-light.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.620689">
-          <caret line="2153" column="28" selection-start-line="2153" selection-start-column="28" selection-end-line="2153" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/rito.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.551724">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dark.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-86.42857">
@@ -822,6 +772,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0172415">
+          <caret line="338" column="46" selection-start-line="338" selection-start-column="46" selection-end-line="338" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/PS_theme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -832,10 +790,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/topcoat-desktop-light.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.620689">
+          <caret line="2153" column="28" selection-start-line="2153" selection-start-column="28" selection-end-line="2153" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.266666">
+          <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+          <folding>
+            <marker date="1450175355007" expanded="true" signature="9915:10296" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/PS_theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.857143">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/rito.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.551724">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/panel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.448276">
+          <caret line="762" column="0" selection-start-line="762" selection-start-column="0" selection-end-line="769" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/light2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25404158">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.861244">
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
           <folding />
         </state>
       </provider>
