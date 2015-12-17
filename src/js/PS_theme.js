@@ -71,14 +71,14 @@
                     //dark1
                    // alert("dark1")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
-                    changeCSSfile("css_dark","css/dark.css");
+                    changeCSSfile("css_dark","css/dark1.css");
                 }
                 else
                 {
                     //dark2
                     //alert("dark2")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
-                    changeCSSfile("css_dark","css/dark.css");
+                    changeCSSfile("css_dark","css/dark2.css");
                 }
             }
         }

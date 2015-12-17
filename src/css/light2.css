@@ -72,3 +72,8 @@
     background-color: #C8C8C8;
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.22),inset 0px 1px 1px 0px rgba(197, 197, 197, 0.75);
 }
+
+:checked + .rito-button.chooser_all {
+    background-color: #8290aa;
+    border-color: #5d7786;
+}
