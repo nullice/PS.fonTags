@@ -265,3 +265,8 @@ a, a:visited {
 .gname_edit {
     color: #88B4C8;
 }
+
+:checked + .rito-button.chooser_all {
+    background-color: #515A6C;
+    border-color: #626C71;
+}
