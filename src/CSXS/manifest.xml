@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschan.fotags" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
     <ExtensionList>
-        <Extension Id="com.nullice.pschan.fotags" Version="1.0"/>
+        <Extension Id="com.nullice.pschan.fotags" Version="0.8"/>
     </ExtensionList>
 
     <ExecutionEnvironment>
