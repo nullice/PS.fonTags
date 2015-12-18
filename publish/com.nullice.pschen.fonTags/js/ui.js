@@ -4,6 +4,13 @@
 
 //----------------
 
+
+$(".fontlist").niceScroll({
+    cursorcolor:"rgba(0,0,0,0.2)",
+    cursorborder:"none",
+    mousescrollstep: 8
+});
+
 $(document).on('click', ".spead_buttom", function ()
 {
 
@@ -99,10 +106,17 @@ function fontlistDisplayFromFamily()
         return $(this).parent().attr("font_family") + " " + $(this).parent().attr("font_style");
     });
 
-    //$(".groupItem>span:not(.font_number)").text(function ()
+    //$(".groupItem>label>.groupItem>span:not(.font_number)").text(function ()
     //{
-    //    return $(this).parent().attr("font_family");
+    //    return $(this).parent().parent().siblings()[0].attr("id")
+    //    fontages.index()
+    //        attr("font_family") + " " + $(this).parent().attr("font_style");
     //});
+
+    $(".groupItem>span:not(.font_number)").text(function ()
+    {
+        return $(this).parent().attr("font_group_name");
+    });
 
 
     $(".preview_text").css("display", "none");
@@ -121,6 +135,12 @@ function fontlistDisplayFromName()
     //{
     //    return $(this).parent().attr("font_family");
     //});
+
+    $(".groupItem>span:not(.font_number)").text(function ()
+    {
+        return $(this).parent().attr("font_group_name");
+    });
+
 
 
     $(".preview_text").css("display", "none");

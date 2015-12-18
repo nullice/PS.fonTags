@@ -1,6 +1,9 @@
 /**
  * Created by 语冰 on 2015/11/7.
  */
+
+
+ 
 (function ()
 {
 
@@ -49,16 +52,16 @@
                 if(panelBgColor > LIGHT1_2_SWITCH_COLOR)
                 {
                     //light1
-                    //alert("light2")
+                    //alert("light1")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
                     changeCSSfile("css_dark","");
                 }
                 else
                 {
                     //light2
-                    //alert("light1")
+                    //alert("light2")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-light.css");
-                    changeCSSfile("css_dark","");
+                    changeCSSfile("css_dark","css/light2.css");
                 }
             }
             else
@@ -68,14 +71,14 @@
                     //dark1
                    // alert("dark1")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
-                    changeCSSfile("css_dark","css/dark.css");
+                    changeCSSfile("css_dark","css/dark1.css");
                 }
                 else
                 {
                     //dark2
                     //alert("dark2")
                     changeCSSfile("css_topcoat","css/topcoat-desktop-dark.css");
-                    changeCSSfile("css_dark","css/dark.css");
+                    changeCSSfile("css_dark","css/dark2.css");
                 }
             }
         }

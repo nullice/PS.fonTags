@@ -225,6 +225,42 @@ Fontages.prototype.removeFontFromGroup = function (fid)
     }
 }
 
+Fontages.prototype.removeUnableFonts = function (o)
+{
+
+    var Temp_fontages = new Fontages();
+
+    for (var i = 0; i < o.length; i++)
+    {
+        if ("" !== o.list[i].name && undefined != o.list[i].name)
+        {
+                Temp_fontages.length++;
+                Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i)
+        }
+    }
+
+    _removeuf(fontages.list)
+    function _removeuf(list)
+    {
+        for (var i = 0; i < list.length; i++)
+        {
+            if (list[i]._type == "font")
+            {
+
+                if ( Temp_fontages.findByPSName(list[i].postScriptName)===undefined)
+                {
+                    console.log( "remve unable font:"+ list[i].name);
+                    list.splice(i,1);
+                    i--;
+                }
+            }
+            else if (list[i]._type == "group")
+            {
+                 _removeuf(list[i].fonts);
+            }
+        }
+    }
+}
 
 Fontages.prototype.moveFontToGroup = function (fid, group)
 {
@@ -280,12 +316,17 @@ function refurFontags(addmod)
             var o = JSON.parse(result);
             var Temp_fontages = new Fontages();
 
+            if (addmod) {
+                fontages.removeUnableFonts(o);
+            }
+
             for (var i = 0; i < o.length; i++)
             {
                 if ("" !== o.list[i].name && undefined != o.list[i].name)
                 {
                     if (addmod)
                     {
+
                         if (fontages.findByPSName(o.list[i].postScriptName) === undefined)
                         {
                             Temp_fontages.length++;
@@ -329,6 +370,11 @@ function showfontages()
     {
         showOverHeightBut();
     }, 2000);
+
+    setTimeout(function ()
+    {
+        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    }, 100);
 }
 
 function showOverHeightBut()
@@ -387,7 +433,6 @@ function arrangeFontGroup(fonts)
 
 function fontagasToHTML(fontagesIn)
 {
-
     $(".fontlist").html("");
     var groupCounter = 0;
 
@@ -1438,6 +1483,7 @@ else
 {
     refurFontags();
 }
+
 //-------选中字体操作--------------------------------
 
 
@@ -1471,6 +1517,7 @@ $(document).on("change", ".gname_edit", function ()
     if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
     {
         fontages.list[g_pickLastGroup].groupName = $(this).val();
+        g_pickLastGroup_element.attr("font_group_name",$(this).val());
         g_pickLastGroup_element.children("span:not(.font_number)").text($(this).val());
         nowSave();
     }

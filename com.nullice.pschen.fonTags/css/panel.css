@@ -24,7 +24,7 @@ body{
     margin: auto ;
     vertical-align: middle;
     position: relative;
-    top:4px;
+    top:7px;
     z-index: 3;
 
 }
@@ -78,8 +78,6 @@ body{
     left: 12px;
     height: 18px;
     width:60px;
-
-
     font-size: 8pt;
     color: #5b5b5b;
 }
@@ -88,7 +86,6 @@ body{
 .bottom_bar
 {
     display: block;
-
     min-height: 22px;
     position: relative;
     margin: 5px ;
@@ -96,27 +93,15 @@ body{
     margin-left: 55px;
     /*background:#134f7f;*/
     top:4px;
-
-
-
-
     overflow: hidden;
-
 }
 
 :checked + .bottom_bar
 {
-
     height: 22px;
 }
 
 
-
-
-:checked + label .topcoat-button
-{
-
-}
 
 .chooser,
 .chooser_all
@@ -125,10 +110,11 @@ body{
     font-size: 8pt;
     line-height: 12pt;
     padding: 0 0.30rem;
+    vertical-align: bottom;
 }
 
 
-:checked+label .chooser_all {
+:checked+.chooser_all {
     background-color: rgb(130, 144, 170);
     border-color: rgb(93, 119, 134);
 }
@@ -165,15 +151,19 @@ body{
 
 .fontlist
 {
-
     position: relative;
     width: 94%;
     margin: auto;
-
     bottom: 0;
     overflow: auto;
-
 }
+
+.fontlist_box{
+    background-color: rgba(31, 31, 29, 0.04);
+}
+
+
+
 
 /*滚动条：*/
 ::-webkit-scrollbar {
@@ -211,8 +201,7 @@ body{
     margin:2px 4px 2px 4px;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
-
+    background-color: rgba(245, 245, 245, 1);
     white-space: nowrap;
     overflow: hidden;
     text-overline: ellipsis;
@@ -234,7 +223,7 @@ body{
 .fontitem:hover:not(.pick):not(.pickG)
 {
     /*box-shadow: 0px 3px 4px 1px rgba(19, 92, 221, 0.22);*/
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgb(253, 253, 253);
 }
 
 
@@ -259,15 +248,15 @@ body{
 }
 
 
-.foot{
 
-    height:50px;
+.foot{
+    height:45px;
     width: 100%;
     bottom: 0;
     display: -webkit-flex;
     -webkit-flex-wrap:wrap;
     -webkit-justify-content: space-between;
-
+    box-shadow: 0 1px 0 rgba(85, 85, 85, 0.1) inset;
 
 }
 
@@ -344,7 +333,7 @@ body{
 
 .group>.fontitem
 {
-    background-color: rgba(255, 255, 255, 0.27);
+    background-color: rgba(255, 255, 255, 0.46);
     margin-left: 20px;
     margin-right: 8px;
 }
@@ -497,11 +486,6 @@ body{
 }
 
 
-.topcoat-button-bar__item>input
-{
-    width: 0px;
-    height: 0px;
-}
 
 
 .hide{
@@ -621,16 +605,14 @@ body{
 .eop_buttom,
 .spead_buttom,
 .filter_buttom {
-
     position: fixed;
     font-size: 10pt;
-    color: rgba(66, 67, 67, 0.72);
+    color: rgba(66, 67, 67, 0.57);
     text-shadow: 0 1px 1px #fbfbfb;
-
     display: block;
     left: 15px;
     padding: 0 4px 0 4px;
-    top: 7px;
+    top: 9px;
     z-index: 3;
 }
 
@@ -641,7 +623,7 @@ body{
     left: auto;
     width: 12px;
     margin: 4px;
-    top: -18px;
+    top: -26px;
     display: block;
     position: absolute;
 }
@@ -780,12 +762,19 @@ h2{
 
 
 .redbut{
-     background-color: rgb(233, 82, 86);
-     border-color: rgb(143, 10, 10);
+    background-color: rgb(255, 198, 200);
+    color: rgba(121, 72, 72, 0.98);
+    border-color: rgb(221, 143, 143);
+    text-shadow: none;
+    box-shadow: none;
  }
 
 .redbut:hover{
-    background-color: rgb(244, 104, 106);
+    background-color: rgb(255, 198, 200);
+    color: rgba(242, 36, 43, 0.98);
+    border-color: rgb(221, 143, 143);
+    text-shadow: none;
+    box-shadow: none;
 }
 
 .lll div {
@@ -802,3 +791,4 @@ a,a:visited {
     text-decoration: none;
     color: #343434;
 }
+

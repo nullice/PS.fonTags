@@ -6,12 +6,14 @@
     <script type="text/javascript">window.module = undefined</script>
     <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="js/jquery.tmpl.js" type="text/javascript"></script>
+    <script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
     <script src="js/CSInterface.js" type="text/javascript"></script>
     <link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
-    <link  id="css_topcoat" rel="stylesheet" href="css/topcoat-desktop-light.css"/>
-    <link  id="css_psui" rel="stylesheet" href="css/PS_theme.css"/>
-    <link   rel="stylesheet" href="css/panel.css"/>
-    <link   rel="stylesheet" id="css_dark" href=""/>
+    <link id="css_topcoat" rel="stylesheet" href="css/topcoat-desktop-light.css"/>
+    <link rel="stylesheet" href="css/rito.css">
+    <link rel="stylesheet" href="css/panel.css"/>
+    <link rel="stylesheet" id="css_dark" href=""/>
+    <link id="css_psui" rel="stylesheet" href="css/PS_theme.css"/>
 
 
     <!--模板-->
@@ -29,6 +31,7 @@
                <li><span>自定义: </span><input type="text" class="edit_inl edit_tags" value="${user}" inp_for="tags_user"/><span class="addtag_but">+</span></li>
            </ul>
       </div>
+
     </script>
 
 
@@ -37,65 +40,72 @@
         <input type="checkbox" id="cgroup${group_id}" checked="checked"  class="group_inp">
         <div class="group" id="group${group_id}">
             <label for="cgroup${group_id}">
-                <div class="fontitem groupItem" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
+                <div class="fontitem groupItem"  font_group_name="${font_group_name}" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
                     <span> ${font_group_name} </span>
                     <span class="font_number">${font_number}</span>
                 </div>
             </label>
          </div>
 
-    </script>
 
+    </script>
 
 
     <script id="tmpl_bar_item" type="text/x-jquery-tmpl">
-
         <input type="checkbox" id="ctag_${bar}_${name}" class="chooser_input">
-        <label for="ctag_${bar}_${name}" id="ltag_${bar}_${name}"> <button class="topcoat-button chooser" >${name}</button> </label>
-
+        <label for="ctag_${bar}_${name}" id="ltag_${bar}_${name}" class="rito-button chooser"> ${name} </label>
     </script>
 
     <script id="tmpl_bar_item_all" type="text/x-jquery-tmpl">
-
         <input type="checkbox" id="ctag_all_${bar}" class="chooser_input input_all">
-        <label for="ctag_all_${bar}"> <button class="topcoat-button chooser_all" >全部</button> </label>
-
+        <label for="ctag_all_${bar}" class="rito-button chooser_all"> 全部 </label>
     </script>
-
 
 
     <title></title>
 </head>
 <body>
 
+<!--<div class="topnav">-->
+<!--<nav class="topcoat-button-bar">-->
+
+<!--<label class="topcoat-button-bar__item" for="tagbut1">-->
+<!--<input type="radio" id="tagbut1" checked="checked">-->
+<!--<button class="topcoat-button-bar__button" > 浏览 </button>-->
+<!--</label>-->
+
+
+<!--<label class="topcoat-button-bar__item"  for="tagbut3">-->
+<!--<input type="radio"  id="tagbut3">-->
+<!--<button class="topcoat-button-bar__button"  > 设置 </button>-->
+<!--</label>-->
+<!--</nav>-->
+
+<!--<hr/>-->
+<!--</div>-->
+
 
 <div class="topnav">
-    <nav class="topcoat-button-bar">
+    <nav class="rito-button-bar">
+        <input type="radio" id="tagbut1" checked="checked" name="bar">
+        <label class="rito-button-bar-item rito-button" for="tagbut1"><span>浏览</span></label>
 
-        <label class="topcoat-button-bar__item">
-            <input type="radio" name="tab-bar" id="tagbut1" checked="checked">
-            <button class="topcoat-button-bar__button" > 浏览 </button>
-        </label>
+        <!--<input type="radio" id="tagbut2" checked="checked" name="bar">-->
+        <!--<label class="rito-button-bar-item rito-button" for="tagbut2"><span>xx</span></label>-->
 
-        <!--<label class="topcoat-button-bar__item">-->
-            <!--<input type="radio" name="tab-bar" id="tagbut2">-->
-            <!--<button class="topcoat-button-bar__button" > 记录 </button>-->
-        <!--</label>-->
-
-        <label class="topcoat-button-bar__item">
-            <input type="radio" name="tab-bar" id="tagbut3">
-            <button class="topcoat-button-bar__button"  > 设置 </button>
-        </label>
+        <input type="radio" id="tagbut3" name="bar">
+        <label class="rito-button-bar-item rito-button" for="tagbut3"><span>设置</span></label>
     </nav>
 
-    <hr/>
+    <!--<hr/>-->
 </div>
+
 
 <div class="tagpage_box">
 
     <div class="page1 tagpage" id="test">
 
-        <div class="filter_buttom" ><i class="fa fa-tags"></i></div>
+        <div class="filter_buttom"><i class="fa fa-tags"></i></div>
         <div class="spead_buttom" title="展开\收起所有组"><i class="fa fa-sort"></i></div>
         <!--<div class="eop_buttom"><i class="fa fa-eyedropper"></i></div>-->
 
@@ -106,31 +116,47 @@
 
                 <label for="dd" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd">
-                <div class="bottom_bar" >
+                <div class="bottom_bar">
 
-                    <input type="checkbox" id="ctag1" >
-                    <label for="ctag1"> <button class="topcoat-button chooser" >中文</button> </label>
+                    <input type="checkbox" id="ctag1">
+                    <label for="ctag1">
+                        <button class="topcoat-button chooser">中文</button>
+                    </label>
 
                     <input type="checkbox" id="ctag2">
-                    <label for="ctag2"> <button class="topcoat-button chooser" >英文</button> </label>
+                    <label for="ctag2">
+                        <button class="topcoat-button chooser">英文</button>
+                    </label>
 
                     <input type="checkbox" id="ctag3">
-                    <label for="ctag3"> <button class="topcoat-button chooser" >日文</button> </label>
+                    <label for="ctag3">
+                        <button class="topcoat-button chooser">日文</button>
+                    </label>
 
                     <input type="checkbox" id="ctag4">
-                    <label for="ctag4"> <button class="topcoat-button chooser" >fds</button> </label>
+                    <label for="ctag4">
+                        <button class="topcoat-button chooser">fds</button>
+                    </label>
 
                     <input type="checkbox" id="ctag5">
-                    <label for="ctag5"> <button class="topcoat-button chooser" >SDFDDSF</button> </label>
+                    <label for="ctag5">
+                        <button class="topcoat-button chooser">SDFDDSF</button>
+                    </label>
 
                     <input type="checkbox" id="ctag6">
-                    <label for="ctag6"> <button class="topcoat-button chooser" >dfgf个梵蒂冈</button> </label>
+                    <label for="ctag6">
+                        <button class="topcoat-button chooser">dfgf个梵蒂冈</button>
+                    </label>
 
                     <input type="checkbox" id="ctag7">
-                    <label for="ctag7"> <button class="topcoat-button chooser" >SDAF的风格的发生过电饭锅的</button> </label>
+                    <label for="ctag7">
+                        <button class="topcoat-button chooser">SDAF的风格的发生过电饭锅的</button>
+                    </label>
 
                     <input type="checkbox" id="ctag8">
-                    <label for="ctag8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
+                    <label for="ctag8">
+                        <button class="topcoat-button chooser">是的风格的发生过是大法官电饭锅的</button>
+                    </label>
                 </div>
             </div>
             <div class="chosebar" id="bar_com">
@@ -138,32 +164,48 @@
 
                 <label for="dd2" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd2">
-                <div class="bottom_bar" >
+                <div class="bottom_bar">
 
 
-                    <input type="checkbox" id="ctagr1" >
-                    <label for="ctagr1"> <button class="topcoat-button chooser" >中文</button> </label>
+                    <input type="checkbox" id="ctagr1">
+                    <label for="ctagr1">
+                        <button class="topcoat-button chooser">中文</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr2">
-                    <label for="ctagr2"> <button class="topcoat-button chooser" >英文</button> </label>
+                    <label for="ctagr2">
+                        <button class="topcoat-button chooser">英文</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr3">
-                    <label for="ctagr3"> <button class="topcoat-button chooser" >日文</button> </label>
+                    <label for="ctagr3">
+                        <button class="topcoat-button chooser">日文</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr4">
-                    <label for="ctagr4"> <button class="topcoat-button chooser" >fds</button> </label>
+                    <label for="ctagr4">
+                        <button class="topcoat-button chooser">fds</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr5">
-                    <label for="ctagr5"> <button class="topcoat-button chooser" >SDFDDSF</button> </label>
+                    <label for="ctagr5">
+                        <button class="topcoat-button chooser">SDFDDSF</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr6">
-                    <label for="ctagr6"> <button class="topcoat-button chooser" >dfgf个梵蒂冈</button> </label>
+                    <label for="ctagr6">
+                        <button class="topcoat-button chooser">dfgf个梵蒂冈</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr7">
-                    <label for="ctagr7"> <button class="topcoat-button chooser" >SDAF的风格的发生过电饭锅的</button> </label>
+                    <label for="ctagr7">
+                        <button class="topcoat-button chooser">SDAF的风格的发生过电饭锅的</button>
+                    </label>
 
                     <input type="checkbox" id="ctagr8">
-                    <label for="ctagr8"> <button class="topcoat-button chooser" >是的风格的发生过是大法官电饭锅的</button> </label>
+                    <label for="ctagr8">
+                        <button class="topcoat-button chooser">是的风格的发生过是大法官电饭锅的</button>
+                    </label>
                 </div>
             </div>
             <div class="chosebar" id="bar_type">
@@ -171,21 +213,21 @@
 
                 <label for="dd3" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd3">
-                <div class="bottom_bar" ></div>
+                <div class="bottom_bar"></div>
             </div>
             <div class="chosebar" id="bar_weight">
                 <div class="title"><span>字重</span></div>
 
                 <label for="dd4" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd4">
-                <div class="bottom_bar" ></div>
+                <div class="bottom_bar"></div>
             </div>
             <div class="chosebar" id="bar_user">
                 <div class="title"><span>自定义</span></div>
 
                 <label for="dd5" class="bar_switch"> <span>⋯</span></label>
                 <input type="checkbox" id="dd5">
-                <div class="bottom_bar" ></div>
+                <div class="bottom_bar"></div>
             </div>
         </div>
 
@@ -259,91 +301,91 @@
                     </div>-->
 
 
-                 </div>
+                </div>
             </div>
 
             <div class="tagcook hide">
                 <ul>
-                    <li><span>语言: </span><input type="text" class=" cook_inp cook_lang" value="" inp_for="tags_lang"/><span class="addtag_but">+</span></li>
-                    <li><span>厂商: </span><input type="text" class=" cook_inp cook_com" value="" inp_for="tags_com"/><span class="addtag_but">+</span></li>
-                    <li><span>类型: </span><input type="text" class=" cook_inp cook_type" value="" inp_for="tags_type"/><span class="addtag_but">+</span></li>
-                    <li><span>字重: </span><input type="text" class=" cook_inp cook_weight" value="" inp_for="tags_weight"/><span class="addtag_but">+</span></li>
-                    <li><span>自定义: </span><input type="text" class=" cook_inp cook_user" value="" inp_for="tags_user"/><span class="addtag_but">+</span></li>
+                    <li><span>语言: </span><input type="text" class=" cook_inp cook_lang" value=""
+                                                inp_for="tags_lang"/><span class="addtag_but">+</span></li>
+                    <li><span>厂商: </span><input type="text" class=" cook_inp cook_com" value=""
+                                                inp_for="tags_com"/><span class="addtag_but">+</span></li>
+                    <li><span>类型: </span><input type="text" class=" cook_inp cook_type" value=""
+                                                inp_for="tags_type"/><span class="addtag_but">+</span></li>
+                    <li><span>字重: </span><input type="text" class=" cook_inp cook_weight" value=""
+                                                inp_for="tags_weight"/><span class="addtag_but">+</span></li>
+                    <li><span>自定义: </span><input type="text" class=" cook_inp cook_user" value=""
+                                                 inp_for="tags_user"/><span class="addtag_but">+</span></li>
                 </ul>
-                <div class="cookbut_box"> <button class="topcoat-button cook_add"> 添加 </button><button class="topcoat-button cook_del"> 移除 </button>
+                <div class="cookbut_box">
+                    <button class="rito-button cook_add"> 添加</button>
+                    <button class="rito-button cook_del"> 移除</button>
                 </div>
 
             </div>
-
 
 
             <div class="editmod">
 
                 <div class="picknumber" title="取消所有选中项">0</div>
-                <button class="topcoat-button act_creat_group"> 创建组 </button>
-                <button class="topcoat-button act_out_group"> 从组移出 </button>
+                <button class="rito-button act_creat_group"> 创建组</button>
+                <button class="rito-button act_out_group"> 从组移出</button>
                 <input type="checkbox" id="ddd3" class="setg_group_inp">
-                <label for="ddd3"><button class="topcoat-button act_setg_group"> 设置标签 </button></label>
+                <label for="ddd3" class="rito-button act_setg_group">设置标签</label>
 
-                <div class="finf"><span>目标组: </span> <input class="gname_edit" type="text" value=""/> <button class="topcoat-button act_push_group"> 移入 </button></div>
+                <div class="finf"><span>目标组: </span> <input class="gname_edit" type="text" value=""/>
+                    <button class="rito-button act_push_group"> 移入</button>
+                </div>
 
             </div>
 
             <div class="foot">
-                <div class="topcoat-button-bar font_name_display">
-                    <label class="topcoat-button-bar__item">
-                        <input type="radio" name="view-bar"  checked="checked" id="view_mod1_inp">
-                        <button class="topcoat-button-bar__button" id="view_mod1"> 名 </button>
-                    </label>
-
-                    <label class="topcoat-button-bar__item">
-                        <input type="radio" name="view-bar" id="view_mod2_inp" >
-                        <button class="topcoat-button-bar__button" id="view_mod2"> 族 </button>
-                    </label>
-
-                    <label class="topcoat-button-bar__item">
-                        <input type="radio" name="view-bar" id="previewON" >
-                        <button class="topcoat-button-bar__button" id="view_mod3"> 预览 </button>
-                    </label>
+                <div class="rito-button-bar font_name_display">
+                    <input type="radio" name="view-bar" checked="checked" id="view_mod1_inp">
+                    <label class="rito-button-bar-item rito-button" for="view_mod1_inp" id="view_mod1">名</label>
+                    <input type="radio" name="view-bar" id="view_mod2_inp">
+                    <label class="rito-button-bar-item rito-button" for="view_mod2_inp" id="view_mod2">族</label>
+                    <input type="radio" name="view-bar" id="previewON">
+                    <label class="rito-button-bar-item rito-button" for="previewON" id="view_mod3">预览</label>
                 </div>
                 <input type="text" class="topcoat-text-input preview_text" placeholder="预览文字" value="">
 
 
-                <div class="sizeranger"> <div class="srang">18</div> <input type="range" class="topcoat-range" max="70" min="8" value="18"on ></div>
+                <div class="sizeranger">
+                    <div class="srang">18</div>
+                    <input type="range" class="topcoat-range" max="70" min="8" value="18" on></div>
             </div>
         </div>
-
-
-
 
 
     </div>
 
     <div class="page2 tagpage">
 
-        <input type="checkbox" id="spoiler1" />
-        <label for="spoiler1"><span class="spoiler_open" >-</span><span class="spoiler_close">+</span>&nbsp;
-        </label><div class="spoiler">
+        <input type="checkbox" id="spoiler1"/>
+        <label for="spoiler1"><span class="spoiler_open">-</span><span class="spoiler_close">+</span>&nbsp;
+        </label>
+        <div class="spoiler">
+
+        </div>
+
 
     </div>
-
-
-</div>
     <div class="page3 tagpage">
 
         <div class="opbox">
             <h2>扫描字体列表</h2>
             <div class="lll">
-                <button class="topcoat-button--cta" id="addfonts" >扫描新增字体</button>
-                <button class="topcoat-button--cta redbut" id="reloadfonts" >重新扫描</button>
+                <button class="rito-button" id="addfonts">扫描新增字体</button>
+                <button class="rito-button redbut" id="reloadfonts">重新扫描</button>
             </div>
 
 
             <h2>字体列表保存</h2>
             <div class="lll">
-                <button class="topcoat-button" id="fontlist_out" > 导出 </button>
-                <button class="topcoat-button" id="fontlist_in" > 导入 </button>
-                <button class="topcoat-button" id="opensetfolder" >打开配置文件夹</button>
+                <button class="rito-button" id="fontlist_out"> 导出</button>
+                <button class="rito-button" id="fontlist_in"> 导入</button>
+                <button class="rito-button" id="opensetfolder">打开配置文件夹</button>
             </div>
 
             <h2>标签自定义</h2>
@@ -352,34 +394,34 @@
                     <li>
                         <span>语言:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_lang" value="语言"/>
-                        <button class="topcoat-button--cta redbut" id="" >清空标签</button>
+                        <button class="rito-button redbut" id="">清空标签</button>
                     </li>
                     <li>
                         <span>厂商:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_com" value="厂商"/>
-                        <button class="topcoat-button--cta redbut" id="" >清空标签</button>
+                        <button class="rito-button redbut" id="">清空标签</button>
                     </li>
                     <li>
                         <span>类型:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_type" value="类型"/>
-                        <button class="topcoat-button--cta redbut" id="" >清空标签</button>
+                        <button class="rito-button redbut" id="">清空标签</button>
                     </li>
                     <li>
                         <span>字重:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_weight" value="字重"/>
-                        <button class="topcoat-button--cta redbut"  >清空标签</button>
+                        <button class="rito-button redbut">清空标签</button>
                     </li>
                     <li>
                         <span>用户:</span>
-                        <input type="text" class=" cook_inp diytag_inp" id="diyt_user"  value="自定义"/>
-                        <button class="topcoat-button--cta  redbut" id="" >清空标签</button>
+                        <input type="text" class=" cook_inp diytag_inp" id="diyt_user" value="自定义"/>
+                        <button class="rito-button  redbut" id="">清空标签</button>
                     </li>
                 </ul>
             </div>
             <h2>About</h2>
             <div class="lll">
-                <div> fonTags 字体标签夹 </div>
-                <div> v0.3 Beta 测试版 (2015/11/23) </div>
+                <div> fonTags 字体标签夹</div>
+                <div> v0.8 Beta2 测试版 (2015/12/17)</div>
                 <div>作者: <a href="http://nullice.com/about">nullice</a></div>
                 <div>主页: <a href="http://nullice.com/ps/fontags">nullice.com/ps/fontags</a></div>
 
@@ -389,7 +431,6 @@
 
     </div>
 </div>
-
 
 
 <script src="js/clipboard.min.js"></script>

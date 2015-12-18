@@ -1,0 +1,79 @@
+.fontitem:not(.pick):not(.pickG) {
+    background-color: rgba(211, 210, 206, 1);
+}
+
+.group>.fontitem:hover:not(.pick):not(.pickG), .group label .fontitem:hover:not(.pick):not(.pickG), .fontitem:hover:not(.pick):not(.pickG) {
+    background-color: rgb(236, 236, 236);
+}
+
+.group>.fontitem:not(.pick):not(.pickG) {
+    background-color: rgba(200, 199, 196, 1);
+}
+
+:checked + .group label .fontitem {
+    box-shadow: 0 1px 0px 1px rgba(189, 189, 189, 0.9), 0 2px 2px 0px rgba(40, 40, 40, 0.67);
+}
+
+.chosebar {
+    border-color: rgba(124, 124, 124, 0.36);
+}
+
+
+.rito-button-bar .rito-button-bar-item {
+    background-color: #D7D5D5;
+    box-shadow: inset 0 1px #D7D5D5;
+    border: 1px solid rgba(92, 92, 92, 0.43);
+}
+
+.rito-button {
+    background-color: #D7D7D7;
+    box-shadow: inset 0 1px #D7D7D7;
+    border: 1px solid rgba(124, 119, 119, 0.55);
+}
+
+.rito-button:hover {
+    background-color: #e5e5e5;
+    box-shadow: inset 0 1px #e5e5e5;
+}
+
+.rito-button-bar .rito-button-bar-item:hover {
+    background: #DDDDDD;
+}
+
+.rito-button-bar :checked + .rito-button-bar-item {
+    background: #BDBDBD;
+    color: #414141;
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+:checked + .rito-button.chooser, :checked + .rito-button.chooser_all {
+    color: #E4E7EA;
+    background-color: #3980c3;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.13);
+    box-shadow: inset 0 1px 0px rgba(10, 42, 37, 0.28);
+    border-color: #4683B3;
+}
+
+
+.redbut {
+    background-color: rgb(221, 190, 191);
+    color: rgba(152, 81, 81, 0.98);
+    border-color: rgb(226, 151, 151);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.eop_buttom, .spead_buttom, .filter_buttom {
+    text-shadow: 0 1px 1px #CBCBCB;
+}
+
+
+.tagcook {
+    background-color: #C8C8C8;
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.22),inset 0px 1px 1px 0px rgba(197, 197, 197, 0.75);
+}
+
+:checked + .rito-button.chooser_all {
+    background-color: #8290aa;
+    border-color: #5d7786;
+}

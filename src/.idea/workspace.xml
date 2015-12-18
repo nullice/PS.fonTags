@@ -97,23 +97,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="panel.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="panel.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/panel.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6755725">
-                  <caret line="335" column="48" selection-start-line="335" selection-start-column="48" selection-end-line="335" selection-end-column="48" />
+                <state vertical-scroll-proportion="5.1034484">
+                  <caret line="375" column="0" selection-start-line="375" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.066667">
-                  <caret line="326" column="31" selection-start-line="326" selection-start-column="31" selection-end-line="326" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.5869565">
+                  <caret line="1436" column="0" selection-start-line="1436" selection-start-column="0" selection-end-line="1436" selection-end-column="0" />
                   <folding>
-                    <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
+                    <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -138,10 +138,10 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.58762884">
+                <state vertical-scroll-proportion="0.69072163">
                   <caret line="251" column="67" selection-start-line="251" selection-start-column="67" selection-end-line="251" selection-end-column="67" />
                   <folding>
-                    <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
+                    <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -183,12 +183,12 @@
         <option value="$PROJECT_DIR$/css/dark.css" />
         <option value="$PROJECT_DIR$/js/PS_theme.js" />
         <option value="$PROJECT_DIR$/css/light2.css" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/dark1.css" />
         <option value="$PROJECT_DIR$/css/dark2.css" />
         <option value="$PROJECT_DIR$/CSXS/manifest.xml" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/panel.css" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -353,7 +353,6 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="js-jscs-nodeInterpreter" value="D:\Develop\Web\Run\Node\node.exe" />
     <property name="last_opened_file_path" value="$USER_HOME$/node_modules/less/bin/lessc" />
     <property name="javascript.nodejs.core.library.configured.version" value="5.2.0" />
@@ -478,7 +477,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18675596" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18675596" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31744313" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49420443" order="7" side_tool="false" content_ui="tabs" />
@@ -662,7 +661,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
+            <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -672,7 +671,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
+            <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -705,7 +704,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
-            <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
+            <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -913,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.066667">
-          <caret line="326" column="31" selection-start-line="326" selection-start-column="31" selection-end-line="326" selection-end-column="31" />
-          <folding>
-            <marker date="1450333165007" expanded="true" signature="10971:11352" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dark1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6206896">
@@ -957,9 +946,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/panel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6755725">
-          <caret line="335" column="48" selection-start-line="335" selection-start-column="48" selection-end-line="335" selection-end-column="48" />
+        <state vertical-scroll-proportion="5.1034484">
+          <caret line="375" column="0" selection-start-line="375" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5869565">
+          <caret line="1436" column="0" selection-start-line="1436" selection-start-column="0" selection-end-line="1436" selection-end-column="0" />
+          <folding>
+            <marker date="1450337974114" expanded="true" signature="10971:11352" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
