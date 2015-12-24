@@ -1438,11 +1438,11 @@ function loadSetting()
 
 //------------------main---------
 
-var event = new CSEvent();//创建一个事件
-event.type = "com.adobe.PhotoshopPersistent"; //注册持久化运行事件
-event.scope = "APPLICATION";
-event.extensionId = cs.getExtensionID();// 我们的扩展 ID
-cs.dispatchEvent(event); //发送事件让宿主持久化运行我们的扩展
+//var event = new CSEvent();//创建一个事件
+//event.type = "com.adobe.PhotoshopPersistent"; //注册持久化运行事件
+//event.scope = "APPLICATION";
+//event.extensionId = cs.getExtensionID();// 我们的扩展 ID
+//cs.dispatchEvent(event); //发送事件让宿主持久化运行我们的扩展
 
 
 loadSetting();
@@ -1463,11 +1463,9 @@ $(document).on("change", ".edit_inl", function (e)
             $("#fid" + fid).attr("font_" + $(this).attr("inp_for"), $(this)[0].value);
 
         }
-
         nowSave();
         rufSetting();
         reloadChooserBar();
-        //console.log(fontages.index(fid));
     }
 });
 
