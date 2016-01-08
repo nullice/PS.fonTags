@@ -1143,6 +1143,7 @@ function refurDisplay()
     hideEmptyGourp();
     hideUnusedBar();
     showOverHeightBut();
+    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
 
 
     //-------------
