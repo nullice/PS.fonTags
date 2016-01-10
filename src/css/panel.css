@@ -589,7 +589,6 @@ body{
 .edit_inl,
 .cook_inp
 {
-
     padding: 0 4px;
     border: 1px solid rgba(51, 52, 52, 0);
     background-color: rgba(69, 70, 70, 0);
@@ -599,9 +598,7 @@ body{
 
 
 
-
-
-
+.search_buttom,
 .eop_buttom,
 .spead_buttom,
 .filter_buttom {
@@ -615,6 +612,12 @@ body{
     top: 9px;
     z-index: 3;
 }
+
+.search_buttom {
+    left: 37px;
+    text-shadow: none;
+}
+
 
 .eop_buttom,
 .spead_buttom{
@@ -634,6 +637,8 @@ body{
     top: -16px;
 }
 
+
+.search_buttom:hover,
 .eop_buttom:hover,
 .spead_buttom:hover,
 .filter_buttom:hover{
@@ -708,15 +713,24 @@ li input:hover{
 
 .cook_inp{
 
-
     border-bottom-width:1px;
     border-bottom-color: rgba(51, 51, 51, 0.08);
     margin-bottom: 10px;
     font-family: inherit;
     width:80%;
+}
 
+.cook_inp:focus{
+
+    border-bottom-color: #1e76e3;
 
 }
+
+
+
+
+
+
 
 .cookbut_box{
 
@@ -790,5 +804,19 @@ a:hover {
 a,a:visited {
     text-decoration: none;
     color: #343434;
+}
+
+
+
+
+.search_inp{
+    font-size: 13px;
+    color: #535353;
+    display: inline-block;
+    position: absolute;
+    left: 55px;
+    right: 0px;
+    top: -22px;
+    width: 195px;
 }
 

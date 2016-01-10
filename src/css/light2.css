@@ -63,7 +63,7 @@
     box-shadow: none;
 }
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     text-shadow: 0 1px 1px #CBCBCB;
 }
 

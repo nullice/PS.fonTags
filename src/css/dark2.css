@@ -2,7 +2,7 @@
     border-color: rgba(77, 77, 77, 0.46);
 }
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     color: rgba(0, 0, 0, 0.72);
     text-shadow: 0 1px 1px rgb(77, 77, 77);
 }
@@ -226,7 +226,7 @@ a, a:visited {
 }
 
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     color: rgba(145, 145, 145, 0.72);
     text-shadow: 0 1px 1px rgb(36, 36, 36);
 }
@@ -245,4 +245,10 @@ a, a:visited {
 :checked + .rito-button.chooser_all {
     background-color: #515A6C;
     border-color: #626C71;
+}
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(108, 108, 108, 0.93);
 }
