@@ -8,6 +8,8 @@
 $(".fontlist").niceScroll({
     cursorcolor:"rgba(0,0,0,0.2)",
     cursorborder:"none",
+    cursorwidth: "8px",
+    cursorborderradius: "3px",
     mousescrollstep: 8
 });
 
