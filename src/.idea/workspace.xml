@@ -63,13 +63,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.733333">
-              <caret line="371" column="13" selection-start-line="371" selection-start-column="13" selection-end-line="371" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.91004497">
+              <caret line="704" column="1" selection-start-line="704" selection-start-column="1" selection-end-line="704" selection-end-column="1" />
               <folding>
-                <marker date="1454577303546" expanded="true" signature="10924:11305" placeholder="..." />
+                <marker date="1454579690551" expanded="true" signature="10924:11305" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ui.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20086083">
+            <state vertical-scroll-proportion="0.0">
               <caret line="7" column="22" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="22" />
               <folding />
             </state>
@@ -165,9 +165,9 @@
         <option value="$PROJECT_DIR$/css/dark1.css" />
         <option value="$PROJECT_DIR$/css/dark2.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/jquery-2.1.4.js" />
         <option value="$PROJECT_DIR$/js/ui.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -653,7 +653,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1454577303546" expanded="true" signature="10924:11305" placeholder="..." />
+            <marker date="1454579690551" expanded="true" signature="10924:11305" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -663,7 +663,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <marker date="1454577303546" expanded="true" signature="10924:11305" placeholder="..." />
+            <marker date="1454579690551" expanded="true" signature="10924:11305" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -696,7 +696,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
-            <marker date="1454577303546" expanded="true" signature="10924:11305" placeholder="..." />
+            <marker date="1454579690551" expanded="true" signature="10924:11305" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -903,24 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.392858">
-          <caret line="238" column="43" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.733333">
-          <caret line="371" column="13" selection-start-line="371" selection-start-column="13" selection-end-line="371" selection-end-column="13" />
-          <folding>
-            <marker date="1454577303546" expanded="true" signature="10924:11305" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-2.1.4.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -931,9 +913,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20086083">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.392858">
+          <caret line="238" column="43" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91004497">
+          <caret line="704" column="1" selection-start-line="704" selection-start-column="1" selection-end-line="704" selection-end-column="1" />
+          <folding>
+            <marker date="1454579690551" expanded="true" signature="10924:11305" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
