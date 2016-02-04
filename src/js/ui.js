@@ -148,7 +148,6 @@ function fontlistDisplayFromName()
     });
 
 
-
     $(".preview_text").css("display", "none");
 
 }

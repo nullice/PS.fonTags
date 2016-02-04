@@ -431,14 +431,15 @@ function arrangeFontGroup(fonts)
 }
 
 
-function fontagasToHTML(fontagesIn)
+function fontagasToHTML(fontagesIn,HTMLnode )
 {
-    $(".fontlist").html("");
+
+    HTMLnode = typeof HTMLnode !== 'undefined' ?  HTMLnode : ".fontlist";
+    $(HTMLnode).html("");
     var groupCounter = 0;
 
     for (var i = 0; i < fontagesIn.list.length; i++)
     {
-
         function fontTOHTML(parent, font)
         {
             var str1 = ' font_name="' + font.name + '" ';
@@ -461,7 +462,7 @@ function fontagasToHTML(fontagesIn)
 
         if (fontagesIn.list[i]._type == "font")
         {
-            fontTOHTML(".fontlist", fontagesIn.list[i])
+            fontTOHTML(HTMLnode, fontagesIn.list[i])
         }
 
         if (fontagesIn.list[i]._type == "group" && fontagesIn.list[i].fonts.length > 0)
@@ -487,7 +488,7 @@ function fontagasToHTML(fontagesIn)
             groupHtml = $("#tmpl_fontlist_group").tmpl(o);
 
 
-            $(".fontlist").append(groupHtml);
+            $(HTMLnode).append(groupHtml);
 
             for (var z = 0; z < fontagesIn.list[i].fonts.length; z++)
             {
@@ -1874,3 +1875,10 @@ function displayDIYTagsName()
     }
 }
 
+//---------------
+
+function seacher_start(keyword)
+{
+    fontagasToHTML(fontages,".fontlist_search");
+
+}
