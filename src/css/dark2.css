@@ -252,3 +252,7 @@ a, a:visited {
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: rgba(108, 108, 108, 0.93);
 }
+
+.search_inp{
+    color: #a0a0a0;
+}
