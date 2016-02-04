@@ -5,6 +5,31 @@
 //----------------
 
 
+function refWindowSize()
+{
+    setTimeout(function ()
+    {
+        if(  $('.fontlist').is(":hidden") )
+        {
+            $('.fontlist_search').height($(window).height() - $('.fontlist_search').offset().top - $('.foot').height());
+        }
+        else
+        {
+            $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+        }
+    }, 100);
+
+}
+
+
+
+
+
+
+
+
+
+
 $(".fontlist").niceScroll({
     cursorcolor:"rgba(0,0,0,0.2)",
     cursorborder:"none",
@@ -39,10 +64,7 @@ $(document).on('click', ".spead_buttom", function ()
 
 $(document).on('click', ".bar_switch", function ()
 {
-    setTimeout(function ()
-    {
-        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
-    }, 100);
+    refWindowSize();
 
 });
 
@@ -53,10 +75,7 @@ $(document).on('click', ".filter_buttom", function ()
     $(".chosebar_box").toggleClass("hide");
     $(".fontlist_box").toggleClass("top7");
 
-    setTimeout(function ()
-    {
-        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
-    }, 50);
+    refWindowSize();
 
 });
 

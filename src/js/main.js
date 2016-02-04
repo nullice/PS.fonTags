@@ -371,10 +371,7 @@ function showfontages()
         showOverHeightBut();
     }, 2000);
 
-    setTimeout(function ()
-    {
-        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
-    }, 100);
+    refWindowSize();
 }
 
 function showOverHeightBut()
@@ -1144,7 +1141,7 @@ function refurDisplay()
     hideEmptyGourp();
     hideUnusedBar();
     showOverHeightBut();
-    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    refWindowSize();
 
 
     //-------------
@@ -1880,5 +1877,6 @@ function displayDIYTagsName()
 function seacher_start(keyword)
 {
     fontagasToHTML(fontages,".fontlist_search");
-
+    $(".fontlist").hide();
+    $(".fontlist").visible()
 }
