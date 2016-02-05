@@ -13,9 +13,8 @@ var g_diyTagsname = {lang: "", com: "", type: "", weight: "", user: ""};
 
 function alert(text)
 {
-    cs.evalScript('alert("'+text+'")');
+    cs.evalScript('alert("' + text + '")');
 }
-
 
 
 //------------------------------Fontages------------------------------------
@@ -211,7 +210,7 @@ Fontages.prototype.removeFontFromGroup = function (fid)
         if (o.group >= 0)
         {
             var font = $.extend(true, {}, this.index(fid));
-            font._type="font";
+            font._type = "font";
             //console.log(font);
             this.list[o.group].fonts.splice(o.font, 1);
             this.list.splice(o.group + 1, 0, font);
@@ -234,8 +233,8 @@ Fontages.prototype.removeUnableFonts = function (o)
     {
         if ("" !== o.list[i].name && undefined != o.list[i].name)
         {
-                Temp_fontages.length++;
-                Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i)
+            Temp_fontages.length++;
+            Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i)
         }
     }
 
@@ -247,16 +246,16 @@ Fontages.prototype.removeUnableFonts = function (o)
             if (list[i]._type == "font")
             {
 
-                if ( Temp_fontages.findByPSName(list[i].postScriptName)===undefined)
+                if (Temp_fontages.findByPSName(list[i].postScriptName) === undefined)
                 {
-                    console.log( "remve unable font:"+ list[i].name);
-                    list.splice(i,1);
+                    console.log("remve unable font:" + list[i].name);
+                    list.splice(i, 1);
                     i--;
                 }
             }
             else if (list[i]._type == "group")
             {
-                 _removeuf(list[i].fonts);
+                _removeuf(list[i].fonts);
             }
         }
     }
@@ -284,7 +283,7 @@ Fontages.prototype.moveFontToGroup = function (fid, group)
             this.list[group].fonts.push(font);
             this.list.splice(o.font, 1);
 
-            if(o.font<group)
+            if (o.font < group)
             {
                 return -1;
             }
@@ -316,7 +315,8 @@ function refurFontags(addmod)
             var o = JSON.parse(result);
             var Temp_fontages = new Fontages();
 
-            if (addmod) {
+            if (addmod)
+            {
                 fontages.removeUnableFonts(o);
             }
 
@@ -428,34 +428,35 @@ function arrangeFontGroup(fonts)
 }
 
 
-function fontagasToHTML(fontagesIn,HTMLnode )
+function fontagasToHTML(fontagesIn, HTMLnode)
 {
-
-    HTMLnode = typeof HTMLnode !== 'undefined' ?  HTMLnode : ".fontlist";
+    HTMLnode = typeof HTMLnode !== 'undefined' ? HTMLnode : ".fontlist";
     $(HTMLnode).html("");
     var groupCounter = 0;
 
+    function fontTOHTML(parent, font)
+    {
+        var str1 = ' font_name="' + font.name + '" ';
+        str1 += ' font_family="' + font.family + '" ';
+        str1 += ' font_postscriptname="' + font.postScriptName + '" ';
+        str1 += ' font_style="' + font.style + '" ';
+        str1 += ' id="fid' + font._id + '" ';
+        var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
+        str1 += ' style="' + strf + '" ';
+
+        var html =
+            '<div class="fontitem"' + str1 + ">\n" +
+            '<span>' + font.name + '<\/span> ' +
+
+            ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名" data-clipboard-text="' + font.family + " " + font.style + '" ><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
+            + '<\/div>';
+
+        $(parent).append(html);
+    }
+
+
     for (var i = 0; i < fontagesIn.list.length; i++)
     {
-        function fontTOHTML(parent, font)
-        {
-            var str1 = ' font_name="' + font.name + '" ';
-            str1 += ' font_family="' + font.family + '" ';
-            str1 += ' font_postscriptname="' + font.postScriptName + '" ';
-            str1 += ' font_style="' + font.style + '" ';
-            str1 += ' id="fid' + font._id + '" ';
-            var strf = "font-family: '" + font.name + "', '" + font.postScriptName + "', '" + font.family + "' ;";
-            str1 += ' style="' + strf + '" ';
-
-            var html =
-                '<div class="fontitem"' + str1 + ">\n" +
-                '<span>' + font.name + '<\/span> ' +
-
-                ' <div class="opbar"><i class="fa fa-sticky-note  act_buttom act_copy" title="复制字体名" data-clipboard-text="' +font.family+" "+font.style+'" ><\/i><i class="fa fa-check  act_buttom act_apply" title="应用字体"><\/i><i class="fa fa-info act_buttom act_info" title="字体信息"><\/i> <\/div>'
-                + '<\/div>';
-
-            $(parent).append(html);
-        }
 
         if (fontagesIn.list[i]._type == "font")
         {
@@ -496,11 +497,14 @@ function fontagasToHTML(fontagesIn,HTMLnode )
 
 
     rufSetting();
-    $(".act_info").on("click", act_info);
 
 
 
-    $(".fontitem").bind("contextmenu", function (e)
+
+    $(".act_info").unbind().on("click", act_info);
+
+
+    $(".fontitem").unbind().bind("contextmenu", function (e)
     {
         return false;
     });
@@ -510,7 +514,7 @@ function fontagasToHTML(fontagesIn,HTMLnode )
 
         function (e)
         {
-            if($(e.target).hasClass("act_copy"))
+            if ($(e.target).hasClass("act_copy"))
             {
                 return;
             }
@@ -524,14 +528,14 @@ function fontagasToHTML(fontagesIn,HTMLnode )
     $(".fontitem").on("mousedown", function (e)
         {
 
-            if (e.which == 3)
+            if (e.which == 3 && $(this).parent().hasClass("fontlist_search") == false)
             {
+                console.log("-----");
                 if ($(this).hasClass("groupItem"))
                 {
-
                     var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
                     var count = 0;
-                   // console.log(ev);
+                    // console.log(ev);
 
                     ev.each(function ()
                     {
@@ -577,6 +581,7 @@ function fontagasToHTML(fontagesIn,HTMLnode )
 
             function fontItemPick(e)
             {
+                console.log(e);
                 if (e.hasClass("pick"))
                 {
                     e.removeClass("pick");
@@ -685,18 +690,18 @@ var INCS = {
     "ＭＳ": "微软",
     "MS ": "微软",
     "微軟": "微软",
-    "四通利方":" 四通利方",
-    "超研泽":"超研泽",
-    "昆仑":"昆仑",
-    "TypeLand":"文悦",
-    "文悦":"文悦",
-    "Monotype":"蒙纳",
-    "蒙纳":"蒙纳",
-    "华康":"",
-    "ITC":"",
-    "汉鼎":"",
-    "长城":"",
-    "超世纪":"",
+    "四通利方": " 四通利方",
+    "超研泽": "超研泽",
+    "昆仑": "昆仑",
+    "TypeLand": "文悦",
+    "文悦": "文悦",
+    "Monotype": "蒙纳",
+    "蒙纳": "蒙纳",
+    "华康": "",
+    "ITC": "",
+    "汉鼎": "",
+    "长城": "",
+    "超世纪": "",
 
 }
 
@@ -889,8 +894,6 @@ function chooserToHTML()
         });
 
 
-
-
     //------------------------
 
 
@@ -980,14 +983,14 @@ function refPickfont()
 
         $(".editmod").css("bottom", "5px");
         $(".editmod").css("height", "64px");
-        $(".fontitem").css("-webkit-user-select","text");
+        $(".fontlist.fontitem").css("-webkit-user-select", "text");
     }
 
     else
     {
         $(".editmod").css("bottom", "-95px");
         $(".editmod").css("height", "0px");
-        $(".fontitem").css("-webkit-user-select","none");
+        $(".fontlist.fontitem").css("-webkit-user-select", "none");
     }
 
 
@@ -1062,8 +1065,8 @@ var booList_user = {};
 //选择器被改变
 function getbooList()
 {
-/*    console.log("getbooList");
-    console.log(fontages);*/
+    /*    console.log("getbooList");
+     console.log(fontages);*/
     fontages.restVisiable();
 
     booList_lang = {};
@@ -1098,27 +1101,27 @@ function getbooList()
     }
 
 
-/*    console.log(booList_lang);
-    console.log(booList_com);
-    console.log(booList_type);
-    console.log(booList_weight);
-    console.log(booList_user);
-    console.log("---------------------");*/
+    /*    console.log(booList_lang);
+     console.log(booList_com);
+     console.log(booList_type);
+     console.log(booList_weight);
+     console.log(booList_user);
+     console.log("---------------------");*/
 
     refurDisplay();
 
 
     input_allRef();
-/*    console.log(booList_lang);
-    console.log(booList_com);
-    console.log(booList_type);
-    console.log(booList_weight);
-    console.log(booList_user);*/
+    /*    console.log(booList_lang);
+     console.log(booList_com);
+     console.log(booList_type);
+     console.log(booList_weight);
+     console.log(booList_user);*/
 
 
     function input_allRef()
     {
-       /* console.log($(this).siblings().filter(".chooser_input"));*/
+        /* console.log($(this).siblings().filter(".chooser_input"));*/
         $(".input_all").each(function ()
         {
             var bool = true;
@@ -1142,13 +1145,13 @@ function refurDisplay()
     dealFontDisplay(fontages.list, "tags_lang", booList_lang);
     //console.log(fontages.list[0]._visiable + "tags_lang");
     dealFontDisplay(fontages.list, "tags_com", booList_com);
-   // console.log(fontages.list[0]._visiable + "tags_com");
+    // console.log(fontages.list[0]._visiable + "tags_com");
     dealFontDisplay(fontages.list, "tags_type", booList_type);
-   // console.log(fontages.list[0]._visiable + "tags_type");
+    // console.log(fontages.list[0]._visiable + "tags_type");
     dealFontDisplay(fontages.list, "tags_weight", booList_weight);
-   // console.log(fontages.list[0]._visiable + "tags_weight");
+    // console.log(fontages.list[0]._visiable + "tags_weight");
     dealFontDisplay(fontages.list, "tags_user", booList_user);
-   // console.log(fontages.list[0]._visiable + "tags_user");
+    // console.log(fontages.list[0]._visiable + "tags_user");
 
     applyVisible(fontages.list);
     hideEmptyGourp();
@@ -1300,7 +1303,7 @@ function saveFontages(fileName)
     var result = window.cep.fs.writeFile(fileName, data);
     if (0 == result.err)
     {
-       // console.log("保存到：" + fileName);
+        // console.log("保存到：" + fileName);
     }
     else
     {
@@ -1328,9 +1331,9 @@ function loadFontages(fileName)
 
 function nowSave()
 {
-    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    var p1 = cs.getSystemPath(SystemPath.USER_DATA) + "/nullice.psex";
     window.cep.fs.makedir(p1);
-    var fileName = p1 +"/fontages.json";
+    var fileName = p1 + "/fontages.json";
     saveFontages(fileName);
 
 }
@@ -1338,9 +1341,9 @@ function nowSave()
 function nowLoad()
 {
 
-    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
-    console.log("用户设置目录：" +p1);
-    var fileName = p1 +"/fontages.json";
+    var p1 = cs.getSystemPath(SystemPath.USER_DATA) + "/nullice.psex";
+    console.log("用户设置目录：" + p1);
+    var fileName = p1 + "/fontages.json";
 
     if (loadFontages(fileName))
     {
@@ -1396,9 +1399,9 @@ function rufSetting()
 function saveSetting()
 {
 
-    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    var p1 = cs.getSystemPath(SystemPath.USER_DATA) + "/nullice.psex";
     window.cep.fs.makedir(p1);
-    var fileName = p1 +"/setting.json";
+    var fileName = p1 + "/setting.json";
 
     var setObj = {
         "g_vmod": g_vmod,
@@ -1420,9 +1423,9 @@ function saveSetting()
 function loadSetting()
 {
 
-    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex";
+    var p1 = cs.getSystemPath(SystemPath.USER_DATA) + "/nullice.psex";
 
-    var fileName = p1 +"/setting.json";
+    var fileName = p1 + "/setting.json";
     var result = window.cep.fs.readFile(fileName);
 
     if (0 == result.err)// err 为 0 读取成功
@@ -1431,11 +1434,11 @@ function loadSetting()
         g_vmod = result.g_vmod;
         g_diyTagsname = result.diyTagsname;
 
-        $("#diyt_lang").val(g_diyTagsname.lang );
-        $("#diyt_com").val(g_diyTagsname.com );
-        $("#diyt_type").val(g_diyTagsname.type );
+        $("#diyt_lang").val(g_diyTagsname.lang);
+        $("#diyt_com").val(g_diyTagsname.com);
+        $("#diyt_type").val(g_diyTagsname.type);
         $("#diyt_weight").val(g_diyTagsname.weight);
-        $("#diyt_user").val(g_diyTagsname.user );
+        $("#diyt_user").val(g_diyTagsname.user);
 
         return true;
     }
@@ -1527,7 +1530,7 @@ $(document).on("change", ".gname_edit", function ()
     if (g_pickLastGroup != undefined && g_pickLastGroup >= 0)
     {
         fontages.list[g_pickLastGroup].groupName = $(this).val();
-        g_pickLastGroup_element.attr("font_group_name",$(this).val());
+        g_pickLastGroup_element.attr("font_group_name", $(this).val());
         g_pickLastGroup_element.children("span:not(.font_number)").text($(this).val());
         nowSave();
     }
@@ -1582,10 +1585,6 @@ $(document).on("click", "#opensetfolder", function ()
 });
 
 
-
-
-
-
 function pf_dismissFonts()
 {//Object.getOwnPropertyNames(g_pickfont).length
     for (var i in g_pickfont)
@@ -1600,7 +1599,7 @@ function pf_newGroup()
 {
     var d = 0;
     var pos = 0;
-    var previous =0;
+    var previous = 0;
     for (var i in g_pickfont)
     {
         if (0 == d)
@@ -1623,8 +1622,8 @@ function pf_newGroup()
 
         if (fontages.list[pos]._type == "group")
         {
-             previous =fontages.moveFontToGroup(g_pickfont[i], pos);
-            if( previous === -1)
+            previous = fontages.moveFontToGroup(g_pickfont[i], pos);
+            if (previous === -1)
             {
                 pos--;
             }
@@ -1735,10 +1734,10 @@ function pf_removePicksTag()
 
 function pf_fontlist_out()
 {
-    result = window.cep.fs.showSaveDialogEx ("导出字体列表", "", ["json"], "fonTagsList.json", "字体列表 JSON");
+    result = window.cep.fs.showSaveDialogEx("导出字体列表", "", ["json"], "fonTagsList.json", "字体列表 JSON");
     if (0 == result.err)
     {
-        if(result.data.length==0)
+        if (result.data.length == 0)
         {
             console.log("用户放弃了保存");
         }
@@ -1758,10 +1757,10 @@ function pf_fontlist_out()
 
 function pf_fontlist_in()
 {
-    var result = window.cep.fs.showOpenDialogEx (false, false, "导入字体列表", "", ["json"] , "字体列表 JSON");
+    var result = window.cep.fs.showOpenDialogEx(false, false, "导入字体列表", "", ["json"], "字体列表 JSON");
     if (0 == result.err)
     {
-        console.log( result.data)
+        console.log(result.data)
         loadFontages(result.data[0]);
         nowSave();
         showfontages();
@@ -1783,13 +1782,10 @@ function pf_opensetfolder()
 {
     var process = require('child_process');
     var path = require('path');
-    var p1= cs.getSystemPath(SystemPath.USER_DATA)+"/nullice.psex"
-    process.exec("explorer " + path.normalize(p1) );
+    var p1 = cs.getSystemPath(SystemPath.USER_DATA) + "/nullice.psex"
+    process.exec("explorer " + path.normalize(p1));
 
 }
-
-
-
 
 
 //------------------setting page-----------
@@ -1814,12 +1810,6 @@ $(document).on("click", "#reloadfonts", function ()
     $(".page3").hide();
     nowSave();
 });
-
-
-
-
-
-
 
 
 $(document).on("change", "#diyt_lang", function ()
@@ -1859,27 +1849,25 @@ $(document).on("change", "#diyt_user", function ()
 });
 
 
-
-
 function displayDIYTagsName()
 {
-    if(g_diyTagsname.lang != "")
+    if (g_diyTagsname.lang != "")
     {
         $("#bar_lang>.title>span").text(g_diyTagsname.lang);
     }
-    if(g_diyTagsname.com != "")
+    if (g_diyTagsname.com != "")
     {
         $("#bar_com>.title>span").text(g_diyTagsname.com);
     }
-    if(g_diyTagsname.type != "")
+    if (g_diyTagsname.type != "")
     {
         $("#bar_type>.title>span").text(g_diyTagsname.type);
     }
-    if(g_diyTagsname.weight != "")
+    if (g_diyTagsname.weight != "")
     {
         $("#bar_weight>.title>span").text(g_diyTagsname.weight);
     }
-    if(g_diyTagsname.user != "")
+    if (g_diyTagsname.user != "")
     {
         $("#bar_user>.title>span").text(g_diyTagsname.user);
     }
@@ -1889,7 +1877,195 @@ function displayDIYTagsName()
 
 function seacher_start(keyword)
 {
-    fontagasToHTML(fontages,".fontlist_search");
+    var pinyin = require("./js/pinyin")
+
+
+    if (keyword == "" || keyword == undefined)
+    {
+        $(".fontlist_search").hide();
+        $(".fontlist").show();
+        $(".fontlist_search").html("");
+
+        if ($(".chosebar_box").hasClass("hide") == false)
+        {
+            $(".chosebar_box").show();
+        }
+        refWindowSize();
+        return;
+    }
+    var reg = new RegExp("^" + keyword, "i");
+    var tempFontages = new Fontages();
+
+    function _seacher_start_byName(name, bool_pinyin, bool_kana)
+    {
+        for (var i = 0; i < fontages.length; i++)
+        {
+            if (fontages.index(i) !== undefined)
+            {
+                if (bool_pinyin)
+                {
+                    if (reg.test(strToPyinyinStr(fontages.index(i)[name])))
+                    {
+                        if (tempFontages.findByPSName(fontages.index(i).postScriptName) === undefined)
+                        {
+                            tempFontages.list[tempFontages.list.length] = fontages.index(i);
+                            tempFontages.length++;
+                        }
+                    }
+                }
+                else if (bool_kana)
+                {
+
+                    if (reg.test(strToKanaStr(fontages.index(i)[name])))
+                    {
+                        if (tempFontages.findByPSName(fontages.index(i).postScriptName) === undefined)
+                        {
+                            tempFontages.list[tempFontages.list.length] = fontages.index(i);
+                            tempFontages.length++;
+                        }
+                    }
+                }
+                else if (reg.test(fontages.index(i)[name]))
+                {
+                    if (tempFontages.findByPSName(fontages.index(i).postScriptName) === undefined)
+                    {
+                        tempFontages.list[tempFontages.list.length] = fontages.index(i);
+                        tempFontages.length++;
+                    }
+                }
+            }
+        }
+    }
+
+
+    function strToPyinyinStr(str)
+    {
+        var py = pinyin(str, {style: pinyin.STYLE_FIRST_LETTER, heteronym: true})
+        var pyinyinStr = [""];
+        for (var ia = 0; ia < py.length; ia++)
+        {
+            if (py[ia].length > 1)
+            {
+                var org = pyinyinStr[0];
+                for (var ib = 0; ib < pyinyinStr.length; ib++)
+                {
+                    pyinyinStr[ib] = pyinyinStr[ib] + py[ia][0];
+                }
+                for (var ic = 1; ic < py[ia].length; ic++)
+                {
+                    pyinyinStr[pyinyinStr.length] = org + py[ia][ic];
+                }
+            }
+            else
+            {
+                for (var ib = 0; ib < pyinyinStr.length; ib++)
+                {
+                    pyinyinStr[ib] = pyinyinStr[ib] + py[ia];
+                }
+            }
+        }
+        return pyinyinStr;
+    }
+
+
+    function strToKanaStr(str)
+    {
+        return wanakana.toRomaji(str);
+
+    }
+
+
+    //从起始位置匹配--------------------
+    if (g_vmod == 1)
+    {
+        _seacher_start_byName("name");
+        _seacher_start_byName("family");
+    }
+    else
+    {
+        _seacher_start_byName("family");
+        _seacher_start_byName("name");
+    }
+    //任意位置匹配---------------------
+    reg = new RegExp(keyword, "i");
+    if (g_vmod == 1)
+    {
+        _seacher_start_byName("name");
+        _seacher_start_byName("family");
+    }
+    else
+    {
+        _seacher_start_byName("family");
+        _seacher_start_byName("name");
+    }
+    //任意位置匹配-拼音首字母---------------------
+    reg = new RegExp(keyword, "i");
+    if (g_vmod == 1)
+    {
+        _seacher_start_byName("name", true);
+        _seacher_start_byName("family", true);
+    }
+    else
+    {
+        _seacher_start_byName("family", true);
+        _seacher_start_byName("name", true);
+    }
+    //任意位置匹配-假名罗马音首字母---------------------
+    reg = new RegExp(keyword, "i");
+    if (g_vmod == 1)
+    {
+        _seacher_start_byName("name", false, true);
+        _seacher_start_byName("family", false, true);
+    }
+    else
+    {
+        _seacher_start_byName("family", false, true);
+        _seacher_start_byName("name", false, true);
+    }
+
+    fontagasToHTML(tempFontages, ".fontlist_search");
+
     $(".fontlist").hide();
-    $(".fontlist").visible()
-}
+    $(".fontlist_search").show();
+    if ($(".chosebar_box").hasClass("hide") == false)
+    {
+        $(".chosebar_box").hide();
+    }
+
+    refWindowSize();
+};
+
+
+$('.search_inp').on("input",
+    //延迟输入
+    function ()
+    {
+        var res_text = "";
+        res_text = $(this).val();
+        if (res_text == undefined || res_text == "")
+        {
+            seacher_start(res_text);
+            return;
+        }
+
+
+        setTimeout(delayRespond, 500);
+        function delayRespond()
+        {
+
+            if ($('.search_inp').val() == res_text)
+            {
+                seacher_start(res_text);
+            }
+        }
+    }
+
+
+    //无延迟
+    //function ()
+    //{
+    //    seacher_start($(this).val());
+    //}
+);
+
+

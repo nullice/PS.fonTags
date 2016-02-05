@@ -149,13 +149,18 @@ body{
     /*background-color: #1e7dc8;*/
 }
 
-.fontlist
+
+
+
+
+.fontlist,.fontlist_search
 {
     position: relative;
     width: 94%;
     margin: auto;
     bottom: 0;
     overflow: auto;
+
 }
 
 .fontlist_box{
@@ -315,7 +320,7 @@ body{
 
     font-family:"Helvetica", serif;
     font-size: 12px;
-    background-color: rgba(53, 36, 255, 0.55);
+    background-color: rgba(148, 148, 148, 0.55);
 }
 
 
@@ -568,7 +573,7 @@ body{
     border-radius: 3px;
     font-family: "Helvetica", serif;
     font-size: 12px;
-    background-color: rgba(53, 36, 255, 0.55);
+    background-color: rgba(148, 148, 148, 0.55);
     -webkit-user-select: none;
     cursor: default;
 }

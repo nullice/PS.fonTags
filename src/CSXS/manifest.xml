@@ -29,6 +29,7 @@
                     <ScriptPath>./jsx/jsx_main.jsx</ScriptPath>
                     <CEFCommandLine>
                         <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
                     </CEFCommandLine>    
                 </Resources>
 

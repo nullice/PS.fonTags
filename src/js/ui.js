@@ -30,7 +30,7 @@ function refWindowSize()
 
 
 
-$(".fontlist").niceScroll({
+$(".fontlist, .fontlist_search").niceScroll({
     cursorcolor:"rgba(0,0,0,0.2)",
     cursorborder:"none",
     cursorwidth: "8px",
@@ -82,7 +82,7 @@ $(document).on('click', ".filter_buttom", function ()
 
 $(window).resize(function ()
 {
-    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    refWindowSize();
 });
 
 $('.sizeranger').on('mouseup', function ()
