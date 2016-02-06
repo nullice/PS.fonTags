@@ -514,6 +514,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
 
         function (e)
         {
+            console.log("-----");
             if ($(e.target).hasClass("act_copy"))
             {
                 return;
@@ -530,7 +531,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
 
             if (e.which == 3 && $(this).parent().hasClass("fontlist_search") == false)
             {
-                console.log("-----");
+
                 if ($(this).hasClass("groupItem"))
                 {
                     var ev = $(this).parent().parent().children().filter(".fontitem:not(.groupItem)");
@@ -581,7 +582,6 @@ function fontagasToHTML(fontagesIn, HTMLnode)
 
             function fontItemPick(e)
             {
-                console.log(e);
                 if (e.hasClass("pick"))
                 {
                     e.removeClass("pick");
@@ -1889,6 +1889,8 @@ function seacher_start(keyword)
         if ($(".chosebar_box").hasClass("hide") == false)
         {
             $(".chosebar_box").show();
+            $(".fontlist_box").removeClass("top7");
+            $(".topsl").addClass("hide");
         }
         refWindowSize();
         return;
@@ -2030,6 +2032,8 @@ function seacher_start(keyword)
     if ($(".chosebar_box").hasClass("hide") == false)
     {
         $(".chosebar_box").hide();
+        $(".fontlist_box").addClass("top7");
+        $(".topsl").removeClass("hide");
     }
 
     refWindowSize();

@@ -170,7 +170,7 @@ a, a:visited {
 
 
 .cook_inp {
-    border-bottom-color: rgba(184, 182, 182, 0.19);
+    border-bottom-color: rgba(184, 182, 182, 0.38);
 }
 
 
@@ -276,6 +276,15 @@ a, a:visited {
 }
 
 
-.search_inp{
+.search_inp,.preview_text{
     color: #aeaeae;
+}
+
+.sizeranger .topcoat-range {
+    border: 1px solid #424343;
+}
+
+
+.setting_page_title {
+    color: #BDBDBD;
 }

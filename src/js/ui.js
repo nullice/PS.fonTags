@@ -71,14 +71,18 @@ $(document).on('click', ".bar_switch", function ()
 
 $(document).on('click', ".filter_buttom", function ()
 {
+    toggleTagsFilter()
+});
+
+
+function toggleTagsFilter()
+{
 
     $(".chosebar_box").toggleClass("hide");
     $(".fontlist_box").toggleClass("top7");
-
+    $(".topsl").toggleClass("hide");
     refWindowSize();
-
-});
-
+}
 
 $(window).resize(function ()
 {
@@ -231,3 +235,22 @@ function ttt()
 
 
 new Clipboard('.act_copy');
+
+
+
+
+$("#setting_buttom").bind("click", function(){
+    $(".page1").hide();
+    $(".page2").hide();
+    $(".page3").show();
+});
+
+
+$(".return_buttom").bind("click", function(){
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+});
+
+
+
