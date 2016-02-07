@@ -85,6 +85,22 @@
 <!--<hr/>-->
 <!--</div>-->
 
+<div class="load_screen">
+    <div class="loader" title="1">
+        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+  <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+    <animateTransform attributeType="xml"
+      attributeName="transform"
+      type="rotate"
+      from="0 25 25"
+      to="360 25 25"
+      dur="0.6s"
+      repeatCount="indefinite"/>
+    </path>
+  </svg>
+    </div>
+</div>
 
 <div class="topnav">
     <!--<nav class="rito-button-bar">-->
@@ -320,45 +336,46 @@
 
             <h2>扫描字体列表</h2>
             <div class="lll">
-                <button class="rito-button" id="addfonts">扫描新增字体</button>
-                <button class="rito-button redbut" id="reloadfonts">重新扫描</button>
+                <button class="rito-button" id="reflist" title="刷新显示界面中的字体列表">刷新显示</button>
+                <button class="rito-button" id="addfonts" title="如果计算机中安装了新字体，点此把它们加入字体列表">扫描新增字体</button>
+                <button class="rito-button redbut" id="reloadfonts" title="新的扫描结果会覆盖旧列表，以前对字体列表的编辑将丢失">重新扫描</button>
             </div>
 
 
             <h2>字体列表保存</h2>
             <div class="lll">
-                <button class="rito-button" id="fontlist_out"> 导出</button>
-                <button class="rito-button" id="fontlist_in"> 导入</button>
+                <button class="rito-button" id="fontlist_out" title="导出字体列表"> 导出</button>
+                <button class="rito-button" id="fontlist_in" title="导入字体列表，你当前的字体列表将会被覆盖"> 导入</button>
                 <button class="rito-button" id="opensetfolder">打开配置文件夹</button>
             </div>
 
-            <h2>标签自定义</h2>
+            <h2 title="给每种类型的标签设置类型名称">标签自定义</h2>
             <div class="lll">
                 <ul>
                     <li>
                         <span>语言:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_lang" value="语言"/>
-                        <button class="rito-button redbut" id="">清空标签</button>
+                        <button class="rito-button redbut" id="" title="把所有字体的此类型标签删除">清空标签</button>
                     </li>
                     <li>
                         <span>厂商:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_com" value="厂商"/>
-                        <button class="rito-button redbut" id="">清空标签</button>
+                        <button class="rito-button redbut" id="" title="把所有字体的此类型标签删除">清空标签</button>
                     </li>
                     <li>
                         <span>类型:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_type" value="类型"/>
-                        <button class="rito-button redbut" id="">清空标签</button>
+                        <button class="rito-button redbut" id="" title="把所有字体的此类型标签删除">清空标签</button>
                     </li>
                     <li>
                         <span>字重:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_weight" value="字重"/>
-                        <button class="rito-button redbut">清空标签</button>
+                        <button class="rito-button redbut" title="把所有字体的此类型标签删除">清空标签</button>
                     </li>
                     <li>
                         <span>用户:</span>
                         <input type="text" class=" cook_inp diytag_inp" id="diyt_user" value="自定义"/>
-                        <button class="rito-button  redbut" id="">清空标签</button>
+                        <button class="rito-button  redbut" id="" title="把所有字体的此类型标签删除">清空标签</button>
                     </li>
                 </ul>
             </div>
@@ -370,7 +387,6 @@
                     <div>作者: <a id="author_url">nullice</a></div>
                     <div>主页: <a id="home_page_url">nullice.com/ps/fontags</a></div>
                     <div><a id="home_help_url">帮助文档</a></div>
-                    http://styletin.com/archives/751
                 </div>
 
 

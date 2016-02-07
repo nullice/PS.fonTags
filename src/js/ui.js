@@ -253,6 +253,14 @@ $(".return_buttom").bind("click", function(){
 });
 
 
+$("#reflist").bind("click", function(){
+    showfontages();
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+});
+
+
 
 $("#author_url").bind("click", function(){
     cs.openURLInDefaultBrowser("http://nullice.com/about");
@@ -262,10 +270,10 @@ $("#home_page_url").bind("click", function(){
     cs.openURLInDefaultBrowser("http://nullice.com/ps/fontags");
 });
 
-$("#home_page_url").bind("click", function(){
-    cs.openURLInDefaultBrowser("http://nullice.com/ps/fontags");
+$("#home_help_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://styletin.com/archives/751");
 });
 
 
-home_help_url
+
 

@@ -359,6 +359,7 @@ function refurFontags(addmod)
             $(".page1").show();
             $(".page2").hide();
             $(".page3").hide();
+            $(".load_screen").hide();
             nowSave();
         }
     )
@@ -1501,6 +1502,7 @@ else
     refurFontags();
 }
 
+$(".load_screen").hide();
 //-------选中字体操作--------------------------------
 
 
@@ -1795,7 +1797,9 @@ function pf_opensetfolder()
 //------------------setting page-----------
 $(document).on("click", "#addfonts", function ()
 {
+    $(".load_screen").show();
     refurFontags(true);
+
     //
     //$("#tagbut1")[0].checked = true;
     //$(".page1").show();
@@ -1807,7 +1811,9 @@ $(document).on("click", "#addfonts", function ()
 
 $(document).on("click", "#reloadfonts", function ()
 {
+    $(".load_screen").show();
     refurFontags();
+
     //$("#tagbut1")[0].checked = true;
 
 

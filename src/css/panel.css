@@ -850,7 +850,8 @@ a,a:visited {
 }
 
 #author_url,
-#home_page_url
+#home_page_url,
+#home_help_url
 {
     cursor: pointer;
 }
@@ -859,3 +860,29 @@ a,a:visited {
 {
     font-size: 11px;
 }
+
+.load_screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: inherit;
+}
+
+.loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 40%;
+    width: 50px;
+    height: 50px;
+}
+
+
+svg path,
+svg rect {
+    fill: #75B1E4;
+}
+
+
