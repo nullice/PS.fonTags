@@ -356,6 +356,9 @@ function refurFontags(addmod)
 
 
             showfontages();
+            $(".page1").show();
+            $(".page2").hide();
+            $(".page3").hide();
             nowSave();
         }
     )
@@ -474,6 +477,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
             {
                 group_id: groupCounter,
                 font_name: fontagesIn.list[i].fonts[mid].name,
+                font_style:fontagesIn.list[i].fonts[mid].style,
                 font_family: fontagesIn.list[i].fonts[mid].family,
                 font_postscriptname: fontagesIn.list[i].fonts[mid].postScriptName,
                 group_style: " '" + fontagesIn.list[i].fonts[mid].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
@@ -520,7 +524,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
                 return;
             }
             cs.evalScript(
-                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "')"
+                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "' , '" + $(this).attr("font_family") +"' , '" + $(this).attr("font_style") +"')"
             )
         }
     );
@@ -1792,23 +1796,22 @@ function pf_opensetfolder()
 $(document).on("click", "#addfonts", function ()
 {
     refurFontags(true);
-
-    $("#tagbut1")[0].checked = true;
-    $(".page1").show();
-    $(".page2").hide();
-    $(".page3").hide();
-    nowSave();
+    //
+    //$("#tagbut1")[0].checked = true;
+    //$(".page1").show();
+    //$(".page2").hide();
+    //$(".page3").hide();
+    //nowSave();
 });
 
 
 $(document).on("click", "#reloadfonts", function ()
 {
     refurFontags();
-    $("#tagbut1")[0].checked = true;
-    $(".page1").show();
-    $(".page2").hide();
-    $(".page3").hide();
-    nowSave();
+    //$("#tagbut1")[0].checked = true;
+
+
+    //nowSave();
 });
 
 

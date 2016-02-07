@@ -8,6 +8,10 @@
         <HostList>
             <Host Name="PHXS" Version="[11.0,19.0]"/>
             <Host Name="PHSP" Version="[11.0,19.0]"/>
+            <Host Name="ILST" Version="[15.0,33.0]"/>
+            <Host Name="IDSN" Version="[10.0,22.0]"/>
+            <Host Name="AEFT" Version="[12.0,22.0]"/>
+            
         </HostList>
 
         <LocaleList>

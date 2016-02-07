@@ -254,3 +254,18 @@ $(".return_buttom").bind("click", function(){
 
 
 
+$("#author_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://nullice.com/about");
+});
+
+$("#home_page_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://nullice.com/ps/fontags");
+});
+
+$("#home_page_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://nullice.com/ps/fontags");
+});
+
+
+home_help_url
+

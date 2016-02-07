@@ -848,3 +848,14 @@ a,a:visited {
     top: -20px;
     width: 195px;
 }
+
+#author_url,
+#home_page_url
+{
+    cursor: pointer;
+}
+
+.minifz div
+{
+    font-size: 11px;
+}

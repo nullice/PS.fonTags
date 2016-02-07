@@ -41,7 +41,7 @@
         <input type="checkbox" id="cgroup${group_id}" checked="checked"  class="group_inp">
         <div class="group" id="group${group_id}">
             <label for="cgroup${group_id}">
-                <div class="fontitem groupItem"  font_group_name="${font_group_name}" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
+                <div class="fontitem groupItem"  font_style="${font_style}" font_group_name="${font_group_name}" font_name="${font_name}" font_family="${font_family}" font_postscriptname="${font_postscriptname}" style="font-family: ${group_style} ;">
                     <span> ${font_group_name} </span>
                     <span class="font_number">${font_number}</span>
                 </div>
@@ -365,9 +365,14 @@
             <h2>About</h2>
             <div class="lll">
                 <div> fonTags 字体标签夹</div>
-                <div> v1.0 (2016/2/6)</div>
-                <div>作者: <a href="http://nullice.com/about">nullice</a></div>
-                <div>主页: <a href="http://nullice.com/ps/fontags">nullice.com/ps/fontags</a></div>
+                <div class="minifz">
+                    <div> v1.0 (2016/2/6)</div>
+                    <div>作者: <a id="author_url">nullice</a></div>
+                    <div>主页: <a id="home_page_url">nullice.com/ps/fontags</a></div>
+                    <div><a id="home_help_url">帮助文档</a></div>
+                    http://styletin.com/archives/751
+                </div>
+
 
             </div>
 
