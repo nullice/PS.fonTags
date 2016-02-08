@@ -5,9 +5,36 @@
 //----------------
 
 
-$(".fontlist").niceScroll({
+function refWindowSize()
+{
+    setTimeout(function ()
+    {
+        if(  $('.fontlist').is(":hidden") )
+        {
+            $('.fontlist_search').height($(window).height() - $('.fontlist_search').offset().top - $('.foot').height());
+        }
+        else
+        {
+            $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+        }
+    }, 100);
+
+}
+
+
+
+
+
+
+
+
+
+
+$(".fontlist, .fontlist_search").niceScroll({
     cursorcolor:"rgba(0,0,0,0.2)",
     cursorborder:"none",
+    cursorwidth: "8px",
+    cursorborderradius: "3px",
     mousescrollstep: 8
 });
 
@@ -37,31 +64,29 @@ $(document).on('click', ".spead_buttom", function ()
 
 $(document).on('click', ".bar_switch", function ()
 {
-    setTimeout(function ()
-    {
-        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
-    }, 100);
+    refWindowSize();
 
 });
 
 
 $(document).on('click', ".filter_buttom", function ()
 {
-
-    $(".chosebar_box").toggleClass("hide");
-    $(".fontlist_box").toggleClass("top7");
-
-    setTimeout(function ()
-    {
-        $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
-    }, 50);
-
+    toggleTagsFilter()
 });
 
 
+function toggleTagsFilter()
+{
+
+    $(".chosebar_box").toggleClass("hide");
+    $(".fontlist_box").toggleClass("top7");
+    $(".topsl").toggleClass("hide");
+    refWindowSize();
+}
+
 $(window).resize(function ()
 {
-    $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+    refWindowSize();
 });
 
 $('.sizeranger').on('mouseup', function ()
@@ -70,6 +95,10 @@ $('.sizeranger').on('mouseup', function ()
     $(".fontitem").css("font-size", +$(".sizeranger>input").val());
     g_fsize = +$(".sizeranger>input").val();
 });
+
+
+
+
 
 
 $('.sizeranger').on('change', function ()
@@ -142,7 +171,6 @@ function fontlistDisplayFromName()
     });
 
 
-
     $(".preview_text").css("display", "none");
 
 }
@@ -207,3 +235,45 @@ function ttt()
 
 
 new Clipboard('.act_copy');
+
+
+
+
+$("#setting_buttom").bind("click", function(){
+    $(".page1").hide();
+    $(".page2").hide();
+    $(".page3").show();
+});
+
+
+$(".return_buttom").bind("click", function(){
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+});
+
+
+$("#reflist").bind("click", function(){
+    showfontages();
+    $(".page1").show();
+    $(".page2").hide();
+    $(".page3").hide();
+});
+
+
+
+$("#author_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://nullice.com/about");
+});
+
+$("#home_page_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://nullice.com/ps/fontags");
+});
+
+$("#home_help_url").bind("click", function(){
+    cs.openURLInDefaultBrowser("http://styletin.com/archives/751");
+});
+
+
+
+

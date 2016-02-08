@@ -41,6 +41,7 @@
   box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.08);
 }
 .rito-button {
+  cursor: pointer;
   display: inline-block;
   padding: 0 0.563rem;
   text-align: center;

@@ -63,7 +63,7 @@
     box-shadow: none;
 }
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     text-shadow: 0 1px 1px #CBCBCB;
 }
 
@@ -76,4 +76,17 @@
 :checked + .rito-button.chooser_all {
     background-color: #8290aa;
     border-color: #5d7786;
+}
+
+
+::-webkit-input-placeholder {
+    color: rgba(124, 124, 124, 0.93);
+}
+
+.topcoat-text-input,
+.topcoat-text-input--large,
+.topcoat-text-input:focus,
+.topcoat-text-input--large:focus
+{
+    background-color: #E2E2E2;
 }

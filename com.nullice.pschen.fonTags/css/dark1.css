@@ -170,7 +170,7 @@ a, a:visited {
 
 
 .cook_inp {
-    border-bottom-color: rgba(184, 182, 182, 0.19);
+    border-bottom-color: rgba(184, 182, 182, 0.38);
 }
 
 
@@ -226,7 +226,7 @@ a, a:visited {
 }
 
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     color: rgba(145, 145, 145, 0.72);
     text-shadow: 0 1px 1px rgb(36, 36, 36);
 }
@@ -243,7 +243,7 @@ a, a:visited {
 
 
 
-.eop_buttom, .spead_buttom, .filter_buttom {
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
     color: rgba(205, 205, 205, 0.72);
     text-shadow: 0 1px 1px rgb(79, 79, 79);
 }
@@ -269,4 +269,22 @@ a, a:visited {
 :checked + .rito-button.chooser_all {
     background-color: #515A6C;
     border-color: #626C71;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #818181;
+}
+
+
+.search_inp,.preview_text{
+    color: #aeaeae;
+}
+
+.sizeranger .topcoat-range {
+    border: 1px solid #424343;
+}
+
+
+.setting_page_title {
+    color: #BDBDBD;
 }
