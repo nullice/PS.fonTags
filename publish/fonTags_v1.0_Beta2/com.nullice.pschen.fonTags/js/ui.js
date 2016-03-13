@@ -20,7 +20,7 @@ function refWindowSize()
     }, 100);
 
 }
-
+refWindowSize()
 
 
 

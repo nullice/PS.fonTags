@@ -92,6 +92,7 @@
     {
         function computeValue(value, delta)
         {
+            value=Math.floor(value);
             var computedValue = !isNaN(delta) ? value + delta : value;
             if (computedValue < 0)
             {

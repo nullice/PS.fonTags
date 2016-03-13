@@ -42,7 +42,7 @@
 
                 <UI>
                     <Type>Panel</Type>
-                    <Menu> fonTags</Menu>
+                    <Menu>fonTags</Menu>
 
 
                     <Geometry>
@@ -51,12 +51,12 @@
                             <Width>300</Width>
                         </Size>
                         <MaxSize>
-                            <Height>900</Height>
-                            <Width>900</Width>
+                            <Height>9000</Height>
+                            <Width>9000</Width>
                         </MaxSize>
                         <MinSize>
-                            <Height>300</Height>
-                            <Width>300</Width>
+                            <Height>20</Height>
+                            <Width>265</Width>
                         </MinSize>
                     </Geometry>
 
@@ -66,7 +66,6 @@
                         <Icon Type="DarkNormal">./icon/Dark.png</Icon>
                         <Icon Type="DarkRollOver">./icon/Dark.png</Icon>
                     </Icons>
-
                 </UI>
 
             </DispatchInfo>
