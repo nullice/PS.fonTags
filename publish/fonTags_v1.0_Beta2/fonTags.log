@@ -1,0 +1,69 @@
+Product: fonTags
+Version: 1.0
+Photoshop version: undefined
+Operating system: Windows 7/64 6.2  (32-bit emulation)
+Locale: zh_CN
+Installation source: /e/Work/GitHub/PS.fonTags/publish/fonTags_v1.0_Beta2
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\dark1.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\dark1.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\dark2.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\dark2.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\light2.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\light2.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\panel.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\panel.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\PS_theme.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\PS_theme.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\rito.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\rito.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\topcoat-desktop-dark.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\topcoat-desktop-dark.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\css\topcoat-desktop-light.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\css\topcoat-desktop-light.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\CSXS\manifest.xml -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\CSXS\manifest.xml
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\css\font-awesome.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\css\font-awesome.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\css\font-awesome.min.css -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\css\font-awesome.min.css
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\fontawesome-webfont.eot -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\fontawesome-webfont.eot
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\fontawesome-webfont.svg -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\fontawesome-webfont.svg
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\fontawesome-webfont.ttf -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\fontawesome-webfont.ttf
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\fontawesome-webfont.woff -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\fontawesome-webfont.woff
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\fontawesome-webfont.woff2 -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\fontawesome-webfont.woff2
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\font\font-awesome\fonts\FontAwesome.otf -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\font\font-awesome\fonts\FontAwesome.otf
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\icon\Dark.png -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\icon\Dark.png
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\icon\Dark@2X.png -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\icon\Dark@2X.png
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\icon\Light.png -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\icon\Light.png
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\icon\Light@2X.png -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\icon\Light@2X.png
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\index.html -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\index.html
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\clipboard.min.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\clipboard.min.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\CSInterface.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\CSInterface.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\jquery-2.1.4.min.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\jquery-2.1.4.min.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\jquery-tmpl.jquery.json -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\jquery-tmpl.jquery.json
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\jquery.nicescroll.min.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\jquery.nicescroll.min.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\jquery.tmpl.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\jquery.tmpl.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\main.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\main.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\bin\pinyin -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\bin\pinyin
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\data\dict-zi-web.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\data\dict-zi-web.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\data\dict-zi.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\data\dict-zi.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\data\dict.bin -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\data\dict.bin
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\data\phrases-dict.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\data\phrases-dict.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\index.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\index.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\lib\index.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\lib\index.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\lib\phonetic-symbol.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\lib\phonetic-symbol.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\lib\pinyin.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\lib\pinyin.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\lib\web-pinyin.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\lib\web-pinyin.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\.npmignore -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\.npmignore
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\.travis.yml -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\.travis.yml
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\History.md -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\History.md
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\index.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\index.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\Makefile -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\Makefile
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\node_modules\keypress\index.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\node_modules\keypress\index.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\node_modules\keypress\package.json -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\node_modules\keypress\package.json
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\node_modules\keypress\README.md -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\node_modules\keypress\README.md
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\node_modules\keypress\test.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\node_modules\keypress\test.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\package.json -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\package.json
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\commander\Readme.md -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\commander\Readme.md
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\object-assign\index.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\object-assign\index.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\object-assign\license -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\object-assign\license
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\object-assign\package.json -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\object-assign\package.json
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\node_modules\object-assign\readme.md -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\node_modules\object-assign\readme.md
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\pinyin\package.json -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\pinyin\package.json
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\PS_theme.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\PS_theme.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\ui.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\ui.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\js\wanakana.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\js\wanakana.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\jsx\json2.js -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\jsx\json2.js
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\jsx\jsx_main.jsx -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\jsx\jsx_main.jsx
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\META-INF\signatures.xml -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\META-INF\signatures.xml
+cp E:\Work\GitHub\PS.fonTags\publish\fonTags_v1.0_Beta2\com.nullice.pschen.fonTags\mimetype -> C:\Users\nullice\AppData\Roaming\Adobe\CEP\extensions\fonTags\mimetype
+安装完成
