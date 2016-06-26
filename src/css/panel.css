@@ -98,7 +98,7 @@ body{
 
 :checked + .bottom_bar
 {
-    height: 22px;
+    height: 24px;
 }
 
 
@@ -107,9 +107,9 @@ body{
 .chooser_all
 {
     margin: 0 1px 4px;
-    font-size: 8pt;
+    font-size: 9pt;
     line-height: 12pt;
-    padding: 0 0.30rem;
+    padding: 1px 6px;
     vertical-align: bottom;
 }
 
@@ -684,7 +684,7 @@ body{
 
 .addtag_but:hover{
 
-    color: #288edf;
+    color: #3B9DEA;
 }
 
 li:hover .addtag_but
@@ -895,3 +895,21 @@ svg rect {
 }
 
 
+.close_ico, .tagcook_close_ico {
+    color: rgba(66, 67, 67, 0.36);
+    text-shadow: 0 1px 1px #fbfbfb;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+}
+
+.tagcook_close_ico
+{
+    right: 5px;
+    top: 4px;
+}
+
+
+.close_ico:hover ,.tagcook_close_ico:hover{
+    color: rgba(211, 74, 74, 0.66);
+}

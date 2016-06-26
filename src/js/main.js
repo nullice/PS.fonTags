@@ -914,29 +914,33 @@ function chooserToHTML()
 
     $(".chooser_input+label").mousedown(function (e)
     {
+        e.stopPropagation();
         //console.log("点击：" + e.which);
         // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 
-        if (e.which == 3)
+        if (e.which == 1 && e.shiftKey==false)
         {
+            barChooseUnique($(this));
 
-            if ($("#" + $(this).attr("for")).get(0).checked)
-            {
-                // 反选 barChooseReverse($(this));
-                barChooseUnique($(this));
-            }
-            else
-            {
-                barChooseUnique($(this));
-            }
         }
+        else if (e.which == 3 )
+        {
+            var b = $("#" + $(this).attr("for")).get(0).checked;
+            $("#" + $(this).attr("for")).get(0).checked = !b;
+            getbooList();
 
+        }
+        return false;
 
     });
 
+
+
+
+
+
     $(".input_all").on("change", function ()
     {
-
 
         var bool = $(this).get(0).checked;
 
@@ -956,8 +960,10 @@ function chooserToHTML()
             $(this).get(0).checked = false;
         });
 
-        $("#" + e.attr("for")).get(0).checked = true;
-        getbooList()
+
+        $("#" + e.attr("for")).get(0).checked = false;
+
+         getbooList()
     }
 
     function barChooseReverse(e)
@@ -1458,11 +1464,11 @@ function loadSetting()
 
 //------------------main---------
 
-var event = new CSEvent();//创建一个事件
-event.type = "com.adobe.PhotoshopPersistent"; //注册持久化运行事件
-event.scope = "APPLICATION";
-event.extensionId = cs.getExtensionID();// 我们的扩展 ID
-cs.dispatchEvent(event); //发送事件让宿主持久化运行我们的扩展
+// var event = new CSEvent();//创建一个事件
+// event.type = "com.adobe.PhotoshopPersistent"; //注册持久化运行事件
+// event.scope = "APPLICATION";
+// event.extensionId = cs.getExtensionID();// 我们的扩展 ID
+// cs.dispatchEvent(event); //发送事件让宿主持久化运行我们的扩展
 
 
 loadSetting();
@@ -1473,14 +1479,17 @@ $(document).on("change", ".edit_inl", function (e)
     var fid = $(this).parent().parent().parent().parent().attr("id").slice(3);
     if (fid != undefined)
     {
+        var el = $(this)[0];
+        var  str = el.value.replace(/\s/,"");
+
         if ($(this).hasClass("edit_tags"))
         {
-            fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value.split(",");
+            fontages.index(fid)[$(this).attr("inp_for")] = str.split(",");
         }
         else
         {
-            fontages.index(fid)[$(this).attr("inp_for")] = $(this)[0].value;
-            $("#fid" + fid).attr("font_" + $(this).attr("inp_for"), $(this)[0].value);
+            fontages.index(fid)[$(this).attr("inp_for")] = el.value;
+            $("#fid" + fid).attr("font_" + $(this).attr("inp_for"), el.value);
 
         }
         nowSave();
@@ -1545,7 +1554,6 @@ $(document).on("change", ".gname_edit", function ()
 
 $(document).on("change", ".setg_group_inp", function ()
 {
-
     if ($(this)[0].checked === true)
     {
         $(".tagcook").removeClass("hide");
@@ -1555,6 +1563,18 @@ $(document).on("change", ".setg_group_inp", function ()
         $(".tagcook").addClass("hide");
     }
 });
+
+
+
+
+$(document).on("click", ".tagcook_close_ico", function ()
+{
+    $(".tagcook").addClass("hide");
+    $(".setg_group_inp")[0].checked =  false;
+
+});
+
+
 
 $(document).on("click", ".cook_add", function ()
 {
@@ -1577,7 +1597,7 @@ $(document).on("click", "#fontlist_in", function ()
     pf_fontlist_in();
 });
 
-$(document).on("click", ".picknumber", function ()
+$(document).on("click", ".picknumber, .close_ico", function ()
 {
     $(".pick").removeClass("pick");
     $(".pickG").removeClass("pickG");
@@ -2082,3 +2102,16 @@ $('.search_inp').on("input",
 );
 
 
+
+
+
+$(document).on("input", ".cook_inp, .edit_inl", function (e)
+{
+
+    var el =e.target;
+
+    el.value = el.value.replace(/[，、]/,",");
+    el.value = el.value.replace(" ","");
+
+
+});

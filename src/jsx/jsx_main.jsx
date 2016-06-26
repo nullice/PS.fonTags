@@ -39,6 +39,8 @@ function getFontsJson()
     else
     {//PhotoShop
         //这个例子是获得 PhotoShop 的可用字体列表
+
+        app.refreshFonts();
         fontlist.length = app.fonts.length;
         for (var i=0; i < app.fonts.length; i++)
         {

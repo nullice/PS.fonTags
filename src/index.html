@@ -127,7 +127,7 @@
         <!--<div class="eop_buttom"><i class="fa fa-eyedropper"></i></div>-->
         <input type="text" class="cook_inp  search_inp"  value="" placeholder="查找" />
 
-        <div class="chosebar_box">
+        <div class="chosebar_box" oncontextmenu="return false">
             <div class="chosebar" id="bar_lang">
                 <div class="title"><span>语言</span></div>
 
@@ -250,6 +250,7 @@
         </div>
 
         <div class="midbox">
+
             <div class="spead_buttom" title="展开\收起所有组"><i class="fa fa-sort"></i></div>
             <div class="search_buttom" title="设置" id="setting_buttom"><i class="fa  fa-cog"></i></div>
 
@@ -260,6 +261,7 @@
             </div>
 
             <div class="tagcook hide">
+                <div class="tagcook_close_ico " ><i  class="fa fa-close"></i></div>
                 <ul>
                     <li><span>语言: </span><input type="text" class=" cook_inp cook_lang" value=""
                                                 inp_for="tags_lang"/><span class="addtag_but">+</span></li>
@@ -282,14 +284,16 @@
 
             <div class="editmod">
 
+                <div class="close_ico " ><i  class="fa fa-close"></i></div>
+
                 <div class="picknumber" title="取消所有选中项">0</div>
-                <button class="rito-button act_creat_group"> 创建组</button>
-                <button class="rito-button act_out_group"> 从组移出</button>
+                <button title="创建一个字体组，并把所有选中字体移入其中" class="rito-button act_creat_group"> 创建组</button>
+                <button title="把选中字体从其字体组中移出，字体组如果中没有字体会被解散" class="rito-button act_out_group"> 从组移出</button>
                 <input type="checkbox" id="ddd3" class="setg_group_inp">
                 <label for="ddd3" class="rito-button act_setg_group">设置标签</label>
 
                 <div class="finf"><span>目标组: </span> <input class="gname_edit" type="text" value=""/>
-                    <button class="rito-button act_push_group"> 移入</button>
+                    <button title="选择中一个字体组，把所有选中字体移入其中" class="rito-button act_push_group"> 移入</button>
                 </div>
 
             </div>
@@ -329,7 +333,7 @@
     <div class="page3 tagpage">
 
         <div class="return_buttom search_buttom" title="返回"><i class="fa  fa-chevron-circle-left"></i></div>
-        <div class="setting_page_title">设置</div>
+        <div class="setting_page_title"><i class="fa  fa-cog"></i >  设置</div>
         <div class="opbox">
 
 
@@ -382,7 +386,7 @@
             <div class="lll">
                 <div> fonTags 字体标签夹</div>
                 <div class="minifz">
-                    <div> v1.0 (2016/2/6)</div>
+                    <div> v1.2 (2016/6/25)</div>
                     <div>作者: <a id="author_url">nullice</a></div>
                     <div>主页: <a id="home_page_url">nullice.com/ps/fontags</a></div>
                     <div><a id="home_help_url">帮助文档</a></div>

@@ -2,11 +2,11 @@
 <ExtensionList>
     <Extension Id="com.nullice.pschan.fotags">
         <HostList>
-            <Host Name="PHXS" Port="8998"/>
-            <Host Name="ILST" Port="9998"/>
-            <Host Name="AEFT" Port="6998"/>
-            <Host Name="IDSN" Port="7998"/>
-            
+            <Host Name="PHXS" Port="6000"/>
+            <Host Name="PHSP" Port="6001"/>
+            <Host Name="ILST" Port="6002"/>
+            <Host Name="AEFT" Port="6003"/>
+            <Host Name="IDSN" Port="6004"/>
         </HostList>
     </Extension>
 </ExtensionList>
