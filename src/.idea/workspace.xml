@@ -23,13 +23,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="1485" column="51" selection-start-line="1482" selection-start-column="0" selection-end-line="1487" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="1482" column="28" selection-start-line="1482" selection-start-column="28" selection-end-line="1482" selection-end-column="28" />
               <folding>
-                <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+                <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
               </folding>
             </state>
           </provider>
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CSXS/manifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-407">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="378">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -149,7 +149,6 @@
         <option value="$PROJECT_DIR$/jsx/jsx_main.js" />
         <option value="$PROJECT_DIR$/UserData/fontages.json" />
         <option value="chrome-extension://eljapbgkmlngdpckoiiibecpemleclhh/src/js/inject.js" />
-        <option value="$PROJECT_DIR$/CSXS/manifest.xml" />
         <option value="$PROJECT_DIR$/.debug" />
         <option value="$PROJECT_DIR$/css/topcoat-desktop-dark.css" />
         <option value="$PROJECT_DIR$/js/PS_theme.js" />
@@ -163,6 +162,7 @@
         <option value="$USER_HOME$/AppData/Roaming/nullice.psex/fontages.json" />
         <option value="$PROJECT_DIR$/js/ui.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/CSXS/manifest.xml" />
       </list>
     </option>
   </component>
@@ -173,10 +173,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="186" />
+    <option name="y" value="153" />
+    <option name="width" value="1327" />
+    <option name="height" value="858" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -210,7 +210,80 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSXS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.nullice.pschen.fonTags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
       <pane id="Scope">
@@ -342,7 +415,7 @@
       <option name="presentableId" value="Default" />
       <updated>1448291027639</updated>
       <workItem from="1466831411569" duration="20868000" />
-      <workItem from="1466901176497" duration="15480000" />
+      <workItem from="1466901176497" duration="17325000" />
     </task>
     <task id="LOCAL-00001">
       <created>1448290951328</created>
@@ -359,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36348000" />
+    <option name="totallyTimeSpent" value="38193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -371,15 +444,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="186" y="153" width="1327" height="858" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11327714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16679597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31750742" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.084415585" sideWeight="0.5073762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14752372" sideWeight="0.49280575" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14752372" sideWeight="0.49280575" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3397626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1871698" sideWeight="0.5071942" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.052980132" sideWeight="0.4926238" order="3" side_tool="false" content_ui="tabs" />
@@ -480,7 +553,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -540,7 +613,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -550,7 +623,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -617,7 +690,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -627,7 +700,7 @@
         <state relative-caret-position="0">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -660,7 +733,7 @@
         <state relative-caret-position="0">
           <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
         </state>
       </provider>
@@ -785,14 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSXS/manifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/panel.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="753">
@@ -845,11 +910,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1485" column="51" selection-start-line="1482" selection-start-column="0" selection-end-line="1487" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="1482" column="28" selection-start-line="1482" selection-start-column="28" selection-end-line="1482" selection-end-column="28" />
           <folding>
-            <marker date="1467004762644" expanded="true" signature="11280:11656" ph="..." />
+            <marker date="1467004762000" expanded="true" signature="11280:11656" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSXS/manifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
