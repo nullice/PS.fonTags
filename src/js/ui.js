@@ -16,6 +16,7 @@ function refWindowSize()
         else
         {
             $('.fontlist').height($(window).height() - $('.fontlist').offset().top - $('.foot').height());
+            $('.fontlist_search').height($(window).height() - $('.fontlist_search').offset().top - $('.foot').height());
         }
     }, 100);
 
@@ -254,6 +255,7 @@ $(".return_buttom").bind("click", function(){
 
 
 $("#reflist").bind("click", function(){
+    nowLoad();
     showfontages();
     $(".page1").show();
     $(".page2").hide();

@@ -51,6 +51,19 @@ var Fontages = function ()
     }
 };
 
+
+Fontages.prototype.getNewId = function ()
+{
+
+    var t_id = this.length;
+    while (this.index(t_id) != undefined)
+    {
+        t_id++;
+    }
+
+    return t_id;
+}
+
 Fontages.prototype.add = function (name, family, postScriptName, style, id)
 {
     var font =
@@ -318,6 +331,7 @@ function refurFontags(addmod)
             if (addmod)
             {
                 fontages.removeUnableFonts(o);
+                var lastId = fontages.getNewId();
             }
 
             for (var i = 0; i < o.length; i++)
@@ -326,11 +340,11 @@ function refurFontags(addmod)
                 {
                     if (addmod)
                     {
-
                         if (fontages.findByPSName(o.list[i].postScriptName) === undefined)
                         {
                             Temp_fontages.length++;
-                            Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, i);
+                            Temp_fontages.add(o.list[i].name, o.list[i].family, o.list[i].postScriptName, o.list[i].style, lastId);
+                            lastId++;
                         }
                     }
                     else
@@ -344,8 +358,10 @@ function refurFontags(addmod)
 
             if (addmod)
             {
+
                 Temp_fontages = arrangeFontGroup(Temp_fontages);
                 fontages.list = fontages.list.concat(Temp_fontages.list);
+                fontages.length = Temp_fontages.length;
 
             }
             else
@@ -478,7 +494,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
             {
                 group_id: groupCounter,
                 font_name: fontagesIn.list[i].fonts[mid].name,
-                font_style:fontagesIn.list[i].fonts[mid].style,
+                font_style: fontagesIn.list[i].fonts[mid].style,
                 font_family: fontagesIn.list[i].fonts[mid].family,
                 font_postscriptname: fontagesIn.list[i].fonts[mid].postScriptName,
                 group_style: " '" + fontagesIn.list[i].fonts[mid].name + "', '" + fontagesIn.list[i].fonts[0].postScriptName + "', '" + fontagesIn.list[i].fonts[0].family + "' ",
@@ -504,8 +520,6 @@ function fontagasToHTML(fontagesIn, HTMLnode)
     rufSetting();
 
 
-
-
     $(".act_info").unbind().on("click", act_info);
 
 
@@ -525,7 +539,7 @@ function fontagasToHTML(fontagesIn, HTMLnode)
                 return;
             }
             cs.evalScript(
-                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "' , '" + $(this).attr("font_family") +"' , '" + $(this).attr("font_style") +"')"
+                "ps_applyLayerFont('" + $(this).attr("font_postscriptname") + "' , '" + $(this).attr("font_family") + "' , '" + $(this).attr("font_style") + "')"
             )
         }
     );
@@ -707,6 +721,11 @@ var INCS = {
     "汉鼎": "",
     "长城": "",
     "超世纪": "",
+    "A-OTF": "森泽",
+    "U-OTF": "森泽",
+    "G-OTF": "森泽",
+    "Morisawa": "森泽",
+
 
 }
 
@@ -918,12 +937,12 @@ function chooserToHTML()
         //console.log("点击：" + e.which);
         // alert(e.which);// 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 
-        if (e.which == 1 && e.shiftKey==false)
+        if (e.which == 1 && e.shiftKey == false)
         {
             barChooseUnique($(this));
 
         }
-        else if (e.which == 3 )
+        else if (e.which == 3)
         {
             var b = $("#" + $(this).attr("for")).get(0).checked;
             $("#" + $(this).attr("for")).get(0).checked = !b;
@@ -933,10 +952,6 @@ function chooserToHTML()
         return false;
 
     });
-
-
-
-
 
 
     $(".input_all").on("change", function ()
@@ -963,7 +978,7 @@ function chooserToHTML()
 
         $("#" + e.attr("for")).get(0).checked = false;
 
-         getbooList()
+        getbooList()
     }
 
     function barChooseReverse(e)
@@ -1377,6 +1392,7 @@ function reloadChooserBar()
     setTimeout(function ()
     {
         showOverHeightBut();
+        refWindowSize()
     }, 2000);
 }
 
@@ -1445,11 +1461,11 @@ function loadSetting()
         g_vmod = result.g_vmod;
         g_diyTagsname = result.diyTagsname;
 
-        $("#diyt_lang").val(g_diyTagsname.lang);
-        $("#diyt_com").val(g_diyTagsname.com);
-        $("#diyt_type").val(g_diyTagsname.type);
-        $("#diyt_weight").val(g_diyTagsname.weight);
-        $("#diyt_user").val(g_diyTagsname.user);
+        $("#diyt_lang").val(g_diyTagsname.lang || "语言");
+        $("#diyt_com").val(g_diyTagsname.com || "厂商");
+        $("#diyt_type").val(g_diyTagsname.type || "类型");
+        $("#diyt_weight").val(g_diyTagsname.weight || "字重");
+        $("#diyt_user").val(g_diyTagsname.user || "用户");
 
         return true;
     }
@@ -1480,7 +1496,7 @@ $(document).on("change", ".edit_inl", function (e)
     if (fid != undefined)
     {
         var el = $(this)[0];
-        var  str = el.value.replace(/\s/,"");
+        var str = el.value.replace(/\s/, "");
 
         if ($(this).hasClass("edit_tags"))
         {
@@ -1565,25 +1581,27 @@ $(document).on("change", ".setg_group_inp", function ()
 });
 
 
-
-
 $(document).on("click", ".tagcook_close_ico", function ()
 {
     $(".tagcook").addClass("hide");
-    $(".setg_group_inp")[0].checked =  false;
+    $(".setg_group_inp")[0].checked = false;
 
 });
-
 
 
 $(document).on("click", ".cook_add", function ()
 {
     pf_addPicksTag();
+    $(".tagcook").addClass("hide");
+    $(".setg_group_inp")[0].checked = false;
+
 });
 
 $(document).on("click", ".cook_del", function ()
 {
     pf_removePicksTag();
+    $(".tagcook").addClass("hide");
+    $(".setg_group_inp")[0].checked = false;
 });
 
 
@@ -1903,11 +1921,9 @@ function displayDIYTagsName()
 }
 
 //---------------
-
+var pinyin = require("./js/pinyin")
 function seacher_start(keyword)
 {
-    var pinyin = require("./js/pinyin")
-
 
     if (keyword == "" || keyword == undefined)
     {
@@ -1929,7 +1945,7 @@ function seacher_start(keyword)
 
     function _seacher_start_byName(name, bool_pinyin, bool_kana)
     {
-        for (var i = 0; i < fontages.length; i++)
+        for (var i = 0; i < fontages.getNewId(); i++)
         {
             if (fontages.index(i) !== undefined)
             {
@@ -2102,16 +2118,67 @@ $('.search_inp').on("input",
 );
 
 
-
-
-
-$(document).on("input", ".cook_inp, .edit_inl", function (e)
+$(document).on("input", ".cook_inp, .edit_tags", function (e)
 {
 
-    var el =e.target;
+    var el = e.target;
 
-    el.value = el.value.replace(/[，、]/,",");
-    el.value = el.value.replace(" ","");
-
+    el.value = el.value.replace(/[，、]/, ",");
+    el.value = el.value.replace(" ", "");
 
 });
+
+
+$(document).on("click", ".empty_tags", function (e)
+{
+
+    var el = e.target;
+
+    if (el.id == "empty_tags_lang")
+    {
+        var tags = "tags_lang"
+    }
+    else if (el.id == "empty_tags_com")
+    {
+        var tags = "tags_com"
+    }
+    else if (el.id == "empty_tags_type")
+    {
+        var tags = "tags_type"
+    }
+    else if (el.id == "empty_tags_weight")
+    {
+        var tags = "tags_weight"
+    }
+    else if (el.id == "empty_tags_user")
+    {
+        var tags = "tags_user"
+    }
+
+
+    var leng = fontages.getNewId();
+    for (var i = 0; i < leng; i++)
+    {
+        if (fontages.index(i) != undefined)
+        {
+            if (fontages.index(i)[tags] != undefined)
+            {
+
+                if (tags == "tags_lang")
+                {
+                    fontages.index(i)[tags] = ["其他"];
+                } else
+                {
+                    fontages.index(i)[tags] = ["无"];
+                }
+            }
+        }
+
+    }
+    rufSetting();
+    reloadChooserBar();
+    nowSave();
+
+});
+
+refWindowSize()
