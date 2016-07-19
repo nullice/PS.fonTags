@@ -1945,7 +1945,8 @@ function seacher_start(keyword)
 
     function _seacher_start_byName(name, bool_pinyin, bool_kana)
     {
-        for (var i = 0; i < fontages.getNewId(); i++)
+        var len = fontages.getNewId();
+        for (var i = 0; i < len; i++)
         {
             if (fontages.index(i) !== undefined)
             {
@@ -2018,7 +2019,6 @@ function seacher_start(keyword)
     function strToKanaStr(str)
     {
         return wanakana.toRomaji(str);
-
     }
 
 
@@ -2085,10 +2085,14 @@ function seacher_start(keyword)
 };
 
 
+
+
 $('.search_inp').on("input",
     //延迟输入
     function ()
     {
+
+
         var res_text = "";
         res_text = $(this).val();
         if (res_text == undefined || res_text == "")
@@ -2120,13 +2124,51 @@ $('.search_inp').on("input",
 
 $(document).on("input", ".cook_inp, .edit_tags", function (e)
 {
-
+    if(!inputCPLock) {
     var el = e.target;
-
     el.value = el.value.replace(/[，、]/, ",");
     el.value = el.value.replace(" ", "");
+    }
 
 });
+
+
+
+var inputCPLock = false;
+
+$(document).on("compositionstart", ".cook_inp, .edit_tags", function (e)
+{
+    console.log("compositionstart");
+    inputCPLock = true;
+});
+
+
+$(document).on("compositionend", ".cook_inp, .edit_tags", function (e)
+{
+    console.log("compositionend");
+    inputCPLock = false;
+
+});
+
+
+
+/*var node = document.querySelector('.search_inp');
+var cpLock = false;
+node.addEventListener('compositionstart', function(){
+    console.log("compositionstart")
+    cpLock = true;
+})
+node.addEventListener('compositionend', function(){
+    cpLock = false;
+    console.log("compositionend")
+})
+node.addEventListener('input', function(){
+    if(!cpLock)console.log(this.value);
+});*/
+
+
+
+
 
 
 $(document).on("click", ".empty_tags", function (e)

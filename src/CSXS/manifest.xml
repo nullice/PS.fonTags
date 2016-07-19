@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschan.fotags" ExtensionBundleVersion="1.2" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschan.fotags" ExtensionBundleVersion="1.3" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
     <ExtensionList>
-        <Extension Id="com.nullice.pschan.fotags" Version="1.2"/>
+        <Extension Id="com.nullice.pschan.fotags" Version="1.3"/>
     </ExtensionList>
 
     <ExecutionEnvironment>
         <HostList>
-            <Host Name="PHXS" Version="[14.0,17.0]"/>
-            <Host Name="PHSP" Version="[14.0,17.0]"/>
+            <Host Name="PHXS" Version="[14.0,17.9]"/>
+            <Host Name="PHSP" Version="[14.0,17.9]"/>
             <Host Name="ILST" Version="[15.0,20]"/>
             <Host Name="IDSN" Version="[9,11]"/>
         </HostList>
@@ -32,7 +32,7 @@
                     <CEFCommandLine>
                         <Parameter>--enable-nodejs</Parameter>
                         <Parameter>--mixed-context</Parameter>
-                    </CEFCommandLine>    
+                    </CEFCommandLine>
                 </Resources>
 
                 <Lifecycle>
