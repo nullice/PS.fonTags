@@ -1,2 +1,2 @@
-del  "E:\Work\GitHub\PS.fonTags\fonTags_v1.3_Beta1.zxp"
-E:\Work\GitHub\PS.fonTags\build_tool\ZXP_eWGUI_BIN\ZXPSignCmd.exe  -sign  "E:\Work\GitHub\PS.fonTags\com.nullice.pschen.fonTags"  "E:\Work\GitHub\PS.fonTags\fonTags_v1.3_Beta1.zxp"  "E:\Work\GitHub\PS.fonTags\build_tool\ZXP_eWGUI_BIN\Certs\nullicep.p12"  "nullicep" 
+del  "E:\Work\GitHub\PS.fonTags\fonTags_v1.4_Beta1.zxp"
+E:\Work\GitHub\PS.fonTags\build_tool\ZXP_eWGUI_BIN\ZXPSignCmd.exe  -sign  "E:\Work\GitHub\PS.fonTags\com.nullice.pschen.fonTags"  "E:\Work\GitHub\PS.fonTags\fonTags_v1.4_Beta1.zxp"  "E:\Work\GitHub\PS.fonTags\build_tool\ZXP_eWGUI_BIN\Certs\nullicep.p12"  "nullicep" 
