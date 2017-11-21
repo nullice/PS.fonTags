@@ -1,0 +1,107 @@
+{
+  "name": "pinyin",
+  "version": "2.7.0",
+  "description": "汉语拼音转换工具。",
+  "files": [
+    "bin",
+    "data",
+    "lib",
+    "index.js",
+    "src"
+  ],
+  "keywords": [
+    "拼音",
+    "汉语",
+    "汉字",
+    "中文",
+    "Pinyin"
+  ],
+  "homepage": "http://pinyin.hotoo.me/",
+  "author": {
+    "name": "闲耘",
+    "email": "hotoo.cn@gmail.com"
+  },
+  "main": "lib/index.js",
+  "bin": {
+    "pinyin": "./bin/pinyin"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hotoo/pinyin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hotoo/pinyin/issues"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "commander": "~1.1.1",
+    "object-assign": "^4.0.1",
+    "nodejieba": "^1.3.0"
+  },
+  "optionalDependencies": {
+    "nodejieba": "^1.3.0"
+  },
+  "devDependencies": {
+    "benchmark": "~1.0.0",
+    "eslint": "~0.24.0",
+    "expect.js": "0.3.1",
+    "istanbul": "~0.3.17",
+    "mocha": "1.17.1",
+    "request": "2.33.0"
+  },
+  "spm": {
+    "main": "lib/web-pinyin.js",
+    "devDependencies": {
+      "expect.js": "0.3.1",
+      "url": "1.2.0"
+    },
+    "build": {
+      "babel": {}
+    },
+    "tests": "tests/*-spec.js",
+    "dependencies": {
+      "object-assign": "~4.0.1"
+    }
+  },
+  "browser": "lib/web-pinyin.js",
+  "license": "MIT",
+  "gitHead": "5ef947e9a84d8e3a048f394e01a4739dcb7b1d6c",
+  "_id": "pinyin@2.7.0",
+  "_shasum": "db0e2e878a6ea601057a9162c7b33ca2c0c09e40",
+  "_from": "pinyin@latest",
+  "_npmVersion": "2.14.2",
+  "_nodeVersion": "4.0.0",
+  "_npmUser": {
+    "name": "hotoo",
+    "email": "hotoo.cn@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "hotoo",
+      "email": "hotoo.cn@gmail.com"
+    },
+    {
+      "name": "vingel",
+      "email": "vingel@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "db0e2e878a6ea601057a9162c7b33ca2c0c09e40",
+    "size": 1031713,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/pinyin/download/pinyin-2.7.0.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/pinyin-2.7.0.tgz_1454571079557_0.21465019136667252"
+  },
+  "publish_time": 1454571083057,
+  "_cnpm_publish_time": 1454571083057,
+  "_resolved": "https://registry.npm.taobao.org/pinyin/download/pinyin-2.7.0.tgz"
+}

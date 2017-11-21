@@ -1,0 +1,290 @@
+.topnav hr {
+    border-color: rgba(77, 77, 77, 0.46);
+}
+
+.eop_buttom, .spead_buttom, .filter_buttom {
+    color: rgba(0, 0, 0, 0.72);
+    text-shadow: 0 1px 1px rgb(77, 77, 77);
+}
+
+.chosebar .title {
+    color: rgb(131, 131, 131);
+}
+
+
+.fontitem:not(.pick):not(.pickG) {
+    background-color: rgba(156, 156, 156, 0.23);
+}
+
+.group>.fontitem:hover:not(.pick):not(.pickG), .group label .fontitem:hover:not(.pick):not(.pickG), .fontitem:hover:not(.pick):not(.pickG) {
+    background-color: rgba(114, 112, 112, 0.7);
+}
+
+
+body {
+    color: rgb(219, 219, 219);
+}
+
+.font_number {
+    color: rgb(32, 32, 32);
+    background-color: rgba(119, 116, 116, 0.97);
+}
+
+
+.srang {
+    color: rgba(160, 160, 160, 0.71);
+}
+
+
+.chosebar {
+    border-color: rgba(20, 20, 20, 0.36);
+}
+
+
+.editmod {
+    background-color: rgb(51, 51, 51);
+}
+
+.picknumber {
+    color: rgb(32, 32, 32);
+    background-color: rgba(136, 136, 136, 0.55);
+}
+
+
+.opbar {
+    color: rgba(241, 241, 241, 0.65);
+}
+
+.lll div {
+    color: rgb(158, 156, 156);
+}
+
+
+a, a:visited {
+    color: rgb(209, 205, 205);
+}
+
+.rito-button:active, .rito-button:active, :checked + label .rito-button {
+    background-color: rgb(7, 88, 151);
+    color: rgba(250, 250, 250, 0.8);
+}
+
+:checked+label .chooser_all {
+    background-color: rgb(71, 87, 114);
+    border-color: rgb(58, 77, 87);
+}
+
+
+:checked + .group label .fontitem:not(.pick):not(.pickG) {
+    box-shadow: 0 1px 0px 1px rgba(126, 124, 124, 0.79), 0 2px 2px 0px rgba(58, 58, 58, 0.71);
+}
+
+
+.group>.fontitem:not(.pick):not(.pickG)
+{
+
+    background-color: rgba(126, 123, 123, 0.27);
+}
+
+
+
+.group>.pick:hover, .pick:hover {
+    background-color: rgb(72, 160, 230);
+}
+
+:checked + .group label .pickG, .pickG {
+    background-color: rgb(19, 87, 119);
+    box-shadow: 0 1px 0px 1px rgb(69, 149, 195), 0 2px 2px 0px rgba(30, 63, 80, 0.61);
+}
+
+.group>.pick, .pick {
+    background-color: rgb(34, 87, 129);
+    color: rgba(255, 255, 255, 0.77);
+}
+
+
+
+:checked + .group label .pickG:hover,
+.pickG:hover {
+    background-color: rgb(28, 115, 156)
+
+}
+
+.pick:hover{
+    background-color: rgb(39, 157, 213)
+}
+
+.info_box {
+    color: rgb(149, 149, 150);
+}
+
+.cantedit {
+    color: rgba(143, 143, 143, 0.76);
+}
+
+
+:checked + .rito-button.chooser, :checked + .rito-button.chooser_all {
+    color: #BBD0E4;
+    background-color: #154F7C;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.46);
+    box-shadow: inset 0 1px 0px rgba(10, 42, 37, 0.28);
+    border-color: #286698;
+}
+
+.rito-button {
+    color: #ADACAC;
+    background-color: #494848;
+    box-shadow: inset 0 1px #494848;
+    border: 1px solid #616060;
+}
+
+
+.rito-button:hover {
+    color: #C7D8E2;
+    background-color: #545454;
+    box-shadow: inset 0 1px #545454;
+}
+
+.redbut {
+    background-color: rgb(100, 57, 60);
+    color: rgba(210, 168, 168, 0.98);
+    border-color: rgb(157, 90, 90);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+
+.redbut {
+    background-color: rgb(100, 57, 60);
+    color: rgba(210, 168, 168, 0.98);
+    border-color: rgb(157, 90, 90);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.redbut:hover {
+    color: #FAA5A5;
+    background-color: #7B4246;
+    box-shadow: inset 0 1px #545454;
+}
+
+
+.cook_inp {
+    border-bottom-color: rgba(184, 182, 182, 0.38);
+}
+
+
+
+.rito-button-bar .rito-button-bar-item {
+    font-size: 9pt;
+    border-left: 0px solid #131313;
+    border-radius: 0 0 0 0;
+    padding: 1px 8px;
+    background-color: #545454;
+    border-color: #444040;
+    box-shadow: inset 0 1px #575757;
+}
+
+
+
+
+
+.rito-button-bar .rito-button-bar-item:last-of-type {
+    border-right: 1px solid #444040;
+    color: #b4b3b3;
+}
+
+.rito-button-bar .rito-button-bar-item:first-of-type {
+    border-left: 1px solid #444040;
+}
+
+.rito-button-bar .rito-button-bar-item:hover {
+    background: #676767;
+    color: #ADACAC;
+}
+
+.rito-button-bar :checked + .rito-button-bar-item {
+    background: #3D3D3D;
+    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.28);
+}
+
+.rito-button-bar :checked + .rito-button-bar-item:hover {
+    background: #464646;
+    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.28);
+}
+
+
+.tagcook {
+    background-color: #3C3B3B;
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.22),inset 0px 1px 1px 0px rgba(73, 73, 73, 0.75);
+    color: #989898;
+}
+
+.font_number {
+    color: rgb(32, 32, 32);
+    background-color: rgba(150, 149, 149, 0.97);
+}
+
+
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
+    color: rgba(145, 145, 145, 0.72);
+    text-shadow: 0 1px 1px rgb(36, 36, 36);
+}
+
+
+.bar_switch span {
+    text-shadow: 0 1px 1px #2C2B2B;
+    color: #898686;
+}
+
+.foot {
+    box-shadow: 0 1px 0 rgba(34, 33, 33, 0.52) inset;
+}
+
+
+
+.eop_buttom, .spead_buttom, .filter_buttom,.search_buttom {
+    color: rgba(205, 205, 205, 0.72);
+    text-shadow: 0 1px 1px rgb(79, 79, 79);
+}
+
+.fontlist_box {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+.chosebar .title {
+    color: rgb(174, 174, 174);
+}
+
+.bar_switch span {
+    text-shadow: 0 1px 1px #524F4F;
+    color: #898686;
+}
+
+.gname_edit {
+    color: #88B4C8;
+}
+
+:checked + .rito-button.chooser_all {
+    background-color: #515A6C;
+    border-color: #626C71;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #818181;
+}
+
+
+.search_inp,.preview_text{
+    color: #aeaeae;
+}
+
+.sizeranger .topcoat-range {
+    border: 1px solid #424343;
+}
+
+
+.setting_page_title {
+    color: #BDBDBD;
+}

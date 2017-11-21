@@ -1,0 +1,55 @@
+适用于 PhotoShop, Illustrator, InDesign CC 2014/2015/2015.5
+
+
+#0.更新 ---------------------------
+如果你以前安装过 fonTags 要更新新版本，请找到以前版本的扩展文件夹删除并重新安装。
+不用担心配置会丢失，配置不存放在扩展文件夹中。
+不可覆盖旧版本文件，这会导致扩展签名失效，导致扩展无法载入。
+
+
+#1. 自动安装  ---------------------------
+方法1：如果是 CC 2014 以下版本，可以使用 Adobe Extension Manager CC 来安装扩展插件
+	1.使用 Adobe Extension Manager 打开 .zxp  文件并安装.
+	2.重启 PhotoShop ，在 PhotoShop 顶部菜单栏： 窗口 > 扩展功能 > fonTags 找到并打开 fonTags
+
+方法2：如果是 CC 2014 以上版本或者没有安装  Adobe Extension Manager CC ，可以使用 "安装脚本(installer).jsx" 来安装，
+	1.启动应用程序如 PhotoShop，使用菜单中的“文件->脚本->浏览”功能，运行本文件夹下的 "安装脚本(installer).jsx" 文件。
+	2. 重启 PhotoShop ，在 PhotoShop 顶部菜单栏： 窗口 > 扩展功能 > fonTags 找到并打开 fonTags
+
+
+本扩展一次安装后即可在 PhotoShop、Illustrator 和 InDesign 同时使用，无需分别安装。
+使用脚本安装后扩展会被安装在“C:\Users\系统用户名\AppData\Roaming\Adobe\CEP\extensions\”文件夹中。只有当前计算机用户才能使用，要为所有本地用户安装，请使用下面的手动安装方法安装到 Program Files 目录。（由于脚本无法判断计算机是 32 位还是 64 位所以只能安装在通用目录）
+
+
+
+#2.手动安装 ---------------------------
+	1.复制压缩包内的 com.nullice.pschen.fonTags  文件夹到“扩展插件目录”
+	2.重启 PhotoShop ，在 PhotoShop 顶部菜单栏： 窗口 > 扩展功能 > fonTags 找到并打开 fonTags
+	其中扩展插件目录在各系统下是：
+
+扩展插件目录”位置（如果相关文件夹不存在，请自行建立）：
+
+	CC 2014, CC 2015, CC 2015.1：
+		Windows 32 位：C:\Program Files\Common Files\Adobe\CEP\extensions\
+		Windows 64 位：C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\
+		Windows 通用 ：C:\Users\系统用户名\AppData\Roaming\Adobe\CEP\extensions\
+		OS X：/Library/Application Support/Adobe/CEP/extensions/
+	CC：
+		Windows 32 位：C:\Program Files\Common Files\Adob\CEPServiceManager4\extensions\
+		Windows 64 位：C:\Program Files (x86)\Common Files\Adobe\CEPServiceManager4\extensions\
+		Windows 通用 ：C:\Users\系统用户名\AppData\Roaming\Adobe\CEPServiceManager4\extensions\
+		OS X：/Library/Application Support/Adobe/CEP/extensions/
+
+
+
+
+#3.卸载 ---------------------------
+请手动删除安装目录下的扩展文件夹和配置文件夹。
+配置文件夹可以在扩展中的设置中点击“打开配置文件夹”找到。如“C:\Users\nullice\AppData\Roaming\nullice.psex”
+
+
+
+
+
+
+

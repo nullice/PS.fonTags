@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.nullice.pschan.fotags" ExtensionBundleVersion="1.3" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+    <ExtensionList>
+        <Extension Id="com.nullice.pschan.fotags" Version="1.3"/>
+    </ExtensionList>
+
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="PHXS" Version="[14.0,17.9]"/>
+            <Host Name="PHSP" Version="[14.0,17.9]"/>
+            <Host Name="ILST" Version="[15.0,20]"/>
+            <Host Name="IDSN" Version="[9,11]"/>
+        </HostList>
+
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="6.0"/> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+        </RequiredRuntimeList>
+
+    </ExecutionEnvironment>
+
+
+    <DispatchInfoList>
+        <Extension Id="com.nullice.pschan.fotags">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./jsx/jsx_main.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>fonTags</Menu>
+
+
+                    <Geometry>
+                        <Size>
+                            <Height>300</Height>
+                            <Width>300</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>9000</Height>
+                            <Width>9000</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>20</Height>
+                            <Width>265</Width>
+                        </MinSize>
+                    </Geometry>
+
+                    <Icons>
+                        <Icon Type="Normal">./icon/Light.png</Icon>
+                        <Icon Type="RollOver">./icon/Light.png</Icon>
+                        <Icon Type="DarkNormal">./icon/Dark.png</Icon>
+                        <Icon Type="DarkRollOver">./icon/Dark.png</Icon>
+                    </Icons>
+                </UI>
+
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
